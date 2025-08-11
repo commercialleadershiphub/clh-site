@@ -1,196 +1,118 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products — Commercial Leadership Hub</title>
-  <meta name="description" content="Upcoming tools and packs for commercial leaders. Explore playbooks, templates and kits — coming soon at Commercial Leadership Hub." />
+  <meta name="description" content="Kommende værktøjer og pakker til kommercielle ledere. Se hvad der er på vej og stem via Request." />
   <link rel="canonical" href="https://commercialleadershiphub.com/products.html" />
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    /* Page-scoped styles (så vi undgår at pille ved assets/style.css) */
-    .clh-wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
-    .clh-topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0 10px; }
-    .clh-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; }
-    .clh-brand-badge { width:28px; height:28px; border-radius:10px; background:#111; }
-    .clh-nav { display:flex; gap:18px; flex-wrap:wrap; }
-    .clh-nav a { color:#111; text-decoration:none; opacity:.8; }
-    .clh-nav a:hover { opacity:1; }
-    .clh-cta { display:flex; gap:10px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; border-radius:14px; padding:10px 14px; border:1px solid #e6e6e6; background:#fff; text-decoration:none; color:#111; font-size:14px; }
-    .btn-primary { background:#111; color:#fff; border-color:#111; }
-    .btn:hover { background:#f7f7f7; }
-    .btn-primary:hover { background:#222; }
-
-    .hero { padding: 36px 0 8px; }
-    .eyebrow { display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:#f4f4f5; }
-    .hero h1 { margin:14px 0 10px; font-size:34px; line-height:1.2; }
-    .hero p { color:#5b5b66; max-width:800px; }
-
-    .grid { display:grid; gap:18px; grid-template-columns: repeat(1,minmax(0,1fr)); margin-top:28px; }
-    @media (min-width: 720px) { .grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-    @media (min-width: 1024px){ .grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
-
-    .card { background:#fff; border:1px solid #ececee; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:12px; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
-    .pill { display:inline-flex; padding:6px 10px; border-radius:999px; font-size:12px; background:#f4f4f5; color:#111; }
-    .title { font-weight:600; }
-    .desc { color:#5b5b66; font-size:14px; line-height:1.45; }
-    .card .foot { margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px; }
-    .soon { background:#111; color:#fff; }
-    .muted { color:#7a7a84; font-size:12px; }
-
-    footer { margin-top: 42px; border-top:1px solid #eee; padding-top:16px; color:#777; font-size:13px; }
-    .footer-cols { display:grid; gap:16px; grid-template-columns: repeat(2,minmax(0,1fr)); }
-    @media (min-width: 860px){ .footer-cols { grid-template-columns: repeat(4,minmax(0,1fr)); } }
-    .footer-brand { display:flex; align-items:center; gap:8px; }
-    .footer-badge { width:24px; height:24px; border-radius:8px; background:#111; }
+    /* Små side-specifikke styles (rører ikke din globale CSS) */
+    .eyebrow{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:#f3f4f6}
+    .grid-products{display:grid;gap:18px;grid-template-columns:repeat(1,minmax(0,1fr));margin-top:24px}
+    @media (min-width:720px){.grid-products{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:1040px){.grid-products{grid-template-columns:repeat(3,1fr)}}
+    .card .pill{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:#111;color:#fff}
+    .card .desc{color:#6b7280}
+    .subtle{color:#6b7280;font-size:14px}
   </style>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date()); gtag('config','G-81TG0R550X');
+  </script>
 </head>
 <body>
-  <header>
-    <div class="clh-wrap clh-topbar">
-      <a class="clh-brand" href="/">
-        <div class="clh-brand-badge"></div><strong>Commercial Leadership Hub</strong>
+
+  <!-- Header (samme stil som forsiden) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Commercial Leadership Hub</span>
       </a>
-      <nav class="clh-nav">
+      <nav class="main-nav">
         <a href="/#features">Features</a>
-        <a href="/products.html" aria-current="page"><strong>Products</strong></a>
         <a href="/articles/">Articles</a>
         <a href="/contribute.html">Contribute</a>
         <a href="/request.html">Request</a>
       </nav>
-      <div class="clh-cta">
-        <a class="btn" href="/#newsletter">Start free</a>
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="/#newsletter">Start free</a>
         <a class="btn btn-primary" href="/#newsletter">Join newsletter</a>
       </div>
     </div>
   </header>
 
-  <main class="clh-wrap">
-    <section class="hero">
-      <span class="eyebrow">Coming soon</span>
-      <h1>Upcoming tools & packs</h1>
-      <p>Her kan du se, hvad vi arbejder på. Klik “Request” for at stemme på et emne – det hjælper os med at prioritere.</p>
-    </section>
-
-    <section aria-label="Product grid" class="grid">
-      <!-- 1 -->
-      <article class="card">
-        <span class="pill">Template</span>
-        <div class="title">Headcount Plan (Sheets)</div>
-        <p class="desc">Rulbar headcount-model med roller, kvartaler, løn og benefits – klar til budget og forecast.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 2 -->
-      <article class="card">
-        <span class="pill">Playbook</span>
-        <div class="title">Weekly Sales Cadence</div>
-        <p class="desc">Praktisk playbook til at styre pipeline, 1:1, review og kvartalsrytme – med skabeloner.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 3 -->
-      <article class="card">
-        <span class="pill">Checklist</span>
-        <div class="title">GTM Launch Checklist</div>
-        <p class="desc">Trin-for-trin checkliste til nye markeder/segmenter – fra ICP til pipeline og enablement.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 4 -->
-      <article class="card">
-        <span class="pill">Dashboards</span>
-        <div class="title">Sales Ops Dashboard Pack</div>
-        <p class="desc">Færdige visninger i Sheets/Looker: funnel, win-rate, cohort, coverage, produktivitet m.m.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 5 -->
-      <article class="card">
-        <span class="pill">Toolkit</span>
-        <div class="title">Partner-Led Entry Toolkit</div>
-        <p class="desc">Partnerprofil, komp, deal-flow og enablement – casepakke til partnerstyret markedsentry.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 6 -->
-      <article class="card">
-        <span class="pill">Model</span>
-        <div class="title">Budget & Forecast Model</div>
-        <p class="desc">Top-down og bottom-up salgsbudget med følsomhed, pipeline-flow og produktmix.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 7 -->
-      <article class="card">
-        <span class="pill">Scorecards</span>
-        <div class="title">Hiring & Onboarding Pack</div>
-        <p class="desc">ATS-venlige scorecards, ramp-planer og 30/60/90-dage mål for AE/SDR/CSM.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-      <!-- 8 -->
-      <article class="card">
-        <span class="pill">Coaching</span>
-        <div class="title">One-to-One Coaching Kit</div>
-        <p class="desc">Strukturerede 1:1-skabeloner, notestruktur og KPI-træ, som holder momentum uge for uge.</p>
-        <div class="foot">
-          <span class="pill soon">Coming soon</span>
-          <a class="btn" href="/request.html">Request</a>
-        </div>
-      </article>
-    </section>
-
-    <p class="muted" style="margin-top:20px;">Tip: mangler vi noget? Skriv en request – vi prioriterer efter efterspørgsel.</p>
-
-    <footer>
-      <div class="footer-cols">
-        <div>
-          <div class="footer-brand">
-            <div class="footer-badge"></div><strong>Commercial Leadership Hub</strong>
-          </div>
-          <p style="margin-top:8px;">Praktiske værktøjer til kommercielle ledere.</p>
-        </div>
-        <div>
-          <strong>Product</strong>
-          <ul style="margin-top:8px; line-height:1.7">
-            <li>Playbooks</li>
-            <li>Templates</li>
-            <li>Courses</li>
-          </ul>
-        </div>
-        <div>
-          <strong>Company</strong>
-          <ul style="margin-top:8px; line-height:1.7">
-            <li><a href="/privacy.html">Privacy</a></li>
-            <li><a href="/contribute.html">Contribute</a></li>
-            <li><a href="/request.html">Request</a></li>
-          </ul>
-        </div>
-        <div>
-          <strong>Follow</strong>
-          <ul style="margin-top:8px; line-height:1.7">
-            <li><a href="/#newsletter">Newsletter</a></li>
-          </ul>
-        </div>
+  <main>
+    <!-- Hero -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Coming soon</span>
+        <h1 class="h2" style="margin-top:10px">Upcoming tools & packs</h1>
+        <p class="subtle" style="max-width:800px;margin-top:8px">
+          Her kan du se, hvad vi arbejder på. Klik “Request” for at stemme på et emne – det hjælper os med at prioritere.
+        </p>
       </div>
-      <div style="margin-top:10px; font-size:12px;">© <script>document.write(new Date().getFullYear())</script> Commercial Leadership Hub.</div>
-    </footer>
-  </main>
-</body>
-</html>
+    </section>
+
+    <!-- Grid med 8 kort -->
+    <section class="section" style="padding-top:0">
+      <div class="container grid-products">
+        <!-- 1 -->
+        <article class="card">
+          <span class="pill">Coming soon</span>
+          <h3 class="h3">Headcount Plan (Sheets)</h3>
+          <p class="desc">Rulbar headcount-model med roller, kvartaler, løn/benefits – klar til budget og forecast.</p>
+          <div class="actions" style="margin-top:auto">
+            <a class="btn btn-outline" href="/request.html">Request</a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="card">
+          <span class="pill">Coming soon</span>
+          <h3 class="h3">Weekly Sales Cadence (Playbook)</h3>
+          <p class="desc">Praktisk playbook til pipeline, 1:1, review og kvartalsrytme – inkl. skabeloner.</p>
+          <div class="actions" style="margin-top:auto">
+            <a class="btn btn-outline" href="/request.html">Request</a>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="card">
+          <span class="pill">Coming soon</span>
+          <h3 class="h3">GTM Launch Checklist</h3>
+          <p class="desc">Trin-for-trin checkliste til nye markeder/segmenter – fra ICP til pipeline og enablement.</p>
+          <div class="actions" style="margin-top:auto">
+            <a class="btn btn-outline" href="/request.html">Request</a>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="card">
+          <span class="pill">Coming soon</span>
+          <h3 class="h3">Sales Ops Dashboard Pack</h3>
+          <p class="desc">Færdige visninger i Sheets/Looker: funnel, win-rate, coverage, cohort, produktivitet m.m.</p>
+          <div class="actions" style="margin-top:auto">
+            <a class="btn btn-outline" href="/request.html">Request</a>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="card">
+          <span class="pill">Coming soon</span>
+          <h3 class="h3">Partner-Led Entry Toolkit</h3>
+          <p class="desc">Partnerprofil, komp, deal-flow og enablement – casepakke til partnerstyret market entry.</p>
+          <div class="actions" style="margin-top:auto">
+            <a class="btn btn-outline" href="/request.html">Request</a>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="card">
+          <span class="pill">Coming soon</span>
+          <h3 class="h3">Budget & Forecast Mode
