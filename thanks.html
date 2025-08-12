@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks — Commercial Leadership Hub</title>
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://commercialleadershiphub.com/thanks.html" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TG0R550X');
+  </script>
+  <style>
+    .thank-hero {
+      min-height: 50vh;
+      display: grid;
+      place-items: center;
+      padding: 72px 0;
+    }
+    .thank-card {
+      max-width: 720px;
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      text-align: center;
+    }
+    .thank-card .mini-logo {
+      margin: 0 auto 12px;
+    }
+    .thank-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header (samme stil som forsiden) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Commercial Leadership Hub</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/#features">Features</a>
+        <a href="/#articles">Articles</a>
+        <a href="/#contribute">Contribute</a>
+        <a href="/#requests">Request</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="/">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="thank-hero">
+      <div class="container">
+        <div class="thank-card">
+          <div class="mini-logo"></div>
+          <h1 class="h2" style="margin:8px 0 6px;">You’re subscribed! 🎉</h1>
+          <p class="muted">Thanks for joining Commercial Leadership Hub. Check your inbox for a welcome email.</p>
+          <div class="thank-actions">
+            <a class="btn btn-primary" id="btn-back-home" href="/">Back to homepage</a>
+            <a class="btn btn-outline" id="btn-browse-products" href="/products.html">Browse products</a>
+          </div>
+          <p class="xs muted" style="margin-top:10px;">No fluff. Actionable material only.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Commercial Leadership Hub</span>
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted">
+          <li>Playbooks</li>
+          <li>Templates</li>
+          <li>Courses</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // GA4: mark view + button clicks (så du evt. kan markere som “Vigtig hændelse” senere)
+    try { gtag('event','view_thank_you'); } catch(e){}
+    document.getElementById('btn-back-home')?.addEventListener('click',()=>{ try{ gtag('event','click_return_home',{from:'thanks'});}catch(e){} });
+    document.getElementById('btn-browse-products')?.addEventListener('click',()=>{ try{ gtag('event','click_browse_products',{from:'thanks'});}catch(e){} });
+  </script>
+</body>
+</html>
