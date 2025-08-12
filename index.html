@@ -19,16 +19,14 @@
     gtag('config', 'G-81TG0R550X');
   </script>
 
-  <!-- Organization schema (with LinkedIn + contact email) -->
+  <!-- Organization schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Commercial Leadership Hub",
     "url": "https://commercialleadershiphub.com/",
-    "sameAs": [
-      "https://www.linkedin.com/company/commercialleadershiphub"
-    ],
+    "sameAs": ["https://www.linkedin.com/company/commercialleadershiphub"],
     "logo": "https://commercialleadershiphub.com/assets/og-image.png",
     "contactPoint": [{
       "@type": "ContactPoint",
@@ -188,7 +186,6 @@
           <p class="muted">One practical idea you can use in your team this week.</p>
         </div>
         <div class="cta-action">
-          <!-- Magic Link to Beehiiv -->
           <a class="btn btn-primary newsletter-link" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Subscribe</a>
         </div>
       </div>
@@ -335,7 +332,8 @@
         <h4 class="h4">Company</h4>
         <ul class="muted">
           <li>About</li>
-          <li><a href="#contact">Contact</a></li>
+          <!-- CHANGED: Contact now opens the email client -->
+          <li><a class="track-contact-email" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
           <li><a href="/privacy.html">Privacy</a></li>
         </ul>
       </div>
