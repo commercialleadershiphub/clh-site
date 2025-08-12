@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .bg{fill:#111827;}
+      .dot{fill:#ffffff;}
+    </style>
+  </defs>
+  <rect x="10" y="10" width="44" height="44" rx="12" class="bg"/>
+  <circle cx="22" cy="22" r="3" class="dot"/>
+  <circle cx="42" cy="22" r="3" class="dot"/>
+  <rect x="18" y="32" width="28" height="3" rx="1.5" class="dot"/>
+</svg>
