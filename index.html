@@ -57,8 +57,8 @@
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn-ghost" href="#newsletter">Sign in</a>
-        <a class="btn btn-primary" href="#newsletter">Join newsletter</a>
+        <a class="btn btn-ghost newsletter-link" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Sign in</a>
+        <a class="btn btn-primary newsletter-link" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Join newsletter</a>
       </div>
     </div>
   </header>
@@ -74,7 +74,7 @@
           Free articles every week. Premium access for deeper execution.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#newsletter">Start free now</a>
+          <a class="btn btn-primary newsletter-link" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Start free now</a>
           <a class="btn btn-outline" href="/products.html">Browse products</a>
         </div>
         <p class="muted xs">No fluff. Actionable material only.</p>
@@ -188,7 +188,8 @@
           <p class="muted">One practical idea you can use in your team this week.</p>
         </div>
         <div class="cta-action">
-          <a class="btn btn-primary" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Subscribe</a>
+          <!-- Magic Link to Beehiiv -->
+          <a class="btn btn-primary newsletter-link" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Subscribe</a>
         </div>
       </div>
     </div>
@@ -301,12 +302,12 @@
         <div class="card">
           <h3 class="h3">Email</h3>
           <p class="muted">General questions, partnerships, and media.</p>
-          <p><a class="btn btn-outline" href="mailto:contact@commercialleadershiphub.com">contact@commercialleadershiphub.com</a></p>
+          <p><a class="btn btn-outline track-contact-email" href="mailto:contact@commercialleadershiphub.com">contact@commercialleadershiphub.com</a></p>
         </div>
         <div class="card">
           <h3 class="h3">LinkedIn</h3>
           <p class="muted">Follow updates and message us.</p>
-          <p><a class="btn btn-outline" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">Visit company page</a></p>
+          <p><a class="btn btn-outline track-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">Visit company page</a></p>
         </div>
       </div>
     </div>
@@ -341,8 +342,8 @@
       <div>
         <h4 class="h4">Follow</h4>
         <ul class="muted">
-          <li><a href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn">LinkedIn</a></li>
-          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a class="track-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn">LinkedIn</a></li>
+          <li><a class="newsletter-link" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d" target="_blank" rel="noopener">Newsletter</a></li>
         </ul>
       </div>
     </div>
@@ -353,6 +354,44 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // GA4: track newsletter clicks
+    document.querySelectorAll('a.newsletter-link').forEach(function(a){
+      a.addEventListener('click', function(){
+        try{
+          gtag('event','click_join_newsletter',{
+            event_category:'engagement',
+            event_label:(a.textContent||'newsletter').trim()
+          });
+        }catch(e){}
+      });
+    });
+
+    // GA4: track contact email clicks
+    document.querySelectorAll('a[href^="mailto:"], .track-contact-email').forEach(function(a){
+      a.addEventListener('click', function(){
+        try{
+          const where = a.closest('footer') ? 'footer' : 'contact_section';
+          gtag('event','click_contact_email',{
+            event_category:'engagement',
+            event_label: where
+          });
+        }catch(e){}
+      });
+    });
+
+    // GA4: track LinkedIn clicks
+    document.querySelectorAll('a[href*="linkedin.com/company/commercialleadershiphub"], .track-linkedin').forEach(function(a){
+      a.addEventListener('click', function(){
+        try{
+          const where = a.closest('footer') ? 'footer' : 'contact_section';
+          gtag('event','click_linkedin',{
+            event_category:'engagement',
+            event_label: where
+          });
+        }catch(e){}
+      });
+    });
   </script>
 </body>
 </html>
