@@ -160,5 +160,17 @@
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <!-- GA4: Track klik på Beehiiv Magic Link -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (a.href && a.href.indexOf('magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d') !== -1) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_join_newsletter', { method: 'magic_link' });
+        }
+      }
+    });
+  </script>
 </body>
 </html>
