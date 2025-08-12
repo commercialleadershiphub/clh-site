@@ -1,3 +1,11 @@
+# CLH robots.txt
+
 User-agent: *
 Allow: /
+
+# (Cloudflare Managed content må gerne stå herunder)
+# BEGIN Cloudflare Managed content
+# ... (de Disallow-linjer for Amazonbot, GPTBot, Google-Extended osv.)
+# END Cloudflare Managed Content
+
 Sitemap: https://commercialleadershiphub.com/sitemap.xml
