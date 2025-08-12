@@ -1,12 +1,9 @@
 # CLH robots.txt
 
-# Tillad almindelig crawling af hele siden
 User-agent: *
 Allow: /
 
-# Peg Google (og andre) på sitemappet
 Sitemap: https://commercialleadershiphub.com/sitemap.xml
-
 
 # BEGIN Cloudflare Managed content
 # (Bloker udvalgte bots som fx AI-træningscrawlere)
