@@ -1,22 +1,83 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Content requests — CLH</title><link rel="stylesheet" href="/assets/style.css" /><header class="header"><div class="container"><nav class="nav">
-<a class="brand" href="/"><span style="color:#9fe6ff">CLH</span> · Commercial Leadership Hub</a>
-<a href="/products.html" class="btn">Products</a>
-<a href="/pricing.html" class="btn">Pricing</a>
-<a href="/articles/index.html" class="btn">Articles</a>
-<a href="/contribute.html" class="btn">Contribute</a>
-<a href="/request.html" class="btn cta">Request</a>
-<span class="spacer"></span>
-<a href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?email={email}" class="btn cta">Join newsletter</a>
-</nav></div></header>
-<main class="container"><h1>Request a playbook / template</h1><p>Tell us what would help you most next. We prioritise based on demand.</p>
-<form action="mailto:admin@commercialleadershiphub.com" method="post" enctype="text/plain">
-<div class="grid"><div><label>Your name<input required name="name" placeholder="Your name" /></label></div>
-<div><label>Email<input required type="email" name="email" placeholder="you@company.com" /></label></div></div>
-<label>What do you need?<textarea name="request" rows="6" placeholder="Describe the playbook, template or course you want."></textarea></label>
-<div class="actions"><button class="btn primary" type="submit">Send request</button>
-<a class="btn" href="mailto:admin@commercialleadershiphub.com?subject=Content%20request">Use email</a></div></form></main><footer class="footer"><div class="container"><div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-<div>© 2025 Commercial Leadership Hub</div><span class="small">No fluff. Actionable tools for commercial leaders.</span>
-<span class="spacer"></span><a class="small" href="/privacy.html">Privacy</a><a class="small" href="/sitemap.xml">Sitemap</a>
-</div></div></footer>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Content requests — CLH</title>
+  <meta name="description" content="Tell us what playbook, template or micro-course you want us to build next." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/request.html" />
+  <link rel="stylesheet" href="/assets/style.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TGR8S50X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TGR8S50X');
+  </script>
+</head>
+<body>
+  <!-- Header / nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark">X</span>
+        <span class="brand-name">Commercial Leadership Hub</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/#features">Features</a>
+        <a href="/products.html">Products</a>
+        <a href="/articles/index.html">Articles</a>
+        <a href="/contribute.html">Contribute</a>
+        <a href="/request.html">Request</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Request a playbook / template</h1>
+    <p>Tell us what would help you most next. We prioritise based on demand.</p>
+
+    <!-- Simple mailto form, as in your current page -->
+    <form
+      action="mailto:admin@commercialleadershiphub.com"
+      method="post"
+      enctype="text/plain"
+      class="stack"
+      style="max-width:640px"
+    >
+      <label>Your name
+        <input name="name" placeholder="Your name" required>
+      </label>
+
+      <label>Email
+        <input name="email" type="email" placeholder="you@company.com" required>
+      </label>
+
+      <label>What do you need?
+        <textarea name="request" rows="6" placeholder="Describe the playbook, template or course you want." required></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn">Send request</button>
+      </div>
+    </form>
+
+    <hr />
+
+    <p class="small">
+      © 2025 Commercial Leadership Hub — No fluff. Actionable tools for commercial leaders.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="small">
+        <a class="small" href="/privacy.html">Privacy</a>
+        <a class="small" href="/sitemap.xml">Sitemap</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
