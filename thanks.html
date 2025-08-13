@@ -7,17 +7,13 @@
   <meta name="robots" content="noindex,follow" />
   <link rel="canonical" href="https://commercialleadershiphub.com/thanks.html" />
   <meta property="og:title" content="Thanks — Commercial Leadership Hub">
-<meta property="og:description" content="You’re subscribed! Practical tools for commercial leaders, weekly.">
-<meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png">
-<meta property="og:url" content="https://commercialleadershiphub.com/thanks.html">
-<meta property="og:type" content="website">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:description" content="You’re subscribed! Practical tools for commercial leaders, weekly.">
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png">
+  <meta property="og:url" content="https://commercialleadershiphub.com/thanks.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/style.css" />
-
-  <!-- GA4 -->
+  <!-- GA4 base (keep only one copy site wide) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,6 +21,10 @@
     gtag('js', new Date());
     gtag('config', 'G-81TG0R550X');
   </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css" />
+
   <style>
     .thank-hero {
       min-height: 50vh;
@@ -83,7 +83,7 @@
           <h1 class="h2" style="margin:8px 0 6px;">You’re subscribed! 🎉</h1>
           <p class="muted">Thanks for joining Commercial Leadership Hub. Check your inbox for a welcome email.</p>
           <div class="thank-actions">
-            <a class="btn btn-primary" id="btn-back-home" href="/">Back to homepage</a>
+            <a class="btn btn-primary" id="btn-return-home" href="/">Back to homepage</a>
             <a class="btn btn-outline" id="btn-browse-products" href="/products.html">Browse products</a>
           </div>
           <p class="xs muted" style="margin-top:10px;">No fluff. Actionable material only.</p>
@@ -133,10 +133,22 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // GA4: mark view + button clicks (så du evt. kan markere som “Vigtig hændelse” senere)
-    try { gtag('event','view_thank_you'); } catch(e){}
-    document.getElementById('btn-back-home')?.addEventListener('click',()=>{ try{ gtag('event','click_return_home',{from:'thanks'});}catch(e){} });
-    document.getElementById('btn-browse-products')?.addEventListener('click',()=>{ try{ gtag('event','click_browse_products',{from:'thanks'});}catch(e){} });
+    // GA4 custom events for thank-you page
+    // Fire once per page load
+    try {
+      gtag('event', 'view_thank_you', {
+        page_location: window.location.href,
+        page_title: document.title
+      });
+    } catch (e) {}
+
+    // Button click events
+    document.getElementById('btn-return-home')?.addEventListener('click', function () {
+      try { gtag('event', 'click_return_home', { link_url: '/' }); } catch (e) {}
+    });
+    document.getElementById('btn-browse-products')?.addEventListener('click', function () {
+      try { gtag('event', 'click_browse_products', { link_url: '/products.html' }); } catch (e) {}
+    });
   </script>
 </body>
 </html>
