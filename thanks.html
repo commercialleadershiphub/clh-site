@@ -19,7 +19,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-81TG0R550X');
+    // Ensure reliable delivery on navigation
+    gtag('config', 'G-81TG0R550X', { transport_type: 'beacon' });
   </script>
 
   <!-- Styles -->
@@ -140,11 +141,29 @@
       });
     } catch (e) {}
 
-    document.getElementById('btn-return-home')?.addEventListener('click', function () {
-      try { gtag('event', 'click_return_home', { link_url: '/' }); } catch (e) {}
+    // Reliable link click events: wait for GA callback, then navigate (with timeout fallback)
+    document.getElementById('btn-return-home')?.addEventListener('click', function (e) {
+      try {
+        e.preventDefault();
+        gtag('event', 'click_return_home', {
+          link_url: '/',
+          event_callback: function () { window.location.href = '/'; },
+          event_timeout: 1000
+        });
+        setTimeout(function(){ window.location.href = '/'; }, 1100);
+      } catch (err) {}
     });
-    document.getElementById('btn-browse-products')?.addEventListener('click', function () {
-      try { gtag('event', 'click_browse_products', { link_url: '/products.html' }); } catch (e) {}
+
+    document.getElementById('btn-browse-products')?.addEventListener('click', function (e) {
+      try {
+        e.preventDefault();
+        gtag('event', 'click_browse_products', {
+          link_url: '/products.html',
+          event_callback: function () { window.location.href = '/products.html'; },
+          event_timeout: 1000
+        });
+        setTimeout(function(){ window.location.href = '/products.html'; }, 1100);
+      } catch (err) {}
     });
   </script>
 </body>
