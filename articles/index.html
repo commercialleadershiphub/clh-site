@@ -7,11 +7,11 @@
   <meta name="description" content="Practical, no-fluff articles for commercial leaders: forecasting, pipeline, pricing, hiring, QBRs and more." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/index.html" />
   <meta property="og:title" content="Articles — Commercial Leadership Hub" />
-  <meta property="og:description" content="Practical, no-fluff articles for commercial leaders: forecasting, pipeline, pricing, hiring, QBRs and more." />
+  <meta property="og:description" content="Forecasting, pipeline, pricing, hiring, QBRs and more." />
   <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/index.html" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
   <!-- GA4 base -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
@@ -22,7 +22,20 @@
     gtag('config', 'G-81TG0R550X');
   </script>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    /* Minimal page-local styles (matcher nuværende look) */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;cursor:pointer}
+    .tab.active{box-shadow:var(--shadow)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:16px}
+    .card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+    .card img{width:100%;height:170px;object-fit:cover}
+    .card .body{padding:12px}
+    .card h3{margin:0 0 6px 0}
+    .tag{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;margin-right:6px}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -45,25 +58,53 @@
 
   <main>
     <section>
-      <div class="container" style="max-width: 860px; padding: 48px 0;">
+      <div class="container" style="max-width: 1100px; padding: 48px 0;">
         <h1>Articles</h1>
-        <p class="muted">No fluff. Short reads you can use this week.</p>
+        <p class="muted">Browse by category. No fluff.</p>
 
-        <h2>New</h2>
-        <ul>
-          <li><a href="/articles/forecast-accuracy-system.html">Forecast Accuracy System</a> — weekly hygiene, cadence, dashboards, inspection rules.</li>
-          <li><a href="/articles/meddicc-qualification-checklist.html">MEDDICC Qualification Checklist</a> — plain-English prompts, stage exits, RAG scoring.</li>
-          <li><a href="/articles/pricing-and-discount-governance.html">Pricing &amp; Discount Governance</a> — guardrails, approval ladder, give-get, reporting.</li>
-          <li><a href="/articles/sales-hiring-scorecard.html">Sales Hiring Scorecard & Interview Loop</a> — outcomes, competencies, loop, decision rubric.</li>
-          <li><a href="/articles/qbr-playbook.html">QBR Playbook (Customer-Facing)</a> — prep, data pack, 60-min agenda, follow-up.</li>
-        </ul>
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-filter="new">New</button>
+          <button class="tab" data-filter="popular">Popular</button>
+          <button class="tab" data-filter="all">All</button>
+        </div>
 
-        <h2>Popular</h2>
-        <ul>
-          <li><a href="/articles/operating-rhythm.html">Operating Rhythm</a> — weekly-monthly-quarterly cadence for GTM.</li>
-          <li><a href="/articles/headcount-planning.html">Headcount Planning</a> — simple model and guardrails for hiring pace.</li>
-          <li><a href="/articles/international-expansion.html">International Expansion</a> — where to start, sequencing, and early metrics.</li>
-        </ul>
+        <div class="grid" id="grid">
+          <!-- New (5 nye artikler) -->
+          <a class="card" data-cat="new" href="/articles/forecast-accuracy-system.html">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200" alt="Forecast">
+            <div class="body"><div class="tag">Forecast</div><h3>Forecast Accuracy System</h3><p class="muted">Weekly hygiene, cadence, dashboards, inspection rules.</p></div>
+          </a>
+          <a class="card" data-cat="new" href="/articles/meddicc-qualification-checklist.html">
+            <img src="https://images.unsplash.com/photo-1520607162513-d3ca22f68b6d?q=80&w=1200" alt="MEDDICC">
+            <div class="body"><div class="tag">Sales</div><h3>MEDDICC Qualification Checklist</h3><p class="muted">Plain-English prompts, stage exits, RAG scoring.</p></div>
+          </a>
+          <a class="card" data-cat="new" href="/articles/pricing-and-discount-governance.html">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200" alt="Pricing">
+            <div class="body"><div class="tag">Pricing</div><h3>Pricing & Discount Governance</h3><p class="muted">Guardrails, approval ladder, give-get, reporting.</p></div>
+          </a>
+          <a class="card" data-cat="new popular" href="/articles/sales-hiring-scorecard.html">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200" alt="Hiring">
+            <div class="body"><div class="tag">Hiring</div><h3>Sales Hiring Scorecard & Interview Loop</h3><p class="muted">Outcomes, competencies, loop, decision rubric.</p></div>
+          </a>
+          <a class="card" data-cat="new popular" href="/articles/qbr-playbook.html">
+            <img src="https://images.unsplash.com/photo-1533561797500-4fad4750814f?q=80&w=1200" alt="QBR">
+            <div class="body"><div class="tag">Success</div><h3>QBR Playbook (Customer-Facing)</h3><p class="muted">Prep, data pack, 60-min agenda, follow-up.</p></div>
+          </a>
+
+          <!-- Eksisterende artikler -->
+          <a class="card" data-cat="popular" href="/articles/operating-rhythm.html">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200" alt="Operating Rhythm">
+            <div class="body"><div class="tag">Ops</div><h3>Operating Rhythm</h3><p class="muted">Weekly-monthly-quarterly cadence for GTM.</p></div>
+          </a>
+          <a class="card" data-cat="all" href="/articles/headcount-planning.html">
+            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200" alt="Headcount">
+            <div class="body"><div class="tag">People</div><h3>Headcount Planning</h3><p class="muted">Simple model and guardrails for hiring pace.</p></div>
+          </a>
+          <a class="card" data-cat="all" href="/articles/international-expansion.html">
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200" alt="Expansion">
+            <div class="body"><div class="tag">Strategy</div><h3>International Expansion</h3><p class="muted">Where to start, sequencing, early metrics.</p></div>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -101,4 +142,35 @@
         </ul>
       </div>
     </div>
-    <div class="container copyri
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Tabs + filter
+    const tabs = document.getElementById('tabs');
+    const tabBtns = [...tabs.querySelectorAll('.tab')];
+    const cards = [...document.querySelectorAll('#grid .card')];
+
+    function applyFilter(filter) {
+      tabBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+      cards.forEach(c => {
+        if (filter === 'all') { c.style.display = ''; return; }
+        const cats = (c.dataset.cat || '').split(/\s+/);
+        c.style.display = cats.includes(filter) ? '' : 'none';
+      });
+    }
+
+    tabs.addEventListener('click', (e) => {
+      const f = e.target.dataset.filter;
+      if (!f) return;
+      applyFilter(f);
+    });
+
+    applyFilter('new'); // default visning
+  </script>
+</body>
+</html>
