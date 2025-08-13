@@ -3,80 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Articles · Commercial Leadership Hub</title>
-  <meta name="description" content="Latest articles from Commercial Leadership Hub — practical ideas for sales leaders." />
-  <link rel="canonical" href="https://commercialleadershiphub.com/articles/" />
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <title>Articles — Commercial Leadership Hub</title>
+  <meta name="description" content="Practical, no-fluff articles for commercial leaders: forecasting, pipeline, pricing, hiring, QBRs and more." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/articles/index.html" />
+  <meta property="og:title" content="Articles — Commercial Leadership Hub" />
+  <meta property="og:description" content="Practical, no-fluff articles for commercial leaders: forecasting, pipeline, pricing, hiring, QBRs and more." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/articles/index.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- GA4 base -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TG0R550X');
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/">Commercial Leadership Hub</a>
-    <nav class="nav">
-      <a href="/products.html">Products</a>
-      <a href="/articles/" class="active">Articles</a>
-      <a href="/contribute.html">Contribute</a>
-      <a href="/request.html">Request</a>
-      <a href="/privacy.html">Privacy</a>
-    </nav>
-  </div>
-</header>
-<main class="container">
-
-  <section class="section">
-    <h1 class="h1">Latest articles</h1>
-    <p class="muted">Short, practical reads. New articles every week.</p>
-    <div class="grid grid-3">
-      <article class="card">
-        <a class="card-cover" href="/articles/operating-rhythm.html" aria-label="Read article">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Team meeting" loading="lazy">
-        </a>
-        <div class="card-body">
-          <h2 class="h4"><a href="/articles/operating-rhythm.html">How to design your weekly sales cadence</a></h2>
-          <p class="muted small">A simple rhythm that keeps focus on pipeline, people and progress.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <a class="card-cover" href="/articles/headcount-planning.html" aria-label="Read article">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Planning on whiteboard" loading="lazy">
-        </a>
-        <div class="card-body">
-          <h2 class="h4"><a href="/articles/headcount-planning.html">Budget that sales can actually deliver</a></h2>
-          <p class="muted small">Headcount planning that supports growth without breaking the model.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <a class="card-cover" href="/articles/international-expansion.html" aria-label="Read article">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Global collaboration" loading="lazy">
-        </a>
-        <div class="card-body">
-          <h2 class="h4"><a href="/articles/international-expansion.html">Hiring your first two AEs</a></h2>
-          <p class="muted small">Scorecards and interview loops that raise the bar from day one.</p>
-        </div>
-      </article>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Commercial Leadership Hub</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/#features">Features</a>
+        <a href="/#articles">Articles</a>
+        <a href="/#contribute">Contribute</a>
+        <a href="/#requests">Request</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="/">Home</a>
+      </div>
     </div>
-  </section>
+  </header>
 
-</main>
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 Commercial Leadership Hub — Practical tools for commercial leaders.</p>
-  </div>
-</footer>
-    <!-- GA4: Track klik på Beehiiv Magic Link -->
-  <script>
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest('a');
-      if (!a) return;
-      if (a.href && a.href.indexOf('magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d') !== -1) {
-        if (typeof gtag === 'function') {
-          gtag('event', 'click_join_newsletter', { method: 'magic_link' });
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+  <main>
+    <section>
+      <div class="container" style="max-width: 860px; padding: 48px 0;">
+        <h1>Articles</h1>
+        <p class="muted">No fluff. Short reads you can use this week.</p>
+
+        <h2>New</h2>
+        <ul>
+          <li><a href="/articles/forecast-accuracy-system.html">Forecast Accuracy System</a> — weekly hygiene, cadence, dashboards, inspection rules.</li>
+          <li><a href="/articles/meddicc-qualification-checklist.html">MEDDICC Qualification Checklist</a> — plain-English prompts, stage exits, RAG scoring.</li>
+          <li><a href="/articles/pricing-and-discount-governance.html">Pricing &amp; Discount Governance</a> — guardrails, approval ladder, give-get, reporting.</li>
+          <li><a href="/articles/sales-hiring-scorecard.html">Sales Hiring Scorecard & Interview Loop</a> — outcomes, competencies, loop, decision rubric.</li>
+          <li><a href="/articles/qbr-playbook.html">QBR Playbook (Customer-Facing)</a> — prep, data pack, 60-min agenda, follow-up.</li>
+        </ul>
+
+        <h2>Popular</h2>
+        <ul>
+          <li><a href="/articles/operating-rhythm.html">Operating Rhythm</a> — weekly-monthly-quarterly cadence for GTM.</li>
+          <li><a href="/articles/headcount-planning.html">Headcount Planning</a> — simple model and guardrails for hiring pace.</li>
+          <li><a href="/articles/international-expansion.html">International Expansion</a> — where to start, sequencing, and early metrics.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Commercial Leadership Hub</span>
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted">
+          <li>Playbooks</li>
+          <li>Templates</li>
+          <li>Courses</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyri
