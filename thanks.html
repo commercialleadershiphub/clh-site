@@ -56,7 +56,6 @@
 </head>
 <body>
 
-  <!-- Header (samme stil som forsiden) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand">
@@ -134,7 +133,6 @@
     document.getElementById('y').textContent = new Date().getFullYear();
 
     // GA4 custom events for thank-you page
-    // Fire once per page load
     try {
       gtag('event', 'view_thank_you', {
         page_location: window.location.href,
@@ -142,7 +140,6 @@
       });
     } catch (e) {}
 
-    // Button click events
     document.getElementById('btn-return-home')?.addEventListener('click', function () {
       try { gtag('event', 'click_return_home', { link_url: '/' }); } catch (e) {}
     });
