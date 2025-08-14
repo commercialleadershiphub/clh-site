@@ -29,7 +29,7 @@
 
   <!-- Page CSS (kun layout for denne side) -->
   <style>
-    html,body{background:var(--bg);color:var(--ink)}
+    html,{background:var(--bg);color:var(--ink)}
     a,a:visited{color:inherit;text-decoration:none} /* ingen “visited”-farve */
     a:hover{text-decoration:underline}
 
@@ -43,7 +43,7 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
     .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
     .thumb{width:100%;height:180px;object-fit:cover;background:#ddd;display:block}
-    .card-body{padding:12px}
+    .card-{padding:12px}
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .title{font-weight:700;margin:0 0 6px;line-height:1.25}
     .excerpt{margin:0;color:var(--muted)}
@@ -57,6 +57,38 @@
     }
   </style>
 </head>
+  <script>
+  (function () {
+    const header = document.querySelector('.site-header') || document.querySelector('.topbar');
+    if (!header) return;
+
+    let lastY = window.scrollY;
+    let ticking = false;
+    const DELTA = 8;           // scroll-deadzone (px) for at undgå flimmer
+    const SHOW_AT_TOP = 60;    // først skjul efter man er lidt nede på siden
+
+    function onScroll() {
+      const y = window.scrollY;
+      const goingDown = y > lastY + DELTA;
+      const goingUp   = y < lastY - DELTA;
+
+      if (goingDown && y > SHOW_AT_TOP) {
+        header.classList.add('is-hidden');
+      } else if (goingUp || y <= 0) {
+        header.classList.remove('is-hidden');
+      }
+      lastY = y;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () { onScroll(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
 <body>
   <!-- Header (samme som øvrige sider) -->
   <header class="site-header">
