@@ -3,13 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Commercial Leadership Hub — Tools, guides & micro-courses</title>
-  <meta name="description" content="Practical playbooks, templates and focused micro-courses to build a high-performing sales organization. Free articles every week." />
+  <title>Commercial Leadership Hub — Lead with clarity</title>
+  <meta name="description" content="Practical tools for commercial leaders. Playbooks, templates, micro-courses and 15–20 min articles to run a calmer GTM engine." />
   <link rel="canonical" href="https://commercialleadershiphub.com/" />
 
-  <link rel="stylesheet" href="/assets/style.css" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Commercial Leadership Hub — Lead with clarity" />
+  <meta property="og:description" content="Practical tools for commercial leaders. Playbooks, templates, micro-courses and 15–20 min articles." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
-  <!-- GA4 -->
+  <!-- GA4 base (single copy site-wide) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,258 +23,212 @@
     gtag('js', new Date());
     gtag('config', 'G-81TG0R550X');
   </script>
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/assets/style.css" />
+
+  <!-- Page-specific palette + components (no frameworks, no extra CSS files) -->
+  <style>
+    :root{
+      /* Sand · Navy palette (no pure white) */
+      --bg:#F3EEE4;          /* page background (warm sand) */
+      --surface:#F9F6EF;     /* cards/surfaces */
+      --ink:#0F172A;         /* headings/body (navy) */
+      --muted:#5F6B7A;       /* secondary text */
+      --line:#E7E1D7;        /* borders */
+      --accent:#0F1A34;      /* primary buttons (deep navy) */
+      --accent-2:#334155;    /* secondary buttons */
+      --overlay:rgba(0,0,0,.40);
+      --radius:18px;
+      --shadow:0 12px 36px rgba(0,0,0,.06);
+    }
+    /* reset-ish */
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    img{max-width:100%;display:block}
+    a,a:visited{color:inherit;text-decoration:none} /* no visited color change */
+    a:hover{text-decoration:underline}
+    .container{max-width:1180px;margin:0 auto;padding:20px}
+
+    /* Topbar */
+    .topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-mark{width:16px;height:16px;border-radius:4px;background:var(--ink);display:inline-block}
+    .quicknav a{margin:0 8px;white-space:nowrap}
+
+    /* Shared UI */
+    .surface{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .muted{color:var(--muted)}
+    .h1{font-size:44px;line-height:1.1;margin:0 0 8px}
+    .lead{font-size:18px}
+    .btn{display:inline-block;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:999px;padding:10px 14px;white-space:nowrap}
+    .btn.ghost{background:var(--surface);color:var(--ink)}
+    .btn.alt{background:var(--accent-2);border-color:var(--accent-2)}
+    .chip{display:inline-block;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:999px}
+
+    /* Hero: overlay image */
+    .hero{overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line);position:relative}
+    .hero img{height:520px;width:100%;object-fit:cover;filter:brightness(.85)}
+    .overlay{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(to top, var(--overlay), rgba(0,0,0,.15))}
+    .overlay h1,.overlay p{color:#fff}
+
+    /* Grids/sections */
+    .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;padding:22px}
+    .overview{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .ov-card{padding:14px}
+    .who{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+    .svc{padding:16px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,var(--surface), rgba(255,255,255,.35))}
+    .icon{width:26px;height:26px;border-radius:8px;border:1px solid var(--line)}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+    .card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+    .card img{height:200px;object-fit:cover}
+    .card-body{padding:12px}
+
+    @media (max-width:980px){
+      .hero img{height:440px}
+      .who,.hero-split{grid-template-columns:1fr}
+      .overview{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
+  <!-- Topbar (quick navigation) -->
+  <div class="topbar">
+    <div class="container row">
       <a href="/" class="brand">
         <span class="brand-mark"></span>
         <span class="brand-name">Commercial Leadership Hub</span>
       </a>
-
-      <nav class="main-nav">
-        <a href="#features">Features</a>
-        <a href="#articles">Articles</a>
-        <a href="#contribute">Contribute</a>
-        <a href="#requests">Request</a>
+      <nav class="quicknav muted">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#cta">Subscribe</a>
+        <a href="/articles/">Articles</a>
       </nav>
-
       <div class="header-cta">
-        <!-- Sign in fjernet bevidst -->
-        <a class="btn btn-primary js-join" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Join newsletter</a>
+        <a class="btn ghost" href="/products.html">Products</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- Hero -->
-  <section class="section hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="tag">For commercial leaders — CLH</span>
-        <h1>Tools, guides and micro-courses to build a high performing sales org</h1>
-        <p class="lead">
-          Short practical playbooks, ready-to-use templates and focused micro courses.
-          Free articles every week. Premium access for deeper execution.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary js-join" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Start free now</a>
-          <a class="btn btn-outline" href="/products.html">Browse products</a>
-        </div>
-        <p class="muted xs">No fluff. Actionable material only.</p>
-
-        <div class="topics">
-          <span class="topics-label xs">Topics we cover</span>
-          <div class="topics-chips">
-            <span class="chip">GTM</span>
-            <span class="chip">Sales Ops</span>
-            <span class="chip">Budgeting</span>
-            <span class="chip">International</span>
-            <span class="chip">Hiring</span>
-            <span class="chip">Coaching</span>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600" alt="Workshop">
+      <div class="overlay">
+        <div>
+          <h1 class="h1">Lead with clarity.</h1>
+          <p class="lead">Practical content that develops commercial leaders and their teams.</p>
+          <div style="margin-top:14px;display:flex;gap:10px;justify-content:center">
+            <a class="btn" href="/articles/">Browse library</a>
+            <a class="btn ghost" id="btn-subscribe-hero" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-collage">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Team workshop" />
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="Dashboards" />
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Strategy session" />
-        <div class="collage-card">
-          <div class="mini-logo"></div>
-          <p class="muted sm">CLH tools and templates</p>
+    <!-- WHO this is for + checklist -->
+    <section class="surface" style="padding:22px;margin-top:16px">
+      <div class="who">
+        <div>
+          <h2 style="margin:0 0 6px">Who this is for</h2>
+          <p class="muted">You lead revenue — as a CRO, VP or founder — and you want clearer decisions, calmer execution and a team that learns together. Whether you’re new in role or a seasoned commercial leader, this is a place to steal working patterns from peers, swap examples, and avoid reinventing the wheel.</p>
+          <p class="muted">Every article is built for practice: short, specific, and paired with templates. The point is to help you run a tighter GTM engine and grow your people — not to add noise.</p>
         </div>
-        <div class="floating"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features" class="section section-bleed">
-    <div class="container">
-      <h2 class="h2">What you get</h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="icon-dot"></div>
-          <h3 class="h3">Playbooks</h3>
-          <p class="muted">Step-by-step guides for building or turning around a sales function.</p>
-        </div>
-        <div class="card">
-          <div class="icon-list"></div>
-          <h3 class="h3">Templates</h3>
-          <p class="muted">Budgets, headcount plans, pipeline reviews, territory design and more.</p>
-        </div>
-        <div class="card">
-          <div class="icon-cube"></div>
-          <h3 class="h3">Micro courses</h3>
-          <p class="muted">Short focused lessons with cases and worksheets you can use tomorrow.</p>
-        </div>
-        <div class="card">
-          <div class="icon-globe"></div>
-          <h3 class="h3">International expansion</h3>
-          <p class="muted">Market entry checklists, partner models and risk assessment.</p>
-        </div>
-        <div class="card">
-          <div class="icon-bars"></div>
-          <h3 class="h3">Data & cadence</h3>
-          <p class="muted">KPI trees, weekly rhythm and dashboards that keep momentum.</p>
-        </div>
-        <div class="card">
-          <div class="icon-user"></div>
-          <h3 class="h3">Team development</h3>
-          <p class="muted">Hiring scorecards, onboarding plans and coaching scripts.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Articles -->
-  <section id="articles" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="h2">Latest articles</h2>
-        <a class="muted" href="/articles">Go to all articles</a>
-      </div>
-
-      <div class="grid-3 cards-img">
-        <a class="article" href="/articles/operating-rhythm.html">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="">
-          <div class="article-body">
-            <h3 class="h3">How to design your weekly sales cadence</h3>
-            <p class="muted sm">A simple flow that keeps focus on pipeline, people and progress.</p>
-          </div>
-        </a>
-        <a class="article" href="/articles/headcount-planning.html">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="">
-          <div class="article-body">
-            <h3 class="h3">Budget that sales can actually deliver</h3>
-            <p class="muted sm">Practical model for targets, capacity and required pipeline.</p>
-          </div>
-        </a>
-        <a class="article" href="/articles/international-expansion.html">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="">
-          <div class="article-body">
-            <h3 class="h3">Hiring your first two AEs</h3>
-            <p class="muted sm">Scorecards, interview structure and onboarding the first 30 days.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / Newsletter -->
-  <section id="newsletter" class="section cta">
-    <div class="container">
-      <div class="cta-card">
-        <div class="cta-copy">
-          <h3 class="h2">Get the free weekly article</h3>
-          <p class="muted">One practical idea you can use in your team this week.</p>
-        </div>
-        <div class="cta-action">
-          <a class="btn btn-primary js-join" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contribute -->
-  <section id="contribute" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="h2">Contribute</h2>
-        <span class="muted">Write for Commercial Leadership Hub</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3 class="h3">Guidelines</h3>
-          <ul class="muted">
-            <li>900–1,400 words. Practical and specific.</li>
-            <li>Structure: problem → solution → steps → example → tool → next action.</li>
-            <li>Original content. No generic AI text. Short citations if needed.</li>
-            <li>Max 2 links in bio. No sales pitch in the body of the article.</li>
+        <div class="surface" style="padding:16px;border-radius:12px">
+          <h3 style="margin-top:0">Common challenges we cover</h3>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li>Taking over a team and setting a simple operating rhythm.</li>
+            <li>Designing the right mix of roles (AE/AM/SE/SDR/CSM) for your stage.</li>
+            <li>Running effective pipeline and forecast reviews (evidence over opinion).</li>
+            <li>Fixing pricing & discount habits without slowing deals.</li>
+            <li>Hiring consistently with a clear scorecard and interview loop.</li>
+            <li>Building dashboards that drive action, not reporting theater.</li>
+            <li>Planning international expansion with repeatable plays.</li>
+            <li>Coaching managers so enablement sticks week to week.</li>
           </ul>
-          <div class="note">
-            <b>Rights.</b> You keep copyright. CLH may host and promote your article (non-exclusive).
-            Repost after 14 days with a canonical link to CLH.
+        </div>
+      </div>
+    </section>
+
+    <!-- Split: Operate a calmer GTM engine -->
+    <section class="surface" style="padding:22px;margin-top:16px">
+      <div class="hero-split" style="border:none;box-shadow:none">
+        <div>
+          <h2 style="margin:0 0 6px">Operate a calmer GTM engine.</h2>
+          <p class="muted">Systems over slogans. Built for CROs, VPs and founders.</p>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <span class="chip">15–20 min reads</span>
+            <span class="chip">Templates included</span>
+            <span class="chip">No fluff</span>
           </div>
         </div>
-
-        <div class="card">
-          <h3 class="h3">Pitch your article</h3>
-          <form class="stack">
-            <input type="text" placeholder="Full name" required />
-            <input type="email" placeholder="Email" required />
-            <input type="text" placeholder="LinkedIn or website" />
-            <input type="text" placeholder="Proposed title" required />
-            <select>
-              <option>Article</option>
-              <option>Playbook PDF</option>
-              <option>Template</option>
-              <option>Micro course</option>
-            </select>
-            <textarea rows="5" placeholder="Outline in five bullets" required></textarea>
-            <textarea rows="3" placeholder="Short author bio (2–3 sentences)"></textarea>
-            <label class="checkbox muted sm">
-              <input type="checkbox" required /> The content is original and does not include confidential information.
-            </label>
-            <button class="btn btn-primary" type="submit">Submit pitch</button>
-          </form>
-        </div>
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400" alt="Whiteboard strategy" style="border-radius:16px">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Requests -->
-  <section id="requests" class="section section-bleed">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="h2">Request content</h2>
-        <span class="muted">Tell us what to build next</span>
+    <!-- Overview -->
+    <section class="surface" style="padding:18px;margin-top:16px">
+      <div class="overview">
+        <div class="ov-card surface"><h3>Services</h3><p class="muted">Playbooks, templates and micro-courses.</p></div>
+        <div class="ov-card surface"><h3>Projects</h3><p class="muted">Case examples and real implementations.</p></div>
+        <div class="ov-card surface"><h3>Articles</h3><p class="muted">Short, actionable reads (15–20 min).</p></div>
       </div>
+    </section>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3 class="h3">How it works</h3>
-          <ul class="muted">
-            <li>Suggest topics or specific tools you want.</li>
-            <li>We review weekly and publish a simple roadmap.</li>
-            <li>Focus: simple solutions with clear business outcomes.</li>
-          </ul>
-          <div class="note">
-            Examples: Budget template for new markets. Playbook for the first two hires.
-            Partner-led entry. Cadence for weekly 1:1s.
+    <!-- What you get -->
+    <section class="surface" id="services" style="padding:22px;margin-top:16px;background:linear-gradient(180deg, rgba(255,255,255,.25), rgba(0,0,0,0))">
+      <h2 style="margin:0 0 6px">What you get</h2>
+      <p class="muted" style="margin:0 0 10px">Make better commercial decisions, faster.</p>
+      <div class="services">
+        <div class="svc surface"><span class="icon"></span><h3>Playbooks</h3><p class="muted">Step-by-step guides to (re)build a sales function.</p></div>
+        <div class="svc surface"><span class="icon"></span><h3>Templates</h3><p class="muted">Budgets, headcount plans, pipeline and territory design.</p></div>
+        <div class="svc surface"><span class="icon"></span><h3>Micro courses</h3><p class="muted">Short lessons with cases and worksheets.</p></div>
+        <div class="svc surface"><span class="icon"></span><h3>International expansion</h3><p class="muted">Market entry checklists and partner models.</p></div>
+        <div class="svc surface"><span class="icon"></span><h3>Data & cadence</h3><p class="muted">KPI trees, weekly rhythm and useful dashboards.</p></div>
+        <div class="svc surface"><span class="icon"></span><h3>Team development</h3><p class="muted">Hiring scorecards, onboarding plans and coaching.</p></div>
+      </div>
+    </section>
+
+    <!-- Projects (sample cards) -->
+    <section class="surface" id="projects" style="padding:22px;margin-top:16px">
+      <h2 style="margin:0 0 8px">Projects</h2>
+      <div class="projects">
+        <a class="card" href="#"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400" alt="Board room"><div class="card-body"><h3>Forecast Rescue</h3><p class="muted">From noise to ±6% accuracy in 2 quarters.</p></div></a>
+        <a class="card" href="#"><img src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1400" alt="Pricing"><div class="card-body"><h3>Pricing Governance</h3><p class="muted">Give-get rules and faster approvals.</p></div></a>
+        <a class="card" href="#"><img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400" alt="QBR"><div class="card-body"><h3>Enterprise QBR</h3><p class="muted">Customer outcomes and expansion plays.</p></div></a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="surface" id="about" style="padding:22px;margin-top:16px">
+      <div class="hero-split" style="border:none;box-shadow:none;padding:0">
+        <div>
+          <h2 style="margin:0 0 6px">About</h2>
+          <p class="muted">We help commercial leaders make better decisions, faster. Clear writing, simple visuals, and examples you can use this week.</p>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <a class="btn" href="/articles/">Browse articles</a>
+            <a class="btn ghost" href="#cta">Subscribe</a>
           </div>
         </div>
-
-        <div class="card">
-          <h3 class="h3">Your request</h3>
-          <form class="stack">
-            <select>
-              <option>Go to market</option>
-              <option>Sales ops</option>
-              <option>Budget & forecast</option>
-              <option>International</option>
-              <option>Hiring & coaching</option>
-              <option>Leadership</option>
-              <option>Other</option>
-            </select>
-            <input type="text" placeholder="Working title" required />
-            <textarea rows="5" placeholder="Problem to solve in 3–5 sentences" required></textarea>
-            <textarea rows="3" placeholder="Use case or context (optional)"></textarea>
-            <input type="email" placeholder="Email for updates (optional)" />
-            <label class="checkbox muted sm">
-              <input type="checkbox" required /> I agree to the privacy policy.
-            </label>
-            <button class="btn btn-primary" type="submit">Send request</button>
-          </form>
-        </div>
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400" alt="Leaders at whiteboard" style="border-radius:16px">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <!-- CTA -->
+    <section class="surface" id="cta" style="padding:22px;margin-top:16px;text-align:center">
+      <h2 class="h1" style="font-size:28px">Lead with clarity.</h2>
+      <p class="muted">Practical content that develops commercial leaders and their teams.</p>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+        <a class="btn" href="/articles/">Browse library</a>
+        <a class="btn ghost" id="btn-subscribe-cta" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
+      </div>
+    </section>
+  </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -289,16 +249,16 @@
       <div>
         <h4 class="h4">Company</h4>
         <ul class="muted">
-          <li><a href="#contact">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
           <li><a href="/privacy.html">Privacy</a></li>
         </ul>
       </div>
       <div>
         <h4 class="h4">Follow</h4>
         <ul class="muted">
-          <li><a href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener" id="ln-company">LinkedIn</a></li>
-          <li><a class="js-join" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
         </ul>
       </div>
     </div>
@@ -308,32 +268,18 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // GA4: track newsletter clicks
-    (function () {
-      const magicLinks = document.querySelectorAll('a.js-join');
-      magicLinks.forEach(a => {
-        a.addEventListener('click', function () {
-          try {
-            gtag('event', 'click_join_newsletter', {
-              link_text: this.textContent.trim(),
-              link_url: this.href
-            });
-          } catch(e){}
-        });
-      });
+    // GA4 click events (consistent with Decision Log)
+    const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
+    function ev(name, data){ try{ gtag('event', name, data||{}); }catch(e){} }
 
-      // LinkedIn click
-      const ln = document.getElementById('ln-company');
-      if (ln) {
-        ln.addEventListener('click', function(){
-          try{
-            gtag('event','click_linkedin',{link_url:this.href});
-          }catch(e){}
-        });
-      }
-    })();
+    document.getElementById('btn-subscribe-hero')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('btn-subscribe-cta')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
+    document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
   </script>
 </body>
 </html>
