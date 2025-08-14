@@ -30,17 +30,17 @@
 </head>
 <body>
 
-  <!-- Site header -->
+  <!-- Site header (match CSS: .header-inner + .main-nav) -->
   <header class="site-header">
-    <div class="container">
+    <div class="container header-inner">
       <a class="brand" href="/" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg"
              alt="Commercial Leadership Hub"
              width="320" height="84" decoding="async"
-             style="display:block;height:56px;width:auto;">
+             style="display:block;height:56px;width:auto">
       </a>
 
-      <nav class="site-nav">
+      <nav class="main-nav">
         <a id="nav-linkedin" href="https://www.linkedin.com/company/commercial-leadership-hub/" rel="noopener" target="_blank">LinkedIn</a>
         <a id="nav-newsletter" href="https://your-beehiiv-magic-link.example" data-redirect="/thanks.html">Newsletter</a>
         <a id="nav-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a>
@@ -82,15 +82,15 @@
 
   <!-- GA4 events -->
   <script>
-    function wireClick(id, eventName, urlAttr) {
+    function wireClick(id, eventName) {
       const el = document.getElementById(id);
       if (!el) return;
       el.addEventListener('click', function() {
         gtag('event', eventName, { transport_type: 'beacon' });
       });
     }
-    wireClick('nav-newsletter', 'click_join_newsletter', 'data-redirect');
-    wireClick('cta-join', 'click_join_newsletter', 'data-redirect');
+    wireClick('nav-newsletter', 'click_join_newsletter');
+    wireClick('cta-join', 'click_join_newsletter');
     wireClick('nav-contact', 'click_contact_email');
     wireClick('footer-contact', 'click_contact_email');
     wireClick('nav-linkedin', 'click_linkedin');
