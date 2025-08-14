@@ -1,4 +1,4 @@
-/* === CLH Theme — Sand · Navy (v1.2) === */
+/* === CLH Theme — Sand · Navy (v1.2.1) === */
 :root{
   --bg:#F3EEE4;
   --surface:#F9F6EF;
@@ -15,9 +15,7 @@
 /* = Base = */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;overflow-x:hidden;background:var(--bg);color:var(--ink)}
-body{
-  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-}
+body{font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
 img{max-width:100%;display:block}
 a,a:visited{color:inherit;text-decoration:none}
 a:hover{text-decoration:underline}
@@ -33,10 +31,14 @@ a:hover{text-decoration:underline}
 .lead{font-size:18px}
 
 /* = Buttons = */
-.btn{display:inline-block;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:999px;padding:10px 14px;white-space:nowrap;text-decoration:none;transition:.15s ease}
-.btn:hover{filter:brightness(.95)}
-.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--ink)}
-.btn.alt{background:var(--accent-2);border-color:var(--accent-2)}
+.btn,
+.btn:visited{display:inline-block;border:1px solid var(--accent);background:var(--accent);
+  color:#fff!important;border-radius:999px;padding:10px 14px;white-space:nowrap;text-decoration:none;transition:.15s ease}
+.btn:hover{filter:brightness(.95);text-decoration:none}
+.btn.ghost,
+.btn.ghost:visited{background:var(--surface);color:var(--ink)!important;border-color:var(--ink)}
+.btn.alt,
+.btn.alt:visited{background:var(--accent-2);border-color:var(--accent-2);color:#fff!important}
 
 /* = Header (permanent, ikke-transparent) = */
 .site-header{
@@ -77,15 +79,15 @@ a:hover{text-decoration:underline}
 .card img{height:180px;object-fit:cover}
 .card-body{padding:12px}
 
-/* = Sektioner med billede-tekst split = */
+/* = Split-sektioner med billede = */
 .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}
 .media-block{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
-.media-block img{width:100%;height:320px;object-fit:cover;display:block} /* FIX: stabile billedhøjder */
+.media-block img{width:100%;height:320px;object-fit:cover;display:block} /* faste, moderate højder */
 @media (max-width:980px){
   .hero img{height:440px}
   .hero-split{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
-  .media-block img{height:240px}         /* mindre billede på mobil */
+  .media-block img{height:240px}
 }
 
 /* = Chips = */
