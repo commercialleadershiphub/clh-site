@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Articles — Commercial Leadership Hub</title>
-  <meta name="description" content="Library of practical articles for commercial leaders." />
+  <meta name="description" content="Short, specific reads paired with templates. Filter by category to find what you need fast." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Articles — Commercial Leadership Hub" />
-  <meta property="og:description" content="Short, actionable reads with templates." />
+  <meta property="og:description" content="Short, specific reads paired with templates. Filter by category." />
   <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/" />
   <meta property="og:type" content="website" />
@@ -24,15 +24,16 @@
     gtag('config', 'G-81TG0R550X');
   </script>
 
-  <!-- Styles -->
+  <!-- Styles (existing single file) -->
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-5" />
 </head>
 <body>
 
+  <!-- Header (matches index reference) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:28px;width:auto">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
         <a href="/#services">Services</a>
@@ -48,20 +49,53 @@
 
   <main class="container section">
     <h1 class="h1" style="margin-bottom:6px">Articles</h1>
-    <p class="muted">Short, specific reads paired with templates.</p>
+    <p class="muted" style="margin:0 0 12px">Short, specific reads paired with templates.</p>
 
-    <ul class="list" style="margin-top:16px">
-      <li><a href="/articles/operating-rhythm.html">Operating rhythm that actually sticks</a></li>
-      <li><a href="/articles/international-expansion.html">International expansion checklist</a></li>
-      <li><a href="/articles/headcount-planning.html">Headcount planning for sales</a></li>
-    </ul>
+    <!-- Category filter -->
+    <div id="cat-filter" class="surface" style="padding:10px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="chip" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" data-cat="execution">Execution</button>
+      <button class="chip" data-cat="strategy">Strategy</button>
+      <button class="chip" data-cat="people">People</button>
+    </div>
+
+    <!-- Articles grid -->
+    <div class="grid-auto" style="margin-top:14px">
+      <!-- Execution -->
+      <a class="card" href="/articles/operating-rhythm.html" data-cat="execution">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop" alt="Operating rhythm">
+        <div class="card-body">
+          <h3>Operating rhythm that actually sticks</h3>
+          <p class="muted">Weekly/quarterly cadence, agenda, and templates to keep execution calm.</p>
+        </div>
+      </a>
+
+      <!-- Strategy -->
+      <a class="card" href="/articles/international-expansion.html" data-cat="strategy">
+        <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop" alt="International expansion">
+        <div class="card-body">
+          <h3>International expansion checklist</h3>
+          <p class="muted">Market entry steps, partner models, and risk gates.</p>
+        </div>
+      </a>
+
+      <!-- People -->
+      <a class="card" href="/articles/headcount-planning.html" data-cat="people">
+        <img src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1200&auto=format&fit=crop" alt="Headcount planning">
+        <div class="card-body">
+          <h3>Headcount planning for sales</h3>
+          <p class="muted">Role mix, capacity plan, hiring loop, and scorecards.</p>
+        </div>
+      </a>
+    </div>
   </main>
 
+  <!-- Footer (matches index reference) -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <div class="brand">
-          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:22px;width:auto">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
         </div>
         <p class="muted">Practical tools for commercial leaders.</p>
       </div>
@@ -94,8 +128,22 @@
     </div>
   </footer>
 
+  <!-- Minimal filter script (no new CSS, just show/hide) -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const btns = Array.from(document.querySelectorAll('#cat-filter .chip'));
+    const cards = Array.from(document.querySelectorAll('[data-cat]'));
+
+    function setActive(cat){
+      btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.cat === cat ? 'true' : 'false'));
+      cards.forEach(c => {
+        const show = (cat === 'all') || (c.dataset.cat === cat);
+        c.style.display = show ? '' : 'none';
+      });
+    }
+    btns.forEach(b => b.addEventListener('click', () => setActive(b.dataset.cat)));
+    setActive('all');
   </script>
 </body>
 </html>
