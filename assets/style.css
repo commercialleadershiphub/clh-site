@@ -132,3 +132,21 @@ input,select,textarea{
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px}
 .copyright{border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
 @media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} }
+/* === CLH: topbar hide/show on scroll (global) === */
+.site-header,
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--surface);           /* fast farve – ikke transparent */
+  border-bottom: 1px solid var(--line);
+  transition: transform .25s ease;
+  will-change: transform;
+}
+
+/* Skjul når man scroller ned */
+.site-header.is-hidden,
+.topbar.is-hidden {
+  transform: translateY(-100%);
+}
+
