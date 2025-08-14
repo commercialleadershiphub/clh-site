@@ -1,97 +1,87 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy — CLH</title>
+  <title>Privacy — Commercial Leadership Hub</title>
+  <meta name="description" content="Privacy policy for Commercial Leadership Hub." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/privacy.html" />
+  <meta property="og:title" content="Privacy — Commercial Leadership Hub" />
+  <meta property="og:description" content="Privacy policy for Commercial Leadership Hub." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/privacy.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://commercialleadershiphub.com/privacy.html">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/style.css" />
-
-  <!-- GA4 loader + init -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TGR8S50X"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-81TGR8S50X');
+    gtag('config', 'G-81TG0R550X');
   </script>
+
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-2" />
 </head>
-  <script>
-  (function () {
-    const header = document.querySelector('.site-header') || document.querySelector('.topbar');
-    if (!header) return;
-
-    let lastY = window.scrollY;
-    let ticking = false;
-    const DELTA = 8;           // scroll-deadzone (px) for at undgå flimmer
-    const SHOW_AT_TOP = 60;    // først skjul efter man er lidt nede på siden
-
-    function onScroll() {
-      const y = window.scrollY;
-      const goingDown = y > lastY + DELTA;
-      const goingUp   = y < lastY - DELTA;
-
-      if (goingDown && y > SHOW_AT_TOP) {
-        header.classList.add('is-hidden');
-      } else if (goingUp || y <= 0) {
-        header.classList.remove('is-hidden');
-      }
-      lastY = y;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        requestAnimationFrame(function () { onScroll(); ticking = false; });
-        ticking = true;
-      }
-    }, { passive: true });
-  })();
-</script>
-
 <body>
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="/"><span style="color:#9f6eff">CLH</span> · Commercial Leadership Hub</a>
-        <a href="/products.html" class="btn">Products</a>
-        <a href="/articles/index.html" class="btn">Articles</a>
-        <a href="/contribute.html" class="btn">Contribute</a>
-        <a href="/request.html" class="btn">Request</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand"><span class="brand-mark"></span><span class="brand-name">Commercial Leadership Hub</span></a>
+      <nav class="main-nav">
+        <a href="/#services">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/articles/">Articles</a>
       </nav>
+      <div class="header-cta"><a class="btn ghost" href="/">Home</a></div>
     </div>
   </header>
 
   <main class="container">
-    <h1>Privacy</h1>
-    <p class="small">
-      We use Beehiiv for email (with branded links) and GA4 for site analytics.
-      You can unsubscribe anytime via the footer of any email.
-    </p>
+    <section class="surface section" style="margin-top:16px;max-width:860px">
+      <h1 style="margin:0 0 8px">Privacy</h1>
+      <p class="muted">Short version: we respect your time and your inbox.</p>
+      <ul>
+        <li>We track basic, anonymous analytics (Google Analytics 4) to understand which pages are useful.</li>
+        <li>If you subscribe to the newsletter, we store your email with our email provider to send updates. Unsubscribe any time.</li>
+        <li>We don't sell personal data. Ever.</li>
+        <li>Questions? <a href="mailto:contact@commercialleadershiphub.com">contact@commercialleadershiphub.com</a></li>
+      </ul>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <div>© 2025 Commercial Leadership Hub</div>
-      <a class="small" href="/privacy.html">Privacy</a>
-      <a class="small" href="/sitemap.xml">Sitemap</a>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><span class="brand-mark"></span><span class="brand-name">Commercial Leadership Hub</span></div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
   </footer>
 
-  <!-- GA4: Track klik på Beehiiv Magic Link -->
   <script>
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest('a');
-      if (!a) return;
-      if (a.href && a.href.indexOf('magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d') !== -1) {
-        if (typeof gtag === 'function') {
-          gtag('event', 'click_join_newsletter', { method: 'magic_link' });
-        }
-      }
-    });
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){const h=document.querySelector('.site-header');if(!h)return;let y=window.scrollY,t=!1;const D=8,S=60;function s(){const n=window.scrollY,d=n>y+D,u=n<y-D;d&&n>S?h.classList.add('is-hidden'):(u||n<=0)&&h.classList.remove('is-hidden');y=n}window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{s();t=!1});t=!0}}, {passive:true});})();
   </script>
 </body>
 </html>
