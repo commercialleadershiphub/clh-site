@@ -147,4 +147,101 @@
     <section class="surface" id="about" style="padding:22px;margin-top:16px">
       <div class="hero-split" style="border:none;box-shadow:none;padding:0">
         <div>
-          <h2 style="margin:
+          <h2 style="margin:0 0 6px">About</h2>
+          <p class="muted">We help commercial leaders make better decisions, faster. Clear writing, simple visuals, and examples you can use this week.</p>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <a class="btn" href="/articles/">Browse articles</a>
+            <a class="btn ghost" href="#cta">Subscribe</a>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400" alt="Leaders at whiteboard" style="border-radius:16px">
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="surface" id="cta" style="padding:22px;margin-top:16px;text-align:center">
+      <h2 class="h1" style="font-size:28px">Lead with clarity.</h2>
+      <p class="muted">Practical content that develops commercial leaders and their teams.</p>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+        <a class="btn" href="/articles/">Browse library</a>
+        <a class="btn ghost" id="btn-subscribe-cta" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Commercial Leadership Hub</span>
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted">
+          <li>Playbooks</li>
+          <li>Templates</li>
+          <li>Courses</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Global scripts (placeres lige før </body>) -->
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Hide header on scroll down, show on scroll up
+    (function () {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var lastY = window.scrollY, ticking = false;
+      var DELTA = 8, SHOW_AT_TOP = 60;
+
+      function onScroll(){
+        var y = window.scrollY;
+        var goingDown = y > lastY + DELTA;
+        var goingUp   = y < lastY - DELTA;
+
+        if (goingDown && y > SHOW_AT_TOP) header.classList.add('is-hidden');
+        else if (goingUp || y <= 0)       header.classList.remove('is-hidden');
+
+        lastY = y;
+      }
+      window.addEventListener('scroll', function(){
+        if (!ticking){ requestAnimationFrame(function(){ onScroll(); ticking=false; }); ticking=true; }
+      }, {passive:true});
+    })();
+
+    // GA4 click events
+    const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
+    function ev(name, data){ try{ gtag('event', name, data||{}); }catch(e){} }
+    document.getElementById('btn-subscribe-hero')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('btn-subscribe-cta')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
+    document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
+  </script>
+</body>
+</html>
