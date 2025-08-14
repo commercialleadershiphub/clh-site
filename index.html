@@ -27,21 +27,8 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/style.css" />
 
-  <!-- Page-specific palette + components (no frameworks, no extra CSS files) -->
+  <!-- Page-specific components (ingen palette her; farver kommer fra style.css) -->
   <style>
-    :root{
-      /* Sand · Navy palette (no pure white) */
-      --bg:#F3EEE4;          /* page background (warm sand) */
-      --surface:#F9F6EF;     /* cards/surfaces */
-      --ink:#0F172A;         /* headings/body (navy) */
-      --muted:#5F6B7A;       /* secondary text */
-      --line:#E7E1D7;        /* borders */
-      --accent:#0F1A34;      /* primary buttons (deep navy) */
-      --accent-2:#334155;    /* secondary buttons */
-      --overlay:rgba(0,0,0,.40);
-      --radius:18px;
-      --shadow:0 12px 36px rgba(0,0,0,.06);
-    }
     /* reset-ish */
     html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     img{max-width:100%;display:block}
@@ -66,11 +53,21 @@
     .btn.alt{background:var(--accent-2);border-color:var(--accent-2)}
     .chip{display:inline-block;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:999px}
 
-    /* Hero: overlay image */
-    .hero{overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line);position:relative}
-    .hero img{height:520px;width:100%;object-fit:cover;filter:brightness(.85)}
+    /* HERO — full-bleed variant */
+    .hero{position:relative;overflow:hidden}
+    .hero img{height:560px;width:100%;object-fit:cover;filter:brightness(.85)}
     .overlay{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(to top, var(--overlay), rgba(0,0,0,.15))}
     .overlay h1,.overlay p{color:#fff}
+
+    /* Make the hero stretch edge-to-edge even though the page uses a centered container */
+    .hero-bleed{
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      margin-right:calc(50% - 50vw);
+      border:none; border-radius:0; box-shadow:none; /* fuld kant-til-kant look */
+      background:var(--surface);
+      border-top:1px solid var(--line); /* subtil adskillelse under topbar */
+    }
 
     /* Grids/sections */
     .hero-split{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;padding:22px}
@@ -114,22 +111,22 @@
     </div>
   </div>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600" alt="Workshop">
-      <div class="overlay">
-        <div>
-          <h1 class="h1">Lead with clarity.</h1>
-          <p class="lead">Practical content that develops commercial leaders and their teams.</p>
-          <div style="margin-top:14px;display:flex;gap:10px;justify-content:center">
-            <a class="btn" href="/articles/">Browse library</a>
-            <a class="btn ghost" id="btn-subscribe-hero" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
-          </div>
+  <!-- HERO (full-bleed) ligger uden for .container via hero-bleed klassen -->
+  <section class="hero hero-bleed" id="home">
+    <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600" alt="Workshop">
+    <div class="overlay">
+      <div>
+        <h1 class="h1">Lead with clarity.</h1>
+        <p class="lead">Practical content that develops commercial leaders and their teams.</p>
+        <div style="margin-top:14px;display:flex;gap:10px;justify-content:center">
+          <a class="btn" href="/articles/">Browse library</a>
+          <a class="btn ghost" id="btn-subscribe-hero" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <main class="container">
     <!-- WHO this is for + checklist -->
     <section class="surface" style="padding:22px;margin-top:16px">
       <div class="who">
@@ -193,7 +190,7 @@
       </div>
     </section>
 
-    <!-- Projects (sample cards) -->
+    <!-- Projects -->
     <section class="surface" id="projects" style="padding:22px;margin-top:16px">
       <h2 style="margin:0 0 8px">Projects</h2>
       <div class="projects">
@@ -271,7 +268,7 @@
     // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // GA4 click events (consistent with Decision Log)
+    // GA4 click events (Decision Log)
     const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
     function ev(name, data){ try{ gtag('event', name, data||{}); }catch(e){} }
 
