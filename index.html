@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Commercial Leadership Hub — Lead with clarity</title>
-  <meta name="description" content="Practical tools for commercial leaders. Playbooks, templates, micro-courses and 15–20 min articles to run a calmer GTM engine." />
-  <link rel="canonical" href="https://commercialleadershiphub.com/" />
+  <title>Articles — Commercial Leadership Hub</title>
+  <meta name="description" content="15–20 minute, no-fluff articles for commercial leaders. Sales, success, pricing, hiring, ops and expansion." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/articles/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Commercial Leadership Hub — Lead with clarity" />
-  <meta property="og:description" content="Practical tools for commercial leaders. Playbooks, templates, micro-courses and 15–20 min articles." />
+  <meta property="og:title" content="Articles — Commercial Leadership Hub" />
+  <meta property="og:description" content="15–20 minute, no-fluff articles for commercial leaders. Sales, success, pricing, hiring, ops and expansion." />
   <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
-  <meta property="og:url" content="https://commercialleadershiphub.com/" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/articles/" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
@@ -25,18 +25,31 @@
   </script>
 
   <!-- Styles (cache-busted) -->
-  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-3" />
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
 
-  <!-- Side-specifik CSS (små justeringer) -->
   <style>
-    .page-overview{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .ov-card{padding:14px}
-    @media (max-width:980px){ .page-overview{grid-template-columns:1fr} }
+    .page-hero{padding:28px 0 10px}
+    .page-hero h1{margin:0}
+    .muted{color:var(--muted)}
+
+    .topic-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{display:inline-block;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:999px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+    .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    .thumb{width:100%;height:180px;object-fit:cover;background:#ddd;display:block}
+    .card-body{padding:12px}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .title{font-weight:700;margin:0 0 6px;line-height:1.25}
+    .excerpt{margin:0;color:var(--muted)}
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .req{font-size:14px}
+    @media (max-width:980px){ .thumb{height:160px} }
   </style>
 </head>
 <body>
-
-  <!-- Header (permanent, solid) -->
+  <!-- Header (permanent) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand">
@@ -44,134 +57,193 @@
         <span class="brand-name">Commercial Leadership Hub</span>
       </a>
       <nav class="main-nav">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
+        <a href="/#services">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
         <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
-        <a class="btn ghost" href="/products.html">Products</a>
+        <a class="btn ghost" href="/">Home</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO (full-bleed) -->
-  <section class="hero hero-bleed" id="home">
-    <img
-      src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=2000&auto=format&fit=crop"
-      alt="Workshop with leaders">
-    <div class="overlay">
-      <div>
-        <h1 class="h1">Lead with clarity.</h1>
-        <p class="lead">Practical content that develops commercial leaders and their teams.</p>
-        <div style="margin-top:14px;display:flex;gap:10px;justify-content:center">
-          <a class="btn" href="/articles/">Browse library</a>
-          <a class="btn ghost" id="btn-subscribe-hero" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <main class="container">
-    <!-- Who this is for + checklist -->
-    <section class="surface" style="padding:22px;margin-top:16px">
-      <div class="hero-split" style="border:none;box-shadow:none">
-        <div>
-          <h2 style="margin:0 0 6px">Who this is for</h2>
-          <p class="muted">You lead revenue — as a CRO, VP or founder — and you want clearer decisions, calmer execution and a team that learns together. Whether you’re new in role or a seasoned commercial leader, this is a place to steal working patterns from peers, swap examples, and avoid reinventing the wheel.</p>
-          <p class="muted">Every article is built for practice: short, specific, and paired with templates. The point is to help you run a tighter GTM engine and grow your people — not to add noise.</p>
+    <!-- Hero -->
+    <section class="page-hero">
+      <h1>Articles</h1>
+      <p class="muted">15–20 minute, no-fluff reads for commercial leaders and their teams.</p>
+
+      <!-- Hurtig “Request content” -->
+      <div class="section" style="margin-top:12px">
+        <div class="section-head">
+          <strong>Can’t find what you need?</strong>
+          <a class="req" href="mailto:contact@commercialleadershiphub.com?subject=Request%20content&body=Tell%20us%20what%20you%27re%20looking%20for%20and%20why%20it%20matters.%0A%0AExamples%3A%20operating%20rhythm%20for%20SDR%20team%2C%20enterprise%20QBR%20deck%2C%20pricing%20playbook%20for%20resellers.">Request content →</a>
         </div>
-        <div class="surface" style="padding:16px;border-radius:12px">
-          <h3 style="margin-top:0">Common challenges we cover</h3>
-          <ul class="muted" style="margin:0 0 0 18px">
-            <li>Taking over a team and setting a simple operating rhythm.</li>
-            <li>Designing the right mix of roles (AE/AM/SE/SDR/CSM) for your stage.</li>
-            <li>Running effective pipeline and forecast reviews (evidence over opinion).</li>
-            <li>Fixing pricing & discount habits without slowing deals.</li>
-            <li>Hiring consistently with a clear scorecard and interview loop.</li>
-            <li>Building dashboards that drive action, not reporting theater.</li>
-            <li>Planning international expansion with repeatable plays.</li>
-            <li>Coaching managers so enablement sticks week to week.</li>
-          </ul>
+        <div class="topic-chips">
+          <a class="chip" href="#sales">Sales</a>
+          <a class="chip" href="#success">Success</a>
+          <a class="chip" href="#pricing">Pricing</a>
+          <a class="chip" href="#hiring">Hiring</a>
+          <a class="chip" href="#ops">Ops</a>
+          <a class="chip" href="#expansion">International</a>
         </div>
       </div>
     </section>
 
-    <!-- Operate a calmer GTM engine -->
-    <section class="surface" style="padding:22px;margin-top:16px">
-      <div class="hero-split" style="border:none;box-shadow:none">
-        <div>
-          <h2 style="margin:0 0 6px">Operate a calmer GTM engine.</h2>
-          <p class="muted">Systems over slogans. Built for CROs, VPs and founders.</p>
-          <div style="display:flex;gap:8px;margin-top:10px">
-            <span class="chip">15–20 min reads</span>
-            <span class="chip">Templates included</span>
-            <span class="chip">No fluff</span>
+    <!-- Featured -->
+    <section class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Featured</h2>
+      <div class="grid">
+        <a class="card" href="/articles/forecast-accuracy-system.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="Forecasting" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Ops</span>
+            <h3 class="title">Forecast Accuracy System</h3>
+            <p class="excerpt">Weekly hygiene, cadence and dashboards that move accuracy to ±5–8%.</p>
           </div>
-        </div>
-        <div class="media-block">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop" alt="Whiteboard strategy">
-        </div>
-      </div>
-    </section>
-
-    <!-- Page overview -->
-    <section class="surface" style="padding:18px;margin-top:16px">
-      <div class="page-overview">
-        <div class="ov-card surface"><h3>Services</h3><p class="muted">Playbooks, templates and micro-courses.</p></div>
-        <div class="ov-card surface"><h3>Projects</h3><p class="muted">Case examples and real implementations.</p></div>
-        <div class="ov-card surface"><h3>Articles</h3><p class="muted">Short, actionable reads (15–20 min).</p></div>
-      </div>
-    </section>
-
-    <!-- What you get -->
-    <section class="surface" id="services" style="padding:22px;margin-top:16px;background:linear-gradient(180deg, rgba(255,255,255,.25), rgba(0,0,0,0))">
-      <h2 style="margin:0 0 6px">What you get</h2>
-      <p class="muted" style="margin:0 0 10px">Make better commercial decisions, faster.</p>
-      <div class="grid-auto">
-        <div class="surface" style="padding:16px"><span class="chip">Playbooks</span><p class="muted">Step-by-step guides to (re)build a sales function.</p></div>
-        <div class="surface" style="padding:16px"><span class="chip">Templates</span><p class="muted">Budgets, headcount plans, pipeline and territory design.</p></div>
-        <div class="surface" style="padding:16px"><span class="chip">Micro courses</span><p class="muted">Short lessons with cases and worksheets.</p></div>
-        <div class="surface" style="padding:16px"><span class="chip">International expansion</span><p class="muted">Market entry checklists and partner models.</p></div>
-        <div class="surface" style="padding:16px"><span class="chip">Data & cadence</span><p class="muted">KPI trees, weekly rhythm and useful dashboards.</p></div>
-        <div class="surface" style="padding:16px"><span class="chip">Team development</span><p class="muted">Hiring scorecards, onboarding plans and coaching.</p></div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="surface" id="projects" style="padding:22px;margin-top:16px">
-      <h2 style="margin:0 0 8px">Projects</h2>
-      <div class="grid-auto">
-        <a class="card" href="#"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop" alt="Board room"><div class="card-body"><h3>Forecast Rescue</h3><p class="muted">From noise to ±6% accuracy in 2 quarters.</p></div></a>
-        <a class="card" href="#"><img src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=1400&auto=format&fit=crop" alt="Pricing"><div class="card-body"><h3>Pricing Governance</h3><p class="muted">Give-get rules and faster approvals.</p></div></a>
-        <a class="card" href="#"><img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="QBR"><div class="card-body"><h3>Enterprise QBR</h3><p class="muted">Customer outcomes and expansion plays.</p></div></a>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="surface" id="about" style="padding:22px;margin-top:16px">
-      <div class="hero-split" style="border:none;box-shadow:none;padding:0">
-        <div>
-          <h2 style="margin:0 0 6px">About</h2>
-          <p class="muted">We help commercial leaders make better decisions, faster. Clear writing, simple visuals, and examples you can use this week.</p>
-          <div style="display:flex;gap:8px;margin-top:10px">
-            <a class="btn" href="/articles/">Browse articles</a>
-            <a class="btn ghost" href="#cta">Subscribe</a>
+        </a>
+        <a class="card" href="/articles/meddicc-qualification-checklist.html">
+          <!-- FIX: stabil billed-URL -->
+          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="MEDDICC" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Sales</span>
+            <h3 class="title">MEDDICC Qualification Checklist</h3>
+            <p class="excerpt">Plain-English prompts, stage exits and a simple R/A/G scoring model.</p>
           </div>
-        </div>
-        <div class="media-block">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop" alt="Leaders at whiteboard">
-        </div>
+        </a>
+        <a class="card" href="/articles/pricing-and-discount-governance.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1400&auto=format&fit=crop" alt="Pricing" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Pricing</span>
+            <h3 class="title">Pricing &amp; Discount Governance</h3>
+            <p class="excerpt">Guardrails and deal-desk flow that protect margin without slowing deals.</p>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="surface" id="cta" style="padding:22px;margin-top:16px;text-align:center">
-      <h2 class="h1" style="font-size:28px">Lead with clarity.</h2>
-      <p class="muted">Practical content that develops commercial leaders and their teams.</p>
+    <!-- Sales -->
+    <section id="sales" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Sales</h2>
+      <div class="grid">
+        <a class="card" href="/articles/meddicc-qualification-checklist.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="Sales discovery" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Sales</span>
+            <h3 class="title">MEDDICC Qualification Checklist</h3>
+            <p class="excerpt">Discovery prompts, stage exits and a RAG sanity check.</p>
+          </div>
+        </a>
+        <a class="card" href="/articles/pipeline-review-template.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="Pipeline review" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Ops</span>
+            <h3 class="title">Pipeline Review Template (30 mins)</h3>
+            <p class="excerpt">Fast weekly review: inputs, agenda, checklist and outputs.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Success -->
+    <section id="success" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Success</h2>
+      <div class="grid">
+        <a class="card" href="/articles/qbr-playbook.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop" alt="QBR" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Success</span>
+            <h3 class="title">QBR Playbook (Customer-Facing)</h3>
+            <p class="excerpt">Prep, data pack, 60-min agenda and crisp follow-up.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Pricing</h2>
+      <div class="grid">
+        <a class="card" href="/articles/pricing-and-discount-governance.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1518186233392-c232efbf2373?q=80&w=1400&auto=format&fit=crop" alt="Pricing policy" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Pricing</span>
+            <h3 class="title">Pricing &amp; Discount Governance</h3>
+            <p class="excerpt">Approval ladder, give-get rules and deal-desk flow.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Hiring -->
+    <section id="hiring" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Hiring</h2>
+      <div class="grid">
+        <a class="card" href="/articles/sales-hiring-scorecard.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="Interview" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Hiring</span>
+            <h3 class="title">Sales Hiring Scorecard &amp; Interview Loop</h3>
+            <p class="excerpt">Role outcomes, competencies, case task and decision rubric.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Ops -->
+    <section id="ops" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Ops</h2>
+      <div class="grid">
+        <a class="card" href="/articles/forecast-accuracy-system.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="Ops dashboards" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Ops</span>
+            <h3 class="title">Forecast Accuracy System</h3>
+            <p class="excerpt">Hygiene rules, cadence, four dashboards and inspection prompts.</p>
+          </div>
+        </a>
+        <a class="card" href="/articles/operating-rhythm.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="Operating rhythm" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Ops</span>
+            <h3 class="title">Operating Rhythm</h3>
+            <p class="excerpt">Weekly–monthly–quarterly cadence that reduces chaos.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- International -->
+    <section id="expansion" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">International</h2>
+      <div class="grid">
+        <a class="card" href="/articles/international-expansion.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1400&auto=format&fit=crop" alt="International expansion" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Expansion</span>
+            <h3 class="title">International Expansion</h3>
+            <p class="excerpt">Market entry checklists, partner models and risk assessment.</p>
+          </div>
+        </a>
+        <a class="card" href="/articles/headcount-planning.html">
+          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="Headcount planning" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Planning</span>
+            <h3 class="title">Headcount Planning</h3>
+            <p class="excerpt">Budgets, territory design and hiring cadence that scales.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section" id="cta" style="margin:16px 0;text-align:center">
+      <h2 style="margin:0 0 6px">Stay sharp.</h2>
+      <p class="muted">One practical email when we publish something new.</p>
       <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
-        <a class="btn" href="/articles/">Browse library</a>
-        <a class="btn ghost" id="btn-subscribe-cta" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Subscribe</a>
+        <a class="btn" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false" id="btn-subscribe-articles">Subscribe</a>
+        <a class="btn ghost" href="/">Back to homepage</a>
       </div>
     </section>
   </main>
@@ -208,14 +280,11 @@
   </footer>
 
   <script>
-    // År i footer
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // GA4 events (samme som tidligere)
+    // GA4 klik
     const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
-    function ev(name, data){ try{ gtag('event', name, data||{}); }catch(e){} }
-    document.getElementById('btn-subscribe-hero')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
-    document.getElementById('btn-subscribe-cta')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    function ev(n,d){ try{ gtag('event', n, d||{}); }catch(e){} }
+    document.getElementById('btn-subscribe-articles')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
     document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
     document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
     document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
