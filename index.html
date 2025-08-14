@@ -29,17 +29,14 @@
 </head>
 <body>
 
-  <!-- Header (structure matches CSS exactly) -->
+  <!-- Header (klasser bevares) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-        <span class="brand-mark"></span>
-        <!-- Use logo inside existing .brand-name to avoid layout changes -->
-        <span class="brand-name">
-          <img src="/assets/clh-logo-primary.svg"
-               alt="Commercial Leadership Hub"
-               style="display:block;height:20px;width:auto">
-        </span>
+        <!-- Logo i stedet for brand-mark + tekst -->
+        <img src="/assets/clh-logo-primary.svg"
+             alt="Commercial Leadership Hub"
+             style="display:block;height:28px;width:auto">
       </a>
       <nav class="main-nav">
         <a href="#services">Services</a>
@@ -53,7 +50,7 @@
     </div>
   </header>
 
-  <!-- HERO (full-bleed, unchanged) -->
+  <!-- HERO -->
   <section class="hero hero-bleed" id="home">
     <img src="https://images.unsplash.com/photo-1517260911058-0fcfd733702f?q=80&w=1600&auto=format&fit=crop" alt="Hero background">
     <div class="overlay">
@@ -177,8 +174,8 @@
     <div class="container footer-grid">
       <div>
         <div class="brand">
-          <span class="brand-mark"></span>
-          <span class="brand-name">Commercial Leadership Hub</span>
+          <!-- Logo i footer -->
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:22px;width:auto">
         </div>
         <p class="muted">Practical tools for commercial leaders.</p>
       </div>
