@@ -1,3 +1,9 @@
+:root{
+  --bg:#F3EEE4; --surface:#F9F6EF; --ink:#0F172A; --muted:#5F6B7A;
+  --line:#E7E1D7; --shadow:0 12px 36px rgba(0,0,0,.06);
+  --accent:#0F1A34; --accent-2:#334155; --overlay:rgba(0,0,0,.40); --radius:18px;
+}
+
 /* === CLH base styles (v1.1) — light theme === */
 
 :root{
