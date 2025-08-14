@@ -1,17 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
   <title>Thanks — Commercial Leadership Hub</title>
-  <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://commercialleadershiphub.com/thanks.html" />
-  <meta property="og:title" content="Thanks — Commercial Leadership Hub" />
-  <meta property="og:description" content="You’re subscribed! Practical tools for commercial leaders, weekly." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
-  <meta property="og:url" content="https://commercialleadershiphub.com/thanks.html" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Noindex -->
+  <meta name="robots" content="noindex,follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://commercialleadershiphub.com/thanks.html">
+
+  <!-- OG -->
+  <meta property="og:title" content="Thanks — Commercial Leadership Hub">
+  <meta property="og:description" content="You’re subscribed. Here are next steps.">
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png">
+  <meta property="og:url" content="https://commercialleadershiphub.com/thanks.html">
+  <meta property="og:type" content="website">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css">
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
@@ -21,92 +29,51 @@
     gtag('js', new Date());
     gtag('config', 'G-81TG0R550X');
   </script>
-
-  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-2" />
-  <style>
-    .thank-hero{min-height:50vh;display:grid;place-items:center;padding:72px 0}
-    .thank-card{max-width:720px;width:100%;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:28px;text-align:center}
-    .thank-actions{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap}
-  </style>
 </head>
 <body>
+
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand"><span class="brand-mark"></span><span class="brand-name">Commercial Leadership Hub</span></a>
-      <nav class="main-nav">
-        <a href="/#services">Services</a>
-        <a href="/#projects">Projects</a>
-        <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
-      </nav>
-      <div class="header-cta"><a class="btn ghost" href="/">Home</a></div>
+    <div class="container">
+      <a class="brand" href="/" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" width="320" height="84" decoding="async">
+      </a>
     </div>
   </header>
 
-  <main>
-    <section class="thank-hero">
-      <div class="container">
-        <div class="thank-card">
-          <div class="mini-logo"></div>
-          <h1 class="h2" style="margin:8px 0 6px;">You’re subscribed! 🎉</h1>
-          <p class="muted">Thanks for joining Commercial Leadership Hub. Check your inbox for a welcome email.</p>
-          <div class="thank-actions">
-            <a class="btn" id="btn-return-home" href="/">Back to homepage</a>
-            <a class="btn ghost" id="btn-browse-products" href="/products.html">Browse products</a>
-          </div>
-          <p class="xs muted" style="margin-top:10px;">No fluff. Actionable material only.</p>
-        </div>
+  <main class="container">
+    <section class="hero">
+      <h1>Thanks for subscribing</h1>
+      <p>You’ll get concise, practical updates only when we have something useful.</p>
+      <div class="cta-row">
+        <a class="button" id="btn-home" href="/">Return home</a>
+        <a class="button secondary" id="btn-products" href="/products.html">Browse products</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand"><span class="brand-mark"></span><span class="brand-name">Commercial Leadership Hub</span></div>
-        <p class="muted">Practical tools for commercial leaders.</p>
-      </div>
-      <div>
-        <h4 class="h4">Product</h4>
-        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
-      </div>
-      <div>
-        <h4 class="h4">Company</h4>
-        <ul class="muted">
-          <li><a href="/#contact">About</a></li>
-          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
-          <li><a href="/privacy.html">Privacy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="h4">Follow</h4>
-        <ul class="muted">
-          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
-        </ul>
-      </div>
+    <div class="container">
+      <p>© Commercial Leadership Hub</p>
+      <nav class="footer-nav">
+        <a href="https://www.linkedin.com/company/commercial-leadership-hub/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:contact@commercialleadershiphub.com">Contact</a>
+      </nav>
     </div>
-    <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Fire pageview event for the thank you page
+    window.addEventListener('load', function() {
+      gtag('event', 'view_thank_you', { transport_type: 'beacon' });
+    });
 
-    /* GA4 custom events for thank-you page */
-    function ev(n,d){try{gtag('event',n,d||{})}catch(e){}}
-    document.getElementById('btn-return-home')?.addEventListener('click',()=>ev('click_return_home',{link_url:'/'}));
-    document.getElementById('btn-browse-products')?.addEventListener('click',()=>ev('click_browse_products',{link_url:'/products.html'}));
+    document.getElementById('btn-home').addEventListener('click', function() {
+      gtag('event', 'click_return_home', { transport_type: 'beacon' });
+    });
 
-    /* Header hide/show */
-    (function(){
-      const header=document.querySelector('.site-header'); if(!header) return;
-      let lastY=window.scrollY,ticking=false; const DELTA=8, SHOW_AT_TOP=60;
-      function onScroll(){const y=window.scrollY,down=y>lastY+DELTA,up=y<lastY-DELTA;
-        if(down&&y>SHOW_AT_TOP) header.classList.add('is-hidden');
-        else if(up||y<=0) header.classList.remove('is-hidden');
-        lastY=y;}
-      window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{onScroll();ticking=false});ticking=true}}, {passive:true});
-    })();
+    document.getElementById('btn-products').addEventListener('click', function() {
+      gtag('event', 'click_browse_products', { transport_type: 'beacon' });
+    });
   </script>
 </body>
 </html>
