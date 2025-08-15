@@ -1,53 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Root pages -->
+
+  <!-- Core pages -->
   <url>
     <loc>https://commercialleadershiphub.com/</loc>
+    <lastmod>2025-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://commercialleadershiphub.com/articles/</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://commercialleadershiphub.com/products.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://commercialleadershiphub.com/contribute.html</loc>
+    <lastmod>2025-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://commercialleadershiphub.com/request.html</loc>
+    <lastmod>2025-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commercialleadershiphub.com/thanks.html</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://commercialleadershiphub.com/thanks-request.html</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://commercialleadershiphub.com/privacy.html</loc>
+    <lastmod>2025-08-16</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://commercialleadershiphub.com/pricing.html</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
-  <!-- Articles: listing page -->
-  <url>
-    <loc>https://commercialleadershiphub.com/articles/index.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Sprint 1 + 2 articles -->
+  <url><loc>https://commercialleadershiphub.com/articles/forecast-accuracy-system.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/meddicc-qualification-checklist.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/pricing-and-discount-governance.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/operating-rhythm.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/qbr-playbook.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/international-expansion.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/headcount-planning.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/sales-hiring-scorecard.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- Articles: individual pages -->
-  <url>
-    <loc>https://commercialleadershiphub.com/articles/operating-rhythm.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://commercialleadershiphub.com/articles/headcount-planning.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://commercialleadershiphub.com/articles/international-expansion.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://commercialleadershiphub.com/articles/discovery-call-framework.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/competitive-deal-strategy.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/executive-meeting-playbook.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://commercialleadershiphub.com/articles/health-score-model.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/expansion-playbook.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/escalation-runbook.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://commercialleadershiphub.com/articles/discount-waterfall-calculator.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/partner-pricing-policy.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/usage-based-pricing-guardrails.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://commercialleadershiphub.com/articles/sdr-hiring-and-ramp.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/ae-onboarding-309090.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/manager-interview-scorecard.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://commercialleadershiphub.com/articles/forecast-inspection-guide.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/revops-metrics-dashboard.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/pipeline-hygiene-standards.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://commercialleadershiphub.com/articles/localisation-checklist.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/channel-partner-selection.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://commercialleadershiphub.com/articles/data-residency-compliance.html</loc><lastmod>2025-08-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
 </urlset>
