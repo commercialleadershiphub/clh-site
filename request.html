@@ -4,15 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Request Content — Commercial Leadership Hub</title>
-  <meta name="description" content="Ask for a specific article, playbook, or template and we’ll prioritize it." />
+  <meta name="description" content="Tell us what you need. Share your goal, audience, context and constraints so we can prioritise the right articles and tools." />
   <link rel="canonical" href="https://commercialleadershiphub.com/request.html" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Request Content — Commercial Leadership Hub" />
-  <meta property="og:description" content="Ask for a specific article, playbook, or template and we’ll prioritize it." />
+  <meta property="og:description" content="Tell us what you need. Share your goal, audience, context and constraints so we can prioritise the right articles and tools." />
   <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
   <meta property="og:url" content="https://commercialleadershiphub.com/request.html" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -21,39 +24,157 @@
     gtag('config', 'G-81TG0R550X');
   </script>
 
-  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-2" />
-  <style>.stack>*+*{margin-top:10px}</style>
+  <!-- Styles (single source) -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .page-hero{padding:28px 0 10px}
+    .page-hero h1{margin:0}
+    .muted{color:var(--muted)}
+    .hero-img{width:100%;height:220px;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-grid .full{grid-column:1 / -1}
+    label{font-weight:600;display:block;margin-bottom:6px}
+    input[type="text"], input[type="email"], input[type="number"], select, textarea{
+      width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface)
+    }
+    textarea{min-height:120px}
+    .btn-row{display:flex;gap:8px;justify-content:flex-start;margin-top:10px}
+    @media (max-width:900px){ .form-grid{grid-template-columns:1fr} .hero-img{height:180px} }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="brand"><span class="brand-mark"></span><span class="brand-name">Commercial Leadership Hub</span></a>
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
       <nav class="main-nav">
         <a href="/#services">Services</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
         <a href="/articles/">Articles</a>
       </nav>
-      <div class="header-cta"><a class="btn ghost" href="/">Home</a></div>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/">Back to Articles</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="surface section" style="margin-top:16px;max-width:860px">
-      <h1 style="margin:0 0 8px">Request content</h1>
-      <p class="muted">Tell us what you’re looking for and why it matters. We’ll send it when we publish.</p>
+    <section class="page-hero">
+      <h1>Request content</h1>
+      <p class="muted">Tell us what you need. Be specific so we can build the right article, playbook or template.</p>
+      <img class="hero-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop" alt="Workshop planning" onerror="this.style.display='none'">
+    </section>
 
-      <div class="stack" style="margin-top:10px">
-        <a class="btn" href="mailto:contact@commercialleadershiphub.com?subject=Request%20content&body=I%27m%20looking%20for%3A%0A%0AWhy%20it%20matters%3A%0A%0AYour%20role%2Fcompany%20%28optional%29%3A">Email request</a>
-        <a class="btn ghost" href="/articles/#cta">Subscribe for updates</a>
-      </div>
+    <section class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">How to write a clear request</h2>
+      <p class="muted" style="margin:0 0 8px">Use this quick model to keep it sharp:</p>
+      <ul class="muted" style="margin:0 0 8px">
+        <li><strong>Goal</strong> — what outcome do you want?</li>
+        <li><strong>Audience</strong> — who will use it? role, seniority, region</li>
+        <li><strong>Context</strong> — your product, sales motion, ACV, deal cycle</li>
+        <li><strong>Constraints</strong> — must haves, compliance, systems</li>
+        <li><strong>Success</strong> — how we will measure impact</li>
+      </ul>
+      <p class="muted" style="margin:0">Example: “We sell B2B SaaS, 20k ACV, EMEA mid market. Need a pricing governance playbook for partners. Goal: fewer ad hoc discounts. Success: margin up 3 points in Q4.”</p>
+    </section>
+
+    <section class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Your request</h2>
+      <form id="req-form" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" />
+          </div>
+          <div>
+            <label for="industry">Industry</label>
+            <input id="industry" name="industry" type="text" placeholder="SaaS, hardware, fintech…" />
+          </div>
+
+          <div>
+            <label for="department">Department(s) responsible</label>
+            <input id="department" name="department" type="text" placeholder="Sales, Success, Pricing, Ops…" />
+          </div>
+          <div>
+            <label for="team">Team size you lead</label>
+            <input id="team" name="team" type="number" min="0" inputmode="numeric" />
+          </div>
+
+          <div class="full">
+            <label for="topic">Primary topic</label>
+            <select id="topic" name="topic">
+              <option>Sales</option>
+              <option>Success</option>
+              <option>Pricing</option>
+              <option>Hiring</option>
+              <option>Ops</option>
+              <option>International</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="goal">Goal</label>
+            <textarea id="goal" name="goal" placeholder="What outcome do you want?" required></textarea>
+          </div>
+
+          <div class="full">
+            <label for="context">Context</label>
+            <textarea id="context" name="context" placeholder="Product, motion, regions, deal size, cycle length…"></textarea>
+          </div>
+
+          <div class="full">
+            <label for="constraints">Constraints</label>
+            <textarea id="constraints" name="constraints" placeholder="Systems, policies, compliance, other must haves…"></textarea>
+          </div>
+
+          <div class="full">
+            <label for="success">Success measure</label>
+            <textarea id="success" name="success" placeholder="How we will know it worked"></textarea>
+          </div>
+
+          <div class="full">
+            <label for="examples">Links or examples (optional)</label>
+            <input id="examples" name="examples" type="text" placeholder="URLs, tools, internal docs"/>
+          </div>
+
+          <div class="full">
+            <label for="urgency">Urgency (optional)</label>
+            <input id="urgency" name="urgency" type="text" placeholder="Deadline, quarter, launch date"/>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn" type="submit" id="btn-submit-request">Submit request</button>
+          <a class="btn ghost" href="/articles/">Back to Articles</a>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" style="margin-top:16px">
+      <h3 style="margin:0 0 6px">Prefer email?</h3>
+      <p class="muted" style="margin:0 0 8px">You can also email us directly.</p>
+      <a class="btn" id="btn-email" href="mailto:contact@commercialleadershiphub.com?subject=Request%20content&body=Tell%20us%20what%20you%20need%20and%20why%20it%20matters.">Open email draft</a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="brand"><span class="brand-mark"></span><span class="brand-name">Commercial Leadership Hub</span></div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
         <p class="muted">Practical tools for commercial leaders.</p>
       </div>
       <div>
@@ -76,12 +197,80 @@
         </ul>
       </div>
     </div>
-    <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
   </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){const h=document.querySelector('.site-header');if(!h)return;let y=window.scrollY,t=!1;const D=8,S=60;function s(){const n=window.scrollY,d=n>y+D,u=n<y-D;d&&n>S?h.classList.add('is-hidden'):(u||n<=0)&&h.classList.remove('is-hidden');y=n}window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{s();t=!1});t=!0}}, {passive:true});})();
+
+    function ev(n,d){ try{ gtag('event', n, d||{}); }catch(e){} }
+    const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
+    document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
+    document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
+
+    // Submit -> POST til serverless endpoint
+    const form = document.getElementById('req-form');
+    const btn = document.getElementById('btn-submit-request');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Simple feltindsamling
+      const get = id => (document.getElementById(id)?.value || '').trim();
+      const payload = {
+        name: get('name'),
+        email: get('email'),
+        company: get('company'),
+        industry: get('industry'),
+        department: get('department'),
+        team: get('team'),
+        topic: get('topic'),
+        goal: get('goal'),
+        context: get('context'),
+        constraints: get('constraints'),
+        success: get('success'),
+        examples: get('examples'),
+        urgency: get('urgency')
+      };
+
+      // Basic required check (frontend)
+      if(!payload.name || !payload.email || !payload.topic || !payload.goal){
+        alert('Please fill in name, email, topic and goal.');
+        return;
+      }
+
+      btn.disabled = true;
+      const prevText = btn.textContent;
+      btn.textContent = 'Sending…';
+
+      try{
+        const res = await fetch('/submit-request', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+
+        if(!res.ok){
+          const t = await res.text();
+          throw new Error(t || 'Request failed');
+        }
+
+        // GA4 event for conversion
+        ev('request_content_submitted', { topic: payload.topic });
+
+        // Redirect til takkeside
+        window.location.href = '/thanks.html';
+      }catch(err){
+        alert('Sorry, something went wrong. Please try again or email us at contact@commercialleadershiphub.com');
+        btn.disabled = false;
+        btn.textContent = prevText;
+      }
+    });
+
+    document.getElementById('btn-email')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com', source:'request_page'}));
   </script>
 </body>
 </html>
