@@ -31,4 +31,19 @@ Disallow: /
 
 User-agent: meta-externalagent
 Disallow: /
+
+# Commercial Leadership Hub — robots.txt (v2025-08-16)
+
+User-agent: *
+Allow: /
+
+# Future paywalled area (private)
+Disallow: /members/
+
+# 404 page (har også <meta name="robots" content="noindex">)
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://commercialleadershiphub.com/sitemap.xml
+
 # END Cloudflare Managed content
