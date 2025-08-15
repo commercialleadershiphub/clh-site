@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you — Commercial Leadership Hub</title>
+  <meta name="description" content="Thank you — we got your request." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/thanks-request.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thank you — Commercial Leadership Hub" />
+  <meta property="og:description" content="We got your request." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/thanks-request.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Robots (noindex as per checklist) -->
+  <meta name="robots" content="noindex,follow" />
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TG0R550X');
+  </script>
+
+  <!-- Styles (single source) -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+
+  <style>
+    .page-hero{padding:28px 0 10px}
+    .page-hero h1{margin:0}
+    .muted{color:var(--muted)}
+    .center{ text-align:center }
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/#services">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section center" style="margin:16px 0">
+      <h1>Thank you</h1>
+      <p class="muted" style="margin:6px 0 12px">We got your request.</p>
+      <a class="btn" id="btn-home" href="/">Back to homepage</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // GA4 events
+    function ev(n,d){ try{ gtag('event', n, d||{}); }catch(e){} }
+    ev('view_thank_you'); // pageview conversion for thanks pages
+
+    // Track footer links (consistent with site)
+    const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
+    document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
+    document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
+
+    // Return home button tracking
+    document.getElementById('btn-home')?.addEventListener('click', ()=>ev('click_return_home'));
+  </script>
+</body>
+</html>
