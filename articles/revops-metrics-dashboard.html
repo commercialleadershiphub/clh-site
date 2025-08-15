@@ -1,39 +1,69 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RevOps Metrics Dashboard — Commercial Leadership Hub</title>
-  <meta name="description" content="A one-page view leaders actually use." />
+  <meta name="description" content="A one-page view leaders actually use — pipeline, conversion and retention." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/revops-metrics-dashboard.html" />
   <meta property="og:title" content="RevOps Metrics Dashboard — Commercial Leadership Hub" />
-  <meta property="og:description" content="A one-page view leaders actually use." />
+  <meta property="og:description" content="A one-page view leaders actually use — pipeline, conversion and retention." />
   <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/revops-metrics-dashboard.html" />
   <meta property="og:type" content="article" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
   <style>
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .muted{color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:8px}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    table{width:100%;border-collapse:separate;border-spacing:0 6px}
+    th,td{padding:8px 10px;border:1px solid var(--line);background:var(--surface);}
+    th{background:var(--canvas)}
+    .callout{border-left:3px solid #111827;padding-left:12px}
+    .xs{font-size:12px}
+    .kbd{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--surface)}
+    ol>li{margin:6px 0}
   </style>
 </head>
 <body>
-<header class="site-header"><div class="container header-inner">
-  <a href="/" class="brand" aria-label="Commercial Leadership Hub"><img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto"></a>
-  <nav class="main-nav"><a href="/#services">Services</a><a href="/#projects">Projects</a><a href="/#about">About</a><a href="/articles/">Articles</a></nav>
-  <div class="header-cta"><a class="btn ghost" href="/articles/">Back to Articles</a></div>
-</div></header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+      <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+    </a>
+    <nav class="main-nav">
+      <a href="/#services">Services</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#about">About</a>
+      <a href="/articles/">Articles</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn ghost" href="/articles/">Back to Articles</a>
+    </div>
+  </div>
+</header>
+
 <main class="container" style="margin:16px 0">
   <span class="tag">Ops</span>
   <h1>RevOps Metrics Dashboard</h1>
-  <p class="muted">A one-page view leaders actually use.</p>
-  <section class="section"><h2>Widgets</h2><ul><li>Coverage & hygiene</li><li>Sales perf: win rate/cycle/ASP</li><li>Forecast vs actual</li><li>Success: GRR/NRR/health</li></ul></section><section class="section"><h2>Dashboards</h2><ul><li>Coverage, conversion, cycle time, ASP</li><li>Hygiene KPIs</li><li>Forecast vs actual with error bands</li></ul></section>
+  <p class="muted">A one-page view leaders actually use — pipeline, conversion and retention.</p>
+
+  <section class="section"><h2>One‑page view</h2><ul><li>Pipeline coverage by segment</li><li>Stage‑to‑stage conversion</li><li>Win rate &amp; cycle length</li><li>GRR/NRR and expansion</li></ul></section>
+<section class="section"><h2>Design rules</h2><ul><li>No vanity charts</li><li>Comparative benchmarks</li><li>Drill‑downs to team/rep</li></ul></section>
+<section class="section"><h2>Tooling</h2><p>Source data from CRM + billing; schedule refresh daily.</p></section>
+
+  <div class="section xs">
+    Last updated: 2025-08-15. © Commercial Leadership Hub.
+  </div>
 </main>
-<footer class="site-footer"><div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div></footer>
+
+<footer class="site-footer">
+  <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
+</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
