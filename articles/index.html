@@ -118,4 +118,222 @@
           </div>
         </a>
         <a class="card" data-href="/articles/pricing-and-discount-governance.html" href="/articles/pricing-and-discount-governance.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1400&auto=format&fit=crop" alt="Pricing" onerror="this.style.di
+          <img class="thumb" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1400&auto=format&fit=crop" alt="Pricing" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">Pricing</span>
+            <h3 class="title">Pricing &amp; Discount Governance</h3>
+            <p class="excerpt">Guardrails and deal-desk flow that protect margin without slowing deals.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Sektioner -->
+    <section id="sales" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Sales</h2>
+      <div class="loading" id="loading-sales">Loading…</div>
+      <div class="grid" id="grid-sales"></div>
+    </section>
+
+    <section id="success" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Success</h2>
+      <div class="loading" id="loading-success">Loading…</div>
+      <div class="grid" id="grid-success"></div>
+    </section>
+
+    <section id="pricing" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Pricing</h2>
+      <div class="loading" id="loading-pricing">Loading…</div>
+      <div class="grid" id="grid-pricing"></div>
+    </section>
+
+    <section id="hiring" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Hiring</h2>
+      <div class="loading" id="loading-hiring">Loading…</div>
+      <div class="grid" id="grid-hiring"></div>
+    </section>
+
+    <section id="ops" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Ops</h2>
+      <div class="loading" id="loading-ops">Loading…</div>
+      <div class="grid" id="grid-ops"></div>
+    </section>
+
+    <section id="expansion" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">International</h2>
+      <div class="loading" id="loading-expansion">Loading…</div>
+      <div class="grid" id="grid-expansion"></div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section" id="cta" style="margin:16px 0;text-align:center">
+      <h2 style="margin:0 0 6px">Stay sharp.</h2>
+      <p class="muted">One practical email when we publish something new.</p>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+        <a class="btn" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false" id="btn-subscribe-articles">Subscribe</a>
+        <a class="btn ghost" href="/">Back to homepage</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <!-- Logo i footer 44px (aftalt) -->
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // GA4 klik
+    const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
+    function ev(n,d){ try{ gtag('event', n, d||{}); }catch(e){} }
+    document.getElementById('btn-subscribe-articles')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
+    document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
+    document.getElementById('btn-request-content')?.addEventListener('click', ()=>ev('click_request_content',{source:'articles_index'}));
+
+    // ---------- Robust auto-index: sitemap -> fallback ----------
+    const grids = {
+      Sales: document.getElementById('grid-sales'),
+      Success: document.getElementById('grid-success'),
+      Pricing: document.getElementById('grid-pricing'),
+      Hiring: document.getElementById('grid-hiring'),
+      Ops: document.getElementById('grid-ops'),
+      Expansion: document.getElementById('grid-expansion')
+    };
+    const loaders = ['loading-sales','loading-success','loading-pricing','loading-hiring','loading-ops','loading-expansion'];
+
+    function clearLoaders(){ loaders.forEach(id=>{ const el=document.getElementById(id); if(el) el.remove(); }); }
+    function cardHTML(it){
+      const tagLabel = it.tag==='Expansion' ? 'International' : it.tag;
+      const img = it.img || 'https://commercialleadershiphub.com/assets/og-image.png';
+      const desc = it.desc || '';
+      return `
+        <a class="card" href="${it.path}" data-href="${it.path}">
+          <img class="thumb" src="${img}" alt="" onerror="this.style.display='none'">
+          <div class="card-body">
+            <span class="tag">${tagLabel}</span>
+            <h3 class="title">${it.title}</h3>
+            <p class="excerpt">${desc}</p>
+          </div>
+        </a>`;
+    }
+    function push(it){
+      const g = grids[it.tag] || grids.Ops;
+      g.insertAdjacentHTML('beforeend', cardHTML(it));
+    }
+
+    const FALLBACK = [
+      // ---- Sprint 1 + 2 (26 artikler) ----
+      {path:'/articles/forecast-accuracy-system.html', title:'Forecast Accuracy System', desc:'Weekly hygiene, cadence and dashboards that move accuracy to ±5–8%.', tag:'Ops'},
+      {path:'/articles/meddicc-qualification-checklist.html', title:'MEDDICC Qualification Checklist', desc:'Plain-English prompts, stage exits and a simple R/A/G scoring model.', tag:'Sales'},
+      {path:'/articles/pricing-and-discount-governance.html', title:'Pricing & Discount Governance', desc:'Guardrails and deal-desk flow that protect margin without slowing deals.', tag:'Pricing'},
+      {path:'/articles/operating-rhythm.html', title:'Operating Rhythm', desc:'Weekly–monthly–quarterly cadence that reduces chaos.', tag:'Ops'},
+      {path:'/articles/qbr-playbook.html', title:'QBR Playbook (Customer-Facing)', desc:'Prep, data pack, 60-min agenda and crisp follow-up.', tag:'Success'},
+      {path:'/articles/international-expansion.html', title:'International Expansion', desc:'Market entry checklists, partner models and risk assessment.', tag:'Expansion'},
+      {path:'/articles/headcount-planning.html', title:'Headcount Planning', desc:'Budgets, territory design and hiring cadence that scales.', tag:'Expansion'},
+      {path:'/articles/sales-hiring-scorecard.html', title:'Sales Hiring Scorecard & Interview Loop', desc:'Role outcomes, competencies, case task and decision rubric.', tag:'Hiring'},
+
+      {path:'/articles/discovery-call-framework.html', title:'Discovery Call Framework & Notes', desc:'Questions, flow and note template that lead to clear next steps.', tag:'Sales'},
+      {path:'/articles/competitive-deal-strategy.html', title:'Competitive Deal Strategy Checklist', desc:'Identify traps, shape criteria and win the narrative.', tag:'Sales'},
+      {path:'/articles/executive-meeting-playbook.html', title:'Executive Meeting Playbook', desc:'Prep, narrative and follow-up for CXO meetings that advance deals.', tag:'Sales'},
+
+      {path:'/articles/health-score-model.html', title:'Customer Health Score Model', desc:'Simple, explainable score that predicts churn and expansion.', tag:'Success'},
+      {path:'/articles/expansion-playbook.html', title:'Expansion Playbook', desc:'From signals to pilots to commercial closes.', tag:'Success'},
+      {path:'/articles/escalation-runbook.html', title:'Escalation Management Runbook', desc:'How to handle high-severity issues without losing the account.', tag:'Success'},
+
+      {path:'/articles/discount-waterfall-calculator.html', title:'Discount Waterfall & Margin Calculator', desc:'See where margin leaks and set guardrails.', tag:'Pricing'},
+      {path:'/articles/partner-pricing-policy.html', title:'Partner & Reseller Pricing Policy', desc:'Clear rules for discounts, MDF and deal registration.', tag:'Pricing'},
+      {path:'/articles/usage-based-pricing-guardrails.html', title:'Usage-Based Pricing Guardrails', desc:'Keep revenue and value aligned without bill shock.', tag:'Pricing'},
+
+      {path:'/articles/sdr-hiring-and-ramp.html', title:'SDR Hiring & Ramp Plan', desc:'Profile, interview loop and 60-day ramp to productivity.', tag:'Hiring'},
+      {path:'/articles/ae-onboarding-309090.html', title:'AE Onboarding 30/60/90', desc:'Skills, assets and proof of readiness before full quota.', tag:'Hiring'},
+      {path:'/articles/manager-interview-scorecard.html', title:'Manager Interview Loop & Scorecard', desc:'Hire leaders who inspect, coach and deliver.', tag:'Hiring'},
+
+      {path:'/articles/forecast-inspection-guide.html', title:'Forecast Inspection Guide', desc:'Questions and artifacts for weekly sales reviews.', tag:'Ops'},
+      {path:'/articles/revops-metrics-dashboard.html', title:'RevOps Metrics Dashboard', desc:'A one-page view leaders actually use.', tag:'Ops'},
+      {path:'/articles/pipeline-hygiene-standards.html', title:'Pipeline Hygiene & Data Standards', desc:'Keep CRM trustworthy and forecastable.', tag:'Ops'},
+
+      {path:'/articles/localisation-checklist.html', title:'Localisation Checklist', desc:'Product, marketing and success items to localize first.', tag:'Expansion'},
+      {path:'/articles/channel-partner-selection.html', title:'Channel Partner Selection Framework', desc:'How to pick and activate partners that sell.', tag:'Expansion'},
+      {path:'/articles/data-residency-compliance.html', title:'Data Residency & Compliance Checklist', desc:'Reduce risk when entering new regions.', tag:'Expansion'}
+    ];
+
+    async function buildFromSitemap(){
+      try{
+        const sm = await fetch('/sitemap.xml', {cache:'no-store'});
+        const xml = new DOMParser().parseFromString(await sm.text(),'application/xml');
+        const locs = Array.from(xml.querySelectorAll('url > loc')).map(n=>n.textContent.trim());
+        const urls = locs.filter(u => (u.includes('/articles/') && !u.endsWith('/articles/') && !u.endsWith('/articles/index.html')));
+        if(!urls.length) throw new Error('No article URLs found in sitemap');
+
+        // Skip duplicates already in Featured
+        const featured = new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
+
+        const concurrency = 6;
+        const queue = urls.slice();
+        async function worker(){
+          while(queue.length){
+            const url = queue.shift();
+            const path = new URL(url).pathname;
+            if(featured.has(path)) continue;
+
+            try{
+              const res = await fetch(path, {cache:'no-store'});
+              const html = await res.text();
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
+              const desc = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
+              const img  = (doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '/assets/og-image.png');
+              let tag    = (doc.querySelector('.tag')?.textContent || '').trim() || 'Ops';
+              if(tag.toLowerCase()==='international' || tag.toLowerCase()==='planning') tag='Expansion';
+
+              push({path, title, desc, img, tag});
+            }catch(e){ /* ignore single errors */ }
+          }
+        }
+        await Promise.all(Array.from({length:concurrency}, worker));
+        clearLoaders();
+        // Hvis intet blev tilføjet (fx CORS/XML issues) -> fallback
+        const total =
+          Object.values(grids).reduce((s,g)=>s+g.children.length,0);
+        if(total===0) FALLBACK.forEach(push);
+      }catch(e){
+        FALLBACK.forEach(push);
+        clearLoaders();
+      }
+    }
+    buildFromSitemap();
+  </script>
+</body>
+</html>
