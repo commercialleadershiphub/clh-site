@@ -60,15 +60,44 @@
   </footer>
 
   <script>
+    // Page view event (kept as-is, with beacon transport)
     window.addEventListener('load', function() {
-      gtag('event', 'view_thank_you', { transport_type: 'beacon' });
+      if (typeof gtag === 'function') {
+        gtag('event', 'view_thank_you', { transport_type: 'beacon' });
+      }
     });
+
+    // Return home click (unchanged)
     document.getElementById('btn-home').addEventListener('click', function() {
-      gtag('event', 'click_return_home', { transport_type: 'beacon' });
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_return_home', { transport_type: 'beacon' });
+      }
     });
-    document.getElementById('btn-products').addEventListener('click', function() {
-      gtag('event', 'click_browse_products', { transport_type: 'beacon' });
-    });
+
+    // Browse products click — robust delivery with event_callback + timeout + beacon
+    (function() {
+      var btn = document.getElementById('btn-products');
+      if (!btn) return;
+
+      btn.addEventListener('click', function(e) {
+        // If GA isn't available, don't block navigation
+        if (typeof gtag !== 'function') return;
+
+        try {
+          e.preventDefault(); // briefly hold navigation until GA confirms (or timeout)
+          var target = btn.getAttribute('href') || '/products.html';
+
+          gtag('event', 'click_browse_products', {
+            transport_type: 'beacon',
+            event_callback: function() { window.location.href = target; },
+            event_timeout: 2000
+          });
+        } catch (err) {
+          // Fallback: proceed with navigation if anything goes wrong
+          window.location.href = btn.getAttribute('href') || '/products.html';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
