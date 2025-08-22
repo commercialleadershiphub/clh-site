@@ -225,6 +225,8 @@
     const loaders = ['loading-sales','loading-success','loading-pricing','loading-hiring','loading-ops','loading-expansion'];
     function clearLoaders(){ loaders.forEach(id=>{ const el=document.getElementById(id); if(el) el.remove(); }); }
 
+    function isGenericImg(src){ return !src || src.includes('/assets/og-image'); }
+
     function cardHTML(it){
       const tagLabel = it.tag==='Expansion' ? 'International' : it.tag;
       const img = it.img || 'https://commercialleadershiphub.com/assets/og-image.png';
@@ -246,6 +248,10 @@
       const g = grids[it.tag] || grids.Ops;
       g.insertAdjacentHTML('beforeend', cardHTML(it));
       added.add(it.path);
+      // Try to upgrade image if generic
+      if(isGenericImg(it.img)){
+        upgradeImage(it.path).catch(()=>{});
+      }
     }
 
     function featuredSet(){
@@ -255,8 +261,8 @@
     function pickImageFromDoc(doc){
       // 1) Prefer non-generic og:image
       const og = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
-      const isGeneric = og.includes('/assets/og-image') || og.includes('og-image');
-      if(og && !isGeneric) return og;
+      const ogIsGeneric = isGenericImg(og);
+      if(og && !ogIsGeneric) return og;
 
       // 2) Look for likely hero images in content (Unsplash, hero/thumb/figure)
       const selectors = [
@@ -265,12 +271,24 @@
       ];
       for(const sel of selectors){
         const el = doc.querySelector(sel);
-        if(el && el.getAttribute('src')){
-          return el.getAttribute('src');
-        }
+        if(el && el.getAttribute('src')) return el.getAttribute('src');
       }
       // 3) Fallback: site OG
       return '/assets/og-image.png';
+    }
+
+    async function upgradeImage(path){
+      try{
+        const res = await fetch(path, {cache:'no-store'});
+        if(!res.ok) return;
+        const html = await res.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const better = pickImageFromDoc(doc);
+        if(!isGenericImg(better)) {
+          const imgEl = document.querySelector(`a.card[href="${path}"] img.thumb`);
+          if(imgEl){ imgEl.src = better; }
+        }
+      }catch(e){}
     }
 
     async function buildFromManifest(){
