@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Articles -->
+  <url><loc>https://commercialleadershiphub.com/articles/forecast-accuracy-system.html</loc></url>
+  <url><loc>https://commercialleadershiphub.com/articles/meddicc-qualification-checklist.html</loc></url>
+  <url><loc>https://commercialleadershiphub.com/articles/pricing-and-discount-governance.html</loc></url>
 
+  <!-- Add all remaining /articles/*.html here, one per <url> -->
 </urlset>
