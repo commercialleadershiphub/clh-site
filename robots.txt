@@ -1,49 +1,23 @@
-# CLH robots.txt
-
 User-agent: *
-Allow: /
-
-Sitemap: https://commercialleadershiphub.com/sitemap.xml
-
-# BEGIN Cloudflare Managed content
-# (Bloker udvalgte bots som fx AI-træningscrawlere)
-
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-# Commercial Leadership Hub — robots.txt (v2025-08-16)
-
-User-agent: *
-Allow: /
-
-# Future paywalled area (private)
 Disallow: /members/
-
-# 404 page (har også <meta name="robots" content="noindex">)
 Disallow: /404.html
 
-# Sitemap
-Sitemap: https://commercialleadershiphub.com/sitemap.xml
+# Block AI training crawlers
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: OAI-SearchBot
+Disallow: /
+User-agent: FacebookBot
+Disallow: /
+User-agent: Twitterbot
+Disallow: /
 
-# END Cloudflare Managed content
+Sitemap: https://commercialleadershiphub.com/sitemap.xml
