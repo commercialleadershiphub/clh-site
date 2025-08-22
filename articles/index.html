@@ -94,7 +94,7 @@
       <h2 style="margin:0 0 8px">Featured</h2>
       <div class="grid">
         <a class="card" data-href="/articles/forecast-accuracy-system.html" href="/articles/forecast-accuracy-system.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="Forecasting" onerror="this.style.display='none'">
+          <img class="thumb" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="Forecasting" onerror="this.style.display='none'" loading="lazy">
           <div class="card-body">
             <span class="tag">Ops</span>
             <h3 class="title">Forecast Accuracy System</h3>
@@ -102,7 +102,7 @@
           </div>
         </a>
         <a class="card" data-href="/articles/meddicc-qualification-checklist.html" href="/articles/meddicc-qualification-checklist.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="MEDDICC" onerror="this.style.display='none'">
+          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="MEDDICC" onerror="this.style.display='none'" loading="lazy">
           <div class="card-body">
             <span class="tag">Sales</span>
             <h3 class="title">MEDDICC Qualification Checklist</h3>
@@ -110,7 +110,7 @@
           </div>
         </a>
         <a class="card" data-href="/articles/pricing-and-discount-governance.html" href="/articles/pricing-and-discount-governance.html">
-          <img class="thumb" src="/assets/international-expansion.jpg" alt="International expansion playbook" onerror="this.style.display='none'">
+          <img class="thumb" src="/assets/international-expansion.jpg" alt="International expansion playbook" onerror="this.style.display='none'" loading="lazy">
           <div class="card-body">
             <span class="tag">Pricing</span>
             <h3 class="title">Pricing &amp; Discount Governance</h3>
@@ -231,7 +231,7 @@
       const desc = it.desc || '';
       return `
         <a class="card" href="${it.path}" data-href="${it.path}">
-          <img class="thumb" src="${img}" alt="" onerror="this.style.display='none'">
+          <img class="thumb" src="${img}" alt="" onerror="this.style.display='none'" loading="lazy">
           <div class="card-body">
             <span class="tag">${tagLabel}</span>
             <h3 class="title">${it.title}</h3>
@@ -252,55 +252,74 @@
       return new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
     }
 
+    function pickImageFromDoc(doc){
+      // 1) Prefer non-generic og:image
+      const og = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+      const isGeneric = og.includes('/assets/og-image') || og.includes('og-image');
+      if(og && !isGeneric) return og;
+
+      // 2) Look for likely hero images in content (Unsplash, hero/thumb/figure)
+      const selectors = [
+        'img.hero','img.thumb','.article-hero img','figure img',
+        'img[src*="images.unsplash.com"]','main img','article img'
+      ];
+      for(const sel of selectors){
+        const el = doc.querySelector(sel);
+        if(el && el.getAttribute('src')){
+          return el.getAttribute('src');
+        }
+      }
+      // 3) Fallback: site OG
+      return '/assets/og-image.png';
+    }
+
     async function buildFromManifest(){
-      const res = await fetch('/articles/manifest.json', {cache:'no-store'});
-      if(!res.ok) return; // silently skip if missing
-      const list = await res.json();
-      const featured = featuredSet();
-      list.forEach(it => { if(!featured.has(it.path)) push(it); });
+      try{
+        const res = await fetch('/articles/manifest.json?t=' + Date.now(), {cache:'no-store'});
+        if(!res.ok) return;
+        const list = await res.json();
+        const featured = featuredSet();
+        list.forEach(it => { if(!featured.has(it.path)) push(it); });
+      }catch(e){}
     }
 
     async function buildFromSitemap(){
-      const sm = await fetch('/sitemap.xml', {cache:'no-store'});
-      if(!sm.ok) return;
-      const xml = new DOMParser().parseFromString(await sm.text(),'application/xml');
-      const locs = Array.from(xml.querySelectorAll('url > loc')).map(n=>n.textContent.trim());
-      const urls = locs.filter(u => (u.includes('/articles/') && !u.endsWith('/articles/') && !u.endsWith('/articles/index.html')));
+      try{
+        const sm = await fetch('/sitemap.xml?t=' + Date.now(), {cache:'no-store'});
+        if(!sm.ok) return;
+        const xml = new DOMParser().parseFromString(await sm.text(),'application/xml');
+        const locs = Array.from(xml.querySelectorAll('url > loc')).map(n=>n.textContent.trim());
+        const urls = locs.filter(u => (u.includes('/articles/') && !u.endsWith('/articles/') && !u.endsWith('/articles/index.html')));
 
-      const featured = featuredSet();
-      const queue = urls.slice();
-      const concurrency = 6;
+        const featured = featuredSet();
+        const queue = urls.slice();
+        const concurrency = 6;
 
-      async function worker(){
-        while(queue.length){
-          const url = queue.shift();
-          const path = new URL(url).pathname;
-          if(featured.has(path)) continue;
-          if(added.has(path)) continue;
-          try{
-            const res = await fetch(path, {cache:'no-store'});
-            const html = await res.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
-            const desc  = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
-            const img   = (doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '/assets/og-image.png');
-            let tag     = (doc.querySelector('.tag')?.textContent || '').trim() || 'Ops';
-            if(tag.toLowerCase()==='international' || tag.toLowerCase()==='planning') tag='Expansion';
-            push({path,title,desc,img,tag});
-          }catch(e){}
+        async function worker(){
+          while(queue.length){
+            const url = queue.shift();
+            const path = new URL(url).pathname;
+            if(featured.has(path) || added.has(path)) continue;
+            try{
+              const res = await fetch(path, {cache:'no-store'});
+              const html = await res.text();
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
+              const desc  = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
+              let tag     = (doc.querySelector('.tag')?.textContent || '').trim() || 'Ops';
+              if(tag.toLowerCase()==='international' || tag.toLowerCase()==='planning') tag='Expansion';
+              const img   = pickImageFromDoc(doc);
+              push({path,title,desc,img,tag});
+            }catch(e){}
+          }
         }
-      }
-      await Promise.all(Array.from({length:concurrency}, worker));
+        await Promise.all(Array.from({length:concurrency}, worker));
+      }catch(e){}
     }
 
     (async function init(){
-      try{
-        // Merge: manifest first (guarantees metadata when present), then sitemap for any leftovers
-        await buildFromManifest();
-      }catch(e){}
-      try{
-        await buildFromSitemap();
-      }catch(e){}
+      await buildFromManifest(); // show everything we explicitly declare
+      await buildFromSitemap();  // then fill gaps if sitemap has extras
       clearLoaders();
     })();
   </script>
