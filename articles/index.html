@@ -213,7 +213,7 @@
     document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
     document.getElementById('btn-request-content')?.addEventListener('click', ()=>ev('click_request_content',{source:'articles_index'}));
 
-    // ---- Render from manifest.json (preferred), else sitemap.xml, else hardcoded fallback ----
+    // ---- Render from manifest.json + sitemap.xml (merged) ----
     const grids = {
       Sales: document.getElementById('grid-sales'),
       Success: document.getElementById('grid-success'),
@@ -239,39 +239,47 @@
           </div>
         </a>`;
     }
+
+    const added = new Set(); // paths already rendered
     function push(it){
+      if(!it || !it.path || added.has(it.path)) return;
       const g = grids[it.tag] || grids.Ops;
       g.insertAdjacentHTML('beforeend', cardHTML(it));
+      added.add(it.path);
     }
 
-    const FALLBACK = []; // (not needed when manifest is present)
+    function featuredSet(){
+      return new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
+    }
 
     async function buildFromManifest(){
       const res = await fetch('/articles/manifest.json', {cache:'no-store'});
-      if(!res.ok) throw new Error('manifest missing');
+      if(!res.ok) return; // silently skip if missing
       const list = await res.json();
-      // Skip items already listed in Featured
-      const featured = new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
+      const featured = featuredSet();
       list.forEach(it => { if(!featured.has(it.path)) push(it); });
-      clearLoaders();
     }
 
     async function buildFromSitemap(){
       const sm = await fetch('/sitemap.xml', {cache:'no-store'});
+      if(!sm.ok) return;
       const xml = new DOMParser().parseFromString(await sm.text(),'application/xml');
       const locs = Array.from(xml.querySelectorAll('url > loc')).map(n=>n.textContent.trim());
       const urls = locs.filter(u => (u.includes('/articles/') && !u.endsWith('/articles/') && !u.endsWith('/articles/index.html')));
-      const featured = new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
 
+      const featured = featuredSet();
       const queue = urls.slice();
       const concurrency = 6;
+
       async function worker(){
         while(queue.length){
           const url = queue.shift();
           const path = new URL(url).pathname;
           if(featured.has(path)) continue;
+          if(added.has(path)) continue;
           try{
-            const res = await fetch(path, {cache:'no-store'}); const html = await res.text();
+            const res = await fetch(path, {cache:'no-store'});
+            const html = await res.text();
             const doc = new DOMParser().parseFromString(html, 'text/html');
             const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
             const desc  = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
@@ -283,20 +291,17 @@
         }
       }
       await Promise.all(Array.from({length:concurrency}, worker));
-      clearLoaders();
     }
 
     (async function init(){
       try{
-        await buildFromManifest(); // preferred: guarantees images + completeness
-      }catch(e){
-        try{
-          await buildFromSitemap(); // fallback to sitemap if no manifest
-        }catch(err){
-          FALLBACK.forEach(push);
-          clearLoaders();
-        }
-      }
+        // Merge: manifest first (guarantees metadata when present), then sitemap for any leftovers
+        await buildFromManifest();
+      }catch(e){}
+      try{
+        await buildFromSitemap();
+      }catch(e){}
+      clearLoaders();
     })();
   </script>
 </body>
