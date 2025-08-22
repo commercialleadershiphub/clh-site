@@ -99,11 +99,32 @@ a:hover{text-decoration:underline}
 .copyright{border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
 @media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} }
 
-/* Content update: hero background image (keeps layout 1:1) */
-.hero::before,
-.hero {
-  background-image: url('/assets/hero-team-2400ai.jpg') !important;
+/* =========================================================
+   Content update: swap hero <img> for CSS background
+   (bevarer layout 1:1; ingen ændring af typografi/spacing)
+   ========================================================= */
+.hero { 
+  position: relative; 
+  min-height: 520px;                     /* samme visuelle højde som .hero img */
+}
+.hero img { 
+  display: none !important;              /* skjul gamle inline-billede */
+}
+.hero::before {
+  content: "";
+  position: absolute; 
+  inset: 0;
+  background-image: url('/assets/hero-team-2400ai.jpg?v=1');
   background-position: center 35%;
   background-size: cover;
+  filter: brightness(.85);               /* matcher tidligere img-filter */
+  z-index: 0;
+}
+.hero .overlay { 
+  z-index: 1;                            /* overlay over baggrunden */
 }
 
+/* Responsiv højde som før */
+@media (max-width:980px){
+  .hero{ min-height:440px; }             /* matcher .hero img {height:440px} */
+}
