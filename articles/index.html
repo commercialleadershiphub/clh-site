@@ -1,16 +1,15 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Articles — Commercial Leadership Hub</title>
-  <meta name="description" content="15–30 minute, no-fluff articles for commercial leaders. Sales, success, pricing, hiring, ops and expansion." />
+  <meta name="description" content="B2B sales leadership articles with playbooks and templates. Operating rhythm, forecast accuracy, pricing governance and more." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Articles — Commercial Leadership Hub" />
-  <meta property="og:description" content="15–30 minute, no-fluff articles for commercial leaders. Sales, success, pricing, hiring, ops and expansion." />
+  <meta property="og:description" content="Playbooks, templates and 15–20 min articles for commercial leaders." />
   <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/" />
   <meta property="og:type" content="website" />
@@ -25,150 +24,73 @@
     gtag('config', 'G-81TG0R550X');
   </script>
 
-  <!-- Styles (cache-busted) -->
-  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
-
-  <style>
-    .page-hero{padding:28px 0 10px}
-    .page-hero h1{margin:0}
-    .muted{color:var(--muted)}
-    .topic-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .chip{display:inline-block;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:999px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-    .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
-    .thumb{width:100%;height:180px;object-fit:cover;background:#ddd;display:block}
-    .card-body{padding:12px}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
-    .title{font-weight:700;margin:0 0 6px;line-height:1.25}
-    .excerpt{margin:0;color:var(--muted)}
-    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-    .section-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:12px}
-    .req-box{text-align:right}
-    .req-box strong{display:block;margin-bottom:6px}
-    .loading{color:var(--muted);font-style:italic}
-    @media (max-width:980px){ .thumb{height:160px} .section-head{flex-direction:column;align-items:flex-start} .req-box{text-align:left} }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-5" />
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+        <img src="/assets/clh-logo-primary.svg"
+             alt="Commercial Leadership Hub"
+             style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
         <a href="/#services">Services</a>
-        <a href="/#projects">Projects</a>
+        <a href="/projects.html">Projects</a>
         <a href="/#about">About</a>
         <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
-        <a class="btn ghost" href="/">Home</a>
+        <a class="btn ghost" href="/products.html">Products</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="page-hero">
-      <h1>Articles</h1>
-      <p class="muted">15–30 minute, no-fluff reads for commercial leaders and their teams.</p>
 
-      <div class="section" style="margin-top:12px">
-        <div class="section-head">
-          <div>
-            <div class="topic-chips">
-              <a class="chip" href="#sales">Sales</a>
-              <a class="chip" href="#success">Success</a>
-              <a class="chip" href="#pricing">Pricing</a>
-              <a class="chip" href="#hiring">Hiring</a>
-              <a class="chip" href="#ops">Ops</a>
-              <a class="chip" href="#expansion">International</a>
-            </div>
-          </div>
-          <div class="req-box">
-            <strong>Can’t find what you need?</strong>
-            <a class="btn" href="/request.html" id="btn-request-content">Request content →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured (manual) -->
-    <section class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Featured</h2>
-      <div class="grid">
-        <a class="card" data-href="/articles/forecast-accuracy-system.html" href="/articles/forecast-accuracy-system.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="Forecasting" onerror="this.style.display='none'">
+    <!-- Featured from the library -->
+    <section class="surface" id="featured" style="padding:22px;margin-top:16px">
+      <h2 style="margin:0 0 8px">Featured from the library</h2>
+      <div class="grid-auto">
+        <a class="card" href="/articles/operating-rhythm.html">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1400&auto=format&fit=crop" alt="Sales operating rhythm">
           <div class="card-body">
-            <span class="tag">Ops</span>
-            <h3 class="title">Forecast Accuracy System</h3>
-            <p class="excerpt">Weekly hygiene, cadence and dashboards that move accuracy to ±5–8%.</p>
+            <h3>Sales Operating Rhythm</h3>
+            <p class="muted">A weekly cadence that lifts forecast accuracy and reduces noise.</p>
           </div>
         </a>
-        <a class="card" data-href="/articles/meddicc-qualification-checklist.html" href="/articles/meddicc-qualification-checklist.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="MEDDICC" onerror="this.style.display='none'">
+        <a class="card" href="/articles/headcount-planning.html">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1400&auto=format&fit=crop" alt="Headcount planning">
           <div class="card-body">
-            <span class="tag">Sales</span>
-            <h3 class="title">MEDDICC Qualification Checklist</h3>
-            <p class="excerpt">Plain-English prompts, stage exits and a simple R/A/G scoring model.</p>
+            <h3>Headcount Planning</h3>
+            <p class="muted">Structure roles and hiring windows to match stage and pipeline reality.</p>
           </div>
         </a>
-        <a class="card" data-href="/articles/pricing-and-discount-governance.html" href="/articles/pricing-and-discount-governance.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1400&auto=format&fit=crop" alt="Pricing" onerror="this.style.display='none'">
+        <a class="card" href="/articles/international-expansion.html">
+          <img src="/assets/international-expansion.jpg" alt="International expansion playbook">
           <div class="card-body">
-            <span class="tag">Pricing</span>
-            <h3 class="title">Pricing &amp; Discount Governance</h3>
-            <p class="excerpt">Guardrails and deal-desk flow that protect margin without slowing deals.</p>
+            <h3>International Expansion</h3>
+            <p class="muted">Repeatable market entry with low risk and clear partner models.</p>
           </div>
         </a>
       </div>
     </section>
 
-    <!-- Buckets -->
-    <section id="sales" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Sales</h2>
-      <div class="loading" id="loading-sales">Loading…</div>
-      <div class="grid" id="grid-sales"></div>
-    </section>
+    <!-- Article listing -->
+    <section class="surface" style="padding:22px;margin-top:16px">
+      <h1 style="margin:0 0 10px">All articles</h1>
+      <p class="muted" style="margin:0 0 16px">15–20 min reads with templates you can use right away.</p>
 
-    <section id="success" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Success</h2>
-      <div class="loading" id="loading-success">Loading…</div>
-      <div class="grid" id="grid-success"></div>
-    </section>
-
-    <section id="pricing" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Pricing</h2>
-      <div class="loading" id="loading-pricing">Loading…</div>
-      <div class="grid" id="grid-pricing"></div>
-    </section>
-
-    <section id="hiring" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Hiring</h2>
-      <div class="loading" id="loading-hiring">Loading…</div>
-      <div class="grid" id="grid-hiring"></div>
-    </section>
-
-    <section id="ops" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Ops</h2>
-      <div class="loading" id="loading-ops">Loading…</div>
-      <div class="grid" id="grid-ops"></div>
-    </section>
-
-    <section id="expansion" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">International</h2>
-      <div class="loading" id="loading-expansion">Loading…</div>
-      <div class="grid" id="grid-expansion"></div>
-    </section>
-
-    <!-- Newsletter CTA -->
-    <section class="section" id="cta" style="margin:16px 0;text-align:center">
-      <h2 style="margin:0 0 6px">Stay sharp.</h2>
-      <p class="muted">One practical email when we publish something new.</p>
-      <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
-        <a class="btn" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false" id="btn-subscribe-articles">Subscribe</a>
-        <a class="btn ghost" href="/">Back to homepage</a>
+      <div class="grid-auto">
+        <a class="card" href="/articles/operating-rhythm.html"><div class="card-body"><h3>Operating Rhythm</h3><p class="muted">Weekly cadence for reviews, KPIs and coaching.</p></div></a>
+        <a class="card" href="/articles/headcount-planning.html"><div class="card-body"><h3>Headcount Planning</h3><p class="muted">Designing roles, hiring windows and onboarding.</p></div></a>
+        <a class="card" href="/articles/international-expansion.html"><div class="card-body"><h3>International Expansion</h3><p class="muted">Repeatable, low-risk entry strategies.</p></div></a>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -181,12 +103,16 @@
       </div>
       <div>
         <h4 class="h4">Product</h4>
-        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+        <ul class="muted">
+          <li>Playbooks</li>
+          <li>Templates</li>
+          <li>Courses</li>
+        </ul>
       </div>
       <div>
         <h4 class="h4">Company</h4>
         <ul class="muted">
-          <li><a href="/#contact">About</a></li>
+          <li><a href="/#about">About</a></li>
           <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
           <li><a href="/privacy.html">Privacy</a></li>
         </ul>
@@ -206,101 +132,11 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // GA4 clicks
     const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
-    function ev(n,d){ try{ gtag('event', n, d||{}); }catch(e){} }
-    document.getElementById('btn-subscribe-articles')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
+    function ev(name, data){ try{ gtag('event', name, data||{}); }catch(e){} }
     document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
     document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
     document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
-    document.getElementById('btn-request-content')?.addEventListener('click', ()=>ev('click_request_content',{source:'articles_index'}));
-
-    // ---- Render from manifest.json (preferred), else sitemap.xml, else hardcoded fallback ----
-    const grids = {
-      Sales: document.getElementById('grid-sales'),
-      Success: document.getElementById('grid-success'),
-      Pricing: document.getElementById('grid-pricing'),
-      Hiring: document.getElementById('grid-hiring'),
-      Ops: document.getElementById('grid-ops'),
-      Expansion: document.getElementById('grid-expansion') // shown as "International"
-    };
-    const loaders = ['loading-sales','loading-success','loading-pricing','loading-hiring','loading-ops','loading-expansion'];
-    function clearLoaders(){ loaders.forEach(id=>{ const el=document.getElementById(id); if(el) el.remove(); }); }
-
-    function cardHTML(it){
-      const tagLabel = it.tag==='Expansion' ? 'International' : it.tag;
-      const img = it.img || 'https://commercialleadershiphub.com/assets/og-image.png';
-      const desc = it.desc || '';
-      return `
-        <a class="card" href="${it.path}" data-href="${it.path}">
-          <img class="thumb" src="${img}" alt="" onerror="this.style.display='none'">
-          <div class="card-body">
-            <span class="tag">${tagLabel}</span>
-            <h3 class="title">${it.title}</h3>
-            <p class="excerpt">${desc}</p>
-          </div>
-        </a>`;
-    }
-    function push(it){
-      const g = grids[it.tag] || grids.Ops;
-      g.insertAdjacentHTML('beforeend', cardHTML(it));
-    }
-
-    const FALLBACK = []; // (not needed when manifest is present)
-
-    async function buildFromManifest(){
-      const res = await fetch('/articles/manifest.json', {cache:'no-store'});
-      if(!res.ok) throw new Error('manifest missing');
-      const list = await res.json();
-      // Skip items already listed in Featured
-      const featured = new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
-      list.forEach(it => { if(!featured.has(it.path)) push(it); });
-      clearLoaders();
-    }
-
-    async function buildFromSitemap(){
-      const sm = await fetch('/sitemap.xml', {cache:'no-store'});
-      const xml = new DOMParser().parseFromString(await sm.text(),'application/xml');
-      const locs = Array.from(xml.querySelectorAll('url > loc')).map(n=>n.textContent.trim());
-      const urls = locs.filter(u => (u.includes('/articles/') && !u.endsWith('/articles/') && !u.endsWith('/articles/index.html')));
-      const featured = new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
-
-      const queue = urls.slice();
-      const concurrency = 6;
-      async function worker(){
-        while(queue.length){
-          const url = queue.shift();
-          const path = new URL(url).pathname;
-          if(featured.has(path)) continue;
-          try{
-            const res = await fetch(path, {cache:'no-store'}); const html = await res.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
-            const desc  = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
-            const img   = (doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '/assets/og-image.png');
-            let tag     = (doc.querySelector('.tag')?.textContent || '').trim() || 'Ops';
-            if(tag.toLowerCase()==='international' || tag.toLowerCase()==='planning') tag='Expansion';
-            push({path,title,desc,img,tag});
-          }catch(e){}
-        }
-      }
-      await Promise.all(Array.from({length:concurrency}, worker));
-      clearLoaders();
-    }
-
-    (async function init(){
-      try{
-        await buildFromManifest(); // preferred: guarantees images + completeness
-      }catch(e){
-        try{
-          await buildFromSitemap(); // fallback to sitemap if no manifest
-        }catch(err){
-          FALLBACK.forEach(push);
-          clearLoaders();
-        }
-      }
-    })();
   </script>
 </body>
 </html>
