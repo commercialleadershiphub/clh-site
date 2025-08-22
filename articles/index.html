@@ -232,15 +232,29 @@
       Pricing: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
       Hiring: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
       Ops: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
-      Expansion: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop"
+      Expansion: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=1400&auto=format&fit=crop"
     };
 
     function isGenericImg(src){ return !src || src.includes('/assets/og-image'); }
 
+    // Normalize tags to known buckets
+    function normalizeTag(v){
+      if(!v) return 'Ops';
+      const t = (''+v).trim().toLowerCase();
+      if(['sales'].includes(t)) return 'Sales';
+      if(['success','customer success','cs'].includes(t)) return 'Success';
+      if(['pricing','price'].includes(t)) return 'Pricing';
+      if(['hiring','recruiting','talent'].includes(t)) return 'Hiring';
+      if(['ops','operations','revops'].includes(t)) return 'Ops';
+      if(['expansion','international','planning'].includes(t)) return 'Expansion';
+      return 'Ops';
+    }
+
     function cardHTML(it){
-      const tagLabel = it.tag==='Expansion' ? 'International' : it.tag;
+      const tag = normalizeTag(it.tag);
+      const tagLabel = tag==='Expansion' ? 'International' : tag;
       let img = it.img || 'https://commercialleadershiphub.com/assets/og-image.png';
-      if (isGenericImg(img)) img = TAG_FALLBACK_IMG[it.tag] || img;
+      if (isGenericImg(img)) img = TAG_FALLBACK_IMG[tag] || img;
       const desc = it.desc || '';
       return `
         <a class="card" href="${it.path}" data-href="${it.path}">
@@ -256,13 +270,12 @@
     const added = new Set(); // paths already rendered
     function push(it){
       if(!it || !it.path || added.has(it.path)) return;
+      it.tag = normalizeTag(it.tag);
       const g = grids[it.tag] || grids.Ops;
       g.insertAdjacentHTML('beforeend', cardHTML(it));
       added.add(it.path);
-      // If still generic, try to upgrade from article HTML
-      if(isGenericImg(it.img)){
-        upgradeImage(it.path).catch(()=>{});
-      }
+      // Try to upgrade from article HTML; if still generic afterwards, enforce tag fallback
+      upgradeImage(it.path, it.tag).catch(()=>{});
     }
 
     function featuredSet(){
@@ -288,18 +301,33 @@
       return '/assets/og-image.png';
     }
 
-    async function upgradeImage(path){
+    async function upgradeImage(path, tag){
       try{
+        const el = document.querySelector(`a.card[href="${path}"] img.thumb`);
+        if(!el) return;
+        const already = el.getAttribute('src') || '';
+        if(!isGenericImg(already)) return; // already good
+
         const res = await fetch(path, {cache:'no-store'});
-        if(!res.ok) return;
+        if(!res.ok) throw new Error('page fetch failed');
         const html = await res.text();
         const doc = new DOMParser().parseFromString(html, 'text/html');
         const better = pickImageFromDoc(doc);
+
         if(!isGenericImg(better)) {
-          const imgEl = document.querySelector(`a.card[href="${path}"] img.thumb`);
-          if(imgEl){ imgEl.src = better; }
+          el.src = better;
+        } else {
+          // enforce tag fallback as a hard guarantee
+          const fb = TAG_FALLBACK_IMG[tag] || already;
+          el.src = fb;
         }
-      }catch(e){}
+      }catch(e){
+        // On any error, ensure tag fallback
+        const el = document.querySelector(`a.card[href="${path}"] img.thumb`);
+        if(el && isGenericImg(el.getAttribute('src')||'')){
+          el.src = TAG_FALLBACK_IMG[tag] || el.getAttribute('src');
+        }
+      }
     }
 
     async function buildFromManifest(){
@@ -335,8 +363,8 @@
               const doc = new DOMParser().parseFromString(html, 'text/html');
               const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
               const desc  = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
-              let tag     = (doc.querySelector('.tag')?.textContent || '').trim() || 'Ops';
-              if(tag.toLowerCase()==='international' || tag.toLowerCase()==='planning') tag='Expansion';
+              let tag     = (doc.querySelector('.tag')?.textContent || '').trim();
+              tag = normalizeTag(tag || 'Ops');
               const img   = pickImageFromDoc(doc);
               push({path,title,desc,img,tag});
             }catch(e){}
