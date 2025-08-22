@@ -98,3 +98,12 @@ a:hover{text-decoration:underline}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px}
 .copyright{border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
 @media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} }
+
+/* Content update: hero background image (keeps layout 1:1) */
+.hero::before,
+.hero {
+  background-image: url('/assets/hero-team-2400ai.jpg') !important;
+  background-position: center 35%;
+  background-size: cover;
+}
+
