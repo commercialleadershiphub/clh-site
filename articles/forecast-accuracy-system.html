@@ -32,6 +32,10 @@
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
     .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;text-align:left;vertical-align:top}
+    thead th{border-bottom:1px solid var(--line)}
+    tbody tr+tr td{border-top:1px solid var(--line)}
   </style>
 </head>
 <body>
@@ -69,19 +73,6 @@
       <p>Forecast accuracy is the result of a few disciplined components working together every week. You need clear stage definitions, strict hygiene rules for opportunities, explicit commit rules, a predictable cadence, a simple risk register and a scenario model that translates pipeline changes into outcomes. When this is in place, accuracy moves to ±5–10% without heroics.</p>
       <p>This article gives you a practical system you can implement in a spreadsheet and your CRM in under two weeks. It avoids heavy tooling and vague “coaching more”. You get scripts, example rules and meeting formats. Use it as your template and adapt the thresholds to your motion and segments.</p>
       <p>The goal is confidence. Sales leads know what is real, finance sees the same picture, and executives stop being surprised at quarter-end. You spend time on deal strategy and pipeline quality, not on arguing about numbers.</p>
-    </section>
-
-    <section class="section">
-      <h2>The system at a glance</h2>
-      <ul class="muted">
-        <li>Define stages with exit criteria anyone can test</li>
-        <li>Enforce hygiene rules that prevent “ghost pipeline”</li>
-        <li>Use explicit commit rules (owner, proof, date)</li>
-        <li>Run a weekly cadence with the same script</li>
-        <li>Track risks and deltas in a simple register</li>
-        <li>Model scenarios (base, upside, downside) off live pipeline</li>
-        <li>Govern with clear roles and a monthly executive review</li>
-      </ul>
     </section>
 
     <section class="section">
@@ -206,7 +197,7 @@
     <section class="section">
       <picture>
         <source srcset="/assets/articles/forecast-accuracy-system-diagram.webp" type="image/webp">
-        <img src="/assets/articles/forecast-accuracy-system-diagram.png" alt="Flow from data hygiene and stage definitions to hygiene rules, commit rules, cadence, risk register, scenario model and governance" loading="lazy" width="1400" height="840">
+        <img src="/assets/articles/forecast-accuracy-system-diagram.png" alt="Team in a forecast review meeting with whiteboard columns for Data, Commit, Cadence and Risks" loading="lazy" width="1400" height="840">
       </picture>
       <p class="muted">From clean data and stage clarity to hygiene and commit rules, into cadence, risk log, scenarios and governance.</p>
     </section>
@@ -238,17 +229,6 @@
         <li>Percent of deals with next step dated &gt;= 95%</li>
         <li>Deals in commit with economic buyer touched last 14 days</li>
         <li>Legal/security lead time vs. SLA</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Common mistakes (and fixes)</h2>
-      <ul>
-        <li><strong>Commit by feel:</strong> fix with a written commit checklist and proof requirement.</li>
-        <li><strong>Stale pipeline:</strong> fix with next-step discipline and 14-day activity rule.</li>
-        <li><strong>Stage soup:</strong> fix with exit criteria and manager enforcement.</li>
-        <li><strong>Meeting drift:</strong> fix with a strict script and timeboxes.</li>
-        <li><strong>No risk view:</strong> fix with a simple register and owners.</li>
       </ul>
     </section>
 
