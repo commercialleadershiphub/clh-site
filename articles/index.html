@@ -1,384 +1,132 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Articles — Commercial Leadership Hub</title>
-  <meta name="description" content="B2B sales leadership articles with playbooks and templates. Operating rhythm, forecast accuracy, pricing governance and more." />
-  <link rel="canonical" href="https://commercialleadershiphub.com/articles/" />
+  <meta name="description" content="All CLH playbooks and articles collected in one place. Practical, no fluff.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Articles — Commercial Leadership Hub" />
-  <meta property="og:description" content="B2B sales leadership articles with playbooks and templates. Operating rhythm, forecast accuracy, pricing governance and more." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
-  <meta property="og:url" content="https://commercialleadershiphub.com/articles/" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <!-- Canonical & Open Graph -->
+  <link rel="canonical" href="https://commercialleadershiphub.com/articles/">
+  <meta property="og:title" content="Articles — Commercial Leadership Hub">
+  <meta property="og:description" content="All CLH playbooks and articles collected in one place. Practical, no fluff.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://commercialleadershiphub.com/articles/">
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/assets/style.css">
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
     gtag('config', 'G-81TG0R550X');
   </script>
-
-  <!-- Styles (cache-busted) -->
-  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
-
-  <style>
-    .page-hero{padding:28px 0 10px}
-    .page-hero h1{margin:0}
-    .muted{color:var(--muted)}
-    .topic-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .chip{display:inline-block;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:999px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-    .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
-    .thumb{width:100%;height:180px;object-fit:cover;background:#ddd;display:block}
-    .card-body{padding:12px}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
-    .title{font-weight:700;margin:0 0 6px;line-height:1.25}
-    .excerpt{margin:0;color:var(--muted)}
-    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-    .section-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:12px}
-    .req-box{text-align:right}
-    .req-box strong{display:block;margin-bottom:6px}
-    .loading{color:var(--muted);font-style:italic}
-    @media (max-width:980px){ .thumb{height:160px} .section-head{flex-direction:column;align-items:flex-start} .req-box{text-align:left} }
-  </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+    <div class="header-inner container">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub home">
+        <span class="brand-mark" aria-hidden="true">CLH</span>
+        <span class="brand-name">Commercial Leadership Hub</span>
       </a>
       <nav class="main-nav">
         <a href="/articles/">Articles</a>
         <a href="/products.html">Products</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/#about">About</a>
+        <a href="mailto:contact@commercialleadershiphub.com" data-ga="contact">Contact</a>
+        <a class="btn" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false" data-ga="newsletter">Subscribe</a>
       </nav>
-      <!-- header-cta fjernet efter aftale -->
     </div>
   </header>
 
-  <main class="container">
-    <section class="page-hero">
-      <h1>Articles</h1>
-      <p class="muted">15–30 minute, no-fluff reads for commercial leaders and their teams.</p>
+  <main>
+    <section class="container">
+      <header class="page-header">
+        <h1>Articles</h1>
+        <p class="lede">Practical playbooks for commercial leaders. No fluff.</p>
+      </header>
 
-      <div class="section" style="margin-top:12px">
-        <div class="section-head">
-          <div>
-            <div class="topic-chips">
-              <a class="chip" href="#sales">Sales</a>
-              <a class="chip" href="#success">Success</a>
-              <a class="chip" href="#pricing">Pricing</a>
-              <a class="chip" href="#hiring">Hiring</a>
-              <a class="chip" href="#ops">Ops</a>
-              <a class="chip" href="#expansion">International</a>
-            </div>
-          </div>
-          <div class="req-box">
-            <strong>Can’t find what you need?</strong>
-            <a class="btn" href="/request.html" id="btn-request-content">Request content →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured (manual) -->
-    <section class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Featured</h2>
-      <div class="grid">
-        <a class="card" data-href="/articles/forecast-accuracy-system.html" href="/articles/forecast-accuracy-system.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop" alt="Forecasting" onerror="this.style.display='none'" loading="lazy">
+      <!-- Cards -->
+      <div class="articles-grid">
+        <!-- Operating Rhythm -->
+        <article class="card">
+          <a href="/articles/operating-rhythm.html" class="card-media" aria-label="Read Operating Rhythm">
+            <picture>
+              <source srcset="/assets/articles/operating-rhythm-hero.webp" type="image/webp">
+              <img src="/assets/articles/operating-rhythm-hero.png" alt="Operating rhythm hero" width="1600" height="900" loading="lazy">
+            </picture>
+          </a>
           <div class="card-body">
-            <span class="tag">Ops</span>
-            <h3 class="title">Forecast Accuracy System</h3>
-            <p class="excerpt">Weekly hygiene, cadence and dashboards that move accuracy to ±5–8%.</p>
+            <h2 class="card-title"><a href="/articles/operating-rhythm.html">Operating Rhythm</a></h2>
+            <p class="card-text">A simple weekly to quarterly cadence that keeps pipeline, execution, and learning moving in sync.</p>
+            <p class="card-meta"><a class="btn" href="/articles/operating-rhythm.html">Read</a></p>
           </div>
-        </a>
-        <a class="card" data-href="/articles/meddicc-qualification-checklist.html" href="/articles/meddicc-qualification-checklist.html">
-          <img class="thumb" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop" alt="MEDDICC" onerror="this.style.display='none'" loading="lazy">
+        </article>
+
+        <!-- Headcount Planning -->
+        <article class="card">
+          <a href="/articles/headcount-planning.html" class="card-media" aria-label="Read Headcount Planning">
+            <picture>
+              <source srcset="/assets/articles/headcount-planning-hero.webp" type="image/webp">
+              <img src="/assets/articles/headcount-planning-hero.png" alt="Headcount planning hero" width="1600" height="900" loading="lazy">
+            </picture>
+          </a>
           <div class="card-body">
-            <span class="tag">Sales</span>
-            <h3 class="title">MEDDICC Qualification Checklist</h3>
-            <p class="excerpt">Plain-English prompts, stage exits and a simple R/A/G scoring model.</p>
+            <h2 class="card-title"><a href="/articles/headcount-planning.html">Headcount Planning</a></h2>
+            <p class="card-text">Plan roles, timing, and ramp so hiring supports growth without killing runway.</p>
+            <p class="card-meta"><a class="btn" href="/articles/headcount-planning.html">Read</a></p>
           </div>
-        </a>
-        <a class="card" data-href="/articles/pricing-and-discount-governance.html" href="/articles/pricing-and-discount-governance.html">
-          <img class="thumb" src="/assets/international-expansion.jpg" alt="International expansion playbook" onerror="this.style.display='none'" loading="lazy">
+        </article>
+
+        <!-- International Expansion (new card) -->
+        <article class="card">
+          <a href="/articles/international-expansion.html" class="card-media" aria-label="Read International Expansion">
+            <picture>
+              <source srcset="/assets/articles/international-expansion-hero.webp" type="image/webp">
+              <img src="/assets/articles/international-expansion-hero.png" alt="International expansion hero" width="1600" height="900" loading="lazy">
+            </picture>
+          </a>
           <div class="card-body">
-            <span class="tag">Pricing</span>
-            <h3 class="title">Pricing &amp; Discount Governance</h3>
-            <p class="excerpt">Guardrails and deal-desk flow that protect margin without slowing deals.</p>
+            <h2 class="card-title"><a href="/articles/international-expansion.html">International Expansion</a></h2>
+            <p class="card-text">Decide where to play, pilot fast, localize what matters, then scale with control.</p>
+            <p class="card-meta"><a class="btn" href="/articles/international-expansion.html">Read</a></p>
           </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Buckets -->
-    <section id="sales" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Sales</h2>
-      <div class="loading" id="loading-sales">Loading…</div>
-      <div class="grid" id="grid-sales"></div>
-    </section>
-
-    <section id="success" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Success</h2>
-      <div class="loading" id="loading-success">Loading…</div>
-      <div class="grid" id="grid-success"></div>
-    </section>
-
-    <section id="pricing" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Pricing</h2>
-      <div class="loading" id="loading-pricing">Loading…</div>
-      <div class="grid" id="grid-pricing"></div>
-    </section>
-
-    <section id="hiring" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Hiring</h2>
-      <div class="loading" id="loading-hiring">Loading…</div>
-      <div class="grid" id="grid-hiring"></div>
-    </section>
-
-    <section id="ops" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">Ops</h2>
-      <div class="loading" id="loading-ops">Loading…</div>
-      <div class="grid" id="grid-ops"></div>
-    </section>
-
-    <section id="expansion" class="section" style="margin-top:16px">
-      <h2 style="margin:0 0 8px">International</h2>
-      <div class="loading" id="loading-expansion">Loading…</div>
-      <div class="grid" id="grid-expansion"></div>
-    </section>
-
-    <!-- Newsletter CTA -->
-    <section class="section" id="cta" style="margin:16px 0;text-align:center">
-      <h2 style="margin:0 0 6px">Stay sharp.</h2>
-      <p class="muted">One practical email when we publish something new.</p>
-      <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
-        <a class="btn" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false" id="btn-subscribe-articles">Subscribe</a>
-        <a class="btn ghost" href="/">Back to homepage</a>
+        </article>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand">
-          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
-        </div>
-        <p class="muted">Practical tools for commercial leaders.</p>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="/" class="brand">
+          <span class="brand-mark" aria-hidden="true">CLH</span>
+          <span class="brand-name">Commercial Leadership Hub</span>
+        </a>
+        <p class="muted">Practical playbooks for commercial leaders.</p>
       </div>
-      <div>
-        <h4 class="h4">Product</h4>
-        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
-      </div>
-      <div>
-        <h4 class="h4">Company</h4>
-        <ul class="muted">
-          <li><a href="/#contact">About</a></li>
-          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
-          <li><a href="/privacy.html">Privacy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="h4">Follow</h4>
-        <ul class="muted">
-          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container copyright xs muted">
-      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+      <nav class="footer-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="mailto:contact@commercialleadershiphub.com" data-ga="contact">Contact</a>
+        <a href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false" data-ga="newsletter">Newsletter</a>
+        <a href="https://www.linkedin.com/company/commercial-leadership-hub/" rel="noopener" target="_blank" data-ga="linkedin">LinkedIn</a>
+      </nav>
     </div>
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // GA4 clicks
-    const beehiiv = "https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false";
-    function ev(n,d){ try{ gtag('event', n, d||{}); }catch(e){} }
-    document.getElementById('btn-subscribe-articles')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
-    document.getElementById('link-newsletter-footer')?.addEventListener('click', ()=>ev('click_join_newsletter',{link_url: beehiiv}));
-    document.getElementById('link-linkedin')?.addEventListener('click', ()=>ev('click_linkedin',{link_url:'https://www.linkedin.com/company/commercialleadershiphub'}));
-    document.getElementById('link-contact')?.addEventListener('click', ()=>ev('click_contact_email',{email:'contact@commercialleadershiphub.com'}));
-    document.getElementById('btn-request-content')?.addEventListener('click', ()=>ev('click_request_content',{source:'articles_index'}));
-
-    // ---- Render from manifest.json + sitemap.xml (merged) ----
-    const grids = {
-      Sales: document.getElementById('grid-sales'),
-      Success: document.getElementById('grid-success'),
-      Pricing: document.getElementById('grid-pricing'),
-      Hiring: document.getElementById('grid-hiring'),
-      Ops: document.getElementById('grid-ops'),
-      Expansion: document.getElementById('grid-expansion') // shown as "International"
-    };
-    const loaders = ['loading-sales','loading-success','loading-pricing','loading-hiring','loading-ops','loading-expansion'];
-    function clearLoaders(){ loaders.forEach(id=>{ const el=document.getElementById(id); if(el) el.remove(); }); }
-
-    // Tag-specific fallback images (Unsplash)
-    const TAG_FALLBACK_IMG = {
-      Sales: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1400&auto=format&fit=crop",
-      Success: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop",
-      Pricing: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
-      Hiring: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
-      Ops: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
-      Expansion: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=1400&auto=format&fit=crop"
-    };
-
-    function isGenericImg(src){ return !src || src.includes('/assets/og-image'); }
-
-    // Normalize tags to known buckets
-    function normalizeTag(v){
-      if(!v) return 'Ops';
-      const t = (''+v).trim().toLowerCase();
-      if(['sales'].includes(t)) return 'Sales';
-      if(['success','customer success','cs'].includes(t)) return 'Success';
-      if(['pricing','price'].includes(t)) return 'Pricing';
-      if(['hiring','recruiting','talent'].includes(t)) return 'Hiring';
-      if(['ops','operations','revops'].includes(t)) return 'Ops';
-      if(['expansion','international','planning'].includes(t)) return 'Expansion';
-      return 'Ops';
-    }
-
-    function cardHTML(it){
-      const tag = normalizeTag(it.tag);
-      const tagLabel = tag==='Expansion' ? 'International' : tag;
-      let img = it.img || 'https://commercialleadershiphub.com/assets/og-image.png';
-      if (isGenericImg(img)) img = TAG_FALLBACK_IMG[tag] || img;
-      const desc = it.desc || '';
-      return `
-        <a class="card" href="${it.path}" data-href="${it.path}">
-          <img class="thumb" src="${img}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <div class="card-body">
-            <span class="tag">${tagLabel}</span>
-            <h3 class="title">${it.title}</h3>
-            <p class="excerpt">${desc}</p>
-          </div>
-        </a>`;
-    }
-
-    const added = new Set(); // paths already rendered
-    function push(it){
-      if(!it || !it.path || added.has(it.path)) return;
-      it.tag = normalizeTag(it.tag);
-      const g = grids[it.tag] || grids.Ops;
-      g.insertAdjacentHTML('beforeend', cardHTML(it));
-      added.add(it.path);
-      // Try to upgrade from article HTML; if still generic afterwards, enforce tag fallback
-      upgradeImage(it.path, it.tag).catch(()=>{});
-    }
-
-    function featuredSet(){
-      return new Set(Array.from(document.querySelectorAll('.card[data-href]')).map(a=>a.getAttribute('data-href')));
-    }
-
-    function pickImageFromDoc(doc){
-      // 1) Prefer non-generic og:image
-      const og = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
-      const ogIsGeneric = isGenericImg(og);
-      if(og && !ogIsGeneric) return og;
-
-      // 2) Likely hero images in content
-      const selectors = [
-        'img.hero','img.thumb','.article-hero img','figure img',
-        'img[src*="images.unsplash.com"]','main img','article img'
-      ];
-      for(const sel of selectors){
-        const el = doc.querySelector(sel);
-        if(el && el.getAttribute('src')) return el.getAttribute('src');
-      }
-      // 3) Fallback
-      return '/assets/og-image.png';
-    }
-
-    async function upgradeImage(path, tag){
-      try{
-        const el = document.querySelector(`a.card[href="${path}"] img.thumb`);
-        if(!el) return;
-        const already = el.getAttribute('src') || '';
-        if(!isGenericImg(already)) return; // already good
-
-        const res = await fetch(path, {cache:'no-store'});
-        if(!res.ok) throw new Error('page fetch failed');
-        const html = await res.text();
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        const better = pickImageFromDoc(doc);
-
-        if(!isGenericImg(better)) {
-          el.src = better;
-        } else {
-          // enforce tag fallback as a hard guarantee
-          const fb = TAG_FALLBACK_IMG[tag] || already;
-          el.src = fb;
-        }
-      }catch(e){
-        // On any error, ensure tag fallback
-        const el = document.querySelector(`a.card[href="${path}"] img.thumb`);
-        if(el && isGenericImg(el.getAttribute('src')||'')){
-          el.src = TAG_FALLBACK_IMG[tag] || el.getAttribute('src');
-        }
-      }
-    }
-
-    async function buildFromManifest(){
-      try{
-        const res = await fetch('/articles/manifest.json?t=' + Date.now(), {cache:'no-store'});
-        if(!res.ok) return;
-        const list = await res.json();
-        const featured = featuredSet();
-        list.forEach(it => { if(!featured.has(it.path)) push(it); });
-      }catch(e){}
-    }
-
-    async function buildFromSitemap(){
-      try{
-        const sm = await fetch('/sitemap.xml?t=' + Date.now(), {cache:'no-store'});
-        if(!sm.ok) return;
-        const xml = new DOMParser().parseFromString(await sm.text(),'application/xml');
-        const locs = Array.from(xml.querySelectorAll('url > loc')).map(n=>n.textContent.trim());
-        const urls = locs.filter(u => (u.includes('/articles/') && !u.endsWith('/articles/') && !u.endsWith('/articles/index.html')));
-
-        const featured = featuredSet();
-        const queue = urls.slice();
-        const concurrency = 6;
-
-        async function worker(){
-          while(queue.length){
-            const url = queue.shift();
-            const path = new URL(url).pathname;
-            if(featured.has(path) || added.has(path)) continue;
-            try{
-              const res = await fetch(path, {cache:'no-store'});
-              const html = await res.text();
-              const doc = new DOMParser().parseFromString(html, 'text/html');
-              const title = (doc.querySelector('h1')?.textContent || doc.querySelector('title')?.textContent || 'Untitled').replace(' — Commercial Leadership Hub','').trim();
-              const desc  = (doc.querySelector('meta[name="description"]')?.getAttribute('content') || doc.querySelector('p.muted')?.textContent || '').trim();
-              let tag     = (doc.querySelector('.tag')?.textContent || '').trim();
-              tag = normalizeTag(tag || 'Ops');
-              const img   = pickImageFromDoc(doc);
-              push({path,title,desc,img,tag});
-            }catch(e){}
-          }
-        }
-        await Promise.all(Array.from({length:concurrency}, worker));
-      }catch(e){}
-    }
-
-    (async function init(){
-      await buildFromManifest(); // preferred: guarantees images + completeness if present
-      await buildFromSitemap();  // fill gaps if sitemap has extras
-      clearLoaders();
-    })();
+    // Minimal GA4 event bindings; safe if gtag is absent
+    const safeEvent = (name, params={}) => { try { window.gtag && gtag('event', name, params); } catch(e){} };
+    document.querySelectorAll('[data-ga="newsletter"]').forEach(el => el.addEventListener('click', () => safeEvent('click_join_newsletter')));
+    document.querySelectorAll('[data-ga="contact"]').forEach(el => el.addEventListener('click', () => safeEvent('click_contact_email', { email: 'contact@commercialleadershiphub.com' })));
+    document.querySelectorAll('[data-ga="linkedin"]').forEach(el => el.addEventListener('click', () => safeEvent('click_linkedin')));
   </script>
 </body>
 </html>
