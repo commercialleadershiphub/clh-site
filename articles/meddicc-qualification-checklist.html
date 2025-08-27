@@ -37,19 +37,23 @@
     thead th{border-bottom:1px solid var(--line)}
     tbody tr+tr td{border-top:1px solid var(--line)}
     .xs{font-size:12px}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
@@ -58,10 +62,15 @@
   </header>
 
   <main class="container">
-    <div class="hero">
-      <span class="tag">Sales</span>
+
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Sales Process</span>
       <h1>MEDDICC Qualification Checklist</h1>
       <p class="muted">A practical, CRM-ready way to run MEDDICC that improves win rate and forecast accuracy.</p>
+    </div>
+
+    <div class="hero">
       <picture>
         <source srcset="/assets/articles/meddicc-qualification-checklist-hero.webp" type="image/webp">
         <img src="/assets/articles/meddicc-qualification-checklist-hero.png" alt="Sales team reviewing a MEDDICC board with Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion and Competition" loading="eager" width="1400" height="840">
@@ -252,7 +261,6 @@
 
     <section class="section">
       <h2>Worked examples (detailed)</h2>
-
       <h3>1) Mid-market SaaS (ACV $35k)</h3>
       <p><strong>Situation:</strong> Wins stall after demo; deals slip because EB is absent and criteria are fuzzy.</p>
       <ul>
