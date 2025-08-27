@@ -374,10 +374,63 @@
       }catch(e){}
     }
 
+    // ---------- NEW: guarantee branded hero image for any missing/broken/generic thumbs ----------
+    function slugFromPath(p){
+      try{
+        const s = (p||'').split('/').filter(Boolean);
+        const last = s[s.length-1] || '';
+        return last.replace('.html','').replace('/','');
+      }catch(e){ return ''; }
+    }
+    function tagKeyFromCard(card){
+      const t = (card.querySelector('.tag')?.textContent || 'Ops').trim();
+      return t === 'International' ? 'Expansion' : normalizeTag(t);
+    }
+    function setSrcWithChain(img, sources, ultimate){
+      let i = 0;
+      img.style.display = 'block'; // undo any inline onerror hiding
+      function next(){
+        if(i < sources.length){
+          const src = sources[i++];
+          img.onerror = next;
+          img.src = src;
+        }else{
+          img.onerror = null;
+          if(ultimate) img.src = ultimate;
+        }
+      }
+      next();
+    }
+    function needsFix(img){
+      const src = img.getAttribute('src') || '';
+      const hidden = (img.style.display === 'none');
+      const broken = img.complete && img.naturalWidth === 0;
+      return hidden || broken || isGenericImg(src);
+    }
+    function ensureThumb(img){
+      const card = img.closest('a.card');
+      if(!card) return;
+      const path = card.getAttribute('href') || card.getAttribute('data-href') || '';
+      const slug = slugFromPath(path);
+      const tagKey = tagKeyFromCard(card);
+      const heroBase = `/assets/articles/${slug}-hero`;
+      const fallTag = TAG_FALLBACK_IMG[tagKey];
+      setSrcWithChain(img, [`${heroBase}.webp`, `${heroBase}.png`], fallTag);
+    }
+    function ensureAllThumbs(){
+      document.querySelectorAll('img.thumb').forEach(img=>{
+        // attach our own error handler to override inline "display:none"
+        img.addEventListener('error', () => ensureThumb(img), {once:false});
+        if(needsFix(img)) ensureThumb(img);
+      });
+    }
+    // ---------------------------------------------------------------------------------------------
+
     (async function init(){
       await buildFromManifest(); // preferred: guarantees images + completeness if present
       await buildFromSitemap();  // fill gaps if sitemap has extras
       clearLoaders();
+      ensureAllThumbs();         // NEW: finalize thumbs so none are missing
     })();
   </script>
 </body>
