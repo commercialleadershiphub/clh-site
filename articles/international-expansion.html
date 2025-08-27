@@ -32,9 +32,13 @@
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
     .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
@@ -53,10 +57,15 @@
   </header>
 
   <main class="container">
-    <div class="hero">
+
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Strategy</span>
       <h1>International Expansion</h1>
       <p class="muted">Pick markets, sequence entry, localize offers, and scale without waste.</p>
+    </div>
+
+    <div class="hero">
       <picture>
         <source srcset="/assets/articles/international-expansion-hero.webp" type="image/webp">
         <img src="/assets/articles/international-expansion-hero.png" alt="Abstract world grid representing global market entry" loading="eager" width="1400" height="840">
@@ -70,6 +79,7 @@
       <p>The focus is on repeatability. You can run this process for one country or a region. You can also use it to decide <em>not</em> to expand yet. The goal is to ship a plan that finance trusts and the team understands. No heavy systems needed — a spreadsheet and a six-page brief are enough.</p>
       <p>Expect concrete examples: a SaaS vendor into DACH with a partner-first motion; a device company into the Nordics using a distributor; and a UK launch where pricing and data residency block adoption until fixed. Use these patterns and adjust to your context.</p>
       <p>If you do this well, you will enter fewer markets but win more of them. You will spend less on vanity and more on what creates adoption: segment focus, right entry mode, strong local proof, and fast feedback loops.</p>
+      <p>Ultimately, international expansion is a high-stakes bet. It can fuel massive growth or it can burn through capital with little to show. By following a disciplined framework and setting clear success criteria up front, you replace guesswork with informed choices. Instead of simply pouring money into a new region and hoping for traction, you'll know exactly what conditions signal success — and when to pull the plug if needed. In short, this playbook helps you expand with eyes wide open, so you can win in new markets without costly missteps.</p>
     </section>
 
     <section class="section">
