@@ -32,19 +32,23 @@
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
     .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
@@ -53,10 +57,15 @@
   </header>
 
   <main class="container">
-    <div class="hero">
-      <span class="tag">Success</span>
+
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Onboarding</span>
       <h1>Customer Onboarding Blueprint</h1>
       <p class="muted">Turn promises into measurable value with a cross-functional, outcome-driven 90-day plan.</p>
+    </div>
+
+    <div class="hero">
       <picture>
         <source srcset="/assets/articles/customer-onboarding-blueprint-hero.webp" type="image/webp">
         <img src="/assets/articles/customer-onboarding-blueprint-hero.png" alt="Baton handoff between two colleagues symbolising a clean sales-to-success transition" loading="eager" width="1400" height="840">
@@ -67,6 +76,8 @@
       <h2>Introduction</h2>
       <p>Winning a deal is not the finish line. It is the starting gun for the 90 days that decide whether the customer becomes a reference, an expansion account, or an at-risk logo. Those 90 days are also where internal relationships either click — or fracture. Without clarity, Sales is accused of “throwing deals over the fence”, Success inherits unrealistic promises, Support gets blamed for delays, and Product hears about gaps second-hand. That fuels an “us vs. them” culture that slows delivery and erodes trust.</p>
       <p>Leaders fix this by making onboarding a <strong>cross-functional, measured, and predictable</strong> process: clear roles, documented promises, a visible 90-day plan, and a cadence of check-ins. Predictability improves preparation; explicit outcomes shorten time-to-value (TTV), strengthen renewals, and make expansion credible.</p>
+      <p>The first month sets the tone for the entire relationship. Economic buyers and key users are watching closely to see if your team delivers on the promises made in sales. Every touchpoint—kickoff meetings, training sessions, support interactions—either builds confidence or erodes it. A smooth onboarding gives customers quick wins that validate their decision to buy; a rocky start makes them second-guess the deal.</p>
+      <p>Leading teams treat onboarding with the same rigor as closing a big deal. They assign clear owners for each step, set measurable milestones, and communicate proactively so nothing falls through the cracks. When done right, onboarding becomes a competitive asset: time-to-value shrinks, early adoption is higher, and customers begin to view your team as a long-term partner. Early successes not only reduce churn risk, they also lay the foundation for enthusiastic advocates and future expansion.</p>
     </section>
 
     <section class="section">
@@ -123,7 +134,7 @@
         <li>Access + integrations configured; role-based training (recorded).</li>
         <li>Reach first <em>time-to-first-value</em> event (e.g., first automated report to Finance).</li>
         <li><strong>Weekly check-in script:</strong> “One outcome this week, any blockers, and one commitment per side.”</li>
-        <li><strong>Example blocker:</strong> Finance missed training → run a focused 20-min session; record and send.</li>
+        <li><strong>Example blocker:</strong> The Finance team missed the main training session, leaving them unprepared. The CSM quickly arranges a focused 20-minute makeup training just for Finance, records it, and shares the recording so they can get up to speed.</li>
       </ul>
 
       <h4>Phase 2 (Days 31–60): Adoption &amp; usage</h4>
