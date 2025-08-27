@@ -32,6 +32,9 @@
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
     .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
@@ -53,10 +56,15 @@
   </header>
 
   <main class="container">
-    <div class="hero">
-      <span class="tag">Ops</span>
+
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Planning</span>
       <h1>Headcount Planning</h1>
       <p class="muted">Plan roles, ramps and run rate so targets and teams stay in sync.</p>
+    </div>
+
+    <div class="hero">
       <picture>
         <source srcset="/assets/articles/headcount-planning-hero.webp" type="image/webp">
         <img src="/assets/articles/headcount-planning-hero.png" alt="Headcount planning framework from demand to governance" loading="eager" width="1600" height="900">
