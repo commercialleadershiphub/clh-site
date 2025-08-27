@@ -4,106 +4,442 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pricing & Discount Governance — Commercial Leadership Hub</title>
-  <meta name="description" content="Guardrails and deal‑desk flow that protect margin without slowing deals." />
+  <meta name="description" content="A practical governance system for pricing and discounts: clear floors, approval bands, give-get rules, legal guardrails, and a weekly pricing council — with scripts, matrices and worked examples." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/pricing-and-discount-governance.html" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Pricing & Discount Governance — Commercial Leadership Hub" />
-  <meta property="og:description" content="Guardrails and deal‑desk flow that protect margin without slowing deals." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:description" content="Stop discount chaos. Set floors and approval bands, use give-get trades, and run a weekly pricing council to protect margin and speed deals." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/pricing-and-discount-governance-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/pricing-and-discount-governance.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TG0R550X');
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
   <style>
+    .hero{margin:16px 0}
+    .hero img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:8px}
-    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    table{width:100%;border-collapse:separate;border-spacing:0 6px}
-    th,td{padding:8px 10px;border:1px solid var(--line);background:var(--surface);}
-    th{background:var(--canvas)}
-    .callout{border-left:3px solid #111827;padding-left:12px}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;text-align:left;vertical-align:top}
+    thead th{border-bottom:1px solid var(--line)}
+    tbody tr+tr td{border-top:1px solid var(--line)}
     .xs{font-size:12px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-      <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
-    </a>
-    <nav class="main-nav">
-      <a href="/#services">Services</a>
-      <a href="/#projects">Projects</a>
-      <a href="/#about">About</a>
-      <a href="/articles/">Articles</a>
-    </nav>
-    <div class="header-cta">
-      <a class="btn ghost" href="/articles/">Back to Articles</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/#services">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/">Back to Articles</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container" style="margin:16px 0">
-  <span class="tag">Pricing</span>
-  <h1>Pricing & Discount Governance</h1>
-  <p class="muted">Guardrails and deal‑desk flow that protect margin without slowing deals.</p>
-
-
-<section class="section">
-  <h2>Principles</h2>
-  <ul>
-    <li>Simple bands by segment and term</li>
-    <li>Give–get framework (value for every concession)</li>
-    <li>Fast approvals with clear ladders</li>
-    <li>No surprises at renewal</li>
-  </ul>
-</section>
-<section class="section">
-  <h2>Policy</h2>
-  <table>
-    <thead><tr><th>Segment</th><th>List discount</th><th>Max AE</th><th>Manager</th><th>VP</th><th>CFO</th></tr></thead>
-    <tbody>
-      <tr><td>SMB</td><td>0–15%</td><td>10%</td><td>15%</td><td>20%</td><td>—</td></tr>
-      <tr><td>Mid‑market</td><td>0–20%</td><td>12%</td><td>18%</td><td>25%</td><td>30%+</td></tr>
-      <tr><td>Enterprise</td><td>0–25%</td><td>15%</td><td>20%</td><td>28%</td><td>35%+</td></tr>
-    </tbody>
-  </table>
-  <p class="muted">Anything above VP requires CFO approval + give–get items.</p>
-</section>
-<section class="section">
-  <h2>Give–get menu</h2>
-  <div class="grid2">
-    <div>
-      <h3>Customer gets ↓</h3>
-      <ul><li>Extra discount</li><li>Flex billing</li><li>Pilot credits</li></ul>
+  <main class="container">
+    <div class="hero">
+      <span class="tag">Pricing</span>
+      <h1>Pricing & Discount Governance</h1>
+      <p class="muted">Protect margin, keep deals moving, and stop end-of-quarter chaos.</p>
+      <picture>
+        <source srcset="/assets/articles/pricing-and-discount-governance-hero.webp" type="image/webp">
+        <img src="/assets/articles/pricing-and-discount-governance-hero.png" alt="Leadership team reviewing a pricing board showing price floors, discount bands and give-get trades" loading="eager" width="1400" height="840">
+      </picture>
     </div>
-    <div>
-      <h3>We get ↑</h3>
-      <ul><li>2‑year term / multi‑year</li><li>Case study + logo</li><li>Pre‑paid annually</li></ul>
+
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Discounts are not the problem — unmanaged discounts are. In many teams the loudest buyer or the most creative rep dictates price. Floors are unknown, approvals are ad hoc, and every quarter-end becomes a scramble where margin quietly disappears. The board asks why gross margin missed; the team blames “market pressure”.</p>
+      <p>A good governance system removes drama. You define floors and approval bands in advance, set clear give-get rules, and publish legal guardrails for non-standard terms. Reps know what they can trade and for what. Managers inspect decisions with proof, not opinion. Finance and Legal are involved at the right moments, not as last-minute blockers.</p>
+      <p>Price should be anchored in value and segmentation. The same product sold to different segments under different conditions should not carry the same realized price. Governance turns this from a hidden tribal rule into visible price fences: region, segment, volume, term, and channel. With fences in place, you can allow flexibility without losing control.</p>
+      <p>Approvals must be fast or they become a tax on revenue. That means a simple matrix, documented SLAs, and a small pricing council to handle true exceptions. If a deal meets the criteria, approval is a formality. If it doesn’t, the rep knows what they need to trade to earn it — longer term, prepay, a reference, expanded scope.</p>
+      <p>Legal risk is part of pricing. Concessions like MFN, unlimited liability or broad termination rights are price in disguise. The governance system prices those risks with predefined fallbacks and requires a higher approval tier. When Legal and Sales read from the same playbook, cycle time drops and “legal surprise” slips go away.</p>
+      <p>Measurement closes the loop: realized discount, price variance, approval cycle time, and attachment rate of give-gets. You want fewer big, late exceptions and more disciplined trades that preserve value. Over a few cycles you’ll see margin stabilize, deal velocity improve, and quarter-end become boring — in a good way.</p>
+      <p>This article gives you a complete, light-weight system you can implement in your current CRM and contract process in two weeks: definitions, approval matrix, give-get menu, legal guardrails, inspection scripts, cadence, and dashboards — plus detailed worked examples across SMB, mid-market, enterprise and channel motions.</p>
+    </section>
+
+    <section class="section">
+      <h2>At a glance</h2>
+      <ul class="muted">
+        <li>Publish floors: <em>List</em>, <em>Floor</em>, <em>Walk-away</em> per segment and tier.</li>
+        <li>Approval bands with SLAs; only true exceptions reach the council.</li>
+        <li>Give-get menu: every concession trades for value (term, prepay, scope, reference).</li>
+        <li>Legal guardrails: pre-approved fallbacks; price risky clauses.</li>
+        <li>Single source of truth: CRM fields + contract templates.</li>
+        <li>Weekly pricing council + month-end review of exceptions.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>What good looks like</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Good looks like</th>
+            <th>Proof / Artifact</th>
+            <th>System fields</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Floors & fences</td>
+            <td>List, Floor, Walk-away by segment, region, tier, term.</td>
+            <td>Price card; fence table published.</td>
+            <td><span class="mono">price_floor</span>, <span class="mono">walkaway_pct</span>, <span class="mono">segment</span>, <span class="mono">term_months</span></td>
+          </tr>
+          <tr>
+            <td>Approval bands</td>
+            <td>Simple matrix with SLAs; auto-approval under thresholds.</td>
+            <td>Matrix doc; audit log of approvals.</td>
+            <td><span class="mono">discount_pct</span>, <span class="mono">approval_level</span>, <span class="mono">approval_dt</span></td>
+          </tr>
+          <tr>
+            <td>Give-get</td>
+            <td>Mandatory trade for any discount beyond manager band.</td>
+            <td>Deal summary lists Get(s) and owners.</td>
+            <td><span class="mono">trade_term</span>, <span class="mono">prepay</span>, <span class="mono">ref_case</span></td>
+          </tr>
+          <tr>
+            <td>Legal guardrails</td>
+            <td>Pre-approved fallbacks; redline checklist.</td>
+            <td>Clause library; SoW templates.</td>
+            <td><span class="mono">risk_flag</span>, <span class="mono">mfn</span>, <span class="mono">liability_cap</span></td>
+          </tr>
+          <tr>
+            <td>Inspection</td>
+            <td>Evidence-based review; pricing math visible.</td>
+            <td>Deal review sheet; pricing waterfall.</td>
+            <td><span class="mono">price_waterfall_ok</span>, <span class="mono">give_get_ok</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Approval matrix (example)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Discount vs List</th>
+            <th>Who approves</th>
+            <th>Give-get required</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0–5%</td>
+            <td>AE</td>
+            <td>No</td>
+            <td>Within fence; auto in CRM</td>
+          </tr>
+          <tr>
+            <td>6–10%</td>
+            <td>Manager</td>
+            <td>Yes</td>
+            <td>Any one: 24-month term, prepay, or 2× reference</td>
+          </tr>
+          <tr>
+            <td>11–15%</td>
+            <td>Director</td>
+            <td>Yes</td>
+            <td>Two trades, one must be term ≥24m or scope↑</td>
+          </tr>
+          <tr>
+            <td>16–20%</td>
+            <td>VP Sales + Finance</td>
+            <td>Yes</td>
+            <td>Risk review; price waterfall attached</td>
+          </tr>
+          <tr>
+            <td>&gt;20% or below Floor</td>
+            <td>Pricing Council (CRO, Finance, Legal)</td>
+            <td>Yes</td>
+            <td>Exception memo; council only Wed/Fri</td>
+          </tr>
+          <tr>
+            <td>Risky terms (MFN, unlimited liability, broad termination)</td>
+            <td>Legal + Council</td>
+            <td>Yes</td>
+            <td>Priced as additional discount for approval level</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted xs">Tune thresholds by segment and product. The point is simplicity and speed, not bureaucracy.</p>
+    </section>
+
+    <section class="section">
+      <h2>Give-get menu (trade rules)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Give (concession)</th>
+            <th>Get (value you receive)</th>
+            <th>Proof</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Extra discount</td>
+            <td>24–36 month term <em>and</em> prepay</td>
+            <td>Order form term; prepay clause</td>
+          </tr>
+          <tr>
+            <td>Extended pilot</td>
+            <td>Paid pilot or signed rollout plan with date</td>
+            <td>SoW; mutual plan</td>
+          </tr>
+          <tr>
+            <td>Non-standard terms</td>
+            <td>Case study + 2 live references + upsell commit</td>
+            <td>Addendum; ref schedule</td>
+          </tr>
+          <tr>
+            <td>Partner margin increase</td>
+            <td>Volume commitment or multi-year resale</td>
+            <td>Partner addendum</td>
+          </tr>
+          <tr>
+            <td>Feature roadmap ask</td>
+            <td>Co-funding or tier upgrade now</td>
+            <td>Order form</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Playbook: implement governance</h2>
+
+      <h3>1) Set floors and fences</h3>
+      <p>Publish List, Floor and Walk-away per segment, tier and region. Add fences for volume, term and channel. Make the card visible to all managers and in the quote tool.</p>
+
+      <h3>2) Ship the approval matrix</h3>
+      <p>Keep it to five bands. Add SLAs (e.g., Manager 4 business hours, Director 1 day, Council Wed/Fri only). Auto-route approvals from CRM and log outcomes.</p>
+
+      <h3>3) Enforce give-get</h3>
+      <p>No discount beyond the manager band without a trade. Use the menu and record the Get as a field in CRM and a line in the order form.</p>
+
+      <h3>4) Guardrails for risky clauses</h3>
+      <p>Publish a redline checklist with pre-approved fallbacks (liability, termination, MFN, data). Flag risky clauses as additional “price” requiring a higher approval band.</p>
+
+      <h3>5) Inspection script (weekly)</h3>
+      <ul>
+        <li>“Show list vs net and the price waterfall.”</li>
+        <li>“Which Get are we trading for this Give?”</li>
+        <li>“What clause will Legal push on? What’s our fallback?”</li>
+        <li>“If we lost this tomorrow, what would the post-mortem say about price?”</li>
+      </ul>
+
+      <h3>6) Cadence & council</h3>
+      <p>Run a 30-min weekly pricing council: review exceptions, trends by segment, and stuck approvals. Publish decisions and update the card monthly.</p>
+    </section>
+
+    <section class="section">
+      <h2>Cadence (overview)</h2>
+      <p class="muted">Keep it predictable. Same days, same script, same artifacts.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>When</th>
+            <th>Audience</th>
+            <th>Focus</th>
+            <th>Artifacts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Weekly</td>
+            <td>Pricing council (Sales, Finance, Legal)</td>
+            <td>Exceptions, approval SLAs, leakage trends</td>
+            <td>Exception log, price waterfall dashboard</td>
+          </tr>
+          <tr>
+            <td>Bi-weekly</td>
+            <td>Managers</td>
+            <td>Deal inspection; give-get compliance</td>
+            <td>Deal review sheet, approval audit</td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td>Exec</td>
+            <td>Floor updates, segment strategy, risks</td>
+            <td>Price card vNext, legal heatmap</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/pricing-and-discount-governance-diagram.webp" type="image/webp">
+        <img src="/assets/articles/pricing-and-discount-governance-diagram.png" alt="Situational diagram: team in a pricing council reviewing approval matrix and give-get trades on a whiteboard" loading="lazy" width="1400" height="840">
+      </picture>
+      <p class="muted">Simple rules, fast approvals, and visible trades keep prices healthy without slowing deals.</p>
+    </section>
+
+    <section class="section">
+      <h2>Worked examples (detailed)</h2>
+
+      <h3>1) Mid-market SaaS — 12% discount ask</h3>
+      <p><strong>Situation:</strong> Prospect wants 12% off list for a 12-month term. Procurement references a cheaper tool.</p>
+      <ul>
+        <li><strong>Gaps:</strong> Term short, no Get proposed, criteria not tied to value.</li>
+        <li><strong>Fix:</strong> Offer 10% with 24-month term + prepay. Add value proof (cycle time −15%). If 12% is insisted, require both prepay and a public case study.</li>
+        <li><strong>Proof:</strong> Value model; order form with 24m term and prepay clause; case study line item.</li>
+        <li><strong>Outcome:</strong> Net 10% discount, 2-year lock-in, cash up-front.</li>
+      </ul>
+
+      <h3>2) Enterprise — MFN + 25% demand</h3>
+      <p><strong>Situation:</strong> Procurement asks for 25% and Most-Favored-Nation clause.</p>
+      <ul>
+        <li><strong>Gaps:</strong> Risky clause priced at additional discount; MFN is red-lined.</li>
+        <li><strong>Fix:</strong> Decline MFN; offer volume ramp and term: 15% year 1, 10% year 2–3 with expansion commit.</li>
+        <li><strong>Proof:</strong> Clause fallback; expansion schedule attached to order form.</li>
+        <li><strong>Outcome:</strong> Realized discount blended at 12%; MFN removed; expansion visibility gained.</li>
+      </ul>
+
+      <h3>3) Channel deal — partner margin vs end-customer price</h3>
+      <p><strong>Situation:</strong> Partner requests extra margin to win a competitive bake-off.</p>
+      <ul>
+        <li><strong>Gaps:</strong> Risk of double-discount (partner + end-customer).</li>
+        <li><strong>Fix:</strong> Cap extra partner margin at 5% only if end-customer discount ≤10% and with a 12-month resale commitment.</li>
+        <li><strong>Proof:</strong> Partner addendum with volume/term; end-customer quote aligned to fence.</li>
+        <li><strong>Outcome:</strong> Healthy net price; partner commits pipeline for two quarters.</li>
+      </ul>
+
+      <h3>4) Quarter-end panic — 30% request</h3>
+      <p><strong>Situation:</strong> Rep asks for 30% on the last day of the quarter to “save the number”.</p>
+      <ul>
+        <li><strong>Gaps:</strong> No Get; approval exceeds VP band; legal risks unknown.</li>
+        <li><strong>Fix:</strong> Council review only. Counter with 15% now + 3-year term + prepay + reference + QBR with EB in 30 days.</li>
+        <li><strong>Proof:</strong> Exception memo; EB calendar invite; prepay/term on order form.</li>
+        <li><strong>Outcome:</strong> Closed at 15% with strong give-gets; avoided unhealthy precedent.</li>
+      </ul>
+
+      <h3>5) Services-heavy implementation</h3>
+      <p><strong>Situation:</strong> Customer negotiates hard on software and wants services free.</p>
+      <ul>
+        <li><strong>Gaps:</strong> Margin leakage via services; unclear SoW scope.</li>
+        <li><strong>Fix:</strong> Keep software discount at manager band; trade a small services credit for a 24-month term and two references; lock SoW with milestones.</li>
+        <li><strong>Proof:</strong> SoW template with caps; reference schedule.</li>
+        <li><strong>Outcome:</strong> Protected ARR; services margin preserved; predictable rollout.</li>
+      </ul>
+
+      <h3>6) Competitive RFP — low-price rival</h3>
+      <p><strong>Situation:</strong> Rival bids 20% lower headline price.</p>
+      <ul>
+        <li><strong>Gaps:</strong> Criteria not weighted; apples vs oranges on scope.</li>
+        <li><strong>Fix:</strong> Anchor on value and scope: match 10% with a bundle that delivers payback in 9 months; require 36-month term and reference.</li>
+        <li><strong>Proof:</strong> Weighted criteria sheet; ROI calc; order form bundle.</li>
+        <li><strong>Outcome:</strong> Win at 10% discount with 3-year commitment and reference rights.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Metrics to watch</h2>
+      <ul>
+        <li>Realized discount vs list (median, p90) by segment</li>
+        <li>Price variance by rep/segment and vs floor</li>
+        <li>Approval cycle time by band; % auto-approved</li>
+        <li>Give-get attachment rate (how often trades are captured)</li>
+        <li>“Risky clause” incidence and override rate</li>
+        <li>Waterfall leakage (promo, services credit, terms risk)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Common mistakes</h2>
+      <ul>
+        <li><strong>Stacking concessions:</strong> discount + free services + risky terms.</li>
+        <li><strong>Hidden floors:</strong> managers know them, reps don’t → publish the card.</li>
+        <li><strong>Slow approvals:</strong> no SLAs → set bands and auto-routing.</li>
+        <li><strong>Unpriced risk:</strong> MFN/unlimited liability treated as “legal”, not “price”.</li>
+        <li><strong>One-way give:</strong> discounts without trades → enforce give-get.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <ul>
+        <li><strong>Week 1:</strong> Draft price card (List/Floor/Walk-away) + fence table; publish internally.</li>
+        <li><strong>Week 2:</strong> Ship approval matrix + SLAs in CRM; turn on auto-routing and logging.</li>
+        <li><strong>Week 3–4:</strong> Launch give-get menu; update order form to capture Gets; redline checklist live.</li>
+        <li><strong>Week 5–8:</strong> Run weekly pricing council; coach on inspection script; tune bands by segment.</li>
+        <li><strong>Week 9–12:</strong> Review metrics; adjust floors; publish vNext of the price card.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>One-page checklist</h2>
+      <ul>
+        <li>Price card published (List/Floor/Walk-away per segment)</li>
+        <li>Approval matrix with SLAs running in CRM</li>
+        <li>Give-get menu enforced; Gets recorded in order form</li>
+        <li>Redline checklist and clause fallbacks live</li>
+        <li>Pricing council running; exception log reviewed monthly</li>
+        <li>Dashboard: realized discount, variance, approval SLA, give-get rate</li>
+      </ul>
+      <p class="xs muted">Tip: show each rep their realized discount vs team median and % of deals at/above floor.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-<section class="section">
-  <h2>Deal‑desk flow</h2>
-  <ol>
-    <li>AE submits quote + justification + give–get</li>
-    <li>Auto‑checks policy; routes to approver</li>
-    <li>Finance reviews pocket margin</li>
-    <li>Approval or counter with alternative structure</li>
-  </ol>
-</section>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
 
-
-  <div class="section xs">
-    Last updated: 2025-08-15. © Commercial Leadership Hub.
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
