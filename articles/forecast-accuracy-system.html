@@ -36,9 +36,13 @@
     th,td{padding:10px 12px;text-align:left;vertical-align:top}
     thead th{border-bottom:1px solid var(--line)}
     tbody tr+tr td{border-top:1px solid var(--line)}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
@@ -57,10 +61,15 @@
   </header>
 
   <main class="container">
-    <div class="hero">
-      <span class="tag">Ops</span>
+
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Forecasting</span>
       <h1>Forecast Accuracy System</h1>
       <p class="muted">From clean data and commit rules to a cadence, risk log and scenarios you can trust.</p>
+    </div>
+
+    <div class="hero">
       <picture>
         <source srcset="/assets/articles/forecast-accuracy-system-hero.webp" type="image/webp">
         <img src="/assets/articles/forecast-accuracy-system-hero.png" alt="Team reviewing forecast funnel, coverage gauge and hygiene checks on a whiteboard" loading="eager" width="1400" height="840">
@@ -73,6 +82,7 @@
       <p>Forecast accuracy is the result of a few disciplined components working together every week. You need clear stage definitions, strict hygiene rules for opportunities, explicit commit rules, a predictable cadence, a simple risk register and a scenario model that translates pipeline changes into outcomes. When this is in place, accuracy moves to ±5–10% without heroics.</p>
       <p>This article gives you a practical system you can implement in a spreadsheet and your CRM in under two weeks. It avoids heavy tooling and vague “coaching more”. You get scripts, example rules and meeting formats. Use it as your template and adapt the thresholds to your motion and segments.</p>
       <p>The goal is confidence. Sales leads know what is real, finance sees the same picture, and executives stop being surprised at quarter-end. You spend time on deal strategy and pipeline quality, not on arguing about numbers.</p>
+      <p>Too many teams accept missed forecasts as a fact of life. But forecasting can become reliable when it's treated as a weekly discipline instead of a last-minute scramble. By building the habits and checkpoints described in this playbook, you can turn your forecast into a strategic asset — one that accurately reflects reality and earns the trust of your board and team.</p>
     </section>
 
     <section class="section">
@@ -205,19 +215,19 @@
     <section class="section">
       <h2>Worked examples</h2>
       <h3>Example A: Mid-market SaaS</h3>
-      <p><strong>Situation:</strong> Team at 2.2× coverage keeps missing by 15% due to slips.</p>
-      <p><strong>Fix:</strong> add “next step dated” and “mutual plan attached” as required for commit; add slip rule &gt; 14 days → best case.</p>
-      <p><strong>Result:</strong> Slips drop by 40%; forecast within ±8% next quarter.</p>
+      <p><strong>Situation:</strong> A mid-market sales team had roughly 2.2× pipeline coverage each quarter, yet consistently missed their number by about 15%. Deals that seemed like “safe bets” kept slipping to the next quarter or falling apart late in the cycle, undermining confidence in the forecast.</p>
+      <p><strong>Fix:</strong> Leadership tightened the criteria for any deal in the Commit forecast. They mandated that every Commit opportunity must have a next meeting date scheduled (a concrete next step) and an attached mutual close plan that the customer agreed to. They also set a new rule: if a deal had no meaningful customer activity for over 14 days, it was automatically downgraded from Commit to Best Case. These changes forced reps to keep opportunities fresh and realistic in the pipeline.</p>
+      <p><strong>Result:</strong> In the next quarter, the number of deals that slipped beyond the quarter dropped by around 40%. The team’s forecast accuracy dramatically improved – final revenue came in within about 8% of the initial forecast – and this was achieved without needing excessive pipeline, just better deal discipline.</p>
 
       <h3>Example B: Enterprise with legal bottlenecks</h3>
-      <p><strong>Situation:</strong> Deals stall in legal with no visibility; leaders push for more pipeline.</p>
-      <p><strong>Fix:</strong> legal quick-guide + fallback clauses; commit rule requires legal path confirmed; risk tag = legal.</p>
-      <p><strong>Result:</strong> Cycle time -18%; commit conversion improves; fewer end-of-quarter surprises.</p>
+      <p><strong>Situation:</strong> An enterprise sales team was often blindsided by deals getting stuck in legal or security review. Late in the quarter, several big deals went dark in the contracting phase, leading sales leaders to scramble by pressuring teams to generate more last-minute pipeline as a hedge. These late-stage legal bottlenecks made the forecast volatile and usually overly optimistic.</p>
+      <p><strong>Fix:</strong> To fix this, the team worked with the legal department to create a “legal playbook” – a quick-reference guide for common contract obstacles and pre-approved fallback clauses. They also updated their commit criteria: no deal could enter Commit unless the legal review path was understood and agreed upon by the customer (who needs to approve, roughly how long it takes). Any deal in Commit that hit a legal snag was tagged as “Legal Risk” and closely monitored in the risk log. By shining a light on legal steps, the sales team could address them earlier or adjust forecasts accordingly.</p>
+      <p><strong>Result:</strong> Deal cycle times shortened by about 18% now that legal hurdles were addressed proactively. More Commit deals closed on time (fewer last-minute slip-ups), and those frantic end-of-quarter scramble tactics largely disappeared. With legal risks clearly visible and mitigated, the forecast became far more dependable – restoring leadership’s confidence in the numbers.</p>
 
       <h3>Example C: New segment with low win rate</h3>
-      <p><strong>Situation:</strong> Coverage looks fine but wins are rare in manufacturing sub-segment.</p>
-      <p><strong>Fix:</strong> split funnel by segment; commit allowed only in segments with 3+ references; scenario shows downside risk.</p>
-      <p><strong>Result:</strong> Accuracy improves; spend shifts to segments that convert.</p>
+      <p><strong>Situation:</strong> The company expanded into a manufacturing sub-segment and saw healthy pipeline coverage there, but very few wins. Even with enough opportunities, deals in this segment rarely closed, which meant the forecast was often overly optimistic whenever it included manufacturing deals.</p>
+      <p><strong>Fix:</strong> The team split out the forecast by segment to clearly see the problem. They imposed stricter commit criteria for manufacturing: a deal from this new segment could only be counted in Commit if there were at least three reference customers in that segment (to prove product fit). Otherwise, such deals stayed in Best Case or Pipeline. They also adjusted their scenario planning to explicitly factor in manufacturing underperformance, prompting reallocation of effort to stronger segments while the manufacturing motion matured.</p>
+      <p><strong>Result:</strong> Forecast accuracy improved because the team stopped counting unproven segment deals as sure things. Leadership shifted more focus and resources toward high-converting segments, improving overall results. Meanwhile, as a few manufacturing deals eventually started closing and producing references, the team gradually gained confidence to include them in forecasts – but only once the data showed they deserved it. In the interim, the company avoided big forecast misses by being realistic about the new segment’s odds.</p>
     </section>
 
     <section class="section">
