@@ -10,7 +10,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Mutual Action Plan (MAP) Template — Commercial Leadership Hub" />
   <meta property="og:description" content="Dates, owners, risks and comms that keep deals moving." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/mutual-action-plan-template-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/mutual-action-plan-template.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
@@ -31,6 +31,11 @@
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
@@ -40,30 +45,218 @@
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
       </div>
     </div>
   </header>
+
   <main class="container">
-    <div class="hero">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Sales</span>
       <h1>Mutual Action Plan (MAP) Template</h1>
       <p class="muted">Dates, owners, risks and comms that keep deals moving.</p>
-      <img src="https://images.unsplash.com/photo-1523958203904-cdcb402031fd?q=80&w=1600&auto=format&fit=crop" alt="Mutual Action Plan (MAP) Template">
     </div>
-    <section class="section"><h2>Problem</h2><p>Deals stall because only the seller has a plan. No shared dates, no customer owners, and legal/security join too late.</p></section>
-    <section class="section"><h2>What good looks like</h2><ul class="muted"><li>One page, shared with the buyer on day 1 of evaluation.</li><li>Milestones from today to go‑live with named customer owners.</li><li>Risk log with counters and a weekly 15‑min check‑in.</li></ul></section>
-    <section class="section"><h2>Steps</h2><ol><li>List milestones: eval start, security, legal, pilot, exec sign, go‑live.</li><li>Assign owners on both sides; agree dates and proof of done.</li><li>Flag risks early (data, SSO, procurement) and add counters.</li><li>Share link (doc/sheet) and review weekly.</li></ol></section>
-    <section class="section"><h2>Template</h2><ul><li>Milestone | Date | Seller owner | Customer owner | Status | Risk/notes</li><li>Weekly notes: decisions, blockers, next actions.</li></ul></section>
-    <section class="section"><h2>Metrics</h2><ul><li>Cycle time variance vs. plan.</li><li># milestones with named customer owners.</li><li>Slips caught ≥2 weeks ahead.</li></ul></section>
-    <section class="section"><h2>Risks</h2><ul><li>Over‑engineered MAP → keep to one page.</li><li>“We’ll fill it later” → complete live on the call.</li></ul></section>
+
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/mutual-action-plan-template-hero.webp" type="image/webp">
+        <img src="/assets/articles/mutual-action-plan-template-hero.png" alt="Shared plan board with milestones, owners and dates for a deal" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
+
+    <!-- TLDR -->
+    <section class="section">
+      <h2>TLDR</h2>
+      <p>A MAP makes the plan visible on both sides. You list milestones from evaluation to go-live, assign <em>customer</em> owners, set dates, track risks, and review weekly. Deals move faster, surprises shrink, and decisions feel safe because responsibilities are shared.</p>
+    </section>
+
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For AEs, AMs and CS leaders running evaluations or expansions with more than two stakeholders, legal/security steps, or a board date. If your opportunities stall late or slip month-to-month, start here.</p>
+    </section>
+
+    <!-- Problem -->
+    <section class="section">
+      <h2>Problem</h2>
+      <p>Deals stall because only the seller has a plan. Dates slide, legal/security arrive too late, and executives don’t see clear ownership. Internal updates turn into guesswork instead of actions.</p>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section">
+      <h2>Why it matters</h2>
+      <ul class="muted">
+        <li><strong>Predictability:</strong> cycle time variance drops when tasks have named <em>customer</em> owners.</li>
+        <li><strong>Decision safety:</strong> executives see risk handled (security, data, procurement) before the ask.</li>
+        <li><strong>Less thrash:</strong> weekly 15-minute reviews replace ad hoc chasing.</li>
+      </ul>
+      <p>Pair this with strong <a href="/articles/discovery-call-framework.html">discovery</a> and crisp <a href="/articles/executive-meeting-playbook.html">executive meetings</a> to keep momentum.</p>
+    </section>
+
+    <!-- Solution model -->
+    <section class="section">
+      <h2>Solution model</h2>
+      <ul>
+        <li><strong>Milestones:</strong> evaluation start → security → legal → pilot → executive decision → contract → go-live.</li>
+        <li><strong>Owners:</strong> seller + named customer owner for each milestone.</li>
+        <li><strong>Dates &amp; proof:</strong> target date and “definition of done”.</li>
+        <li><strong>Risks:</strong> early flags with counter-moves and owners.</li>
+        <li><strong>Comms:</strong> weekly 15-minute check-in; shared doc for notes.</li>
+      </ul>
+    </section>
+
+    <!-- Step-by-step guide -->
+    <section class="section">
+      <h2>Step-by-step guide</h2>
+      <ol>
+        <li><strong>Co-create on the first call:</strong> screen-share the MAP; fill owners/dates live.</li>
+        <li><strong>Front-load risk:</strong> add security/data/procurement steps early; attach intake links.</li>
+        <li><strong>Define proof:</strong> write acceptance criteria for pilot and decision checkpoint.</li>
+        <li><strong>Share &amp; review:</strong> send link; hold 15-minute weekly review; update status and slips.</li>
+        <li><strong>Close with confidence:</strong> final read-out summarizes milestones met, risks closed, and remaining actions.</li>
+      </ol>
+    </section>
+
+    <!-- Example / mini case -->
+    <section class="section">
+      <h2>Example</h2>
+      <p><strong>Context:</strong> Mid-market fintech; security backlog; quarter end in 7 weeks.</p>
+      <ul>
+        <li><strong>Key milestones:</strong> security intake (Week 1), pilot kickoff (Week 2), exec read-out (Week 5), legal review (Week 6), sign (Week 7).</li>
+        <li><strong>Risks:</strong> data access → counter: data owner assigned Day 2; legal capacity → counter: pre-approved LOA.</li>
+        <li><strong>Result:</strong> MAP kept timeline visible; decision on Week 5, sign on Week 7 with no last-minute escalations.</li>
+      </ul>
+    </section>
+
+    <!-- Checklist or template -->
+    <section class="section">
+      <h2>Checklist or template</h2>
+      <ul class="checklist">
+        <li>Milestone | Target date | Seller owner | Customer owner | Definition of done | Status | Risk/notes</li>
+        <li>Weekly notes: decisions, blockers, next actions, date moves (with reason).</li>
+        <li>Link to security/legal intake; add pilot acceptance criteria.</li>
+      </ul>
+    </section>
+
+    <!-- Diagram -->
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/mutual-action-plan-template-diagram.webp" type="image/webp">
+        <img src="/assets/articles/mutual-action-plan-template-diagram.png" alt="MAP layout from milestones to owners, dates, risks and weekly notes" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Co-create the MAP on day 1, then keep it honest with weekly 15-minute reviews.</p>
+    </section>
+
+    <!-- Metrics & pitfalls -->
+    <section class="section">
+      <h2>Metrics &amp; pitfalls</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Metrics</h3>
+          <ul>
+            <li>Cycle time variance vs. plan</li>
+            <li>% milestones with named <em>customer</em> owner</li>
+            <li>Risk closure rate per week</li>
+            <li>Slips flagged ≥14 days ahead</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pitfalls</h3>
+          <ul>
+            <li>Over-engineering (keep to one page)</li>
+            <li>“We’ll fill it later” (fill it live on the call)</li>
+            <li>Owner drift (no unnamed milestones)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA standard sections requested globally -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Publish a MAP one-pager and example notes; store in a shared library.</li>
+        <li>Add CRM fields for <em>MAP active</em> and <em>Next MAP milestone</em>; create a dashboard for slips and owner coverage.</li>
+        <li>Stand up pilot acceptance templates and legal/security intake links.</li>
+        <li>Block a weekly 15-minute MAP review with the customer during evaluation.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Measurement</h2>
+      <p><strong>Team level:</strong> MAP adoption on named deals, slip rate, average time between milestones, % risks with counters.</p>
+      <p><strong>Individual level:</strong> % milestones with customer owners, forecast accuracy vs. MAP, timeliness of updates.</p>
+    </section>
+
+    <section class="section">
+      <h2>Team buy-in</h2>
+      <ul>
+        <li>Position the MAP as mutual risk management, not admin.</li>
+        <li>Demonstrate by co-creating one live; celebrate wins where MAP avoided a slip.</li>
+        <li>Keep it light: one page, short notes, weekly 15-minute cadence.</li>
+      </ul>
+    </section>
+
+    <!-- 90-Day rollout (extended) -->
+    <section class="section">
+      <h2>90-day rollout (extended)</h2>
+      <h3>Weeks 1–2 — Stand up the system</h3>
+      <ul>
+        <li><strong>Owners:</strong> Enablement (lead), Sales Ops, Legal/Security.</li>
+        <li><strong>Artifacts:</strong> MAP template, pilot acceptance criteria, intake links, dashboard spec.</li>
+        <li><strong>Actions:</strong> add CRM fields and views; publish weekly review script; pick two gold-standard examples.</li>
+        <li><strong>Exit:</strong> template approved; first 10 named opportunities using MAP.</li>
+      </ul>
+      <h3>Weeks 3–4 — Pilot</h3>
+      <ul>
+        <li>Run MAP on 10 opportunities across segments; review weekly; coach co-creation on calls.</li>
+        <li><strong>KPIs:</strong> ≥80% milestones with customer owners; slips flagged ≥14 days ahead.</li>
+      </ul>
+      <h3>Weeks 5–6 — Instrument &amp; coach</h3>
+      <ul>
+        <li>Dashboard live: adoption, slips, owner coverage, risk closure; publish two anonymized win stories.</li>
+      </ul>
+      <h3>Weeks 7–8 — Roll out</h3>
+      <ul>
+        <li>Make MAP mandatory on all strategic deals; add MAP status to pipeline review.</li>
+      </ul>
+      <h3>Weeks 9–10 — Tighten cross-functional path</h3>
+      <ul>
+        <li>Legal publishes LOA template; Security publishes a pre-check form; CS adds go-live checklist.</li>
+      </ul>
+      <h3>Weeks 11–12 — Bake into rhythm</h3>
+      <ul>
+        <li>Monthly audit of MAP quality; refresh examples quarterly.</li>
+        <li><strong>Target state:</strong> cycle variance −15–20%; forecast accuracy +5 pts on MAP’d deals.</li>
+      </ul>
+    </section>
+
+    <!-- Next steps & CTA (includes template button) -->
+    <section class="section">
+      <h2>Next steps &amp; CTA</h2>
+      <ul>
+        <li>Co-create a MAP on your next discovery or kickoff call.</li>
+        <li>Front-load security/legal and define pilot acceptance early.</li>
+        <li>Review weekly for 15 minutes; track slips and counters.</li>
+      </ul>
+      <p><a class="btn" href="/templates/mutual-action-plan-template.html">Use the template</a></p>
+    </section>
+
+    <!-- Sources & terms -->
+    <section class="section">
+      <h2>Sources &amp; terms</h2>
+      <p><strong>Terms:</strong> MAP (Mutual Action Plan), LOA (Letter of Agreement), Definition of done, Intake.</p>
+      <p class="muted">Related: <a href="/articles/discovery-call-framework.html">Discovery Call Framework</a>, <a href="/articles/executive-meeting-playbook.html">Executive Meeting Playbook</a>.</p>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -97,8 +290,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
