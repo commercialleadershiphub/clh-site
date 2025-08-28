@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mutual Action Plan (MAP) — Template</title>
+  <meta name="description" content="One-page MAP to co-create milestones, owners, dates and risks with your customer." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/mutual-action-plan-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mutual Action Plan (MAP) — Template" />
+  <meta property="og:description" content="One-page MAP to co-create milestones, owners, dates and risks with your customer." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/mutual-action-plan-template-hero.webp" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/mutual-action-plan-template.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TG0R550X');
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    table{width:100%;border-collapse:separate;border-spacing:0}
+    th,td{border:1px solid var(--line);padding:8px;vertical-align:top}
+    th{background:var(--surface-2)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .xs{font-size:12px}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/mutual-action-plan-template.html">Back to Article</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Mutual Action Plan (MAP)</h1>
+      <p class="muted">Co-create this plan with your customer. Keep it to one page. Review weekly (15 minutes).</p>
+
+      <div class="actions">
+        <button class="btn" id="add-row">Add row</button>
+        <button class="btn ghost" id="export">Export CSV</button>
+      </div>
+
+      <div style="overflow:auto;margin-top:12px">
+        <table id="map">
+          <thead>
+            <tr>
+              <th>Milestone</th>
+              <th>Target date</th>
+              <th>Seller owner</th>
+              <th>Customer owner</th>
+              <th>Definition of done</th>
+              <th>Status</th>
+              <th>Risk / notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Security intake submitted</td>
+              <td></td>
+              <td></td>
+              <td>Security lead</td>
+              <td>Ticket accepted; review scheduled</td>
+              <td></td>
+              <td>Data access dependency</td>
+            </tr>
+            <tr>
+              <td>Pilot kickoff</td>
+              <td></td>
+              <td>AE / SE</td>
+              <td>Ops lead</td>
+              <td>Environments ready; success criteria agreed</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin-top:16px">Weekly notes</h2>
+      <p class="xs muted">Decisions, blockers, next actions, date changes (with reason).</p>
+      <div contenteditable="true" style="min-height:120px;border:1px solid var(--line);border-radius:8px;padding:8px"></div>
+
+      <p class="muted xs" style="margin-top:12px">Tip: Link security/legal intake forms and add pilot acceptance criteria inline so decisions feel safe.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const table = document.getElementById('map').getElementsByTagName('tbody')[0];
+    document.getElementById('add-row').addEventListener('click', function(){
+      const r = table.insertRow(-1);
+      for(let i=0;i<7;i++){ const c=r.insertCell(i); c.contentEditable='true'; }
+    });
+
+    document.getElementById('export').addEventListener('click', function(){
+      const rows=[...document.querySelectorAll('#map tr')].map(tr=>[...tr.children].map(td=>('"'+(td.innerText||'').replace(/"/g,'""')+'"')));
+      const csv = rows.map(r=>r.join(',')).join('\n');
+      const blob = new Blob([csv],{type:'text/csv'});
+      const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='map.csv'; a.click();
+      gtag('event','click_download_map_csv',{event_category:'template',event_label:'MAP'});
+    });
+  </script>
+</body>
+</html>
