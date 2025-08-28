@@ -3,91 +3,206 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Discovery Call Framework & Notes — Commercial Leadership Hub</title>
-  <meta name="description" content="Questions, flow and note template that lead to clear next steps." />
+  <title>Discovery Call Framework — Commercial Leadership Hub</title>
+  <meta name="description" content="A crisp discovery system: agenda, context, problem → impact → priority, stakeholder map, success criteria, timeline, next steps. Includes call scripts and worked examples." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/discovery-call-framework.html" />
-  <meta property="og:title" content="Discovery Call Framework & Notes — Commercial Leadership Hub" />
-  <meta property="og:description" content="Questions, flow and note template that lead to clear next steps." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Discovery Call Framework — Commercial Leadership Hub" />
+  <meta property="og:description" content="Run discovery that earns second meetings and clear next steps. Scripts, structure and examples included." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/discovery-call-framework-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/discovery-call-framework.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
   <style>
+    .hero{margin:16px 0}
+    .hero img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:8px}
-    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    table{width:100%;border-collapse:separate;border-spacing:0 6px}
-    th,td{padding:8px 10px;border:1px solid var(--line);background:var(--surface);}
-    th{background:var(--canvas)}
-    .callout{border-left:3px solid #111827;padding-left:12px}
-    .xs{font-size:12px}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-      <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
-    </a>
-    <nav class="main-nav">
-      <a href="/#services">Services</a>
-      <a href="/#projects">Projects</a>
-      <a href="/#about">About</a>
-      <a href="/articles/">Articles</a>
-    </nav>
-    <div class="header-cta">
-      <a class="btn ghost" href="/articles/">Back to Articles</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/">Back to Articles</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container" style="margin:16px 0">
-  <span class="tag">Sales</span>
-  <h1>Discovery Call Framework & Notes</h1>
-  <p class="muted">Questions, flow and note template that lead to clear next steps.</p>
+  <main class="container">
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Sales</span>
+      <h1>Discovery Call Framework</h1>
+      <p class="muted">Ask less, learn more, and earn the next step with a clear mutual plan.</p>
+    </div>
 
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/discovery-call-framework-hero.webp" type="image/webp">
+        <img src="/assets/articles/discovery-call-framework-hero.png" alt="Sales rep running a structured discovery call with a visible agenda" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
 
-<section class="section">
-  <h2>Objectives</h2>
-  <ul>
-    <li>Understand the problem, impact and priority</li>
-    <li>Test fit and identify stakeholders</li>
-    <li>Agree on a concrete next step</li>
-  </ul>
-</section>
-<section class="section">
-  <h2>Flow (30–45 mins)</h2>
-  <ol>
-    <li>Set agenda &amp; time check</li>
-    <li>Current state &amp; pain</li>
-    <li>Impact &amp; value hypothesis</li>
-    <li>Decision process &amp; timeline</li>
-    <li>Next step: workshop, pilot or executive intro</li>
-  </ol>
-</section>
-<section class="section">
-  <h2>Prompts</h2>
-  <ul>
-    <li>What changes if you do nothing in 6–12 months?</li>
-    <li>Who owns the outcome? Who can say no?</li>
-    <li>How have you tried to solve it before?</li>
-    <li>What does success look like this quarter?</li>
-  </ul>
-</section>
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Discovery isn’t an interrogation. It is a fast path to business context, consequences and priority—so both sides can decide if further work is justified. The mistake most reps make is treating discovery as a checklist of questions rather than a conversation that builds trust and clarity.</p>
+      <p>Great discovery feels light for the buyer and rigorous for the seller. We will open with a brief agenda that earns permission, anchor on the customer’s goals in their words, and move from problem to impact to priority. We will map stakeholders, qualify timeline and budget at the right depth, and agree a concrete next step before time expires.</p>
+      <p>Structure matters because time is short. A good 30-minute discovery call can set a multi-threaded evaluation in motion; a messy one creates follow-ups that never happen. The framework here balances learning with momentum so the buyer leaves feeling helped, not handled.</p>
+      <p>We also design for remote. Clear turns, explicit summaries and visible notes prevent drift and misalignment. When buyers see you capture their words and reflect them back accurately, you become a partner rather than another vendor.</p>
+      <p>Finally, we protect the future stages. We will test for competitive pressure, procurement complexity and data/security needs early enough to plan, but not so early that we derail the conversation. The goal is a right-sized next step that proves value quickly.</p>
+    </section>
 
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Agenda then ask:</strong> permissioned flow that reduces buyer anxiety.</li>
+        <li><strong>Outcome language:</strong> customer KPIs captured verbatim.</li>
+        <li><strong>Depth not breadth:</strong> fewer areas, greater clarity.</li>
+        <li><strong>Clear next step:</strong> time/date, agenda and attendees agreed.</li>
+        <li><strong>Notes visible:</strong> summary read-back in the final minute.</li>
+      </ul>
+    </section>
 
-  <div class="section xs">
-    Last updated: 2025-08-15. © Commercial Leadership Hub.
-  </div>
-</main>
+    <section class="section">
+      <h2>Call structure (30 minutes)</h2>
+      <ul>
+        <li><strong>0–3:</strong> agenda + context (“What prompted the conversation now?”)</li>
+        <li><strong>3–10:</strong> problem → impact (“What breaks if nothing changes by Q3?”)</li>
+        <li><strong>10–18:</strong> current process &amp; tools; what’s working/not; constraints.</li>
+        <li><strong>18–24:</strong> stakeholders, timeline, budget posture (“Who else will weigh in?”)</li>
+        <li><strong>24–28:</strong> recap in buyer’s words; propose next step.</li>
+        <li><strong>28–30:</strong> confirm attendees, date/time, and agenda for next call.</li>
+      </ul>
+    </section>
 
-<footer class="site-footer">
-  <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <section class="section">
+      <h2>Core questions (prompts)</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Business &amp; impact</h3>
+          <ul class="checklist">
+            <li>“What results are you accountable for this quarter?”</li>
+            <li>“What happens if this slips another 90 days?”</li>
+            <li>“Which metric would move first if we got this right?”</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Process &amp; constraints</h3>
+          <ul class="checklist">
+            <li>“Walk me through the current process end-to-end.”</li>
+            <li>“Where does the handoff fail most often?”</li>
+            <li>“What’s blocked by security, data, or integrations?”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Scripts</h2>
+      <ul>
+        <li><strong>Open:</strong> “I propose we confirm your goals, understand where things get stuck, and decide if a short working session makes sense. Sound good?”</li>
+        <li><strong>Recap:</strong> “In your words, the goal is to cut cycle time by ~20% before peak season. The constraint is data access in the warehouse. Did I miss anything critical?”</li>
+        <li><strong>Next step:</strong> “Would a 45-minute workflow session with your ops lead and security next Tuesday help us validate feasibility?”</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Worked examples</h2>
+      <h3>Example A — Logistics ops</h3>
+      <p><strong>Context:</strong> Late deliveries, high OT costs. <strong>Impact:</strong> Lost margin in peak weeks.</p>
+      <p><strong>Moves:</strong> Map current handoffs; quantify dwell time; propose 2-week trial on Route X.</p>
+      <p><strong>Next step:</strong> 45-min workflow session with ops + data owner; agree success criteria.</p>
+
+      <h3>Example B — Fintech compliance</h3>
+      <p><strong>Context:</strong> Manual checks; backlog growing. <strong>Impact:</strong> SLA breaches, fines risk.</p>
+      <p><strong>Moves:</strong> Identify top 3 false-positive drivers; security/data pre-check; demo with real cases.</p>
+      <p><strong>Next step:</strong> 60-min session with compliance + IT; decide on 14-day pilot.</p>
+
+      <h3>Example C — HR onboarding</h3>
+      <p><strong>Context:</strong> Drop-offs in week 2; tool sprawl. <strong>Impact:</strong> Time-to-productivity slips.</p>
+      <p><strong>Moves:</strong> Map lifecycle; find duplicate steps; quantify saves; involve payroll early.</p>
+      <p><strong>Next step:</strong> Build mutual plan; pilot one cohort in next intake.</p>
+    </section>
+
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> second-meeting rate, stakeholder adds per week, time to mutual plan.</p>
+      <p><strong>Lagging:</strong> stage progression, win rate by segment, average discount %.</p>
+    </section>
+
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/discovery-call-framework-diagram.webp" type="image/webp">
+        <img src="/assets/articles/discovery-call-framework-diagram.png" alt="Discovery flow: agenda → problem/impact → process/constraints → stakeholders/timeline → recap/next step" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Keep it light and focused; fewer areas, deeper clarity.</p>
+    </section>
+
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <ul>
+        <li><strong>Month 1:</strong> Train on scripts; publish mutual plan template.</li>
+        <li><strong>Month 2:</strong> Inspect second-meeting rate weekly; coach call recordings.</li>
+        <li><strong>Month 3:</strong> Tie discovery quality to win rate in reviews.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
