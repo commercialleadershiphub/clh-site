@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Competitive Deal Strategy — Companion Template — Commercial Leadership Hub</title>
+  <meta name="description" content="One-page competitive strategy per deal: competitors, traps, countermoves, win themes, proof, pricing posture, risks, plays and milestones." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/competitive-deal-strategy-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Competitive Deal Strategy — Companion Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="Structure your competitive plan with win themes, landmines and decisive next steps." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/competitive-deal-strategy-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)} .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    label{font-weight:600;display:block;margin:6px 0 4px}
+    input[type="text"], input[type="date"], textarea, select{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+    textarea{min-height:84px}
+    table{width:100%;border-collapse:collapse} th,td{border:1px solid var(--line);padding:8px;vertical-align:top} th{text-align:left;background:var(--surface)}
+    .adder{margin-top:8px} .btn-sm{padding:4px 8px;font-size:12px}
+    @media print{ header.site-header, footer.site-footer, .adder, .btn-sm{display:none} .section{box-shadow:none} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub"><img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto"></a>
+      <nav class="main-nav"><a href="/articles/">Articles</a><a href="/products.html">Products</a><a href="/#projects">Projects</a><a href="/#about">About</a></nav>
+      <div class="header-cta"><a class="btn ghost" href="/articles/">Back to Articles</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-top:16px">
+      <span class="tag">Sales</span>
+      <h1>Competitive Deal Strategy — Companion Template</h1>
+      <p class="muted">One page to align win themes, counter-moves and next steps.</p>
+    </div>
+
+    <section class="section">
+      <div class="grid-2">
+        <div><label>Deal / Account</label><input type="text" placeholder="Name"></div>
+        <div><label>Stage / Close date</label><input type="text" placeholder="e.g., Eval / 2025-11-30"></div>
+      </div>
+      <div class="grid-2" style="margin-top:8px">
+        <div><label>Primary competitor</label><input type="text" placeholder="Vendor A"></div>
+        <div><label>Secondary / Incumbent</label><input type="text" placeholder="Vendor B / In-house"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Win themes & proof</h2>
+      <table id="themeTable">
+        <thead><tr><th>Win theme</th><th>Evidence</th><th>Implication for buyer</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="e.g., Faster time-to-value"></td>
+            <td><input type="text" placeholder="Case study / benchmark / pilot"></td>
+            <td><input type="text" placeholder="Saves X weeks / cuts risk"></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" onclick="addRow('themeTable')">+ Add row</button></div>
+    </section>
+
+    <section class="section">
+      <h2>Competitor traps & counter-moves</h2>
+      <table id="trapTable">
+        <thead><tr><th>Trap / landmine</th><th>How they’ll use it</th><th>Counter-move</th><th>Owner</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="e.g., ‘They lack Feature X’"></td>
+            <td><input type="text" placeholder="Position as must-have"></td>
+            <td><input type="text" placeholder="Reframe to outcome; show alt. path"></td>
+            <td><input type="text" placeholder="AE/SE/PM"></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" onclick="addRow('trapTable')">+ Add row</button></div>
+    </section>
+
+    <section class="section">
+      <h2>Pricing posture & give/get</h2>
+      <table id="priceTable">
+        <thead><tr><th>Item</th><th>Posture</th><th>Min / Target</th><th>Approval</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="Term / Volume / Prepay"></td>
+            <td><input type="text" placeholder="Firm / Flexible / Trade"></td>
+            <td><input type="text" placeholder="Min X / Target Y"></td>
+            <td><input type="text" placeholder="Who signs?"></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" onclick="addRow('priceTable')">+ Add row</button></div>
+    </section>
+
+    <section class="section">
+      <h2>Next plays & milestones</h2>
+      <table id="playTable">
+        <thead><tr><th>Play</th><th>Owner</th><th>Due</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="Exec reference / Pilot / Security review"></td>
+            <td><input type="text" placeholder="AE/SE/CS/Legal"></td>
+            <td><input type="date"></td>
+            <td><input type="text" placeholder="Open/Done"></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" onclick="addRow('playTable')">+ Add row</button></div>
+    </section>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a class="btn ghost" href="/articles/competitive-deal-strategy.html">Back to Playbook</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="brand"><img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto"></div><p class="muted">Practical tools for commercial leaders.</p></div>
+      <div><h4 class="h4">Product</h4><ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul></div>
+      <div><h4 class="h4">Company</h4><ul class="muted"><li><a href="/#contact">About</a></li><li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul></div>
+      <div><h4 class="h4">Follow</h4><ul class="muted"><li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li><li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li></ul></div>
+    </div>
+    <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    function addRow(id){const t=document.getElementById(id),b=t.querySelector('tbody'),l=b.querySelector('tr:last-child'),c=l.cloneNode(true);c.querySelectorAll('input,textarea,select').forEach(e=>{if(e.type==='checkbox'||e.type==='radio'){e.checked=false}else{e.value=''}});b.appendChild(c)}
+    function removeRow(btn){const tr=btn.closest('tr'),tb=tr.parentElement;if(tb.querySelectorAll('tr').length>1){tb.removeChild(tr)}else{tr.querySelectorAll('input,textarea,select').forEach(e=>{if(e.type==='checkbox'||e.type==='radio'){e.checked=false}else{e.value=''}})}}
+  </script>
+</body>
+</html>
