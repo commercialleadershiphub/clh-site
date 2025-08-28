@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Account Planning Playbook — Commercial Leadership Hub</title>
-  <meta name="description" content="Roles, whitespace mapping and a practical 90-day plan for landing and expanding strategic accounts." />
+  <meta name="description" content="A practical account planning system: ICP fit, whitespace, stakeholder map, value hypotheses, 90-day plays, risk plan and governance. Includes worked examples and metrics." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/account-planning-playbook.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Account Planning Playbook — Commercial Leadership Hub" />
-  <meta property="og:description" content="Roles, whitespace mapping and a practical 90-day plan for landing and expanding strategic accounts." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:description" content="A practical account planning system with whitespace, stakeholder map, value hypotheses and 90-day plays." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/account-planning-playbook-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/account-planning-playbook.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
@@ -31,39 +31,199 @@
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
       </div>
     </div>
   </header>
+
   <main class="container">
-    <div class="hero">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Sales</span>
       <h1>Account Planning Playbook</h1>
-      <p class="muted">Roles, whitespace mapping and a practical 90-day plan for landing and expanding strategic accounts.</p>
-      <img src="https://images.unsplash.com/photo-1522071901873-411886a10004?q=80&w=1600&auto=format&fit=crop" alt="Account Planning Playbook">
+      <p class="muted">Turn key accounts into predictable growth with whitespace, stakeholder maps and 90-day plays.</p>
     </div>
-    <section class="section"><h2>Problem</h2><p>Most teams “plan” once a year, then chase deals. No clear owners, weak stakeholder maps, and no 90‑day execution rhythm. Result: low expansion and random acts of selling.</p></section>
-    <section class="section"><h2>What good looks like</h2><ul class="muted"><li>One page plan: goals, whitespace, stakeholders, risks, next 12 weeks.</li><li>Named owners: AE (net new), AM/CSM (expand/retain), Exec sponsor.</li><li>Monthly inspection: 30 minutes, same questions, visible progress.</li></ul></section>
-    <section class="section"><h2>Step-by-step</h2><ol><li>Define objectives: revenue target, product adds, references.</li><li>Map stakeholders: power, influence, gaps; assign outreach.</li><li>Whitespace: product × BU matrix; flag easy wins and big bets.</li><li>Plays: 3–5 specific motions with owners and dates.</li><li>Risks & counters: competition, budget, politics.</li><li>Cadence: weekly actions; monthly review with leadership.</li></ol></section>
-    <section class="section"><h2>Templates you can copy</h2><ul><li>One‑Page Plan: Objectives | Stakeholders | Whitespace | Plays | Risks.</li><li>Stakeholder Map: Name, role, power (H/M/L), stance, next touch.</li><li>12‑Week Plan: Week, action, owner, proof of progress.</li></ul></section>
-    <section class="section"><h2>Metrics</h2><ul><li>Coverage: # of power stakeholders with next meeting booked.</li><li>Expansion pipeline: $ by product × BU; conversion to closed‑won.</li><li>Referenceability and executive touches per quarter.</li></ul></section>
-    <section class="section"><h2>Risks</h2><ul><li>Plans with no owners → convert to tasks per week, not vague goals.</li><li>Too many plays → lock to 3–5 and kill the rest.</li><li>Leadership drive‑by → set a recurring 30‑min review and keep receipts.</li></ul></section>
+
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/account-planning-playbook-hero.webp" type="image/webp">
+        <img src="/assets/articles/account-planning-playbook-hero.png" alt="Sales team reviewing an account map, whitespace and 90-day plays" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
+
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Most “account plans” are slides that go stale within weeks. Sellers fill a template before QBRs, the manager nods, and nothing material changes in the account. The problem is simple: plans are written for inspection, not execution. They catalogue information but rarely create a sequence of actions that advances relationships, solves problems and opens new revenue.</p>
+      <p>An effective account plan is a living instrument. It shows where value exists (whitespace), who can unlock it (stakeholder map), why it matters now (value hypotheses), and how we will move in the next 90 days (plays with owners and dates). It is short, numeric, and used weekly. If your team cannot point to concrete outcomes linked to the plan—new meetings, pilots, executive sponsorship—it is not a plan.</p>
+      <p>This playbook defines a practical system you can maintain in a spreadsheet or CRM. Each component produces a visible artifact that informs the next: ICP fit clarifies where to spend time; whitespace quantifies potential; stakeholder mapping reveals influence; value hypotheses anchor messaging; and a 90-day play sequence turns strategy into motion.</p>
+      <p>We design for reality: leadership changes, budgets shift, competitors provoke, and champions leave. The plan embraces uncertainty by focusing on controllable moves and fast learning. We will track leading indicators—executive access, meeting cadence, pilot velocity—so we can adjust the route without losing the destination.</p>
+      <p>Account planning also protects margins. When you know where your product uniquely improves outcomes, discount pressure drops because conversations move from feature parity to business impact. A clear risk plan further prevents last-minute surprises that erode pricing and trust.</p>
+      <p>Use this as the standard for named accounts across segments. Enterprise teams will go deeper on governance and multi-threading; mid-market teams will compress the artifacts. The structure stays the same so coaching, inspection and results stay consistent.</p>
+    </section>
+
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Numeric whitespace:</strong> potential by line of business and product with clear assumptions.</li>
+        <li><strong>Credible map:</strong> authority and influence documented; executive sponsor identified.</li>
+        <li><strong>Value hypotheses:</strong> 2–3 outcomes tied to business metrics and proof assets.</li>
+        <li><strong>90-day plays:</strong> 4–6 timeboxed actions with owners, dates and success criteria.</li>
+        <li><strong>Weekly use:</strong> plan referenced in pipeline reviews; status and next moves updated.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li>Plans as static slides with no owners or dates.</li>
+        <li>Vague “relationships” without influence or decision role defined.</li>
+        <li>Product-first messaging instead of outcome-first hypotheses.</li>
+        <li>No counter-strategy for competitor entrenchment.</li>
+        <li>Lack of executive access; all activity stuck at evaluator level.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Playbook</h2>
+      <h3>1) Confirm ICP &amp; segment fit</h3>
+      <ul class="checklist">
+        <li>Industry, size, tech stack, change drivers (regulation, M&amp;A, cost pressure).</li>
+        <li>Why us vs. alternatives (unique capability, time-to-value, risk reduction).</li>
+        <li>Health baseline: ARR, NRR posture, support incidents, CSAT/NPS, executive air cover.</li>
+      </ul>
+
+      <h3>2) Quantify whitespace</h3>
+      <ul class="checklist">
+        <li>Break down by BU/site/use case; list in a table with estimated ARR and probability.</li>
+        <li>Mark quick wins (pilotable in &lt;45 days) vs. strategic bets.</li>
+        <li>Assumptions explicit (adoption rate, price per unit, seat counts, sites).</li>
+      </ul>
+
+      <h3>3) Map stakeholders &amp; influence</h3>
+      <ul class="checklist">
+        <li>Economic buyer, technical owner, power users, blockers, legal/procurement.</li>
+        <li>Influence lines: who listens to whom, where objections originate.</li>
+        <li>Gaps: exec sponsor missing? Identify pathway and warm intro routes.</li>
+      </ul>
+
+      <h3>4) Craft value hypotheses (2–3)</h3>
+      <ul class="checklist">
+        <li>Outcome → metric → proof (reference, ROI model, benchmark).</li>
+        <li>Trigger events that make the hypothesis urgent now.</li>
+        <li>Risks and counter-evidence to test early.</li>
+      </ul>
+
+      <h3>5) Build a 90-day play sequence</h3>
+      <ul class="checklist">
+        <li>4–6 plays, each with owner, date, success measure, and pre-reqs.</li>
+        <li>Mix of access (exec mtg), discovery (site visits), proof (pilot), and governance (steerco).</li>
+        <li>Competitor counter-moves baked into timing and narrative.</li>
+      </ul>
+
+      <h3>6) Risk plan &amp; competitor posture</h3>
+      <ul class="checklist">
+        <li>Top 3 risks (budget freeze, leadership change, incumbent lock-in) with mitigations.</li>
+        <li>Competitor traps to set/avoid; neutralize their proof assets.</li>
+      </ul>
+
+      <h3>7) Governance</h3>
+      <ul class="checklist">
+        <li>Weekly plan review in pipeline forum (10 min per named account).</li>
+        <li>Monthly exec read-out: decisions required, risks, expansion path.</li>
+        <li>Single owner; cross-functional contributors visible.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Account canvas (1-pager)</h3>
+          <ul>
+            <li>ICP fit summary</li>
+            <li>Whitespace table with totals</li>
+            <li>Stakeholder map (roles + influence)</li>
+            <li>Top 3 value hypotheses</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Play tracker</h3>
+          <ul>
+            <li>Plays with owners/dates</li>
+            <li>Status (Planned/In-flight/Blocked/Won)</li>
+            <li>Leading indicators (exec meetings, pilot progress)</li>
+            <li>Competitor notes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Worked examples</h2>
+      <h3>Example A — Land &amp; expand via operations pain</h3>
+      <p><strong>Situation:</strong> Mid-market manufacturer; incumbent point tool; ops KPIs slipping; CFO pressing for cost control.</p>
+      <p><strong>Hypothesis:</strong> Cut rework by 25% using our workflow + analytics; payback &lt; 4 months.</p>
+      <p><strong>Plays (90 days):</strong> Plant tour (Week 1); exec meeting (Week 2) with benchmark pack; 30-day pilot on Line B (Week 3–7); steerco (Week 8) to decide rollout; procurement pre-wire (Week 9–10).</p>
+      <p><strong>Result:</strong> Pilot hits −27% rework; 3-site rollout approved; competitor displaced without discounting.</p>
+
+      <h3>Example B — Platform consolidation against an incumbent</h3>
+      <p><strong>Situation:</strong> Global retailer; incumbent suite; tool sprawl; CIO wants vendor reduction.</p>
+      <p><strong>Hypothesis:</strong> Consolidate 3 tools; save 18% TCO; improve time-to-change by 30%.</p>
+      <p><strong>Plays:</strong> Architecture workshop (Week 1); CFO cost model (Week 2); security review (Week 3–4); 6-week controlled pilot (Week 5–10).</p>
+      <p><strong>Result:</strong> Suite overlap exposed; consolidation program created; multi-year expansion with step-downs.</p>
+
+      <h3>Example C — Re-entry after churn risk</h3>
+      <p><strong>Situation:</strong> Account at risk; champion left; two P1 incidents last quarter.</p>
+      <p><strong>Plays:</strong> Exec apology + post-mortem (Week 1); publish stability plan; office hours (Weeks 1–6); ROI validation (Week 3–8).</p>
+      <p><strong>Result:</strong> Risk down-classified; renewal at 102% net; expansion hypothesis for Q3 agreed.</p>
+    </section>
+
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> exec meetings/quarter, pilot velocity, new buying centers engaged, stakeholder coverage.</p>
+      <p><strong>Lagging:</strong> expansion pipeline created, ARR won, discount %, cycle time, NRR class migration.</p>
+    </section>
+
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/account-planning-playbook-diagram.webp" type="image/webp">
+        <img src="/assets/articles/account-planning-playbook-diagram.png" alt="Account planning canvas: ICP fit → whitespace → stakeholder map → value hypotheses → 90-day plays" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Keep the canvas light and updated weekly; the value is in the actions it drives.</p>
+    </section>
+
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <ul>
+        <li><strong>Month 1:</strong> Canvas &amp; whitespace for top 20 accounts; first play set started.</li>
+        <li><strong>Month 2:</strong> Exec access rate ≥70%; 50% accounts in pilot/validation.</li>
+        <li><strong>Month 3:</strong> Expansion decisions on 30%; risk plan active on all Amber/Red.</li>
+      </ul>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -97,8 +257,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
