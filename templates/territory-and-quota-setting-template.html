@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Territory & Quota Setting — Companion Template — Commercial Leadership Hub</title>
+  <meta name="description" content="Copy-ready workbook: objectives, capacity model, account scoring, territory builder, quota calculator, fairness checks, conflicts, comms & appeal log. Printable." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/territory-and-quota-setting-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Territory & Quota Setting — Companion Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="Bottom-up capacity, book potential, quota math and fairness checks in a one-pager you can copy." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/territory-and-quota-setting-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
+  <!-- Styles (baseline) -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    label{font-weight:600;display:block;margin:6px 0 4px}
+    input[type="text"], input[type="date"], input[type="time"], input[type="number"], textarea, select{
+      width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface)
+    }
+    textarea{min-height:84px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}
+    th{background:var(--surface)}
+    .adder{margin-top:8px}
+    .adder .btn{padding:6px 10px;font-size:12px}
+    .btn-sm{padding:4px 8px;font-size:12px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    @media print{
+      header.site-header, footer.site-footer, .actions, .adder, .btn-sm{display:none}
+      .section{box-shadow:none}
+      body{background:#fff}
+    }
+    /* header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
+  </style>
+</head>
+<body>
+  <!-- Header — BASELINE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/territory-and-quota-setting.html">Back to Article</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-top:16px">
+      <span class="tag">Ops</span>
+      <h1>Territory &amp; Quota Setting — Companion Template</h1>
+      <p class="muted">Copy these sections into your doc/sheet. Keep numbers visible and decisions auditable.</p>
+    </div>
+
+    <!-- Objectives & guardrails -->
+    <section class="section">
+      <h2>Objectives &amp; guardrails</h2>
+      <div class="grid-3">
+        <div>
+          <label>Revenue target (FY)</label>
+          <input type="text" placeholder="e.g., $84M" />
+        </div>
+        <div>
+          <label>Headcount by segment</label>
+          <input type="text" placeholder="SMB 20 / MM 16 / ENT 10" />
+        </div>
+        <div>
+          <label>Guardrails</label>
+          <input type="text" placeholder="Potential spread ≤ ±12%; max 180 accts/rep" />
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:8px">
+        <div>
+          <label>Named-account policy</label>
+          <textarea placeholder="Criteria, ownership, carve-outs, overlay rules"></textarea>
+        </div>
+        <div>
+          <label>Conflict SLA & appeal window</label>
+          <textarea placeholder="Conflicts resolved ≤48h; appeals 10 business days; decision body"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom-up capacity model -->
+    <section class="section">
+      <h2>Capacity model</h2>
+      <div class="grid-3">
+        <div>
+          <label>Ramp schedule</label>
+          <input type="text" placeholder="60% / 80% / 100% (first 3 months)" />
+        </div>
+        <div>
+          <label>Win rate (P50 / P75)</label>
+          <input type="text" placeholder="23% / 29%" />
+        </div>
+        <div>
+          <label>ACV by segment</label>
+          <input type="text" placeholder="SMB 12k / MM 45k / ENT 180k" />
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Cycle time (days)</label>
+          <input type="number" placeholder="SMB 30 / MM 60 / ENT 120" />
+        </div>
+        <div>
+          <label>Coverage ratio</label>
+          <input type="text" placeholder="Accounts:Rep (e.g., 120:1 SMB)" />
+        </div>
+        <div>
+          <label>Over-assignment (×)</label>
+          <input type="number" step="0.01" placeholder="1.15" />
+        </div>
+      </div>
+      <label style="margin-top:8px">Notes & assumptions</label>
+      <textarea placeholder="Document assumptions used to reconcile sum(quota) to target."></textarea>
+    </section>
+
+    <!-- Account scoring -->
+    <section class="section">
+      <h2>Account scoring (features &amp; weights)</h2>
+      <table id="scoreTable">
+        <thead><tr><th>Feature</th><th>Weight</th><th>Definition</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="ICP fit"/></td>
+            <td><input type="number" step="0.1" placeholder="0.35"/></td>
+            <td><input type="text" placeholder="Industry, size, tech"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" type="button" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Intent"/></td>
+            <td><input type="number" step="0.1" placeholder="0.20"/></td>
+            <td><input type="text" placeholder="Recent research, keywords"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" type="button" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('scoreTable')">+ Add feature</button></div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Tier thresholds</label>
+          <input type="text" placeholder="A ≥ 0.75; B 0.50–0.74; C &lt; 0.50" />
+        </div>
+        <div>
+          <label>Max accounts per rep</label>
+          <input type="number" placeholder="e.g., 180" />
+        </div>
+        <div>
+          <label>Tier mix per rep</label>
+          <input type="text" placeholder="e.g., A 10 / B 40 / C 130" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Territory builder -->
+    <section class="section">
+      <h2>Territory builder</h2>
+      <table id="territoryTable" aria-label="Draft territory books">
+        <thead>
+          <tr>
+            <th>Rep</th><th>Segment</th><th>Geo/Vertical</th><th>A</th><th>B</th><th>C</th>
+            <th>Book potential ($)</th><th>Δ vs. cohort</th><th>Notes</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="Name"/></td>
+            <td><input type="text" placeholder="SMB/MM/ENT"/></td>
+            <td><input type="text" placeholder="e.g., NE / Retail"/></td>
+            <td><input type="number" placeholder="10"/></td>
+            <td><input type="number" placeholder="40"/></td>
+            <td><input type="number" placeholder="130"/></td>
+            <td><input type="text" placeholder="e.g., 2.4M"/></td>
+            <td><input type="text" placeholder="+8% / -5%"/></td>
+            <td><input type="text" placeholder="Carve-out X"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" type="button" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('territoryTable')">+ Add rep</button></div>
+    </section>
+
+    <!-- Quota calculator -->
+    <section class="section">
+      <h2>Quota calculator</h2>
+      <table id="quotaTable" aria-label="Quota by rep">
+        <thead>
+          <tr>
+            <th>Rep</th><th>Book potential ($)</th><th>Productivity factor</th><th>Ramp adj.</th><th>Quota ($)</th><th>Rationale</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text"/></td>
+            <td><input type="text" placeholder="2.4M"/></td>
+            <td><input type="text" placeholder="P50/P75"/></td>
+            <td><input type="text" placeholder="60/80/100%"/></td>
+            <td><input type="text" placeholder="1.25M"/></td>
+            <td><input type="text" placeholder="Book × factor × ramp"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" type="button" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('quotaTable')">+ Add row</button></div>
+      <label style="margin-top:8px">Reconciliation notes</label>
+      <textarea placeholder="Sum(quota) vs. target; deltas and justifications."></textarea>
+    </section>
+
+    <!-- Fairness checks -->
+    <section class="section">
+      <h2>Fairness checks</h2>
+      <table id="fairnessTable" aria-label="Fairness metrics">
+        <thead>
+          <tr><th>Metric</th><th>Value</th><th>Target</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Potential spread (median ±)</td>
+            <td><input type="text" placeholder="±11%"/></td>
+            <td>≤ ±12%</td>
+            <td><input type="text" placeholder="OK / Review"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Gini coefficient</td>
+            <td><input type="text" placeholder="0.18"/></td>
+            <td>≤ 0.20</td>
+            <td><input type="text" placeholder="OK"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('fairnessTable')">+ Add metric</button></div>
+    </section>
+
+    <!-- Conflicts & exceptions -->
+    <section class="section">
+      <h2>Conflicts &amp; exceptions</h2>
+      <table id="conflictsTable">
+        <thead><tr><th>Account</th><th>Issue</th><th>Owner</th><th>ETA</th><th>Outcome</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="Acme Corp"/></td>
+            <td><input type="text" placeholder="Overlap NA/MM"/></td>
+            <td><input type="text" placeholder="RevOps"/></td>
+            <td><input type="date"/></td>
+            <td><input type="text" placeholder="Assigned to MM"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('conflictsTable')">+ Add conflict</button></div>
+    </section>
+
+    <!-- Rep comms & appeal log -->
+    <section class="section">
+      <h2>Rep comms &amp; appeal log</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Comms pack</h3>
+          <label>FAQs / rationale</label>
+          <textarea placeholder="What changed, how quotas were set, examples"></textarea>
+          <label style="margin-top:8px">Links</label>
+          <textarea placeholder="Policy doc, methodology deck, appeal form"></textarea>
+        </div>
+        <div>
+          <h3>Appeal log</h3>
+          <table id="appealTable">
+            <thead><tr><th>Rep</th><th>Topic</th><th>Evidence</th><th>Status</th><th>Outcome</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><input type="text"/></td>
+                <td><input type="text" placeholder="Book potential"/></td>
+                <td><textarea placeholder="Data supporting claim"></textarea></td>
+                <td><input type="text" placeholder="Open / Closed"/></td>
+                <td><input type="text" placeholder="Adjusted / No change"/></td>
+                <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="adder"><button class="btn ghost" type="button" onclick="addRow('appealTable')">+ Add appeal</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <div class="actions" style="margin:10px 0 18px">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a class="btn ghost" href="/articles/territory-and-quota-setting.html">Back to Playbook</a>
+    </div>
+
+    <section class="section muted" style="font-size:12px">
+      Use with the <em>Territory &amp; Quota Setting</em> article. This template aligns to the 90-day rollout and the fairness/appeal governance described there.<br/>
+      <strong>Repo path:</strong> <code>/templates/territory-and-quota-setting-template.html</code>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function addRow(tableId){
+      const table=document.getElementById(tableId);
+      if(!table) return;
+      const tbody=table.querySelector('tbody');
+      const last=tbody.querySelector('tr:last-child');
+      const clone=last.cloneNode(true);
+      clone.querySelectorAll('input, textarea, select').forEach(el=>{
+        if(el.type==='checkbox' || el.type==='radio'){el.checked=false;return;}
+        el.value='';
+      });
+      tbody.appendChild(clone);
+    }
+    function removeRow(btn){
+      const tr=btn.closest('tr'); const tbody=tr.parentElement;
+      if(tbody.querySelectorAll('tr').length>1){tbody.removeChild(tr);}
+      else{
+        tr.querySelectorAll('input, textarea, select').forEach(el=>{
+          if(el.type==='checkbox' || el.type==='radio'){el.checked=false;return;}
+          el.value='';
+        });
+      }
+    }
+  </script>
+</body>
+</html>
