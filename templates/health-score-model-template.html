@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Customer Health Score — Companion Template — Commercial Leadership Hub</title>
+  <meta name="description" content="Fill this one-pager to define and run a simple, explainable customer health score: factors, weights, buckets, data sources, actions, dashboards and calibration log." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/health-score-model-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Customer Health Score — Companion Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="Practical 1-pager to build an explainable health score with actions. Printable." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/health-score-model-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    label{font-weight:600;display:block;margin:6px 0 4px}
+    input[type="text"], input[type="date"], input[type="time"], input[type="number"], textarea, select{
+      width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface)
+    }
+    textarea{min-height:84px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}
+    th{background:var(--surface)}
+    .adder{margin-top:8px}
+    .btn-sm{padding:4px 8px;font-size:12px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    @media print{
+      header.site-header, footer.site-footer, .actions, .adder, .btn-sm{display:none}
+      .section{box-shadow:none}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header — BASELINE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/health-score-model.html">Back to Playbook</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-top:16px">
+      <span class="tag">Success</span>
+      <h1>Customer Health Score — Companion Template</h1>
+      <p class="muted">Define factors, buckets and actions. Print or save as PDF.</p>
+    </div>
+
+    <!-- Model meta -->
+    <section class="section">
+      <div class="grid-3">
+        <div>
+          <label>Model version</label>
+          <input type="text" placeholder="v1.0 / v1.1 (date)"/>
+        </div>
+        <div>
+          <label>Owner</label>
+          <input type="text" placeholder="CS Ops / RevOps"/>
+        </div>
+        <div>
+          <label>Effective date</label>
+          <div class="row">
+            <input type="date"/><input type="time"/>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Segments</label>
+          <input type="text" placeholder="MM / ENT / Region / Industry"/>
+        </div>
+        <div>
+          <label>Refresh cadence</label>
+          <input type="text" placeholder="Weekly (Mon 08:00 UTC)"/>
+        </div>
+        <div>
+          <label>Hysteresis rule</label>
+          <input type="text" placeholder="±5 pts required to change bucket"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buckets -->
+    <section class="section">
+      <h2>Bucket thresholds</h2>
+      <div class="grid-3">
+        <div>
+          <label>Green ≥</label>
+          <input type="number" placeholder="80" />
+        </div>
+        <div>
+          <label>Amber</label>
+          <input type="text" placeholder="60–79" />
+        </div>
+        <div>
+          <label>Red &lt;</label>
+          <input type="number" placeholder="60" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Factors table -->
+    <section class="section">
+      <h2>Factors &amp; weights</h2>
+      <table id="factorsTable">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Weight %</th>
+            <th>Definition (plain English)</th>
+            <th>Data source</th>
+            <th>Field ID / Query</th>
+            <th>Transform → 0–100</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" value="Usage"/></td>
+            <td><input type="number" value="30"/></td>
+            <td><textarea placeholder="WAU/Seats; key feature adoption; 4-week trend vs. baseline"></textarea></td>
+            <td><input type="text" placeholder="Product analytics"/></td>
+            <td><input type="text" placeholder="metric.wau_ratio"/></td>
+            <td><textarea placeholder="min-max 0–100; cap at 100; 4-wk SMA"></textarea></td>
+            <td style="width:1%;white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Outcomes"/></td>
+            <td><input type="number" value="20"/></td>
+            <td><textarea placeholder="Customer KPI vs. target; validation cadence"></textarea></td>
+            <td><input type="text" placeholder="CS workbook / CRM"/></td>
+            <td><input type="text" placeholder="field.outcome_delta"/></td>
+            <td><textarea placeholder="delta → score mapping table"></textarea></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Sponsorship"/></td>
+            <td><input type="number" value="20"/></td>
+            <td><textarea placeholder="Named EB; last EB meeting date; cadence adherence"></textarea></td>
+            <td><input type="text" placeholder="CRM meetings"/></td>
+            <td><input type="text" placeholder="field.eb_last_meeting"/></td>
+            <td><textarea placeholder="recency → score; 0 if no EB"></textarea></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Support"/></td>
+            <td><input type="number" value="10"/></td>
+            <td><textarea placeholder="TTR; P1/P2 counts in last 90 days; CSAT"></textarea></td>
+            <td><input type="text" placeholder="Zendesk / Jira"/></td>
+            <td><input type="text" placeholder="metric.ttr_90d"/></td>
+            <td><textarea placeholder="inverse scale; penalties for recent P1s"></textarea></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Financial"/></td>
+            <td><input type="number" value="20"/></td>
+            <td><textarea placeholder="DSO trend; invoices on time; credit risk"></textarea></td>
+            <td><input type="text" placeholder="ERP / Billing"/></td>
+            <td><input type="text" placeholder="metric.dso_trend"/></td>
+            <td><textarea placeholder="on-time%=100; late%=scaled penalty"></textarea></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('factorsTable')">+ Add factor</button></div>
+    </section>
+
+    <!-- Formula -->
+    <section class="section">
+      <h2>Scoring formula</h2>
+      <textarea placeholder="Health score = Σ(weight_i × factor_score_i). Example: (0.30×Usage) + (0.20×Outcomes) + …; all factors 0–100; sum(weights)=1.0"></textarea>
+    </section>
+
+    <!-- Data freshness & exceptions -->
+    <section class="section">
+      <div class="grid-2">
+        <div>
+          <h2>Data freshness</h2>
+          <textarea placeholder="All inputs refresh weekly (Mon 08:00 UTC). Support: nightly. Billing: weekly."></textarea>
+        </div>
+        <div>
+          <h2>Exceptions</h2>
+          <textarea placeholder="Manual override allowed only by CS Director; requires rationale; expires in 30 days."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions per bucket -->
+    <section class="section">
+      <h2>Actions by bucket</h2>
+      <table id="actionsTable">
+        <thead><tr><th>Bucket</th><th>Trigger</th><th>Action(s)</th><th>Owner</th><th>SLA</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" value="Red"/></td>
+            <td><input type="text" value="Score &lt; 60 or −10 in 14d"/></td>
+            <td><textarea placeholder="Exec call; success plan; weekly check-ins; incident review if relevant"></textarea></td>
+            <td><input type="text" value="CSM / Exec sponsor"/></td>
+            <td><input type="text" value="48h to first touch; plan in 5d"/></td>
+            <td style="width:1%;white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Amber"/></td>
+            <td><input type="text" value="60–79 or −5 in 14d"/></td>
+            <td><textarea placeholder="Training; feature enablement; validate KPIs; MAP milestones"></textarea></td>
+            <td><input type="text" value="CSM"/></td>
+            <td><input type="text" value="5 business days"/></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Green"/></td>
+            <td><input type="text" value="≥80 for 30d"/></td>
+            <td><textarea placeholder="Exec value review; expansion discovery; pilot next module"></textarea></td>
+            <td><input type="text" value="AE/CSM"/></td>
+            <td><input type="text" value="Within cycle"/></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('actionsTable')">+ Add row</button></div>
+    </section>
+
+    <!-- Dashboards -->
+    <section class="section">
+      <h2>Dashboards</h2>
+      <table id="dashTable">
+        <thead><tr><th>Tile</th><th>Definition</th><th>Owner</th><th>Frequency</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="text" value="Bucket distribution"/></td>
+            <td><textarea>% of accounts in Green/Amber/Red</textarea></td>
+            <td><input type="text" placeholder="CS Ops"/></td>
+            <td><input type="text" placeholder="Weekly"/></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Boundary transitions"/></td>
+            <td><textarea>Accounts crossing bucket boundaries (7/14/30d)</textarea></td>
+            <td><input type="text" placeholder="RevOps"/></td>
+            <td><input type="text" placeholder="Weekly"/></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Time-to-action"/></td>
+            <td><textarea>Median hours from boundary cross to first play started</textarea></td>
+            <td><input type="text" placeholder="Managers"/></td>
+            <td><input type="text" placeholder="Weekly"/></td>
+            <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('dashTable')">+ Add tile</button></div>
+    </section>
+
+    <!-- Calibration log -->
+    <section class="section">
+      <h2>Calibration log</h2>
+      <table id="calTable">
+        <thead><tr><th>Date</th><th>Finding</th><th>Change</th><th>Approved by</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><input type="date"/></td>
+            <td><textarea placeholder="Amber too wide; false positives in support spikes"></textarea></td>
+            <td><textarea placeholder="Increase support weight 10→12; adjust thresholds 60/80→62/82"></textarea></td>
+            <td><input type="text" placeholder="CS Director / RevOps"/></td>
+            <td style="width:1%;white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('calTable')">+ Add entry</button></div>
+    </section>
+
+    <!-- Actions -->
+    <div class="actions" style="margin:10px 0 18px">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a class="btn ghost" href="/articles/health-score-model.html">Back to Playbook</a>
+    </div>
+
+    <section class="section muted" style="font-size:12px">
+      Use with the <em>Customer Health Score Model</em> playbook. For every new field you add, remove one. Review factors quarterly; publish a change log.
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function addRow(tableId){
+      const t=document.getElementById(tableId); if(!t) return;
+      const tb=t.querySelector('tbody'); const last=tb.querySelector('tr:last-child');
+      const clone=last.cloneNode(true);
+      clone.querySelectorAll('input, textarea, select').forEach(el=>{
+        if(el.type==='checkbox'||el.type==='radio'){el.checked=false;} else {el.value='';}
+      });
+      tb.appendChild(clone);
+    }
+    function removeRow(btn){
+      const tr=btn.closest('tr'); const tb=tr.parentElement;
+      if(tb.querySelectorAll('tr').length>1){tb.removeChild(tr);}
+      else{
+        tr.querySelectorAll('input, textarea, select').forEach(el=>{
+          if(el.type==='checkbox'||el.type==='radio'){el.checked=false;} else {el.value='';}
+        });
+      }
+    }
+  </script>
+</body>
+</html>
