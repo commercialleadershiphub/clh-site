@@ -4,67 +4,377 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Escalation Management Runbook — Commercial Leadership Hub</title>
-  <meta name="description" content="Handle high-severity incidents without losing the account — roles, flow and comms." />
+  <meta name="description" content="Handle high-severity incidents without losing the account — roles, flow, comms, metrics and 90-day rollout." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/escalation-runbook.html" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Escalation Management Runbook — Commercial Leadership Hub" />
-  <meta property="og:description" content="Handle high-severity incidents without losing the account — roles, flow and comms." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:description" content="A complete escalation system: when to declare, roles, comms cadence, customer updates, postmortem and rollout." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/escalation-runbook-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/escalation-runbook.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date()); gtag('config','G-81TG0R550X');
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
   <style>
+    .hero{margin:16px 0}
+    .hero img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:8px}
-    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    table{width:100%;border-collapse:separate;border-spacing:0 6px}
-    th,td{padding:8px 10px;border:1px solid var(--line);background:var(--surface);}
-    th{background:var(--canvas)}
-    .callout{border-left:3px solid #111827;padding-left:12px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .checklist li{margin:6px 0}
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
     .xs{font-size:12px}
-    .kbd{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--surface)}
-    ol>li{margin:6px 0}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-      <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
-    </a>
-    <nav class="main-nav">
-      <a href="/#services">Services</a>
-      <a href="/#projects">Projects</a>
-      <a href="/#about">About</a>
-      <a href="/articles/">Articles</a>
-    </nav>
-    <div class="header-cta">
-      <a class="btn ghost" href="/articles/">Back to Articles</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/">Back to Articles</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container" style="margin:16px 0">
-  <span class="tag">Success</span>
-  <h1>Escalation Management Runbook</h1>
-  <p class="muted">Handle high-severity incidents without losing the account — roles, flow and comms.</p>
+  <main class="container">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Success</span>
+      <h1>Escalation Management Runbook</h1>
+      <p class="muted">Handle high-severity incidents without losing the account — roles, flow, comms, metrics and rollout.</p>
+    </div>
 
-  <section class="section"><h2>When to declare</h2><p>Severity matrix: user impact, data loss, security, exec visibility.</p></section>
-<section class="section"><h2>Roles</h2><ul><li>Incident commander</li><li>Comms lead</li><li>Engineering owner</li><li>Exec sponsor</li></ul></section>
-<section class="section"><h2>Flow</h2><ol><li>Contain</li><li>Communicate</li><li>Fix</li><li>Post‑mortem</li></ol></section>
-<section class="section"><h2>Templates</h2><p>Customer update template every 2–4 hours until resolved.</p></section>
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/escalation-runbook-hero.webp" type="image/webp">
+        <img src="/assets/articles/escalation-runbook-hero.png" alt="War room with roles, timeline and customer comms for a major incident" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
 
-  <div class="section xs">
-    Last updated: 2025-08-15. © Commercial Leadership Hub.
-  </div>
-</main>
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For CS, Support, Engineering and Sales leaders who must stabilize high-severity incidents (SEV-1/2) while protecting revenue and trust. Use this runbook when outages, security events, data issues or high-impact defects trigger executive visibility and churn risk.</p>
+    </section>
 
-<footer class="site-footer">
-  <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <!-- Introduction (long) -->
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Most escalations are lost in the first hour—not because engineering cannot fix the issue, but because ownership and communication are unclear. Customers can tolerate defects; they will not tolerate silence or spin. A repeatable escalation system protects the relationship while the fix is in flight: we declare quickly, assign clear roles, publish a cadence for updates and document decisions in one place.</p>
+      <p>This runbook defines when to declare, who leads what, how we communicate and how we close. It compresses chaos into a rhythm: contain risk, inform stakeholders, fix fast, and learn so it does not happen again. We keep executives focused on decisions (risk, customer impact, credits) while the incident team handles technical work. Everyone sees the same timeline and facts.</p>
+      <p>We design for mixed contexts: SaaS outages, integrations failing at a key customer, security events with legal implications. In all cases, we bias to early declaration and over-communication. We prefer a clean “we are on it every 2 hours” over a perfectly formatted post at hour six.</p>
+      <p>Finally, we protect the account. Sales and CS are part of the core team from minute one. They inform the update cadence and align on credits, extension of terms or executive calls. We avoid promises the team cannot meet and escalate decisions that change scope or risk. After resolution, we run a blameless post-mortem that produces specific code/process changes and an outbound narrative that rebuilds confidence.</p>
+    </section>
+
+    <!-- What good looks like -->
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Clear declaration:</strong> severity, customer impact, incident commander assigned within 15 minutes.</li>
+        <li><strong>Roles &amp; channel:</strong> IC, Comms Lead, Engineering Owner, CS/Sales owner; single incident channel and timeline log.</li>
+        <li><strong>Comms cadence:</strong> public updates every 60–120 minutes, exec brief every 4 hours, one source of truth.</li>
+        <li><strong>Binary status:</strong> Contained → Mitigated → Resolved, with exit criteria and evidence.</li>
+        <li><strong>Post-mortem:</strong> blameless, scheduled within 5 business days, actions with owners and due dates.</li>
+      </ul>
+    </section>
+
+    <!-- Common pitfalls -->
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li><strong>Slow declaration:</strong> teams wait for perfect facts → customer fills the gap.</li>
+        <li><strong>Role confusion:</strong> IC vs. Eng lead vs. Comms lead not explicit → conflicting messages.</li>
+        <li><strong>Drift in cadence:</strong> “we’ll update soon” becomes hours → trust evaporates.</li>
+        <li><strong>Vague closure:</strong> “seems stable” without formal exit → incidents reopen.</li>
+        <li><strong>No learning loop:</strong> post-mortem postponed → recurrence risk stays high.</li>
+      </ul>
+    </section>
+
+    <!-- Playbook -->
+    <section class="section">
+      <h2>Playbook</h2>
+
+      <h3>1) Declare &amp; triage (first 15 minutes)</h3>
+      <ul class="checklist">
+        <li>Assess user impact, data risk, security indicators and executive visibility.</li>
+        <li>Set severity (SEV-1/2), name Incident Commander (IC) and open the incident channel.</li>
+        <li>Create incident record (ID, start time, affected services, customers, first hypothesis).</li>
+      </ul>
+
+      <h3>2) Assign roles</h3>
+      <ul class="checklist">
+        <li><strong>Incident Commander:</strong> owns flow, decisions, timeline, and status.</li>
+        <li><strong>Engineering Owner:</strong> leads technical triage/fix; assigns SMEs.</li>
+        <li><strong>Comms Lead:</strong> drafts updates (customer + internal) and runs cadence.</li>
+        <li><strong>CS/Sales Owner:</strong> customer briefings, sentiment, credits path, exec calls.</li>
+        <li><strong>Executive Sponsor:</strong> shields team, aligns on risk and approvals.</li>
+      </ul>
+
+      <h3>3) Contain &amp; communicate (first hour)</h3>
+      <ul class="checklist">
+        <li>Publish first customer update: acknowledge, impact, current mitigation, next update time.</li>
+        <li>Open executive brief doc (one pager): status, risks, asks, ETA, customer list.</li>
+        <li>Decide mitigation (rollback, feature flag, rate limiting, hotfix) with risk notes.</li>
+      </ul>
+
+      <h3>4) Fix &amp; track</h3>
+      <ul class="checklist">
+        <li>Timebox hypotheses; log each attempt in the timeline with result.</li>
+        <li>Keep 60–120 minute public update cadence; internal updates as needed.</li>
+        <li>Mark status transitions with evidence: logs/metrics for <em>Contained</em>, validation for <em>Resolved</em>.</li>
+      </ul>
+
+      <h3>5) Close cleanly</h3>
+      <ul class="checklist">
+        <li>Resolution update: cause (known/under investigation), customer impact window, prevention steps.</li>
+        <li>Decide credits/terms with CS/Sales; book post-mortem within 5 business days.</li>
+        <li>Handoff to remediation: owners, dates, acceptance criteria, comms plan.</li>
+      </ul>
+
+      <h3>6) Post-mortem &amp; remediation</h3>
+      <ul class="checklist">
+        <li>Blameless write-up: timeline, contributing factors, detection gaps, “five whys”.</li>
+        <li>Actions across code, infra, process and monitoring; tie to OKRs.</li>
+        <li>Outbound “we learned” update to key customers where appropriate.</li>
+      </ul>
+    </section>
+
+    <!-- Artifacts -->
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Core</h3>
+          <ul>
+            <li>Incident record (ID, severity, owners, start, status, affected scope).</li>
+            <li>Timeline log (UTC stamps, action, owner, result).</li>
+            <li>Customer update template (acknowledge → impact → action → next update).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Supporting</h3>
+          <ul>
+            <li>Executive brief (one pager, refreshed every 4h).</li>
+            <li>Post-mortem template (blameless, actions with owners/dates).</li>
+            <li>Credit/terms calculator and approval matrix.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section">
+      <h2>Worked examples</h2>
+
+      <h3>Example A — SaaS outage (database failover)</h3>
+      <p><strong>Situation:</strong> Global read latency spikes → write errors for 18% of sessions.</p>
+      <p><strong>Actions:</strong> SEV-1 declared in 9 min; rollback feature flag; failover to replica; status page + 60-min cadence; exec brief every 4h.</p>
+      <p><strong>Result:</strong> Mitigated in 72 min; root cause: connection pool misconfig; shipped guardrails in 48h; zero churn; one credit issued.</p>
+
+      <h3>Example B — Security incident (credential leak suspicion)</h3>
+      <p><strong>Situation:</strong> Anomalous logins in two regions; potential token reuse.</p>
+      <p><strong>Actions:</strong> SEV-1; forced token rotation; geo blocks; forensic logging; legal engaged; 2-hour updates.</p>
+      <p><strong>Result:</strong> No data exfil confirmed; rotated secrets; updated playbooks; customer trust preserved via transparent comms.</p>
+
+      <h3>Example C — P1 integration failure at strategic account</h3>
+      <p><strong>Situation:</strong> Nightly sync fails; finance cannot close month.</p>
+      <p><strong>Actions:</strong> SEV-2; hotfix patch; backfill job; daily exec call with customer CFO; MAP for hardening.</p>
+      <p><strong>Result:</strong> Resolved in 36h; created reliability program; expansion continued.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> time-to-ack (TTA), time-to-first-update (TTU), update SLA adherence, executive brief cadence kept, % incidents with named IC and Comms Lead.</p>
+      <p><strong>Lagging:</strong> MTTR, customer sentiment delta (before/after), SLA credits issued, churn risk change on affected accounts, recurrence rate within 90 days.</p>
+    </section>
+
+    <!-- Diagram -->
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/escalation-runbook-diagram.webp" type="image/webp">
+        <img src="/assets/articles/escalation-runbook-diagram.png" alt="Escalation flow: Declare → Roles → Contain → Communicate → Fix → Resolve → Post-mortem → Remediate" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Declare early, communicate on a clock, close with evidence and learning.</p>
+    </section>
+
+    <!-- Implementation checklist -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Publish severity matrix and declaration rules (SEV-1/2/3).</li>
+        <li>Define roles (IC, Eng Owner, Comms, CS/Sales) and on-call rotation.</li>
+        <li>Create incident channel convention and timeline logging template.</li>
+        <li>Stand up status page or customer update mechanism.</li>
+        <li>Adopt post-mortem template; schedule monthly drills.</li>
+        <li>Set credit approval matrix and exec brief template.</li>
+      </ul>
+    </section>
+
+    <!-- Measurement -->
+    <section class="section">
+      <h2>Measurement</h2>
+      <p><strong>Team level:</strong> % incidents declared &lt;15 min, update SLA hit rate, MTTR trend, recurrence, credits cost as % ARR.</p>
+      <p><strong>Individual level:</strong> IC cadence kept, timeline completeness, post-mortem timeliness, remediation action closure rate.</p>
+    </section>
+
+    <!-- Team buy-in -->
+    <section class="section">
+      <h2>Team buy-in</h2>
+      <ul>
+        <li>Position escalations as trust-events: how we respond matters more than the defect.</li>
+        <li>Coach blamelessness and single-source-of-truth comms; celebrate clean runs.</li>
+        <li>Rotate roles to build depth; shadow IC on drills.</li>
+      </ul>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section">
+      <h2>Why it matters</h2>
+      <ul class="muted">
+        <li><strong>Customer trust:</strong> clear ownership and cadence prevent rumor spirals.</li>
+        <li><strong>Revenue protection:</strong> faster, cleaner incidents reduce credits and churn risk.</li>
+        <li><strong>Learning culture:</strong> post-mortems compound reliability and speed.</li>
+      </ul>
+      <p>Pair with the <a href="/articles/mutual-action-plan-template.html">MAP</a> for recovery plans and <a href="/articles/sales-process-and-stage-criteria.html">Stage Criteria</a> to keep deal rhythm during incidents.</p>
+    </section>
+
+    <!-- Metrics & pitfalls (always-on block) -->
+    <section class="section">
+      <h2>Metrics &amp; pitfalls</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Watch</h3>
+          <ul>
+            <li>TTA / TTU &lt;= 15m / 60–120m</li>
+            <li>Update SLA adherence</li>
+            <li>Post-mortem scheduled &lt;= 5d</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Avoid</h3>
+          <ul>
+            <li>“We’ll update soon” (no timestamp)</li>
+            <li>Competing narratives across teams</li>
+            <li>Closing without evidence or actions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-day rollout -->
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <h3>Weeks 1–2 — Stand up</h3>
+      <ul>
+        <li><strong>Owners:</strong> Support/CS (lead), Engineering, Legal/Comms.</li>
+        <li><strong>Artifacts:</strong> severity matrix, role cards, templates (updates, exec brief, post-mortem).</li>
+        <li><strong>Exit:</strong> on-call rota live; incident channel convention published.</li>
+      </ul>
+      <h3>Weeks 3–4 — Drill</h3>
+      <ul>
+        <li>Tabletop exercise; measure TTA/TTU; tune templates and handoffs.</li>
+      </ul>
+      <h3>Weeks 5–6 — Pilot on live incidents</h3>
+      <ul>
+        <li>Run the cadence on 3+ incidents; collect customer feedback; adjust update timing.</li>
+      </ul>
+      <h3>Weeks 7–8 — Instrument</h3>
+      <ul>
+        <li>Dashboard: TTA, TTU, MTTR, SLA credits; add IC cadence metric.</li>
+      </ul>
+      <h3>Weeks 9–10 — Cross-functional SLAs</h3>
+      <ul>
+        <li>Legal/security response times; exec brief schedule; credit approval matrix.</li>
+      </ul>
+      <h3>Weeks 11–12 — Bake into rhythm</h3>
+      <ul>
+        <li>Monthly drills; post-mortem review in ops forum; refresh examples quarterly.</li>
+      </ul>
+    </section>
+
+    <!-- Related articles (prominent, clickable) -->
+    <section class="section">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/articles/proof-of-concept-plan.html">Proof-of-Concept Plan</a></li>
+        <li><a href="/articles/mutual-action-plan-template.html">Mutual Action Plan (MAP)</a></li>
+        <li><a href="/articles/sales-process-and-stage-criteria.html">Sales Process &amp; Stage Criteria</a></li>
+        <li><a href="/articles/executive-meeting-playbook.html">Executive Meeting Playbook</a></li>
+      </ul>
+    </section>
+
+    <!-- Next steps & CTA -->
+    <section class="section">
+      <h2>Next steps &amp; CTA</h2>
+      <ul>
+        <li>Publish the severity matrix and declare rules this week.</li>
+        <li>Run a 45-minute tabletop with IC/Eng/Comms/CS.</li>
+        <li>Adopt the companion template for the next incident.</li>
+      </ul>
+      <p><a class="btn" href="/templates/escalation-runbook-template.html">Use the template</a></p>
+    </section>
+
+    <!-- Sources & terms -->
+    <section class="section">
+      <h2>Sources &amp; terms</h2>
+      <p><strong>Terms:</strong> SEV-1/2 (severity), IC (Incident Commander), MTTR (Mean Time to Restore), TTU (Time to first Update), PIR (Post-Incident Review), RFO/RCA (Reason/Root Cause Analysis).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
