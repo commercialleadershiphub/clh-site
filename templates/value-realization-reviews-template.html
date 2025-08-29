@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Value Realization Reviews — Companion Template — Commercial Leadership Hub</title>
+  <meta name="description" content="Copy-ready EBR one-pager: goals, KPI deltas, ROI quick math, stories, options & asks, decisions and recap checklist. Printable." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/value-realization-reviews-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Value Realization Reviews — Companion Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="One-pager to prep and run EBRs with proof, ROI and crisp asks. Printable." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/value-realization-reviews-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
+  <!-- Styles (baseline) -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    label{font-weight:600;display:block;margin:6px 0 4px}
+    input[type="text"], input[type="date"], input[type="time"], input[type="number"], textarea, select{
+      width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface)
+    }
+    textarea{min-height:84px}
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}
+    th{background:var(--surface)}
+    .adder{margin-top:8px}
+    .btn-sm{padding:4px 8px;font-size:12px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
+    @media print{
+      header.site-header, footer.site-footer, .actions, .adder, .btn-sm{display:none}
+      .section{box-shadow:none}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header — BASELINE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/value-realization-reviews.html">Back to Playbook</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Title -->
+    <div style="margin-top:16px">
+      <span class="tag">Success</span>
+      <h1>Value Realization Reviews — Companion Template</h1>
+      <p class="muted">Fill live with the customer. Keep it short, numeric and decisive. Print or save as PDF.</p>
+    </div>
+
+    <!-- Review meta -->
+    <section class="section">
+      <div class="grid-3">
+        <div>
+          <label>Account</label>
+          <input type="text" placeholder="Customer name" />
+        </div>
+        <div>
+          <label>Executive sponsor (role)</label>
+          <input type="text" placeholder="e.g., COO / CFO / CIO" />
+        </div>
+        <div>
+          <label>Date &amp; Time</label>
+          <div class="row">
+            <input type="date" />
+            <input type="time" />
+          </div>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Original goal (1 line)</label>
+          <input type="text" placeholder="e.g., Reduce approval cycle time by 20%" />
+        </div>
+        <div>
+          <label>Stage / Board date</label>
+          <input type="text" placeholder="e.g., Renewal Q4 / Board 2025-11-05" />
+        </div>
+        <div>
+          <label>Internal sponsor</label>
+          <input type="text" placeholder="Name + role" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Attendees -->
+    <section class="section">
+      <h2>Attendees &amp; roles</h2>
+      <div class="table-wrap">
+        <table id="attendeesTable">
+          <thead><tr><th>Name</th><th>Org</th><th>Role (decision/influence)</th><th>What we need from them</th><th style="width:1%"></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" placeholder="Customer / Vendor" /></td>
+              <td><input type="text" placeholder="EB / Tech / Finance" /></td>
+              <td><input type="text" placeholder="Approval / data / intro" /></td>
+              <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('attendeesTable')">+ Add attendee</button></div>
+    </section>
+
+    <!-- KPI table -->
+    <section class="section">
+      <h2>KPIs — before / after / target</h2>
+      <div class="table-wrap">
+        <table id="kpiTable">
+          <thead><tr><th>KPI</th><th>Baseline</th><th>Current</th><th>Target</th><th>Source</th><th>Owner</th><th style="width:1%"></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><input type="text" placeholder="e.g., Approval cycle time (days)"/></td>
+              <td><input type="text" placeholder="14"/></td>
+              <td><input type="text" placeholder="10"/></td>
+              <td><input type="text" placeholder="9"/></td>
+              <td><input type="text" placeholder="System / report"/></td>
+              <td><input type="text" placeholder="Ops Lead"/></td>
+              <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('kpiTable')">+ Add KPI</button></div>
+    </section>
+
+    <!-- ROI quick math & Evidence -->
+    <section class="section">
+      <div class="grid-2">
+        <div>
+          <h2>ROI quick math</h2>
+          <div class="grid-3">
+            <div>
+              <label>Volume / mo</label>
+              <input type="number" placeholder="e.g., 1,200" />
+            </div>
+            <div>
+              <label>Time saved / unit</label>
+              <input type="text" placeholder="e.g., 15 min" />
+            </div>
+            <div>
+              <label>Cost / hour</label>
+              <input type="text" placeholder="$45" />
+            </div>
+          </div>
+          <label style="margin-top:8px">Monthly impact (notes)</label>
+          <textarea placeholder="Show the quick math and assumptions. Include sensitivity."></textarea>
+        </div>
+        <div>
+          <h2>Evidence pack (tick attached)</h2>
+          <label><input type="checkbox" /> KPI screenshots / report links</label><br/>
+          <label><input type="checkbox" /> User quotes</label><br/>
+          <label><input type="checkbox" /> Benchmark / reference</label><br/>
+          <label><input type="checkbox" /> Pilot data / demo script</label><br/>
+          <label><input type="checkbox" /> Security/Legal appendix</label>
+          <label style="margin-top:8px">Links</label>
+          <textarea placeholder="URLs or internal doc links."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories -->
+    <section class="section">
+      <div class="grid-2">
+        <div>
+          <h2>90-second storyline</h2>
+          <p class="muted">Context → problem cost → proof → options → asks.</p>
+          <textarea placeholder="Write 4–5 sentences verbatim."></textarea>
+        </div>
+        <div>
+          <h2>User stories (2–3)</h2>
+          <textarea placeholder="Short bullets with quotes/screens."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Options & Asks -->
+    <section class="section">
+      <div class="grid-2">
+        <div>
+          <h2>Options &amp; trade-offs</h2>
+          <textarea placeholder="Option A (default) — impact, effort, risk&#10;Option B — impact, effort, risk&#10;Option C — impact, effort, risk"></textarea>
+        </div>
+        <div>
+          <h2>The asks (2–3)</h2>
+          <div class="table-wrap">
+            <table id="asksTable">
+              <thead><tr><th>Ask</th><th>Owner</th><th>Due</th><th>Feasibility</th><th style="width:1%"></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" placeholder="Approve 3-week pilot"/></td>
+                  <td><input type="text" placeholder="Exec / IT"/></td>
+                  <td><input type="date"/></td>
+                  <td><input type="text" placeholder="Low/Med/High"/></td>
+                  <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="adder"><button class="btn ghost" type="button" onclick="addRow('asksTable')">+ Add ask</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decisions & next milestones -->
+    <section class="section">
+      <h2>Decisions &amp; next milestones</h2>
+      <div class="table-wrap">
+        <table id="decisionsTable">
+          <thead><tr><th>Decision</th><th>Milestone</th><th>Date</th><th>Calendar hold</th><th>Status</th><th style="width:1%"></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><input type="text" placeholder="Proceed with pilot scope"/></td>
+              <td><input type="text" placeholder="Pilot kickoff"/></td>
+              <td><input type="date"/></td>
+              <td><input type="text" placeholder="Held / Pending"/></td>
+              <td><input type="text" placeholder="Open / Done"/></td>
+              <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('decisionsTable')">+ Add row</button></div>
+    </section>
+
+    <!-- Recap email checklist -->
+    <section class="section">
+      <h2>Recap email (send within 24h)</h2>
+      <div class="grid-3">
+        <div>
+          <label><input type="checkbox" /> Decisions and asks listed</label>
+          <label><input type="checkbox" /> Milestones + dates + owners</label>
+          <label><input type="checkbox" /> Links to KPI sources & ROI sheet</label>
+        </div>
+        <div>
+          <label><input type="checkbox" /> Security/Legal next steps booked</label>
+          <label><input type="checkbox" /> Next meeting calendar hold added</label>
+          <label><input type="checkbox" /> Internal notes updated (CRM)</label>
+        </div>
+        <div>
+          <label><input type="checkbox" /> Risk log updated (if any)</label>
+          <label><input type="checkbox" /> Thank-you sent to EA/CoS</label>
+          <label><input type="checkbox" /> Manager notified (if escalations)</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <div class="actions" style="margin:10px 0 18px">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a class="btn ghost" href="/articles/value-realization-reviews.html">Back to Playbook</a>
+    </div>
+
+    <section class="section muted" style="font-size:12px">
+      Use with the <em>Value Realization Reviews</em> playbook. Keep KPI sources clear, make ROI assumptions explicit, and always leave with dated next steps.
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Add a new row: clone last row and clear values
+    function addRow(tableId){
+      const table = document.getElementById(tableId);
+      if(!table) return;
+      const tbody = table.querySelector('tbody');
+      const last = tbody.querySelector('tr:last-child');
+      const clone = last.cloneNode(true);
+      clone.querySelectorAll('input, textarea, select').forEach(el=>{
+        if(el.type === 'checkbox' || el.type === 'radio'){ el.checked = false; return; }
+        el.value = '';
+      });
+      tbody.appendChild(clone);
+    }
+
+    // Remove a row; keep at least one row. If last row, just clear inputs.
+    function removeRow(btn){
+      const tr = btn.closest('tr');
+      const tbody = tr.parentElement;
+      if(tbody.querySelectorAll('tr').length > 1){
+        tbody.removeChild(tr);
+      }else{
+        tr.querySelectorAll('input, textarea, select').forEach(el=>{
+          if(el.type === 'checkbox' || el.type === 'radio'){ el.checked = false; return; }
+          el.value = '';
+        });
+      }
+    }
+  </script>
+</body>
+</html>
