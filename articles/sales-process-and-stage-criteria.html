@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sales Process & Stage Criteria — Commercial Leadership Hub</title>
-  <meta name="description" content="Clean exits, docs and MEDDICC alignment that sticks." />
+  <meta name="description" content="A complete operating system for stages: clean entry/exit criteria, required artifacts, MEDDICC mapping, governance, dashboards, worked examples and a 90-day rollout. Includes companion template." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/sales-process-and-stage-criteria.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sales Process & Stage Criteria — Commercial Leadership Hub" />
-  <meta property="og:description" content="Clean exits, docs and MEDDICC alignment that sticks." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:description" content="Clean exits, required docs and MEDDICC alignment that sticks. With examples and a 90-day rollout." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/sales-process-and-stage-criteria-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/sales-process-and-stage-criteria.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
@@ -31,36 +31,422 @@
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
       </div>
     </div>
   </header>
+
   <main class="container">
-    <div class="hero">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Ops</span>
       <h1>Sales Process & Stage Criteria</h1>
-      <p class="muted">Clean exits, docs and MEDDICC alignment that sticks.</p>
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Sales Process & Stage Criteria">
+      <p class="muted">Clean exits, required docs and MEDDICC alignment that sticks.</p>
     </div>
-    <section class="section"><h2>Framework</h2><ul><li>Funnel with explicit exit criteria and required artifacts.</li><li>MEDDICC fields mapped to stages to avoid duplication.</li></ul></section>
-    <section class="section"><h2>Checklist</h2><ul><li>Stage 2 exit: pain quantified; power map; next exec meeting set.</li><li>Stage 3 exit: MAP agreed; security started; mutual ROI assumptions.</li></ul></section>
-    <section class="section"><h2>Metrics</h2><ul><li>Stage conversion; time‑in‑stage; slipped deals.</li></ul></section>
+
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/sales-process-and-stage-criteria-hero.webp" type="image/webp">
+        <img src="/assets/articles/sales-process-and-stage-criteria-hero.png" alt="Sales stage board with clear entry/exit criteria and required artifacts" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
+
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For CRO/RevOps/Enablement leaders and managers who need a simple, enforceable sales process. Use this when forecast misses come from stage drift, duplicate data entry, or deals that “progress” without proof.</p>
+    </section>
+
+    <!-- Introduction (long) -->
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Most sales processes look good on a slide and fall apart in the CRM. Stages are vague, exits are subjective, and reps retype the same MEDDICC facts in three different places. Managers compensate with more meetings; forecasts still wobble because nothing in the system forces proof before progression.</p>
+      <p>A strong process is an operating system, not a poster. Each stage exists for a reason, has <em>clean entry and exit</em> criteria, and requires a small set of artifacts that prove reality. The CRM enforces these rules at the moment of stage change—no side spreadsheets, no “we’ll fill it later”. Reps spend less time on admin because fields are mapped once to MEDDICC and reused; managers coach the gaps the system surfaces.</p>
+      <p>Clarity changes behavior. When “Stage 3 exit = MAP agreed + security intake started + economic buyer identified in CRM” (and the system prevents the move without those items), velocity improves and surprises drop. Finance trusts the numbers. Leadership can forecast with a narrower confidence band. Most importantly, deals move forward because the next task is obvious and owned.</p>
+      <p>This playbook gives you a practical, enforceable stage model with definitions, artifacts, a MEDDICC field map, governance and dashboards. It includes worked examples across enterprise, mid-market and public sector, plus a 90-day rollout and a companion template you can implement as-is.</p>
+    </section>
+
+    <!-- What good looks like -->
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Explicit stages:</strong> purpose, entry and exit in one sentence each.</li>
+        <li><strong>Few, tight artifacts:</strong> proof beats prose—MAP, discovery brief, security intake, business case.</li>
+        <li><strong>Single source of truth:</strong> MEDDICC captured once and reused; no duplicate fields.</li>
+        <li><strong>Guardrails in CRM:</strong> cannot progress without required fields/files.</li>
+        <li><strong>Manager leverage:</strong> stage-change notes and reason codes drive coaching and pipeline hygiene.</li>
+      </ul>
+    </section>
+
+    <!-- Common pitfalls -->
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li><strong>Vague exits:</strong> “stakeholders aligned” with no names or dates.</li>
+        <li><strong>Duplication:</strong> MEDDICC fields scattered; reps retype the same info.</li>
+        <li><strong>Compliance theatre:</strong> artifacts uploaded after the fact to unlock a stage.</li>
+        <li><strong>Too many stages:</strong> micro-stages that add clicks without clarity.</li>
+        <li><strong>No reason codes:</strong> stage jumps/laps without context → poor learning.</li>
+      </ul>
+    </section>
+
+    <!-- Playbook (expanded with subheads) -->
+    <section class="section">
+      <h2>Playbook</h2>
+
+      <h3>1) Define the funnel (names &amp; purpose)</h3>
+      <ul class="checklist">
+        <li><strong>Stage 1 — Qualify:</strong> is there a problem we solve and a path to power?</li>
+        <li><strong>Stage 2 — Discovery:</strong> quantify pain, map stakeholders, agree evaluation shape.</li>
+        <li><strong>Stage 3 — Solution Fit:</strong> align on approach and scope; draft success criteria.</li>
+        <li><strong>Stage 4 — Validation:</strong> run proof (pilot/POC/ref calls); de-risk security/legal.</li>
+        <li><strong>Stage 5 — Business Case:</strong> confirm ROI and executive sponsorship; commit timeline.</li>
+        <li><strong>Stage 6 — Procurement:</strong> commercials, legal, ordering; exit to won/lost.</li>
+      </ul>
+
+      <h3>2) Make exits binary (per stage)</h3>
+      <div class="grid-2">
+        <div>
+          <h4>Stage 1 → 2 (enter Discovery)</h4>
+          <ul class="checklist">
+            <li>Problem stated in customer language + impact area</li>
+            <li>Access path to economic buyer identified</li>
+            <li>Next meeting booked &amp; on calendar</li>
+          </ul>
+          <h4>Stage 2 → 3 (enter Solution Fit)</h4>
+          <ul class="checklist">
+            <li>Pain quantified (metric &amp; baseline)</li>
+            <li>Power map in CRM (names/roles)</li>
+            <li>Evaluation plan drafted (MAP skeleton)</li>
+          </ul>
+          <h4>Stage 3 → 4 (enter Validation)</h4>
+          <ul class="checklist">
+            <li>POC use cases agreed (≤2) &amp; success criteria written</li>
+            <li>Security intake submitted</li>
+            <li>Technical owner assigned</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Stage 4 → 5 (enter Business Case)</h4>
+          <ul class="checklist">
+            <li>Proof complete (pilot results or reference validation)</li>
+            <li>Risks &amp; counters logged and owned</li>
+            <li>Executive sponsor confirmed</li>
+          </ul>
+          <h4>Stage 5 → 6 (enter Procurement)</h4>
+          <ul class="checklist">
+            <li>Mutual ROI model agreed (assumptions listed)</li>
+            <li>Commercial terms outline (term, volume, attach)</li>
+            <li>Target signature date in MAP</li>
+          </ul>
+          <h4>Stage 6 → Win/Loss</h4>
+          <ul class="checklist">
+            <li>Order form executed / loss reason captured</li>
+            <li>Handoff pack to CS (scope, risks, timeline)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>3) Required artifacts (proof over prose)</h3>
+      <ul class="checklist">
+        <li><strong>Discovery brief</strong> (problem, impact, stakeholders, timeline cues)</li>
+        <li><strong>MAP</strong> (mutual action plan with owners/dates)</li>
+        <li><strong>Security intake</strong> (link/file + owner)</li>
+        <li><strong>Proof pack</strong> (pilot criteria &amp; results / reference call notes)</li>
+        <li><strong>Business case</strong> (1-pager: assumptions, ROI, risk)</li>
+      </ul>
+
+      <h3>4) MEDDICC mapping (once, reused)</h3>
+      <div class="grid-2">
+        <div>
+          <h4>Capture timing</h4>
+          <ul class="checklist">
+            <li><strong>M</strong>etrics: Stage 2 (baseline) → refine Stage 4</li>
+            <li><strong>E</strong>conomic buyer: name by Stage 3 → meeting by Stage 4</li>
+            <li><strong>D</strong>ecision criteria/process: Stage 2 → lock in MAP by Stage 3</li>
+            <li><strong>I</strong>dentified pain: Stage 2 quantified</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Quality bars</h4>
+          <ul class="checklist">
+            <li><strong>C</strong>hampion: named + influence path documented</li>
+            <li><strong>C</strong>ompetition: posture noted + counters</li>
+            <li><strong>Papers</strong> (legal/proc): intake started by Stage 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>5) CRM guardrails &amp; coaching</h3>
+      <ul class="checklist">
+        <li>Make exit fields <em>required on stage change</em> (not on save).</li>
+        <li>Use <em>stage change reason</em> picklist (e.g., “proof passed”, “EB meeting booked”).</li>
+        <li>Auto-create manager task when a deal regresses ≥1 stage.</li>
+        <li>Dashboard tiles: “exits missing”, “security not started”, “no EB meeting”</li>
+      </ul>
+    </section>
+
+    <!-- Stage dictionary (expanded) -->
+    <section class="section">
+      <h2>Stage dictionary (quick reference)</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Stage 1 — Qualify</h3>
+          <p class="muted">Purpose: prove there is a problem we can solve and a path to power.</p>
+          <ul>
+            <li><strong>Entry:</strong> inbound/outbound meeting accepted.</li>
+            <li><strong>Exit:</strong> pain stated, next step booked, path to EB identified.</li>
+            <li><strong>Artifacts:</strong> brief notes in CRM.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stage 2 — Discovery</h3>
+          <p class="muted">Purpose: quantify pain, map stakeholders, shape evaluation.</p>
+          <ul>
+            <li><strong>Exit:</strong> quantified pain, power map, MAP skeleton.</li>
+            <li><strong>Artifacts:</strong> discovery brief, early MAP.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stage 3 — Solution Fit</h3>
+          <p class="muted">Purpose: agree approach and scope; prep validation.</p>
+          <ul>
+            <li><strong>Exit:</strong> POC use cases &amp; success criteria; security intake submitted.</li>
+            <li><strong>Artifacts:</strong> success criteria doc, intake form.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stage 4 — Validation</h3>
+          <p class="muted">Purpose: produce evidence that de-risks the choice.</p>
+          <ul>
+            <li><strong>Exit:</strong> proof passed + EB engaged + risks owned.</li>
+            <li><strong>Artifacts:</strong> proof pack, risk log.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stage 5 — Business Case</h3>
+          <p class="muted">Purpose: align value, timing and sponsorship.</p>
+          <ul>
+            <li><strong>Exit:</strong> ROI approved, terms outline, signature date in MAP.</li>
+            <li><strong>Artifacts:</strong> 1-page business case.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stage 6 — Procurement</h3>
+          <p class="muted">Purpose: finalize terms and paper.</p>
+          <ul>
+            <li><strong>Exit:</strong> order form executed / loss reason captured; CS handoff.</li>
+            <li><strong>Artifacts:</strong> order form, handoff pack.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artifacts -->
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Stage criteria one-pager</h3>
+          <ul>
+            <li>Purpose, entry, exit per stage</li>
+            <li>Checklist icons for quick inspection</li>
+          </ul>
+        </div>
+        <div>
+          <h3>MEDDICC field map</h3>
+          <ul>
+            <li>Field → Stage captured → Required at exit?</li>
+            <li>Owner (rep/SE/manager)</li>
+          </ul>
+        </div>
+      </div>
+      <ul>
+        <li>Discovery brief template • Security intake shortcut • MAP • Proof pack • Business case 1-pager</li>
+      </ul>
+    </section>
+
+    <!-- Worked examples (expanded) -->
+    <section class="section">
+      <h2>Worked examples</h2>
+      <h3>Example A — Enterprise SaaS with security heavy</h3>
+      <p><strong>Context:</strong> Bank; strict infosec; platform incumbent. <strong>Failure mode:</strong> pilots run before security → stall in Stage 4.</p>
+      <p><strong>Fix:</strong> Stage 3 exit requires <em>security intake submitted + EB path</em>. POC limited to 2 use cases with clear success criteria.</p>
+      <p><strong>Result:</strong> Validation time −28%; win rate +9 pts; fewer end-of-quarter slips.</p>
+
+      <h3>Example B — Mid-market fast track</h3>
+      <p><strong>Context:</strong> Time-sensitive ops buyer; light security. <strong>Design:</strong> compress stages 3–4; proof via references + 14-day sandbox.</p>
+      <p><strong>Result:</strong> Cycle time −21%; discount down 2 pts due to earlier EB engagement.</p>
+
+      <h3>Example C — Public sector RFP</h3>
+      <p><strong>Context:</strong> Formal RFP; limited EB access. <strong>Move:</strong> Stage 2 exit includes decision process mapped and pre-bid Q&amp;A logged. Stage 4 proof via site visits + third-party benchmarks.</p>
+      <p><strong>Result:</strong> Higher compliance score; clearer loss reasons when not selected.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> % stage exits passed first time, security started by Stage 3, EB meeting by Stage 4, MAP adoption, proof completion rate.</p>
+      <p><strong>Lagging:</strong> stage conversion, time-in-stage, slipped deals, win rate vs. incumbent, forecast accuracy.</p>
+    </section>
+
+    <!-- Diagram -->
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/sales-process-and-stage-criteria-diagram.webp" type="image/webp">
+        <img src="/assets/articles/sales-process-and-stage-criteria-diagram.png" alt="Diagram: stages with entry/exit, required artifacts and MEDDICC fields mapped across the funnel" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Enforce exits at the point of stage change. Proof before progression.</p>
+    </section>
+
+    <!-- Implementation checklist -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Draft purpose/entry/exit per stage (≤1 sentence each).</li>
+        <li>Pick 5 artifacts max; map each to a stage exit.</li>
+        <li>Create MEDDICC field map; delete duplicates.</li>
+        <li>Configure CRM validation on stage change; add reason codes.</li>
+        <li>Publish manager review script focused on exit checks.</li>
+      </ul>
+    </section>
+
+    <!-- Measurement -->
+    <section class="section">
+      <h2>Measurement</h2>
+      <p><strong>Team level:</strong> exit-pass rate, time-in-stage distribution, % deals with MAP, % security started by Stage 3, forecast error band.</p>
+      <p><strong>Individual level:</strong> exit rejections, regression count, MEDDICC completeness, EB engagement by Stage 4.</p>
+    </section>
+
+    <!-- Team buy-in -->
+    <section class="section">
+      <h2>Team buy-in</h2>
+      <ul>
+        <li>Position exits as a coaching tool, not gatekeeping.</li>
+        <li>Share 2 gold-standard examples per stage; celebrate clean exits.</li>
+        <li>Keep admin light—remove a field for every new one added.</li>
+      </ul>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section">
+      <h2>Why it matters</h2>
+      <ul class="muted">
+        <li><strong>Predictability:</strong> fewer end-of-quarter surprises.</li>
+        <li><strong>Speed:</strong> next actions obvious; blockers surfaced early.</li>
+        <li><strong>Trust:</strong> finance and leadership believe the numbers.</li>
+      </ul>
+      <p>Pair with <a href="/articles/mutual-action-plan-template.html">MAPs</a>, strong <a href="/articles/discovery-call-framework.html">discovery</a> and clear <a href="/articles/give-get-menu.html">give/get guardrails</a> to keep momentum.</p>
+    </section>
+
+    <!-- Metrics & pitfalls (always-on block) -->
+    <section class="section">
+      <h2>Metrics &amp; pitfalls</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Watch</h3>
+          <ul>
+            <li>Exit-pass rate by stage</li>
+            <li>Security intake started by Stage 3</li>
+            <li>EB engaged by Stage 4</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Avoid</h3>
+          <ul>
+            <li>Uploading artifacts after stage move</li>
+            <li>Duplicated MEDDICC fields</li>
+            <li>Micro-stages with no decision</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-day rollout (no "(extended)") -->
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <h3>Weeks 1–2 — Design &amp; align</h3>
+      <ul>
+        <li>Draft stage purpose/entry/exit; select artifacts; agree MEDDICC map.</li>
+        <li>Review with 3 top reps + 2 managers; tighten wording to be binary.</li>
+      </ul>
+      <h3>Weeks 3–4 — Configure &amp; pilot</h3>
+      <ul>
+        <li>CRM: require exit fields on stage change; add reason codes; build dashboard tiles.</li>
+        <li>Pilot on 20 deals across segments; collect rejections and confusion points.</li>
+      </ul>
+      <h3>Weeks 5–6 — Enable &amp; coach</h3>
+      <ul>
+        <li>Publish cheat sheets; run live deal reviews using new exits.</li>
+        <li>Tune artifacts (e.g., shrink discovery brief) based on pilot feedback.</li>
+      </ul>
+      <h3>Weeks 7–8 — Roll out</h3>
+      <ul>
+        <li>Enable validation rules for all; managers own exit checks in pipeline review.</li>
+        <li>Report exit-pass rate weekly; spotlight clean examples.</li>
+      </ul>
+      <h3>Weeks 9–10 — Tighten cross-functional</h3>
+      <ul>
+        <li>Security intake SLA; legal LOA templates; finance guardrails for term/volume.</li>
+      </ul>
+      <h3>Weeks 11–12 — Bake into rhythm</h3>
+      <ul>
+        <li>QBR includes stage hygiene; refresh examples quarterly.</li>
+        <li><strong>Target state:</strong> exit-pass rate ≥85%, forecast error band −25%, time-in-stage variance −20%.</li>
+      </ul>
+    </section>
+
+    <!-- Related articles (prominent, clickable) -->
+    <section class="section">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/articles/discovery-call-framework.html">Discovery Call Framework</a></li>
+        <li><a href="/articles/mutual-action-plan-template.html">Mutual Action Plan (MAP)</a></li>
+        <li><a href="/articles/give-get-menu.html">Give/Get Menu</a></li>
+        <li><a href="/articles/competitive-deal-strategy.html">Competitive Deal Strategy</a></li>
+      </ul>
+    </section>
+
+    <!-- Next steps & CTA (includes template button) -->
+    <section class="section">
+      <h2>Next steps &amp; CTA</h2>
+      <ul>
+        <li>Adopt the stage dictionary verbatim for a 60-day trial.</li>
+        <li>Turn on exit validation for Stage 3→4 and Stage 4→5 first.</li>
+        <li>Review exit-pass rate weekly and coach the top 2 failure reasons.</li>
+      </ul>
+      <p><a class="btn" href="/templates/sales-process-and-stage-criteria-template.html">Use the template</a></p>
+    </section>
+
+    <!-- Sources & terms -->
+    <section class="section">
+      <h2>Sources &amp; terms</h2>
+      <p><strong>Terms:</strong> MEDDICC (Metrics, Economic buyer, Decision criteria/process, Identified pain, Champion, Competition), MAP (Mutual Action Plan), Exit criteria (binary conditions required to move stage).</p>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -94,8 +480,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
