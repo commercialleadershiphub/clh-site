@@ -31,6 +31,11 @@
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
@@ -50,20 +55,298 @@
       </div>
     </div>
   </header>
+
   <main class="container">
-    <div class="hero">
+    <!-- Title block ABOVE hero for consistency -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Sales</span>
       <h1>Proof-of-Concept Plan</h1>
       <p class="muted">Entry/exit, success metrics and resourcing in one page.</p>
-      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop" alt="Proof-of-Concept Plan">
     </div>
-    <section class="section"><h2>Problem</h2><p>POCs sprawl, eat resources and end with “let’s revisit next quarter”.</p></section>
-    <section class="section"><h2>What good looks like</h2><ul class="muted"><li>Business outcome stated up front and measured weekly.</li><li>Two‑to‑four week window; clear exit criteria; no free services creep.</li><li>Small team with named time commitment.</li></ul></section>
-    <section class="section"><h2>Steps</h2><ol><li>Agree business metric and target (e.g., +20% win‑rate).</li><li>Pick 1–2 use cases; define dataset and environment.</li><li>Staffing: roles, hours/week, availability.</li><li>Exit criteria and procurement next steps.</li></ol></section>
-    <section class="section"><h2>Template</h2><ul><li>Goal | Use cases | Data/env | Team & hours | Exit criteria | Next steps</li></ul></section>
-    <section class="section"><h2>Metrics</h2><ul><li>POC duration adherence.</li><li>Conversion rate to paid.</li><li>Services hours burned vs. plan.</li></ul></section>
-    <section class="section"><h2>Risks</h2><ul><li>Undefined “success” → write it in numbers.</li><li>Unbounded dataset → freeze a snapshot.</li></ul></section>
+
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/proof-of-concept-plan-hero.webp" type="image/webp">
+        <img src="/assets/articles/proof-of-concept-plan-hero.png" alt="Proof-of-Concept board with goals, use cases, data and exit criteria" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
+
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For AEs, SEs and CS leaders running time-boxed evaluations where real data and limited build are required. Use this when trials sprawl, success is ambiguous, or services burn explodes. Works for net-new deals and expansions that need proof.</p>
+    </section>
+
+    <!-- Introduction (long) -->
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>POCs often start with good intent and end with fatigue. A champion wants to “try it”, a sandbox appears, two engineers jump in, and weeks later nobody can say if it worked. The result is a vague “let’s revisit next quarter” while your team has burned dozens of hours and lost momentum in other deals.</p>
+      <p>The root cause is the absence of a shared plan with clear entry and exit. Without numeric success criteria, fixed scope and named owners, a POC becomes a hobby project. Stakeholders drift in and out, datasets mutate, and energy shifts to polishing demos rather than producing evidence that executives can trust.</p>
+      <p>A strong Proof-of-Concept Plan solves this by forcing decisions up front: <em>What outcome are we proving? Which use cases matter? What data and environment are in scope? Who is contributing time each week? When do we stop, and what happens if we win?</em> When these are written down and reviewed weekly, the POC becomes a decision engine rather than a time sink.</p>
+      <p>Good plans are short. One page beats a deck. Two to four weeks beats “as long as it takes.” Real data beats perfect data. And most importantly: success criteria are measured during the POC, not retrospectively. If cycle time must drop 20%, we instrument on day one and watch it move week by week.</p>
+      <p>This playbook gives you a practical structure to design, run and close POCs. You will define outcomes and metrics, lock scope, staff realistically, create a simple runbook, and agree the commercial and procurement path that follows a pass. You will also guard against common traps—free services creep, shifting datasets, and pilots that try to be production.</p>
+      <p>Use the companion template to stand up your next POC in under an hour. The goal is not to “win demos”; it is to generate executive-safe evidence that justifies a purchase now, not later.</p>
+    </section>
+
+    <!-- What good looks like -->
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Outcome first:</strong> one business metric with a target and time box.</li>
+        <li><strong>Narrow scope:</strong> one or two use cases; data snapshot frozen.</li>
+        <li><strong>Named team:</strong> roles with weekly hours and availability.</li>
+        <li><strong>Runbook &amp; rhythm:</strong> weekly 20-min review; changes logged.</li>
+        <li><strong>Clear exit:</strong> pass/fail criteria; procurement next step pre-agreed.</li>
+      </ul>
+    </section>
+
+    <!-- Common pitfalls -->
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li><strong>Undefined success:</strong> “looks good” replaces a numeric target.</li>
+        <li><strong>Scope creep:</strong> new use cases sneak in; timeline doubles.</li>
+        <li><strong>Free services trap:</strong> engineers fill gaps that belong in onboarding.</li>
+        <li><strong>Moving data:</strong> live streams change the baseline week to week.</li>
+        <li><strong>No commercial path:</strong> winning POCs stall in legal/procurement.</li>
+      </ul>
+    </section>
+
+    <!-- Playbook -->
+    <section class="section">
+      <h2>Playbook</h2>
+
+      <h3>1) Define outcome &amp; metric</h3>
+      <ul class="checklist">
+        <li>Write a one-sentence goal: <em>“Reduce false positives by 25% within 3 weeks.”</em></li>
+        <li>Pick one metric you can measure weekly; decide the target and baseline.</li>
+        <li>Capture <em>why now</em> (board date, SLA risk, cost pressure) to anchor urgency.</li>
+      </ul>
+
+      <h3>2) Lock scope &amp; use cases</h3>
+      <ul class="checklist">
+        <li>Choose 1–2 use cases. Anything else goes to a backlog for Phase 2.</li>
+        <li>Freeze a data snapshot or controlled feed; document fields and filters.</li>
+        <li>List out-of-scope items explicitly (integrations, custom UI, edge cases).</li>
+      </ul>
+
+      <h3>3) Environment &amp; data readiness</h3>
+      <ul class="checklist">
+        <li>Decide environment (vendor cloud vs. customer sandbox) and access rules.</li>
+        <li>Complete security/legal intake early; link forms and owners.</li>
+        <li>Create a quick start: credentials, sample dataset, and run steps in one doc.</li>
+      </ul>
+
+      <h3>4) Staff realistically</h3>
+      <ul class="checklist">
+        <li>List roles with weekly hours: SE (6h), Data owner (3h), Champion (1h), PM (1h).</li>
+        <li>Confirm availability windows; add substitutes for holidays.</li>
+        <li>Agree response times for blockers (e.g., &lt;24h for data fixes).</li>
+      </ul>
+
+      <h3>5) Success criteria &amp; instrumentation</h3>
+      <ul class="checklist">
+        <li>Translate outcomes to 2–3 acceptance tests (e.g., “AUC ≥ 0.88 on holdout”).</li>
+        <li>Instrument on day one; build a tiny dashboard that updates weekly.</li>
+        <li>Define a decision checkpoint agenda at the end of Week 2/3.</li>
+      </ul>
+
+      <h3>6) Runbook &amp; weekly rhythm</h3>
+      <ul class="checklist">
+        <li>Stand-up notes doc: decisions, blockers, next actions, owner/date.</li>
+        <li>Hold a 20-minute weekly review; no status theater—decisions only.</li>
+        <li>Log all scope changes with impact (time/capacity) and approvals.</li>
+      </ul>
+
+      <h3>7) Commercial &amp; exit path</h3>
+      <ul class="checklist">
+        <li>Pre-agree procurement path on <em>pass</em>: redlines owner, approval dates.</li>
+        <li>Define trade rules if concessions are requested (see Give/Get).</li>
+        <li>On <em>fail</em>: decide next experiment or stop—no “soft extends”.</li>
+      </ul>
+    </section>
+
+    <!-- Artifacts -->
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>POC Charter (1-pager)</h3>
+          <ul>
+            <li>Outcome &amp; metric • Use cases • Data/env • Roles &amp; hours</li>
+            <li>Success criteria • Risks &amp; counters • Exit &amp; commercial path</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Runbook &amp; tracker</h3>
+          <ul>
+            <li>Weekly notes (decisions, blockers, next actions)</li>
+            <li>Mini dashboard of targets vs. actuals</li>
+            <li>Change log (scope, data, time impact)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section">
+      <h2>Worked examples</h2>
+
+      <h3>Example A — Fintech fraud triage</h3>
+      <p><strong>Goal:</strong> reduce false positives by 25% in 3 weeks on a 100k case snapshot. <strong>Scope:</strong> 2 rulesets, 5 features, no production writes. <strong>Team:</strong> SE 6h/w, data owner 3h/w.</p>
+      <p><strong>Success criteria:</strong> precision +8 pts at same recall; analyst handle time −15%. <strong>Result:</strong> hit +9 pts precision; 18% handle-time reduction; moved to paid with 90-day rollout.</p>
+
+      <h3>Example B — Manufacturing quality</h3>
+      <p><strong>Goal:</strong> cut rework by 20% on Line B in 4 weeks using historical lots. <strong>Scope:</strong> one workstation; snapshot of last 12 weeks; no MES integration.</p>
+      <p><strong>Success criteria:</strong> defect prediction AUC ≥0.88; two operator SOP changes trialed. <strong>Result:</strong> AUC 0.90; pilot SOP adopted; 3-line rollout funded.</p>
+
+      <h3>Example C — Retail search relevance</h3>
+      <p><strong>Goal:</strong> +10% add-to-cart rate on long-tail queries in 2 weeks. <strong>Scope:</strong> 500 queries; offline re-rank only; no UI changes.</p>
+      <p><strong>Success criteria:</strong> offline NDCG +12%; online A/B optional. <strong>Result:</strong> NDCG +14%; exec approved paid phase with staged go-live.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> charter completeness, data readiness SLA, weekly review adherence, blocker resolution time.</p>
+      <p><strong>Lagging:</strong> POC duration adherence, conversion to paid, services hours vs. plan, time-to-value after purchase.</p>
+    </section>
+
+    <!-- Diagram -->
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/proof-of-concept-plan-diagram.webp" type="image/webp">
+        <img src="/assets/articles/proof-of-concept-plan-diagram.png" alt="POC flow: outcome → scope/data → team → runbook → success criteria → decision & commercial path" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Short, instrumented, and owned on both sides—so a pass converts to purchase fast.</p>
+    </section>
+
+    <!-- Implementation checklist -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Publish a POC Charter template + two anonymized examples.</li>
+        <li>Create a data readiness checklist and intake links (security/legal).</li>
+        <li>Define standard success criteria patterns by use case.</li>
+        <li>Set up a 20-minute weekly review cadence with a notes doc.</li>
+        <li>Pre-agree commercial path and redlines owner on pass.</li>
+      </ul>
+    </section>
+
+    <!-- Measurement -->
+    <section class="section">
+      <h2>Measurement</h2>
+      <p><strong>Team level:</strong> conversion to paid, average POC duration, services burn variance, percent with complete charters.</p>
+      <p><strong>Individual level:</strong> charter quality, on-time reviews, blocker SLA, criteria hit rate.</p>
+    </section>
+
+    <!-- Team buy-in -->
+    <section class="section">
+      <h2>Team buy-in</h2>
+      <ul>
+        <li>Frame POCs as decision tools, not free projects.</li>
+        <li>Celebrate short passes that save time—discipline is a win.</li>
+        <li>Coach on writing tight success criteria and holding scope.</li>
+      </ul>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section">
+      <h2>Why it matters</h2>
+      <ul class="muted">
+        <li><strong>Predictable decisions:</strong> executives see clear, time-boxed evidence.</li>
+        <li><strong>Lower burn:</strong> services hours align to value, not speculation.</li>
+        <li><strong>Faster revenue:</strong> pass → commercial path already unlocked.</li>
+      </ul>
+      <p>Pair POCs with crisp <a href="/articles/discovery-call-framework.html">discovery</a>, strong <a href="/articles/executive-meeting-playbook.html">executive meetings</a> and disciplined <a href="/articles/give-get-menu.html">give/get trades</a> to keep velocity.</p>
+    </section>
+
+    <!-- Metrics & pitfalls (always-on block) -->
+    <section class="section">
+      <h2>Metrics &amp; pitfalls</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Watch</h3>
+          <ul>
+            <li>POC duration adherence</li>
+            <li>Conversion to paid</li>
+            <li>Services hours vs. plan</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Avoid</h3>
+          <ul>
+            <li>Undefined success criteria</li>
+            <li>Moving data baselines</li>
+            <li>Scope creep into production work</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-day rollout -->
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <h3>Weeks 1–2 — Stand up the system</h3>
+      <ul>
+        <li><strong>Owners:</strong> SE leader (lead), AE manager, CS/Services, Security.</li>
+        <li><strong>Artifacts:</strong> charter template, data readiness checklist, success-criteria patterns, review script.</li>
+        <li><strong>Actions:</strong> publish templates; pick two gold-standard examples; define change-log rules.</li>
+        <li><strong>Exit:</strong> 5 active POCs using the charter; first dashboard draft live.</li>
+      </ul>
+      <h3>Weeks 3–4 — Pilot</h3>
+      <ul>
+        <li>Run 5 POCs to completion; hold weekly reviews; enforce scope and exit.</li>
+        <li><strong>KPIs:</strong> ≥80% with complete charters; duration within ±1 week; change logs present.</li>
+      </ul>
+      <h3>Weeks 5–6 — Instrument &amp; coach</h3>
+      <ul>
+        <li>Dashboard: duration, conversion, burn variance; publish two win stories and one good “no-go”.</li>
+      </ul>
+      <h3>Weeks 7–8 — Roll out</h3>
+      <ul>
+        <li>Make charters mandatory for strategic deals; add POC status to pipeline reviews.</li>
+      </ul>
+      <h3>Weeks 9–10 — Tighten cross-functional path</h3>
+      <ul>
+        <li>Pre-approved legal positions; procurement checklist; give/get guardrails aligned.</li>
+      </ul>
+      <h3>Weeks 11–12 — Bake into rhythm</h3>
+      <ul>
+        <li>Monthly quality audit; refresh examples quarterly.</li>
+        <li><strong>Target state:</strong> conversion to paid +15–20 pts; average duration ≤ 4 weeks; burn variance within ±10%.</li>
+      </ul>
+    </section>
+
+    <!-- Related (prominent, clickable) -->
+    <section class="section">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/articles/discovery-call-framework.html" style="color:var(--text);text-decoration:underline">Discovery Call Framework</a></li>
+        <li><a href="/articles/executive-meeting-playbook.html" style="color:var(--text);text-decoration:underline">Executive Meeting Playbook</a></li>
+        <li><a href="/articles/give-get-menu.html" style="color:var(--text);text-decoration:underline">Give/Get Menu</a></li>
+        <li><a href="/articles/competitive-deal-strategy.html" style="color:var(--text);text-decoration:underline">Competitive Deal Strategy</a></li>
+      </ul>
+    </section>
+
+    <!-- Next steps & CTA (includes template button) -->
+    <section class="section">
+      <h2>Next steps &amp; CTA</h2>
+      <ul>
+        <li>Create a POC Charter for your next evaluation (use the template).</li>
+        <li>Freeze scope to two use cases and instrument success on day one.</li>
+        <li>Book the decision checkpoint now—don’t leave it to chance.</li>
+      </ul>
+      <p><a class="btn" href="/templates/proof-of-concept-plan-template.html">Use the template</a></p>
+    </section>
+
+    <!-- Sources & terms -->
+    <section class="section">
+      <h2>Sources &amp; terms</h2>
+      <p><strong>Terms:</strong> POC (Proof-of-Concept), Charter, Success criteria, Data snapshot, Change log, Decision checkpoint.</p>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -97,8 +380,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
