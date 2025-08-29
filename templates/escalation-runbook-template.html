@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Repo path: /templates/escalation-runbook-template.html -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escalation Management — Companion Template — Commercial Leadership Hub</title>
+  <meta name="description" content="Copy-ready 1-pager for high-severity incidents: declare, roles, timeline, customer updates, exec brief, resolution and post-mortem checklist." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/escalation-runbook-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Escalation Management — Companion Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="One-pager to run clean escalations with roles, cadence and documentation. Printable." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/escalation-runbook-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    label{font-weight:600;display:block;margin:6px 0 4px}
+    input[type="text"], input[type="datetime-local"], input[type="date"], input[type="time"], textarea, select{
+      width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface)
+    }
+    textarea{min-height:84px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}
+    th{background:var(--surface)}
+    .table-wrap{overflow-x:auto}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn-sm{padding:4px 8px;font-size:12px}
+    .adder{margin-top:8px}
+    @media print{
+      header.site-header, footer.site-footer, .actions, .adder, .btn-sm{display:none}
+      .section{box-shadow:none}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header — BASELINE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/escalation-runbook.html">Back to Playbook</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-top:16px">
+      <span class="tag">Success</span>
+      <h1>Escalation Management — Companion Template</h1>
+      <p class="muted">Run high-severity incidents with clear roles, clockwork updates and clean closure. Print or save as PDF.</p>
+    </div>
+
+    <!-- Incident meta -->
+    <section class="section">
+      <div class="grid-3">
+        <div>
+          <label>Incident ID</label>
+          <input type="text" placeholder="INC-YYYY-####" />
+        </div>
+        <div>
+          <label>Severity</label>
+          <select>
+            <option value="">Select…</option>
+            <option>SEV-1 (Critical)</option>
+            <option>SEV-2 (High)</option>
+            <option>SEV-3 (Medium)</option>
+          </select>
+        </div>
+        <div>
+          <label>Declared at</label>
+          <input type="datetime-local" />
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Incident Commander</label>
+          <input type="text" placeholder="Name (IC)" />
+        </div>
+        <div>
+          <label>Engineering Owner</label>
+          <input type="text" placeholder="Name + team" />
+        </div>
+        <div>
+          <label>Comms Lead</label>
+          <input type="text" placeholder="Name (customer updates)" />
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>CS/Sales Owner</label>
+          <input type="text" placeholder="Name + account(s)" />
+        </div>
+        <div>
+          <label>Executive Sponsor</label>
+          <input type="text" placeholder="Name" />
+        </div>
+        <div>
+          <label>Status</label>
+          <select>
+            <option>Declared</option>
+            <option>Contained</option>
+            <option>Mitigated</option>
+            <option>Resolved</option>
+            <option>Closed</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope & impact -->
+    <section class="section">
+      <div class="grid-2">
+        <div>
+          <h2>Scope &amp; impact</h2>
+          <label>Affected services/customers</label>
+          <textarea placeholder="Services, regions, named strategic accounts"></textarea>
+          <label>Customer impact</label>
+          <textarea placeholder="Symptoms, % users affected, business impact"></textarea>
+        </div>
+        <div>
+          <h2>First hypothesis &amp; risk</h2>
+          <label>First hypothesis</label>
+          <textarea placeholder="What changed? deploy/infra/integrations"></textarea>
+          <label>Security / data risk</label>
+          <textarea placeholder="PII exposure? legal involvement?"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline & actions -->
+    <section class="section">
+      <h2>Timeline &amp; actions</h2>
+      <div class="table-wrap">
+        <table id="timelineTable" aria-label="Incident timeline">
+          <thead><tr><th>Time (UTC)</th><th>Event / action</th><th>Owner</th><th>Result</th><th style="width:1%"></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><input type="time" /></td>
+              <td><textarea placeholder="Declared SEV-1; opened channel #inc-..."></textarea></td>
+              <td><input type="text" placeholder="IC"/></td>
+              <td><textarea placeholder="Comms cadence set to 60m"/></td>
+              <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('timelineTable')">+ Add row</button></div>
+    </section>
+
+    <!-- Customer update composer -->
+    <section class="section">
+      <h2>Customer update</h2>
+      <p class="muted">Use: acknowledge → impact → what we’re doing → next update time.</p>
+      <textarea placeholder="[TIMEZONE/UTC] We’re investigating an issue impacting […]. Current impact is […]. We have taken […]. Next update by [HH:MM UTC]."></textarea>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Next public update by</label>
+          <input type="time" />
+        </div>
+        <div>
+          <label>Status page / link</label>
+          <input type="text" placeholder="URL" />
+        </div>
+        <div>
+          <label>Audience</label>
+          <input type="text" placeholder="All customers / named accounts" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive brief -->
+    <section class="section">
+      <h2>Executive brief (one pager)</h2>
+      <div class="grid-2">
+        <div>
+          <label>Summary</label>
+          <textarea placeholder="What happened; current status; risk; ETA; asks"></textarea>
+          <label>Key customers</label>
+          <textarea placeholder="Named accounts; CS/Sales owner; sentiment"></textarea>
+        </div>
+        <div>
+          <label>Decisions needed</label>
+          <textarea placeholder="Credits policy, scope trade-offs, public statements"></textarea>
+          <label>Next exec update</label>
+          <input type="time" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Resolution & closure -->
+    <section class="section">
+      <h2>Resolution &amp; closure</h2>
+      <div class="grid-3">
+        <div>
+          <label>Containment evidence</label>
+          <textarea placeholder="metrics/screens/logs that show containment"></textarea>
+        </div>
+        <div>
+          <label>Resolution details</label>
+          <textarea placeholder="Fix deployed/rollback completed; validation steps"></textarea>
+        </div>
+        <div>
+          <label>Credits / terms</label>
+          <textarea placeholder="SLA credit %, term extension, approvals"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post-incident review -->
+    <section class="section">
+      <h2>Post-incident review (schedule within 5 days)</h2>
+      <div class="grid-2">
+        <div>
+          <label>RCA / contributing factors</label>
+          <textarea placeholder="Blameless analysis; five whys"></textarea>
+          <label>Detection & monitoring gaps</label>
+          <textarea placeholder="What signals were missing?"></textarea>
+        </div>
+        <div>
+          <label>Actions & owners</label>
+          <div class="table-wrap">
+            <table id="actionsTable">
+              <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th><th style="width:1%"></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" placeholder="Add circuit breaker on …"/></td>
+                  <td><input type="text" placeholder="Eng"/></td>
+                  <td><input type="date"/></td>
+                  <td><input type="text" placeholder="Open/In progress/Done"/></td>
+                  <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="adder"><button class="btn ghost" type="button" onclick="addRow('actionsTable')">+ Add action</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recap checklist -->
+    <section class="section">
+      <h2>Recap checklist</h2>
+      <div class="grid-3">
+        <div>
+          <label><input type="checkbox" /> First update sent within 60–120m</label>
+          <label><input type="checkbox" /> Executive brief updated</label>
+          <label><input type="checkbox" /> Status page aligned</label>
+        </div>
+        <div>
+          <label><input type="checkbox" /> Resolution message sent</label>
+          <label><input type="checkbox" /> Credits/terms decided</label>
+          <label><input type="checkbox" /> Post-mortem scheduled ≤5d</label>
+        </div>
+        <div>
+          <label><input type="checkbox" /> Actions logged with owners</label>
+          <label><input type="checkbox" /> CRM notes updated on named accounts</label>
+          <label><input type="checkbox" /> Thank-you to customer contacts</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <div class="actions" style="margin:10px 0 18px">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a class="btn ghost" href="/articles/escalation-runbook.html">Back to Playbook</a>
+    </div>
+
+    <section class="section muted" style="font-size:12px">
+      Use with the <em>Escalation Management Runbook</em>. Keep customer updates on a clock; close with evidence; schedule the post-mortem within five business days.
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+
+    function addRow(tableId){
+      const t=document.getElementById(tableId); if(!t) return;
+      const tb=t.querySelector('tbody'); const last=tb.querySelector('tr:last-child');
+      const clone=last.cloneNode(true);
+      clone.querySelectorAll('input, textarea, select').forEach(el=>{
+        if(el.type==='checkbox'||el.type==='radio'){el.checked=false;} else {el.value='';}
+      });
+      tb.appendChild(clone);
+    }
+    function removeRow(btn){
+      const tr=btn.closest('tr'); const tb=tr.parentElement;
+      if(tb.querySelectorAll('tr').length>1){tb.removeChild(tr);}
+      else{tr.querySelectorAll('input, textarea, select').forEach(el=>{
+        if(el.type==='checkbox'||el.type==='radio'){el.checked=false;} else {el.value='';}
+      });}
+    }
+  </script>
+</body>
+</html>
