@@ -10,7 +10,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Value Realization Reviews — Commercial Leadership Hub" />
   <meta property="og:description" content="EBR pack, KPIs and ROI narrative you can reuse." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/value-realization-reviews-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/value-realization-reviews.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
@@ -31,39 +31,193 @@
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
       </div>
     </div>
   </header>
+
   <main class="container">
-    <div class="hero">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Success</span>
       <h1>Value Realization Reviews</h1>
       <p class="muted">EBR pack, KPIs and ROI narrative you can reuse.</p>
-      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop" alt="Value Realization Reviews">
     </div>
-    <section class="section"><h2>Problem</h2><p>Quarterly reviews drift into status updates. No hard value proof, so expansions stall.</p></section>
-    <section class="section"><h2>What good looks like</h2><ul class="muted"><li>One deck: goals, outcomes, proof, roadmap asks.</li><li>Two stories: business impact and user stories.</li><li>Clear next steps: expansion hypothesis + pilot.</li></ul></section>
-    <section class="section"><h2>Steps</h2><ol><li>Re‑state original goals and KPIs.</li><li>Show before/after graphs and customer quotes.</li><li>Propose expansion with modeled ROI.</li></ol></section>
-    <section class="section"><h2>Templates</h2><ul><li>EBR deck outline; ROI calc sheet; next‑step email.</li></ul></section>
-    <section class="section"><h2>Metrics</h2><ul><li>EBR‑to‑expansion conversion.</li><li>Attendance of exec sponsor.</li></ul></section>
-    <section class="section"><h2>Risks</h2><ul><li>Feature dump → keep to outcomes and proof.</li></ul></section>
+
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/value-realization-reviews-hero.webp" type="image/webp">
+        <img src="/assets/articles/value-realization-reviews-hero.png" alt="Executive business review showing KPI deltas, ROI and next-step roadmap" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
+
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For CS leaders, AMs and Exec Sponsors. Use when quarterly reviews drift into status updates, value is implied not proven, and expansions stall because ROI is unclear.</p>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Great EBRs are short, numeric and reusable. They retell the original goal, show before/after evidence, and propose next steps with modeled ROI. The pack is built once and reused in internal forums (steerco, finance, procurement) so momentum compounds instead of resetting every meeting.</p>
+      <p>This playbook gives you a deck outline, a KPI/ROI rubric, and a repeatable meeting flow that ends with decisions—expansion pilot, executive sponsorship, or a focused improvement plan.</p>
+    </section>
+
+    <!-- What good looks like -->
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>One narrative:</strong> goals → outcomes → proof → roadmap asks.</li>
+        <li><strong>Two lenses:</strong> business impact (KPI delta, ROI) and user stories (adoption, quotes).</li>
+        <li><strong>Clear close:</strong> expansion hypothesis, pilot scope, owners and dates.</li>
+      </ul>
+    </section>
+
+    <!-- Common pitfalls -->
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li>Feature dump instead of outcomes.</li>
+        <li>Charts with no baseline/target.</li>
+        <li>No executive “ask”, so momentum dies.</li>
+      </ul>
+    </section>
+
+    <!-- Playbook -->
+    <section class="section">
+      <h2>Playbook</h2>
+
+      <h3>1) Prep the facts</h3>
+      <ul class="checklist">
+        <li>Collect baseline vs. current for 3–5 KPIs tied to the original business case.</li>
+        <li>Pull usage/adoption to support the “how”.</li>
+        <li>Capture 2–3 credible quotes/screenshots as qualitative proof.</li>
+      </ul>
+
+      <h3>2) Build the deck (10–12 slides)</h3>
+      <ul class="checklist">
+        <li>Goal recap (1 slide) with KPI table (baseline → current → target).</li>
+        <li>Before/after visuals (2–3 slides) with short captions and sources.</li>
+        <li>ROI page: assumptions, quick math, sensitivity.</li>
+        <li>Roadmap &amp; asks: pilot scope, success criteria, timeline, owners.</li>
+      </ul>
+
+      <h3>3) Run the meeting</h3>
+      <ul class="checklist">
+        <li>Open with the 90-second storyline; confirm the goal still matters.</li>
+        <li>Show proof; pause for validation or counter-evidence.</li>
+        <li>Propose options (A default, B phased, C no-regrets) and trade-offs.</li>
+      </ul>
+
+      <h3>4) Close &amp; follow up</h3>
+      <ul class="checklist">
+        <li>Summarize decisions, owners and dates; book the next milestone in-room.</li>
+        <li>Send a recap within 24h with links to data sources and the ROI sheet.</li>
+      </ul>
+    </section>
+
+    <!-- Artifacts -->
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>EBR deck outline</h3>
+          <ul>
+            <li>Goal recap &amp; KPI table</li>
+            <li>Before/after evidence</li>
+            <li>ROI page (assumptions &amp; sensitivity)</li>
+            <li>Roadmap &amp; asks</li>
+          </ul>
+        </div>
+        <div>
+          <h3>ROI model</h3>
+          <ul>
+            <li>Volumes, rates, unit cost</li>
+            <li>Time saved and error reduction</li>
+            <li>Payback &amp; break-even</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section">
+      <h2>Worked examples</h2>
+      <h3>Example A — Cycle time reduction</h3>
+      <p><strong>Goal:</strong> −20% approval cycle time. <strong>Proof:</strong> 14d → 10d (−28%). <strong>ROI:</strong> $220k/yr in labor + faster revenue recognition. <strong>Ask:</strong> expand to two additional regions.</p>
+
+      <h3>Example B — Quality improvement</h3>
+      <p><strong>Goal:</strong> −25% rework. <strong>Proof:</strong> pilot line hit −27% with training + alerting. <strong>ROI:</strong> payback &lt; 4 months. <strong>Ask:</strong> 3-site rollout; reference on pass.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> EBRs run with executive attendance, KPI tables completed, next milestone booked in-room.</p>
+      <p><strong>Lagging:</strong> EBR→expansion conversion, payback on expansions, renewal uplift.</p>
+    </section>
+
+    <!-- Implementation checklist -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Publish EBR deck outline and two anonymized examples.</li>
+        <li>Stand up a shared ROI sheet with guardrails and sources.</li>
+        <li>Add CRM fields for <em>Last EBR date</em> and <em>Next milestone</em>.</li>
+      </ul>
+    </section>
+
+    <!-- 90-day rollout -->
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <h3>Weeks 1–2 — Define</h3>
+      <ul>
+        <li>Approve KPI rubric and deck outline; agree sources and owners.</li>
+      </ul>
+      <h3>Weeks 3–4 — Pilot</h3>
+      <ul>
+        <li>Run 5 EBRs; measure in-room decision rate; gather feedback.</li>
+      </ul>
+      <h3>Weeks 5–8 — Scale</h3>
+      <ul>
+        <li>Publish examples; coach storytelling; add ROI sensitivity patterns.</li>
+      </ul>
+      <h3>Weeks 9–12 — Bake in</h3>
+      <ul>
+        <li>Make EBR a renewal gate; track conversion; refresh quarterly.</li>
+      </ul>
+    </section>
+
+    <!-- Companion template CTA -->
+    <section class="section">
+      <h2>Companion template</h2>
+      <p>Use the one-pager to prep and run EBRs with proof, ROI and crisp asks.</p>
+      <p><a class="btn" href="/templates/value-realization-reviews-template.html">Open companion template</a></p>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -97,8 +251,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
