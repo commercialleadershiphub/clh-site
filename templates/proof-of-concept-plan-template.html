@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proof-of-Concept Plan Template — Commercial Leadership Hub</title>
+  <meta name="description" content="A one-page POC charter you can copy: outcome & metric, scope & data, roles & hours, success criteria, risks & counters, exit & commercial path, plus a weekly tracker." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/proof-of-concept-plan-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Proof-of-Concept Plan Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="Copy-ready POC charter with success criteria, scope, staffing and exit path, plus weekly notes tracker." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/proof-of-concept-plan-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-81TG0R550X');
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .hero{margin:16px 0}
+    .hero img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    table{width:100%;border-collapse:collapse}
+    th, td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+    th{background:var(--surface-2, var(--surface));}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace}
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/proof-of-concept-plan.html">Back to Article</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Title block -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Sales</span>
+      <h1>Proof-of-Concept Plan Template</h1>
+      <p class="muted">Copy this one-pager into your doc/sheet. Keep it short, numeric and owned on both sides.</p>
+    </div>
+
+    <!-- How to use -->
+    <section class="section">
+      <h2>How to use</h2>
+      <ul class="checklist">
+        <li>Fill this live with the customer on the kickoff call (screen share).</li>
+        <li>Time-box to 2–4 weeks. Freeze scope to ≤2 use cases and a data snapshot.</li>
+        <li>Instrument success on day 1. Hold a 20-minute weekly review.</li>
+        <li>Pre-agree the commercial path on <em>pass</em>; decide the next step on <em>fail</em> (no soft extends).</li>
+      </ul>
+      <p class="muted">Tip: keep a running “change log” when scope or data moves, with impact and approvals.</p>
+    </section>
+
+    <!-- Charter (copy-ready) -->
+    <section class="section">
+      <h2>POC Charter (copy-ready)</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Outcome &amp; metric</h3>
+          <ul>
+            <li><strong>Goal:</strong> <span class="muted">e.g., “Reduce false positives by 25% in 3 weeks.”</span></li>
+            <li><strong>Metric &amp; target:</strong> <span class="muted">precision +8 pts at same recall</span></li>
+            <li><strong>Baseline:</strong> <span class="muted">current = 0.71 precision</span></li>
+            <li><strong>Why now:</strong> <span class="muted">board date / SLA / cost pressure</span></li>
+          </ul>
+
+          <h3>Scope &amp; data</h3>
+          <ul>
+            <li><strong>Use cases (≤2):</strong> <span class="muted">UC1, UC2</span></li>
+            <li><strong>Data snapshot:</strong> <span class="muted">source, rows, date range, fields</span></li>
+            <li><strong>Out of scope:</strong> <span class="muted">integrations, custom UI, edge cases…</span></li>
+            <li><strong>Environment:</strong> <span class="muted">vendor cloud / customer sandbox; access rules</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Team &amp; hours/week</h3>
+          <table aria-label="Team and weekly hours">
+            <thead><tr><th>Role</th><th>Name</th><th>Hours/wk</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>SE</td><td class="muted">—</td><td class="muted">6</td><td class="muted">primary</td></tr>
+              <tr><td>Data owner</td><td class="muted">—</td><td class="muted">3</td><td class="muted">extracts</td></tr>
+              <tr><td>Champion</td><td class="muted">—</td><td class="muted">1</td><td class="muted">stakeholders</td></tr>
+              <tr><td>PM</td><td class="muted">—</td><td class="muted">1</td><td class="muted">notes/runbook</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Success criteria</h3>
+          <ul>
+            <li><span class="muted">SC1:</span> <span class="mono">metric ≥ threshold</span></li>
+            <li><span class="muted">SC2:</span> <span class="mono">process time ≤ target</span></li>
+            <li><span class="muted">SC3:</span> <span class="mono">stakeholder sign-off received</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Risks &amp; counters</h3>
+      <ul class="checklist">
+        <li><strong>Data access</strong> → <span class="muted">assign data owner; sample first</span></li>
+        <li><strong>Scope creep</strong> → <span class="muted">change log + approvals</span></li>
+        <li><strong>Capacity</strong> → <span class="muted">realistic hours; substitutes</span></li>
+      </ul>
+
+      <h3>Exit &amp; commercial path</h3>
+      <ul>
+        <li><strong>Decision checkpoint date:</strong> <span class="muted">Week 3 Friday 14:00</span></li>
+        <li><strong>On pass:</strong> <span class="muted">security/DP redlines owner, PO/approval dates</span></li>
+        <li><strong>On fail:</strong> <span class="muted">stop or next experiment (1 sentence)</span></li>
+      </ul>
+    </section>
+
+    <!-- Weekly tracker -->
+    <section class="section">
+      <h2>Weekly tracker</h2>
+      <table aria-label="Weekly review tracker">
+        <thead>
+          <tr>
+            <th style="width:110px">Week</th>
+            <th>Decisions</th>
+            <th>Blockers</th>
+            <th>Next actions</th>
+            <th>Owner</th>
+            <th style="width:110px">Due</th>
+            <th>Changes (scope/data)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>W1</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>
+          <tr><td>W2</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>
+          <tr><td>W3</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>
+          <tr><td>W4</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Keep reviews to 20 minutes. Update this table live; no separate status deck.</p>
+    </section>
+
+    <!-- Ready-to-copy mini table (print-friendly) -->
+    <section class="section">
+      <h2>One-page summary table</h2>
+      <table aria-label="POC one page summary">
+        <thead>
+          <tr>
+            <th>Goal</th><th>Metric/Target</th><th>Use cases</th><th>Data/env</th><th>Team & hours</th><th>Success criteria</th><th>Exit path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="muted">Reduce X by 20%</td>
+            <td class="muted">Metric ≥ target</td>
+            <td class="muted">UC1, UC2</td>
+            <td class="muted">Snapshot; vendor cloud</td>
+            <td class="muted">SE6 / Data3 / Champ1 / PM1</td>
+            <td class="muted">SC1; SC2; SC3</td>
+            <td class="muted">Decision W3 → legal/proc path</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Links back to guidance -->
+    <section class="section">
+      <h2>Guidance</h2>
+      <p>Use with the full <a href="/articles/proof-of-concept-plan.html">Proof-of-Concept Plan</a> article for playbook, examples and rollout. Pair with <a href="/articles/give-get-menu.html">Give/Get Menu</a> to keep trades disciplined.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
