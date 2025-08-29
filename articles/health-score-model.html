@@ -4,66 +4,376 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Customer Health Score Model — Commercial Leadership Hub</title>
-  <meta name="description" content="Simple, explainable score that predicts churn and expansion and drives actions." />
+  <meta name="description" content="A practical, explainable health score that predicts churn/expansion and drives actions. Includes model design, playbook, artifacts, examples, metrics and rollout." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/health-score-model.html" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Customer Health Score Model — Commercial Leadership Hub" />
   <meta property="og:description" content="Simple, explainable score that predicts churn and expansion and drives actions." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/health-score-model-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/health-score-model.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
   <style>
+    .hero{margin:16px 0}
+    .hero img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:8px}
-    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    table{width:100%;border-collapse:separate;border-spacing:0 6px}
-    th,td{padding:8px 10px;border:1px solid var(--line);background:var(--surface);}
-    th{background:var(--canvas)}
-    .callout{border-left:3px solid #111827;padding-left:12px}
-    .xs{font-size:12px}
-    .kbd{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--surface)}
-    ol>li{margin:6px 0}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .checklist li{margin:6px 0}
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand" aria-label="Commercial Leadership Hub">
-      <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
-    </a>
-    <nav class="main-nav">
-      <a href="/#services">Services</a>
-      <a href="/#projects">Projects</a>
-      <a href="/#about">About</a>
-      <a href="/articles/">Articles</a>
-    </nav>
-    <div class="header-cta">
-      <a class="btn ghost" href="/articles/">Back to Articles</a>
+  <!-- Baseline header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/">Back to Articles</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="container" style="margin:16px 0">
-  <span class="tag">Success</span>
-  <h1>Customer Health Score Model</h1>
-  <p class="muted">Simple, explainable score that predicts churn and expansion and drives actions.</p>
+  <main class="container">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
+      <span class="tag">Success</span>
+      <h1>Customer Health Score Model</h1>
+      <p class="muted">Simple, explainable score that predicts churn and expansion — and triggers the right plays.</p>
+    </div>
 
-  <section class="section"><h2>Design principles</h2><ul><li>Explainable — 5–7 factors, no black boxes</li><li>Lead indicators — usage, adoption, value</li><li>Actionable — playbook per bucket</li></ul></section>
-<section class="section"><h2>Model</h2><table><thead><tr><th>Factor</th><th>Weight</th><th>Definition</th></tr></thead><tbody><tr><td>Usage</td><td>30%</td><td>Weekly active users vs. seats</td></tr><tr><td>Outcomes</td><td>20%</td><td>KPIs achieved</td></tr><tr><td>Support</td><td>10%</td><td>Time to resolve</td></tr><tr><td>Executive sponsor</td><td>20%</td><td>Engaged quarterly</td></tr><tr><td>Financial</td><td>20%</td><td>Invoices on time</td></tr></tbody></table></section>
-<section class="section"><h2>Actions</h2><ul><li>Red → exec call, success plan, weekly check‑ins</li><li>Amber → training, feature enablement</li><li>Green → expansion hypothesis</li></ul></section>
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/health-score-model-hero.webp" type="image/webp">
+        <img src="/assets/articles/health-score-model-hero.png" alt="Dashboard showing customer health buckets, factors and actions" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
 
-  <div class="section xs">
-    Last updated: 2025-08-15. © Commercial Leadership Hub.
-  </div>
-</main>
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For CS/RevOps leaders who need a <em>trustworthy</em> health signal that both predicts risk/opportunity and directs action. Use this when your team debates gut-feel vs. dashboards, churn surprises keep happening, or expansion timing is unclear.</p>
+    </section>
 
-<footer class="site-footer">
-  <div class="container copyright xs muted">© <span id="y"></span> Commercial Leadership Hub. All rights reserved.</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <!-- Long Introduction -->
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Most health scores fail for one of two reasons: they are either a black box data project nobody trusts, or a subjective traffic light that doesn’t change outcomes. A good score must be both <em>predictive</em> and <em>explainable</em>. Predictive so leaders can forecast churn/expansion and allocate scarce time; explainable so CSMs and customers accept the signal and act on it.</p>
+      <p>The purpose is not to reduce reality to a single number; it is to collapse noisy signals—usage, outcomes, sponsorship, support, finance—into a coherent <em>narrative</em> that drives consistent plays. The moment a customer flips from green to amber, everyone should know <em>why</em> and <em>what happens next</em>: an exec call, a success plan, enablement, or a commercial checkpoint.</p>
+      <p>We design for simplicity: five to seven factors with clear definitions and weights; a 0–100 score that rolls into three buckets (Green/Amber/Red); and a weekly refresh with data latency that is understood. We avoid vanity signals and duplicate entry by pulling from systems of record (product analytics, ticketing, billing, CRM) and minimizing manual fields to the few that truly matter (e.g., executive sponsorship).</p>
+      <p>Calibration matters more than clever math. We start with a crisp hypothesis, back-test against history, pressure-test with CSMs, and then run a closed-loop for a quarter: every churn/expansion event is compared to the score 30–60–90 days prior. We tune thresholds and weights with evidence, not opinions.</p>
+      <p>Finally, we build governance so the score stays relevant: quarterly factor reviews, change logs, and a rule that for every new field added, one must be removed. If the model can’t be explained in two minutes to a CFO or a Head of Ops, it’s too complex. This playbook shows exactly how to build, launch, and run a score your org will trust.</p>
+    </section>
+
+    <!-- What good looks like -->
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Explainable:</strong> 5–7 factors, each with a plain-English definition, weight, and data source.</li>
+        <li><strong>Predictive:</strong> ≥70% of churn in last quarter was Red/Amber ≥30 days ahead; ≥60% of expansions were Green.</li>
+        <li><strong>Actionable:</strong> each bucket maps to a playbook with owners, SLAs and checklists.</li>
+        <li><strong>Audited:</strong> change log; quarterly calibration; back-test results published.</li>
+        <li><strong>Low admin:</strong> 80–90% of fields auto-populated; minimal manual entries with clear owners.</li>
+      </ul>
+    </section>
+
+    <!-- Common pitfalls -->
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li><strong>Black box:</strong> data science score no one can explain → low adoption.</li>
+        <li><strong>Lagging only:</strong> tickets and NPS dominate → risk detected too late.</li>
+        <li><strong>Overfitting:</strong> perfect back-test, poor real-world signal → keep it simple.</li>
+        <li><strong>Action gap:</strong> buckets without plays → drama, no outcomes.</li>
+        <li><strong>Manual bloat:</strong> CSMs asked to update 15 fields weekly → decay and distrust.</li>
+      </ul>
+    </section>
+
+    <!-- Playbook -->
+    <section class="section">
+      <h2>Playbook</h2>
+
+      <h3>1) Define factors &amp; weights (keep to 5–7)</h3>
+      <ul class="checklist">
+        <li><strong>Usage (30%):</strong> WAU/MAU vs. licensed seats; key feature adoption; trend vs. baseline.</li>
+        <li><strong>Outcomes (20%):</strong> 1–2 customer KPIs tied to value hypothesis; validation cadence.</li>
+        <li><strong>Sponsorship (20%):</strong> exec sponsor named; last EB touch; meeting cadence.</li>
+        <li><strong>Support (10%):</strong> time to resolve; P1/P2 in last 30–90 days; CSAT.</li>
+        <li><strong>Financial (10–20%):</strong> invoices on time; credit risk; contract risk flags.</li>
+        <li><em>Optional</em> (10%): integration health, admin engagement, product feedback severity.</li>
+      </ul>
+
+      <h3>2) Specify each factor</h3>
+      <ul class="checklist">
+        <li>Exact <strong>field names</strong>, <strong>systems</strong> (product analytics, Zendesk, ERP, CRM) and <strong>refresh</strong> cadence.</li>
+        <li><strong>Transform</strong> raw data to 0–100 per factor (e.g., min–max scaling, caps, smoothing).</li>
+        <li><strong>Weighting:</strong> sum of weights = 100; document rationale.</li>
+      </ul>
+
+      <h3>3) Scoring &amp; buckets</h3>
+      <ul class="checklist">
+        <li>Health score = weighted average of factor scores → 0–100.</li>
+        <li><strong>Buckets:</strong> Green ≥80, Amber 60–79, Red &lt;60 (start here; calibrate later).</li>
+        <li>Set <strong>hysteresis</strong> (e.g., require ±5pt move to change bucket) to avoid thrash.</li>
+      </ul>
+
+      <h3>4) Calibrate</h3>
+      <ul class="checklist">
+        <li>Back-test 2–4 quarters of history; compute AUC/precision-recall if available.</li>
+        <li>Run a CSM roundtable: compare score vs. lived reality on 20 accounts; note mismatches.</li>
+        <li>Adjust thresholds/weights once; freeze for pilot.</li>
+      </ul>
+
+      <h3>5) Action mapping</h3>
+      <div class="grid-2">
+        <div>
+          <h4>Red (high risk)</h4>
+          <ul>
+            <li>Exec sponsor call in 48h; success plan within 5d; weekly check-ins.</li>
+            <li>Run <a href="/articles/escalation-runbook.html">escalation runbook</a> if tied to incidents.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Amber (watch)</h4>
+          <ul>
+            <li>Training and feature enablement; MAP for adoption milestones.</li>
+            <li>Validate value hypotheses with fresh benchmarks.</li>
+          </ul>
+        </div>
+      </div>
+      <p><strong>Green (growth):</strong> run expansion discovery; schedule exec value review; attach pilot for next module.</p>
+
+      <h3>6) Operate</h3>
+      <ul class="checklist">
+        <li>Refresh weekly; publish change log; tag accounts that crossed a bucket boundary.</li>
+        <li>Dashboard tiles: distribution by bucket, transitions, signal-to-action SLA, win/loss by bucket.</li>
+        <li>Quarterly calibration: compare bucket distribution vs. churn/NRR realized.</li>
+      </ul>
+    </section>
+
+    <!-- Artifacts -->
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Model spec (1-pager)</h3>
+          <ul>
+            <li>Factors, weights, definitions, formulas, data sources, refresh.</li>
+            <li>Bucket thresholds + hysteresis rule.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Action library</h3>
+          <ul>
+            <li>Plays per bucket with owners/SLAs.</li>
+            <li>Templates: exec email, success plan, enablement plan.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section">
+      <h2>Worked examples</h2>
+
+      <h3>Example A — Collaboration SaaS</h3>
+      <p><strong>Factors:</strong> WAU/Seats (35%), Team adoption (10%), Sponsor touch (20%), P1 in 90d (10%), Invoice status (15%), Admin logins (10%). <strong>Calibration:</strong> Red predicted 74% of churn ≥45d ahead. <strong>Actions:</strong> Red → exec value session + usage campaign; Green → pilot whiteboarding add-on.</p>
+
+      <h3>Example B — Payments platform</h3>
+      <p><strong>Factors:</strong> Processed volume vs. forecast (30%), Success KPI (chargeback rate) (20%), Sponsor cadence (20%), Support time to resolve (10%), DSO trend (20%). <strong>Result:</strong> Amber segment halved after playbook launch; 18% lift in expansion from Green customers.</p>
+
+      <h3>Example C — Industrial IoT</h3>
+      <p><strong>Factors:</strong> Sensor uptime (25%), Work orders closed (20%), Safety incidents (15%), Exec sponsor (15%), Parts SLA (10%), Training completion (15%). <strong>Outcome:</strong> Two plants moved from Red→Amber within 30 days after targeted enablement; renewal risk averted.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> bucket transitions/week, time-to-action after boundary cross, percentage of accounts with validated outcomes, exec touch cadence on Red/Amber.</p>
+      <p><strong>Lagging:</strong> churn captured by Red/Amber ≥30d ahead, expansion win rate by bucket, NRR uplift from Green focus, false-positive/negative rates.</p>
+    </section>
+
+    <!-- Diagram -->
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/health-score-model-diagram.webp" type="image/webp">
+        <img src="/assets/articles/health-score-model-diagram.png" alt="Health score flow: factors → weighted score → buckets → plays → calibration loop" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Keep the loop tight: score → action → outcome → calibration.</p>
+    </section>
+
+    <!-- Implementation checklist -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Publish model spec and action library; pick three gold-standard examples.</li>
+        <li>Connect data sources (analytics, ticketing, billing); define refresh SLAs.</li>
+        <li>Add CRM fields: <em>Health score</em>, <em>Bucket</em>, <em>Boundary crossed at</em>, <em>Action started at</em>.</li>
+        <li>Create dashboards: bucket distribution, transitions, time-to-action, outcomes by bucket.</li>
+      </ul>
+    </section>
+
+    <!-- Measurement -->
+    <section class="section">
+      <h2>Measurement</h2>
+      <p><strong>Team level:</strong> % accounts with current score, action SLA compliance, transition coverage, forecast accuracy for churn/expansion.</p>
+      <p><strong>Individual level:</strong> time to initiate action after boundary cross, success plan completeness for Red, enablement completion for Amber.</p>
+    </section>
+
+    <!-- Team buy-in -->
+    <section class="section">
+      <h2>Team buy-in</h2>
+      <ul>
+        <li>Co-design factors with CSMs; run a live calibration clinic on 20 accounts.</li>
+        <li>Make actions visible and lightweight: checklists, not decks.</li>
+        <li>Celebrate “save stories” where Red→Amber→Green transitions led to renewal or expansion.</li>
+      </ul>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section">
+      <h2>Why it matters</h2>
+      <ul class="muted">
+        <li><strong>Predictable retention:</strong> fewer “surprise churns,” cleaner board narrative.</li>
+        <li><strong>Focused growth:</strong> expansion time spent where evidence is strongest.</li>
+        <li><strong>Org alignment:</strong> shared language across CS, Product, Finance and Sales.</li>
+      </ul>
+      <p>Pair this with <a href="/articles/account-planning-playbook.html">account planning</a> and a disciplined <a href="/articles/sales-process-and-stage-criteria.html">sales process</a> to convert Green signals into revenue.</p>
+    </section>
+
+    <!-- Metrics & pitfalls (always-on block) -->
+    <section class="section">
+      <h2>Metrics &amp; pitfalls</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Watch</h3>
+          <ul>
+            <li>Churn captured ≥30d ahead</li>
+            <li>Time-to-action after bucket change</li>
+            <li>False positive/negative rates</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Avoid</h3>
+          <ul>
+            <li>Black-box models</li>
+            <li>Manual field bloat</li>
+            <li>Plays without owners/SLAs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-day rollout -->
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <h3>Weeks 1–2 — Define &amp; align</h3>
+      <ul>
+        <li><strong>Owners:</strong> CS Ops (lead), RevOps, Product Analytics, Finance.</li>
+        <li>Lock factors, weights, and definitions; sign off on data sources and refresh.</li>
+      </ul>
+      <h3>Weeks 3–4 — Build &amp; back-test</h3>
+      <ul>
+        <li>Implement transforms; run 2–4Q back-test; publish findings; freeze thresholds for pilot.</li>
+      </ul>
+      <h3>Weeks 5–6 — Pilot</h3>
+      <ul>
+        <li>Run on 50–100 accounts; daily boundary alerts; action SLAs enforced; collect feedback.</li>
+      </ul>
+      <h3>Weeks 7–8 — Tune &amp; document</h3>
+      <ul>
+        <li>Adjust weights/thresholds once; publish model spec and action library.</li>
+      </ul>
+      <h3>Weeks 9–10 — Roll out</h3>
+      <ul>
+        <li>Enable dashboards for managers; add score to QBR template.</li>
+      </ul>
+      <h3>Weeks 11–12 — Bake into rhythm</h3>
+      <ul>
+        <li>Monthly calibration review; change log discipline; quarterly factor review.</li>
+        <li><strong>Target state:</strong> ≥70% churn predicted ≥30d ahead; NRR +5–8 pts from Green focus.</li>
+      </ul>
+    </section>
+
+    <!-- Related -->
+    <section class="section">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="/articles/escalation-runbook.html" style="color:#111827;text-decoration:underline">Escalation Management Runbook</a></li>
+        <li><a href="/articles/account-planning-playbook.html" style="color:#111827;text-decoration:underline">Account Planning Playbook</a></li>
+        <li><a href="/articles/sales-process-and-stage-criteria.html" style="color:#111827;text-decoration:underline">Sales Process &amp; Stage Criteria</a></li>
+      </ul>
+    </section>
+
+    <!-- Next steps & CTA -->
+    <section class="section">
+      <h2>Next steps &amp; CTA</h2>
+      <ul>
+        <li>Draft your 5–7 factors with weights and plain-English definitions.</li>
+        <li>Back-test on 2–4 quarters; lock bucket thresholds for a 6-week pilot.</li>
+        <li>Map plays to buckets and enforce SLAs in your CS cadence.</li>
+      </ul>
+      <p><a class="btn" href="/templates/health-score-model-template.html">Use the template</a></p>
+    </section>
+
+    <!-- Sources & terms -->
+    <section class="section">
+      <h2>Sources &amp; terms</h2>
+      <p><strong>Terms:</strong> WAU/MAU (weekly/monthly active users), EB (economic buyer), NRR (net revenue retention), Hysteresis (guard band to reduce churn in/out of buckets).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
