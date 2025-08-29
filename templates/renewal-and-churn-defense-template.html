@@ -1,0 +1,185 @@
+<!-- Account meta -->
+<section class="section">
+  <div class="grid-3">
+    <div>
+      <label>Account</label>
+      <input type="text" placeholder="Customer name" />
+    </div>
+    <div>
+      <label>ARR &amp; Term</label>
+      <input type="text" placeholder="$— / Renews (YYYY-MM-DD)" />
+    </div>
+    <div>
+      <label>Segment</label>
+      <select>
+        <option value="">Select…</option>
+        <option>Mid-Market</option>
+        <option>Enterprise</option>
+        <option>Public Sector</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:8px">
+    <div>
+      <label>Health score (0–100)</label>
+      <input type="number" min="0" max="100" />
+    </div>
+    <div>
+      <label>Risk bucket</label>
+      <select><option>Green</option><option>Amber</option><option>Red</option></select>
+    </div>
+    <div>
+      <label>Exec brief cadence</label>
+      <input type="text" placeholder="Sev-A: 48h / Sev-B: weekly" />
+    </div>
+  </div>
+</section>
+
+<!-- Diagnosis & play -->
+<section class="section">
+  <div class="grid-2">
+    <div>
+      <h2>Risk reason</h2>
+      <select>
+        <option value="">Select…</option>
+        <option>Value gap (KPI unproven)</option>
+        <option>Poor fit / missing req</option>
+        <option>Adoption (breadth/depth)</option>
+        <option>Relationship (sponsor left)</option>
+        <option>Budget / commercial</option>
+        <option>Competition</option>
+        <option>Support incidents</option>
+      </select>
+      <label style="margin-top:8px">Notes</label>
+      <textarea placeholder="Evidence, data points, last exec touch, blockers."></textarea>
+    </div>
+    <div>
+      <h2>Save play</h2>
+      <select>
+        <option value="">Select…</option>
+        <option>Value validation (before/after + ROI)</option>
+        <option>Enablement sprint (admins + power users)</option>
+        <option>Executive re-thread (E2E)</option>
+        <option>Step-down & term trade</option>
+        <option>Consolidation / platform move</option>
+        <option>Stability / support improvement plan</option>
+      </select>
+      <label style="margin-top:8px">Success criteria</label>
+      <textarea placeholder="e.g., KPI delta ≥ X; WAU/Seats ≥ Y; exec sponsor confirmed; signed step-down."></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- Weekly tracker -->
+<section class="section">
+  <h2>Weekly Save Room tracker</h2>
+  <div class="table-wrap">
+    <table id="trackerTable">
+      <thead>
+        <tr>
+          <th>Week</th><th>Decisions</th><th>Blockers</th><th>Next actions</th><th>Owner</th><th>Due</th><th>Status</th><th style="width:1%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" placeholder="W1"/></td>
+          <td><textarea></textarea></td>
+          <td><textarea></textarea></td>
+          <td><textarea></textarea></td>
+          <td><input type="text"/></td>
+          <td><input type="date"/></td>
+          <td><input type="text" placeholder="Open / Done"/></td>
+          <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="adder"><button class="btn ghost" type="button" onclick="addRow('trackerTable')">+ Add week</button></div>
+</section>
+
+<!-- Executive brief log -->
+<section class="section">
+  <h2>Executive brief log</h2>
+  <div class="table-wrap">
+    <table id="briefsTable">
+      <thead><tr><th>Date</th><th>Situation &amp; impact</th><th>Actions &amp; owners</th><th>Asks</th><th>Next milestone</th><th style="width:1%"></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><input type="date"/></td>
+          <td><textarea placeholder="1–2 lines"></textarea></td>
+          <td><textarea placeholder="Bullets with owners"></textarea></td>
+          <td><textarea placeholder="What we need from execs"></textarea></td>
+          <td><input type="text" placeholder="e.g., KPI read-out 2025-11-05"/></td>
+          <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="adder"><button class="btn ghost" type="button" onclick="addRow('briefsTable')">+ Add brief</button></div>
+</section>
+
+<!-- Renewal milestones -->
+<section class="section">
+  <h2>Renewal MAP (T-120 → T-0)</h2>
+  <div class="table-wrap">
+    <table id="mapTable">
+      <thead><tr><th>Milestone</th><th>Target date</th><th>Owner</th><th>Definition of done</th><th>Status</th><th style="width:1%"></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><input type="text" placeholder="Validate KPI outcomes"/></td>
+          <td><input type="date"/></td>
+          <td><input type="text" placeholder="CS / AE / Exec"/></td>
+          <td><textarea placeholder="Before/after model signed off"/></textarea></td>
+          <td><input type="text" placeholder="Open / Done"/></td>
+          <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="adder"><button class="btn ghost" type="button" onclick="addRow('mapTable')">+ Add milestone</button></div>
+</section>
+
+<!-- Commercial guardrails -->
+<section class="section">
+  <h2>Commercial guardrails</h2>
+  <div class="grid-2">
+    <div>
+      <label>Discount counters (required)</label>
+      <textarea placeholder="e.g., 12–24m term, reference, case study, expansion module, consolidation."></textarea>
+    </div>
+    <div>
+      <label>Notes &amp; approvals</label>
+      <textarea placeholder="Finance approval, exception reason, expiry of offer."></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- Change log -->
+<section class="section">
+  <h2>Change log</h2>
+  <div class="table-wrap">
+    <table id="changelogTable">
+      <thead><tr><th>Date</th><th>Change</th><th>Reason</th><th>Approved by</th><th style="width:1%"></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><input type="date"/></td>
+          <td><textarea placeholder="Adjusted play / cadence"/></td>
+          <td><textarea placeholder="Pilot feedback"/></td>
+          <td><input type="text" placeholder="CRO / CS Lead"/></td>
+          <td><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="adder"><button class="btn ghost" type="button" onclick="addRow('changelogTable')">+ Add change</button></div>
+</section>
+
+<!-- Actions -->
+<div class="actions" style="margin:10px 0 18px">
+  <button class="btn" onclick="window.print()">Print / Save PDF</button>
+  <a class="btn ghost" href="/articles/renewal-and-churn-defense.html">Back to Playbook</a>
+</div>
+
+<section class="section muted" style="font-size:12px">
+  Use with the <em>Renewal &amp; Churn Defense</em> playbook. Keep risk reason and save play current; send exec briefs on the agreed cadence; require counters for any discount.
+</section>
