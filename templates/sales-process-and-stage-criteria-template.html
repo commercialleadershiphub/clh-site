@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sales Process & Stage Criteria — Companion Template — Commercial Leadership Hub</title>
+  <meta name="description" content="Design and enforce clean sales stages: purpose, entry/exit, required artifacts, MEDDICC field map, CRM validation, dashboards, governance and rollout tracker." />
+  <link rel="canonical" href="https://commercialleadershiphub.com/templates/sales-process-and-stage-criteria-template.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sales Process & Stage Criteria — Companion Template — Commercial Leadership Hub" />
+  <meta property="og:description" content="One-pager to define stages with binary exits, artifacts and MEDDICC mapping. Printable." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:url" content="https://commercialleadershiphub.com/templates/sales-process-and-stage-criteria-template.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-81TG0R550X');</script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
+  <style>
+    .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    label{font-weight:600;display:block;margin:6px 0 4px}
+    input[type="text"], input[type="date"], input[type="time"], input[type="number"], textarea, select{
+      width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface)
+    }
+    textarea{min-height:84px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid var(--line);padding:8px;vertical-align:top}
+    th{background:var(--surface);text-align:left}
+    .adder{margin-top:8px}
+    .adder .btn{padding:6px 10px;font-size:12px}
+    .btn-sm{padding:4px 8px;font-size:12px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    @media print{
+      header.site-header, footer.site-footer, .actions, .adder, .btn-sm{display:none}
+      .section{box-shadow:none}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header — BASELINE -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Commercial Leadership Hub">
+        <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
+      </a>
+      <nav class="main-nav">
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn ghost" href="/articles/sales-process-and-stage-criteria.html">Back to Playbook</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-top:16px">
+      <span class="tag">Ops</span>
+      <h1>Sales Process &amp; Stage Criteria — Companion Template</h1>
+      <p class="muted">Define stages once, enforce in CRM, and coach to clean exits. Print or save as PDF.</p>
+    </div>
+
+    <!-- Process meta -->
+    <section class="section">
+      <div class="grid-3">
+        <div>
+          <label>Process version</label>
+          <input type="text" placeholder="v1.0 / v1.1 (date)"/>
+        </div>
+        <div>
+          <label>Owner</label>
+          <input type="text" placeholder="RevOps / Enablement"/>
+        </div>
+        <div>
+          <label>Effective date</label>
+          <input type="date"/>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:8px">
+        <div>
+          <label>Segments</label>
+          <input type="text" placeholder="MM / ENT / Public Sector"/>
+        </div>
+        <div>
+          <label>CRM</label>
+          <input type="text" placeholder="SFDC / HubSpot + objects used"/>
+        </div>
+        <div>
+          <label>Manager review cadence</label>
+          <input type="text" placeholder="Weekly pipeline; monthly QBR"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage dictionary builder -->
+    <section class="section">
+      <h2>Stage dictionary</h2>
+      <p class="muted">Purpose, entry and binary exit per stage. Keep each definition to one sentence.</p>
+      <table id="stagesTable">
+        <thead>
+          <tr><th>Stage name</th><th>Purpose</th><th>Entry</th><th>Exit (binary)</th><th>Required artifacts</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" value="Qualify"/></td>
+            <td><textarea placeholder="Prove there is a problem we solve and a path to power."></textarea></td>
+            <td><textarea placeholder="Inbound/outbound meeting accepted."></textarea></td>
+            <td><textarea placeholder="Pain stated in customer language; next meeting booked; path to EB identified."></textarea></td>
+            <td><textarea placeholder="Discovery brief (light)"></textarea></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Discovery"/></td>
+            <td><textarea placeholder="Quantify pain, map stakeholders, shape evaluation."></textarea></td>
+            <td><textarea placeholder="Qualify exit met; timeboxed discovery call(s)."></textarea></td>
+            <td><textarea placeholder="Pain quantified; power map; MAP skeleton agreed."></textarea></td>
+            <td><textarea placeholder="Discovery brief; MAP (draft)"></textarea></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Solution Fit"/></td>
+            <td><textarea placeholder="Agree approach/scope; prep validation."></textarea></td>
+            <td><textarea placeholder="Discovery exit met; champion engaged."></textarea></td>
+            <td><textarea placeholder="POC use cases + success criteria; security intake submitted."></textarea></td>
+            <td><textarea placeholder="Success criteria; security intake"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Validation"/></td>
+            <td><textarea placeholder="Produce evidence that de-risks the choice."></textarea></td>
+            <td><textarea placeholder="Solution Fit exit met; proof plan agreed."></textarea></td>
+            <td><textarea placeholder="Proof passed/ref validated; EB engaged; risks owned."></textarea></td>
+            <td><textarea placeholder="Proof pack; risk log"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Business Case"/></td>
+            <td><textarea placeholder="Align value, timing and sponsorship."></textarea></td>
+            <td><textarea placeholder="Validation exit met; sponsorship path open."></textarea></td>
+            <td><textarea placeholder="ROI model agreed; terms outline; signature date in MAP."></textarea></td>
+            <td><textarea placeholder="1-page business case"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Procurement"/></td>
+            <td><textarea placeholder="Finalize terms and paper."></textarea></td>
+            <td><textarea placeholder="Business Case exit met."></textarea></td>
+            <td><textarea placeholder="Order form executed / loss reason captured; CS handoff pack complete."></textarea></td>
+            <td><textarea placeholder="Order form; CS handoff pack"/></td>
+            <td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('stagesTable')">+ Add stage</button></div>
+    </section>
+
+    <!-- MEDDICC field map -->
+    <section class="section">
+      <h2>MEDDICC field map</h2>
+      <p class="muted">Capture each element once; mark if required at any stage exit.</p>
+      <table id="meddiccTable">
+        <thead><tr><th>Element</th><th>CRM field</th><th>Captured at stage</th><th>Required at exit?</th><th>Notes</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>M — Metrics</td><td><input type="text" placeholder="Metric / Baseline / Target"/></td><td><input type="text" value="Discovery"/></td><td><select><option>No</option><option selected>Yes</option></select></td><td><input type="text" placeholder="Refine in Validation"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>E — Economic buyer</td><td><input type="text" placeholder="EB Name + Role"/></td><td><input type="text" value="Solution Fit"/></td><td><select><option>No</option><option selected>Yes</option></select></td><td><input type="text" placeholder="Meeting by Validation"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>D — Decision criteria/process</td><td><input type="text" placeholder="Criteria / Process"/></td><td><input type="text" value="Discovery"/></td><td><select><option>No</option><option selected>Yes</option></select></td><td><input type="text" placeholder="Lock via MAP"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>I — Identified pain</td><td><input type="text" placeholder="Pain statement"/></td><td><input type="text" value="Discovery"/></td><td><select><option>No</option><option selected>Yes</option></select></td><td><input type="text"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>C — Champion</td><td><input type="text" placeholder="Champion name + influence path"/></td><td><input type="text" value="Solution Fit"/></td><td><select><option>No</option><option selected>Yes</option></select></td><td><input type="text"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>C — Competition</td><td><input type="text" placeholder="Competitor & posture"/></td><td><input type="text" value="Discovery"/></td><td><select><option selected>No</option><option>Yes</option></select></td><td><input type="text" placeholder="Counter-moves"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>P — Papers</td><td><input type="text" placeholder="Security / Legal intake"/></td><td><input type="text" value="Solution Fit"/></td><td><select><option>No</option><option selected>Yes</option></select></td><td><input type="text"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('meddiccTable')">+ Add row</button></div>
+    </section>
+
+    <!-- CRM validation & automations -->
+    <section class="section">
+      <h2>CRM validation &amp; automations</h2>
+      <div class="grid-3">
+        <div>
+          <label><input type="checkbox" /> Require exit fields on stage change</label>
+          <label><input type="checkbox" /> Block stage change if artifact missing</label>
+          <label><input type="checkbox" /> Stage change reason picklist</label>
+        </div>
+        <div>
+          <label><input type="checkbox" /> Alert on regression (manager task)</label>
+          <label><input type="checkbox" /> Auto-create MAP tasks</label>
+          <label><input type="checkbox" /> Auto-flag “Security not started”</label>
+        </div>
+        <div>
+          <label>Reason codes</label>
+          <textarea placeholder="Proof passed; EB meeting booked; ROI approved; Legal redlines; Budget hold;"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboards -->
+    <section class="section">
+      <h2>Dashboards</h2>
+      <table id="dashTable">
+        <thead><tr><th>Tile</th><th>Definition</th><th>Owner</th><th>Frequency</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td><input type="text" value="Exit-pass rate by stage"/></td><td><textarea>Exits passed first try / exits attempted</textarea></td><td><input type="text" placeholder="RevOps"/></td><td><input type="text" placeholder="Weekly"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td><input type="text" value="Security started by Stage 3"/></td><td><textarea>% open opps in ≥Stage 3 with security intake date</textarea></td><td><input type="text" placeholder="Enablement"/></td><td><input type="text" placeholder="Weekly"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td><input type="text" value="EB engaged by Stage 4"/></td><td><textarea>% in Stage 4 with EB meeting on calendar</textarea></td><td><input type="text" placeholder="Managers"/></td><td><input type="text" placeholder="Weekly"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('dashTable')">+ Add tile</button></div>
+    </section>
+
+    <!-- Rollout tracker -->
+    <section class="section">
+      <h2>Rollout tracker (90 days)</h2>
+      <table id="rolloutTable">
+        <thead><tr><th>Week</th><th>Deliverable</th><th>Owner</th><th>Status</th><th>Notes</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td>1–2</td><td><input type="text" value="Finalize stage dictionary & artifacts"/></td><td><input type="text" value="RevOps"/></td><td><input type="text" placeholder="Open/In progress/Done"/></td><td><textarea></textarea></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>3–4</td><td><input type="text" value="Configure CRM validation & dashboards"/></td><td><input type="text" value="Admin"/></td><td><input type="text"/></td><td><textarea></textarea></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>5–6</td><td><input type="text" value="Pilot on 20 live deals"/></td><td><input type="text" value="Managers"/></td><td><input type="text"/></td><td><textarea></textarea></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>7–8</td><td><input type="text" value="Roll out validation to all"/></td><td><input type="text" value="CRO"/></td><td><input type="text"/></td><td><textarea></textarea></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+          <tr><td>9–12</td><td><input type="text" value="Cross-functional SLAs + bake into QBR"/></td><td><input type="text" value="Legal/Sec/Finance"/></td><td><input type="text"/></td><td><textarea></textarea></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('rolloutTable')">+ Add row</button></div>
+    </section>
+
+    <!-- Change log -->
+    <section class="section">
+      <h2>Change log</h2>
+      <table id="changelogTable">
+        <thead><tr><th>Date</th><th>Change</th><th>Reason</th><th>Approved by</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td><input type="date"/></td><td><textarea placeholder="Edited Stage 3 exit …"></textarea></td><td><textarea placeholder="Pilot feedback"></textarea></td><td><input type="text" placeholder="CRO / RevOps"/></td><td style="white-space:nowrap"><button class="btn ghost btn-sm" onclick="removeRow(this)">Remove</button></td></tr>
+        </tbody>
+      </table>
+      <div class="adder"><button class="btn ghost" type="button" onclick="addRow('changelogTable')">+ Add change</button></div>
+    </section>
+
+    <!-- Actions -->
+    <div class="actions" style="margin:10px 0 18px">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a class="btn ghost" href="/articles/sales-process-and-stage-criteria.html">Back to Playbook</a>
+    </div>
+
+    <section class="section muted" style="font-size:12px">
+      Use with the <em>Sales Process &amp; Stage Criteria</em> playbook. Enforce exits at stage change; coach with reason codes; remove a field for every new one you add.
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:44px;width:auto">
+        </div>
+        <p class="muted">Practical tools for commercial leaders.</p>
+      </div>
+      <div>
+        <h4 class="h4">Product</h4>
+        <ul class="muted"><li>Playbooks</li><li>Templates</li><li>Courses</li></ul>
+      </div>
+      <div>
+        <h4 class="h4">Company</h4>
+        <ul class="muted">
+          <li><a href="/#contact">About</a></li>
+          <li><a id="link-contact" href="mailto:contact@commercialleadershiphub.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h4">Follow</h4>
+        <ul class="muted">
+          <li><a id="link-linkedin" href="https://www.linkedin.com/company/commercialleadershiphub" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a id="link-newsletter-footer" href="https://magic.beehiiv.com/v1/e1457804-6433-45aa-9605-1c807b815c3d?redirect_to=https%3A%2F%2Fcommercialleadershiphub.com%2Fthanks.html&double_opt_required=false">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright xs muted">
+      © <span id="y"></span> Commercial Leadership Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+
+    function addRow(tableId){
+      const t=document.getElementById(tableId); if(!t) return;
+      const tb=t.querySelector('tbody'); const last=tb.querySelector('tr:last-child');
+      const clone=last.cloneNode(true);
+      clone.querySelectorAll('input, textarea, select').forEach(el=>{
+        if(el.type==='checkbox'||el.type==='radio'){el.checked=false;} else {el.value='';}
+      });
+      tb.appendChild(clone);
+    }
+    function removeRow(btn){
+      const tr=btn.closest('tr'); const tb=tr.parentElement;
+      if(tb.querySelectorAll('tr').length>1){tb.removeChild(tr);}
+      else{tr.querySelectorAll('input, textarea, select').forEach(el=>{if(el.type==='checkbox'||el.type==='radio'){el.checked=false;} else {el.value='';}});}
+    }
+  </script>
+</body>
+</html>
