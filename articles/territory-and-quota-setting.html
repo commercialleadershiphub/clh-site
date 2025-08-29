@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Territory & Quota Setting — Commercial Leadership Hub</title>
-  <meta name="description" content="Bottom-up model, fairness checks and comms pack." />
+  <meta name="description" content="Bottom-up model, fairness checks and comms pack. Build territories that balance potential and workload, and quotas that are credible and winnable." />
   <link rel="canonical" href="https://commercialleadershiphub.com/articles/territory-and-quota-setting.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Territory & Quota Setting — Commercial Leadership Hub" />
-  <meta property="og:description" content="Bottom-up model, fairness checks and comms pack." />
-  <meta property="og:image" content="https://commercialleadershiphub.com/assets/og-image.png" />
+  <meta property="og:description" content="Bottom-up model, fairness checks and comms pack. Build territories that balance potential and workload, and quotas that are credible and winnable." />
+  <meta property="og:image" content="https://commercialleadershiphub.com/assets/articles/territory-and-quota-setting-hero.webp" />
   <meta property="og:url" content="https://commercialleadershiphub.com/articles/territory-and-quota-setting.html" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
@@ -18,10 +18,8 @@
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81TG0R550X"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-81TG0R550X');
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date()); gtag('config','G-81TG0R550X');
   </script>
 
   <link rel="stylesheet" href="/assets/style.css?v=navy-sand-4" />
@@ -31,36 +29,326 @@
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);margin-bottom:6px}
     .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:12px 0}
     .muted{color:var(--muted)}
+    .section img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .checklist li{margin:6px 0}
+    /* Baseline header alignment */
+    .header-inner{display:flex;align-items:center}
+    .main-nav{margin-left:auto;margin-right:48px}
   </style>
 </head>
 <body>
+  <!-- Baseline header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Commercial Leadership Hub">
         <img src="/assets/clh-logo-primary.svg" alt="Commercial Leadership Hub" style="display:block;height:56px;width:auto">
       </a>
       <nav class="main-nav">
-        <a href="/#services">Services</a>
+        <a href="/articles/">Articles</a>
+        <a href="/products.html">Products</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="/articles/">Articles</a>
       </nav>
       <div class="header-cta">
         <a class="btn ghost" href="/articles/">Back to Articles</a>
       </div>
     </div>
   </header>
+
   <main class="container">
-    <div class="hero">
+    <!-- Title block ABOVE hero -->
+    <div class="title-block" style="margin-top:16px">
       <span class="tag">Ops</span>
-      <h1>Territory & Quota Setting</h1>
+      <h1>Territory &amp; Quota Setting</h1>
       <p class="muted">Bottom-up model, fairness checks and comms pack.</p>
-      <img src="https://images.unsplash.com/photo-1532619187608-e5375cab36aa?q=80&w=1600&auto=format&fit=crop" alt="Territory & Quota Setting">
     </div>
-    <section class="section"><h2>Model</h2><ul><li>Capacity × productivity × coverage assumptions.</li><li>Named account rules and carve‑outs.</li></ul></section>
-    <section class="section"><h2>Process</h2><ol><li>Refresh data; run model; stress test; align leaders.</li><li>Announce with FAQs and appeal window.</li></ol></section>
-    <section class="section"><h2>Metrics</h2><ul><li>Attainment distribution; ramp time; account conflicts.</li></ul></section>
+
+    <div class="hero">
+      <picture>
+        <source srcset="/assets/articles/territory-and-quota-setting-hero.webp" type="image/webp">
+        <img src="/assets/articles/territory-and-quota-setting-hero.png" alt="Territory map and quota model with fairness checks and appeal flow" loading="eager" width="1600" height="900">
+      </picture>
+    </div>
+
+    <!-- Audience & situation -->
+    <section class="section">
+      <h2>Audience &amp; situation</h2>
+      <p>For Revenue/Ops leaders, Sales leaders and Finance partners designing annual/half-year territory books and quota assignments across segments (SMB, MM, ENT) and geographies. Use when growth targets rise, product mix shifts, or last year’s attainment distribution was skewed.</p>
+    </section>
+
+    <!-- Introduction (long) -->
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Territories and quotas are where strategy meets people. Get them wrong and even strong reps underperform: top-heavy patches hoard potential, thin books burn out ramping reps, and quota math loses credibility. Get them right and the org becomes self-correcting—capacity is pointed at real demand, coverage is equitable, and managers can coach instead of firefight compensation disputes.</p>
+      <p>Most misses come from two habits. First, “last year plus 10%”: small edits to historical patches that ignore market change. Second, top-down quotas that don’t reconcile with bottom-up capacity and real pipeline physics. The fix is a transparent, bottom-up model anchored in <em>capacity × productivity × coverage</em>, combined with explicit rules for named accounts, conflict resolution, and fair appeals. We’ll build territories from objective inputs (ICP, intent, whitespace, account density) and then pressure-test them against attainment simulations before anything is announced.</p>
+      <p>This playbook gives you a complete process: the modeling steps, the governance and artifacts to keep it consistent, the fairness checks to catch bias, and a communications pack so reps understand <em>why</em> their book and number are what they are. You’ll leave with a 90-day rollout and a companion template you can use immediately.</p>
+    </section>
+
+    <!-- What good looks like -->
+    <section class="section">
+      <h2>What good looks like</h2>
+      <ul class="muted">
+        <li><strong>Credible quotas:</strong> top-down target reconciled to bottom-up capacity with explicit assumptions.</li>
+        <li><strong>Balanced books:</strong> potential and workload within guardrails (e.g., ±10–15% vs. cohort median).</li>
+        <li><strong>Clean rules:</strong> named account &amp; carve-out policy applied consistently; conflict SLA &lt; 48h.</li>
+        <li><strong>Appeal window:</strong> documented process with data-based outcomes.</li>
+        <li><strong>Comms pack:</strong> FAQs, rationale, and “what changed vs. last year”.</li>
+      </ul>
+    </section>
+
+    <!-- Common pitfalls -->
+    <section class="section">
+      <h2>Common pitfalls</h2>
+      <ul>
+        <li><strong>Top-down only:</strong> quotas set from board target without reconciling capacity or ramp.</li>
+        <li><strong>Historical bias:</strong> rolling forward patches that track past rep performance instead of market potential.</li>
+        <li><strong>Over-weighting logo count:</strong> ignoring ACV mix, buying centers, or intent signals.</li>
+        <li><strong>Undefined rules:</strong> ad hoc named-account and conflict decisions create perceived unfairness.</li>
+        <li><strong>No appeal mechanism:</strong> concerns surface informally and linger.</li>
+      </ul>
+    </section>
+
+    <!-- Playbook -->
+    <section class="section">
+      <h2>Playbook</h2>
+
+      <h3>1) Define objectives &amp; constraints</h3>
+      <ul class="checklist">
+        <li>Revenue target, headcount by segment, ramp plan, coverage model (named vs. pooled).</li>
+        <li>Guardrails: territory potential spread (e.g., Gini ≤ 0.2), account cap per rep, travel/geo limits.</li>
+        <li>Policy: named accounts, carve-outs (strategic, customer success-owned), overlay rules.</li>
+      </ul>
+
+      <h3>2) Build the bottom-up capacity model</h3>
+      <ul class="checklist">
+        <li><strong>Capacity:</strong> reps × ramp schedule × selling days × activity → meetings → opportunities.</li>
+        <li><strong>Productivity:</strong> win rate × ACV × cycle time by segment; use P50/P75 to simulate range.</li>
+        <li><strong>Coverage:</strong> account:rep ratios, inbound/outbound mix, partner influence.</li>
+        <li><strong>Reconcile:</strong> ensure sum(quota) ≈ target ± tolerance; document deltas and assumptions.</li>
+      </ul>
+
+      <h3>3) Score and cluster accounts</h3>
+      <ul class="checklist">
+        <li>Inputs: ICP fit, historical spend, intent signals, tech stack, firmographics, whitespace.</li>
+        <li>Score normalization by segment; create tiers (A/B/C) with ACV expectations.</li>
+        <li>Cluster by geo/industry to minimize travel and maximize referenceability.</li>
+      </ul>
+
+      <h3>4) Draft territory books</h3>
+      <ul class="checklist">
+        <li>Allocate A/B/C mix per rep to hit potential guardrails; cap total active accounts per rep.</li>
+        <li>Apply named-account and carve-out rules; document exceptions.</li>
+        <li>Run conflict detection (overlaps, duplicates, partner ownership) and resolve with SLA.</li>
+      </ul>
+
+      <h3>5) Set quotas</h3>
+      <ul class="checklist">
+        <li>Assign quota per book from bottom-up potential × productivity (not a flat split).</li>
+        <li>Adjust for ramp, tenure, and coverage model (pooled SDRs vs. rep-prospecting).</li>
+        <li>Run attainment simulation (Monte Carlo or percentile bounds) to validate distribution.</li>
+      </ul>
+
+      <h3>6) Fairness checks &amp; stress tests</h3>
+      <ul class="checklist">
+        <li>Variance vs. cohort median potential (±10–15% goal); Gini coefficient trend.</li>
+        <li>Time-in-territory impact (avoid penalizing recent movers); manager span consistency.</li>
+        <li>Scenario tests: macro −10%, pipeline slip +2 weeks, intent surge in Segment X.</li>
+      </ul>
+
+      <h3>7) Governance &amp; communication</h3>
+      <ul class="checklist">
+        <li>Create the comms pack: methodology, what changed, FAQs, appeal form, timelines.</li>
+        <li>Manager enablement: talk track, example calculations, how to handle edge cases.</li>
+        <li>Open 10-business-day appeal window with data requirements and SLA.</li>
+      </ul>
+    </section>
+
+    <!-- Artifacts -->
+    <section class="section">
+      <h2>Artifacts</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Model workbook</h3>
+          <ul>
+            <li>Inputs: headcount, ramp, win rate, ACV, coverage ratios.</li>
+            <li>Account scoring sheet (features &amp; weights) + A/B/C tiering.</li>
+            <li>Reconciliation tab: sum(quota) vs. target, variance notes.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Policy &amp; comms</h3>
+          <ul>
+            <li>Named-account &amp; carve-out rules (one-pager).</li>
+            <li>Conflict resolution flow &amp; SLA.</li>
+            <li>Rep pack: book summary, quota calc, appeal link, FAQ.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section">
+      <h2>Worked examples</h2>
+
+      <h3>Example A — Mid-market NA (redistribution)</h3>
+      <p><strong>Situation:</strong> 22 AEs; historical books uneven; new intent provider added.</p>
+      <p><strong>Moves:</strong> rescored accounts; re-tiered A/B/C; capped 180 accounts/rep; rebalanced to ±12% potential spread.</p>
+      <p><strong>Quota:</strong> cohort-specific based on book potential × P50 productivity; ramped 3 new AEs at 60/80/100%.</p>
+      <p><strong>Result:</strong> attainment variance narrowed by 9 pts; conflict tickets −65% in Q1.</p>
+
+      <h3>Example B — Enterprise EMEA (named accounts)</h3>
+      <p><strong>Situation:</strong> 8 AEs; heavy named-account politics; platform expansion priority.</p>
+      <p><strong>Moves:</strong> published named list with criteria (ARR&gt;500k or ≥3 buying centers); carved out 12 strategic CS-owned; created overlay for one product line.</p>
+      <p><strong>Quota:</strong> book-specific using whitespace × attach model; over-assignment set to 1.15× to match conversion physics.</p>
+      <p><strong>Result:</strong> less ambiguity; exec-approved exceptions documented; 3 expansions closed in first half.</p>
+
+      <h3>Example C — SMB global (pooled coverage)</h3>
+      <p><strong>Situation:</strong> 40 AEs; inbound heavy; SDR pool; high churn in patches.</p>
+      <p><strong>Moves:</strong> moved to pooled inbound + micro-territories for outbound; split by industry verticals to tighten messaging.</p>
+      <p><strong>Quota:</strong> set by lead flow × conversion × ACV; added seasonality factor and PTO buffer.</p>
+      <p><strong>Result:</strong> ramp-to-productivity −3 weeks; attainment spread tightened; fewer reassignment tickets.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <h2>Metrics</h2>
+      <p><strong>Leading:</strong> potential spread vs. median, conflict tickets &amp; SLA, appeal rate &amp; cycle, book changes after appeal.</p>
+      <p><strong>Lagging:</strong> attainment distribution (P25/P50/P75), ramp-to-productivity, quota coverage, rep retention.</p>
+    </section>
+
+    <!-- Diagram -->
+    <section class="section">
+      <picture>
+        <source srcset="/assets/articles/territory-and-quota-setting-diagram.webp" type="image/webp">
+        <img src="/assets/articles/territory-and-quota-setting-diagram.png" alt="Flow: objectives → capacity model → scoring → territory draft → quotas → fairness checks → comms & appeal" loading="lazy" width="1400" height="900">
+      </picture>
+      <p class="muted">Anchor quotas in bottom-up capacity, then balance books with explicit rules and fairness checks.</p>
+    </section>
+
+    <!-- Implementation checklist -->
+    <section class="section">
+      <h2>Implementation checklist</h2>
+      <ul>
+        <li>Publish named-account &amp; carve-out policy with examples.</li>
+        <li>Finalize scoring inputs &amp; weights; lock tiers.</li>
+        <li>Run reconciliation (sum of quotas vs. target) and document assumptions.</li>
+        <li>Produce rep comms pack and open appeal window with SLA.</li>
+      </ul>
+    </section>
+
+    <!-- Measurement -->
+    <section class="section">
+      <h2>Measurement</h2>
+      <p><strong>Team level:</strong> attainment distribution, conflict volume &amp; resolution time, appeal outcomes, % quotas adjusted post-appeal.</p>
+      <p><strong>Individual level:</strong> book potential vs. cohort median, ramp adherence, pipeline creation vs. modeled capacity.</p>
+    </section>
+
+    <!-- Team buy-in -->
+    <section class="section">
+      <h2>Team buy-in</h2>
+      <ul>
+        <li>Explain the <em>why</em>: method, inputs, and fairness guardrails.</li>
+        <li>Train managers on quota math and appeal handling with real examples.</li>
+        <li>Close the loop publicly on policy changes after appeals.</li>
+      </ul>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section">
+      <h2>Why it matters</h2>
+      <ul class="muted">
+        <li><strong>Credibility:</strong> quotas tied to physics, not hope.</li>
+        <li><strong>Equity:</strong> balanced opportunity reduces churn and noise.</li>
+        <li><strong>Focus:</strong> fewer conflicts and clearer books unlock selling time.</li>
+      </ul>
+      <p>Pair this with <a href="/articles/sales-process-and-stage-criteria.html">Sales Process &amp; Stage Criteria</a> and a disciplined <a href="/articles/give-get-menu.html">Give/Get Menu</a> to convert potential into revenue.</p>
+    </section>
+
+    <!-- Metrics & pitfalls (always-on block) -->
+    <section class="section">
+      <h2>Metrics &amp; pitfalls</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Watch</h3>
+          <ul>
+            <li>Potential spread vs. cohort median</li>
+            <li>Attainment distribution &amp; ramp adherence</li>
+            <li>Conflict and appeal SLAs</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Avoid</h3>
+          <ul>
+            <li>Flat quota splits ignoring book potential</li>
+            <li>Hidden named-account exceptions</li>
+            <li>“Last year +10%” without model reconciliation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-day rollout -->
+    <section class="section">
+      <h2>90-day rollout</h2>
+      <h3>Weeks 1–2 — Inputs &amp; policy</h3>
+      <ul>
+        <li>Lock objectives, guardrails, and named-account rules with ELT.</li>
+        <li>Collect data: headcount, ramp, win rates, ACV, intent, whitespace.</li>
+      </ul>
+      <h3>Weeks 3–4 — Model &amp; score</h3>
+      <ul>
+        <li>Build capacity model and reconciliation tab.</li>
+        <li>Score accounts; create A/B/C tiers; draft clusters.</li>
+      </ul>
+      <h3>Weeks 5–6 — Books &amp; quotas</h3>
+      <ul>
+        <li>Draft territory books; assign quotas from book potential × productivity.</li>
+        <li>Run fairness checks and attainment simulations; iterate.</li>
+      </ul>
+      <h3>Weeks 7–8 — Governance</h3>
+      <ul>
+        <li>Publish comms pack; train managers; set conflict/appeal SLAs.</li>
+      </ul>
+      <h3>Weeks 9–10 — Announce &amp; appeal</h3>
+      <ul>
+        <li>Announce books &amp; quotas; open 10-day appeal window; track outcomes.</li>
+      </ul>
+      <h3>Weeks 11–12 — Finalize &amp; instrument</h3>
+      <ul>
+        <li>Close appeals; finalize comp docs; monitor early attainment and conflicts weekly.</li>
+      </ul>
+    </section>
+
+    <!-- Related (prominent links) -->
+    <section class="section">
+      <h2>Related</h2>
+      <ul>
+        <li><a style="font-weight:600;color:var(--text)" href="/articles/sales-process-and-stage-criteria.html">Sales Process &amp; Stage Criteria</a></li>
+        <li><a style="font-weight:600;color:var(--text)" href="/articles/account-planning-playbook.html">Account Planning Playbook</a></li>
+        <li><a style="font-weight:600;color:var(--text)" href="/articles/proof-of-concept-plan.html">Proof-of-Concept Plan</a></li>
+      </ul>
+    </section>
+
+    <!-- Next steps & CTA -->
+    <section class="section">
+      <h2>Next steps &amp; CTA</h2>
+      <ul>
+        <li>Run the bottom-up capacity model with your current headcount and ramp.</li>
+        <li>Score accounts and draft two territory options per segment.</li>
+        <li>Simulate attainment distribution before announcing anything.</li>
+      </ul>
+      <p><a class="btn" href="/templates/territory-and-quota-setting-template.html">Use the template</a></p>
+    </section>
+
+    <!-- Sources & terms -->
+    <section class="section">
+      <h2>Sources &amp; terms</h2>
+      <p><strong>Terms:</strong> Potential spread, Coverage ratio, Named account, Carve-out, Gini coefficient (fairness), Over-assignment.</p>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -94,8 +382,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
