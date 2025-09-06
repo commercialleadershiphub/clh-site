@@ -79,6 +79,8 @@
               <a class="chip" href="#hiring">Hiring</a>
               <a class="chip" href="#ops">Ops</a>
               <a class="chip" href="#expansion">International</a>
+              <!-- NEW chip -->
+              <a class="chip" href="#leadership-insights">Leadership Insights</a>
             </div>
           </div>
           <div class="req-box">
@@ -157,6 +159,13 @@
       <div class="grid" id="grid-expansion"></div>
     </section>
 
+    <!-- NEW: Leadership Insights bucket -->
+    <section id="leadership-insights" class="section" style="margin-top:16px">
+      <h2 style="margin:0 0 8px">Leadership Insights</h2>
+      <div class="loading" id="loading-leadership-insights">Loading…</div>
+      <div class="grid" id="grid-leadership-insights"></div>
+    </section>
+
     <!-- Newsletter CTA -->
     <section class="section" id="cta" style="margin:16px 0;text-align:center">
       <h2 style="margin:0 0 6px">Stay sharp.</h2>
@@ -220,9 +229,11 @@
       Pricing: document.getElementById('grid-pricing'),
       Hiring: document.getElementById('grid-hiring'),
       Ops: document.getElementById('grid-ops'),
-      Expansion: document.getElementById('grid-expansion') // shown as "International"
+      Expansion: document.getElementById('grid-expansion'), // shown as "International"
+      // NEW
+      "Leadership Insights": document.getElementById('grid-leadership-insights')
     };
-    const loaders = ['loading-sales','loading-success','loading-pricing','loading-hiring','loading-ops','loading-expansion'];
+    const loaders = ['loading-sales','loading-success','loading-pricing','loading-hiring','loading-ops','loading-expansion','loading-leadership-insights'];
     function clearLoaders(){ loaders.forEach(id=>{ const el=document.getElementById(id); if(el) el.remove(); }); }
 
     // Tag-specific fallback images (Unsplash)
@@ -232,7 +243,9 @@
       Pricing: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
       Hiring: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
       Ops: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
-      Expansion: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=1400&auto=format&fit=crop"
+      Expansion: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=1400&auto=format&fit=crop",
+      // NEW
+      "Leadership Insights": "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1400&auto=format&fit=crop"
     };
 
     function isGenericImg(src){ return !src || src.includes('/assets/og-image'); }
@@ -247,6 +260,8 @@
       if(['hiring','recruiting','talent'].includes(t)) return 'Hiring';
       if(['ops','operations','revops'].includes(t)) return 'Ops';
       if(['expansion','international','planning'].includes(t)) return 'Expansion';
+      // NEW mappings for leadership
+      if(['leadership insights','leadership','modern leadership','leadership playbook'].includes(t)) return 'Leadership Insights';
       return 'Ops';
     }
 
@@ -374,7 +389,7 @@
       }catch(e){}
     }
 
-    // ---------- NEW: guarantee branded hero image for any missing/broken/generic thumbs ----------
+    // ---------- guarantee branded hero image for any missing/broken/generic thumbs ----------
     function slugFromPath(p){
       try{
         const s = (p||'').split('/').filter(Boolean);
@@ -430,7 +445,7 @@
       await buildFromManifest(); // preferred: guarantees images + completeness if present
       await buildFromSitemap();  // fill gaps if sitemap has extras
       clearLoaders();
-      ensureAllThumbs();         // NEW: finalize thumbs so none are missing
+      ensureAllThumbs();         // finalize thumbs so none are missing
     })();
   </script>
 </body>
